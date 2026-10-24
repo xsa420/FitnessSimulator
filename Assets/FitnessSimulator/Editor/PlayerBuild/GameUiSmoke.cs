@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using FitnessSimulator.Automation;
 using System.Security.Cryptography;
 using FitnessSimulator.Game.Application;
 using FitnessSimulator.Game.Presentation;
@@ -67,8 +68,9 @@ namespace FitnessSimulator.Game.Editor
             var arguments = Environment.GetCommandLineArgs(); int stageIndex = Array.IndexOf(arguments, "-fitnessEvidenceStage");
             string stage = stageIndex >= 0 ? arguments[stageIndex + 1] : "M1";
             if (stage != "M1" && stage != "ConfigR1" && stage != "SaveR1") throw new ArgumentException("Unsupported evidence stage");
-            string directory = Path.GetFullPath("TestResults/" + stage + "/Captures/" + DateTime.UtcNow.ToString("yyyyMMdd-HHmmss") + "-" + Guid.NewGuid().ToString("N").Substring(0, 6));
-            Directory.CreateDirectory(directory);
+            string root = Environment.GetEnvironmentVariable("FITNESS_RUN_OUTPUT_ROOT") ?? "TestResults/" + stage;
+            string directory = Path.GetFullPath(Path.Combine(root, "Captures", DateTime.UtcNow.ToString("yyyyMMdd-HHmmss") + "-" + Guid.NewGuid().ToString("N").Substring(0, 6)));
+            AutomationEvidence.RegisterDirectory(directory);
             UnityEditor.SessionState.SetString(OutputKey, directory);
             UnityEditor.SessionState.SetBool(PendingKey, true);
             EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
@@ -89,6 +91,7 @@ namespace FitnessSimulator.Game.Editor
                 output = UnityEditor.SessionState.GetString(OutputKey, "");
                 string project = Path.GetFullPath(Path.Combine(UnityEngine.Application.dataPath, "..")) + Path.DirectorySeparatorChar;
                 if (string.IsNullOrEmpty(output) || !Path.GetFullPath(output).StartsWith(project, StringComparison.OrdinalIgnoreCase)) throw new IOException("Invalid smoke output path.");
+                AutomationEvidence.RegisterDirectory(output);
                 evidence = new Evidence { status = "Running", fixtureDirectory = Path.Combine(output, "FixtureSave"), startedUtc = DateTime.UtcNow.ToString("O") };
                 saveFeedbackSmoke = Environment.GetCommandLineArgs().Contains("-fitnessSaveFeedbackSmoke");
                 if (saveFeedbackSmoke) CopySaveFeedbackSource(evidence.fixtureDirectory);
@@ -126,6 +129,7 @@ namespace FitnessSimulator.Game.Editor
             if (session == null || finishing) return;
             try
             {
+                AutomationEvidence.ValidateFor(output);
                 double now = EditorApplication.timeSinceStartup;
                 if (now - started > 240) { Finish(false, "Timed out waiting for required UI captures."); return; }
                 if (saveFeedbackSmoke) { TickSaveFeedback(); return; }
@@ -205,7 +209,7 @@ namespace FitnessSimulator.Game.Editor
                     Capture("existing-continued", view);
                     long generation = session.InspectSnapshot().Generation;
                     session.Dispose();
-                    File.WriteAllBytes(Path.Combine(evidence.fixtureDirectory, generation % 2 == 0 ? "state-a.bin" : "state-b.bin"), new byte[] { 7, 8, 9 });
+                    AutomationEvidence.WriteAllBytes(Path.Combine(evidence.fixtureDirectory, generation % 2 == 0 ? "state-a.bin" : "state-b.bin"), new byte[] { 7, 8, 9 });
                     host.SetActive(false); UnityEngine.Object.Destroy(host);
                     session = GameSession.OpenTest(evidence.fixtureDirectory, evidence.seed);
                     host = new GameObject("UiSmokeRecoveryFrontend");
@@ -310,7 +314,7 @@ namespace FitnessSimulator.Game.Editor
                     darkest = Math.Min(darkest, value); brightest = Math.Max(brightest, value);
                 }
                 if (brightest - darkest < 30) throw new InvalidOperationException("Capture is uniform/blank: " + name);
-                byte[] png = texture.EncodeToPNG(); string path = Path.Combine(output, name + ".png"); File.WriteAllBytes(path, png);
+                byte[] png = texture.EncodeToPNG(); string path = Path.Combine(output, name + ".png"); AutomationEvidence.WriteAllBytes(path, png);
                 string hash; using (var sha = SHA256.Create()) hash = BitConverter.ToString(sha.ComputeHash(png)).Replace("-", "");
                 var canvasRect = host.GetComponentInChildren<Canvas>().GetComponent<RectTransform>().rect;
                 captures.Add(new CaptureEvidence { name = name, path = path, sha256 = hash, width = target.width, height = target.height, revision = view.Revision,
@@ -332,7 +336,15 @@ namespace FitnessSimulator.Game.Editor
             if (evidence == null) evidence = new Evidence();
             evidence.status = success ? "Passed" : "Failed"; evidence.error = error ?? (complete ? null : "Required captures missing.");
             evidence.finishedUtc = DateTime.UtcNow.ToString("O"); evidence.captures = captures.ToArray(); evidence.inputEvents = inputs.ToArray();
-            if (!string.IsNullOrEmpty(output)) File.WriteAllText(Path.Combine(output, "ui-evidence.json"), JsonUtility.ToJson(evidence, true));
+            try
+            {
+                if (!string.IsNullOrEmpty(output)) AutomationEvidence.WriteAllText(Path.Combine(output, "ui-evidence.json"), JsonUtility.ToJson(evidence, true));
+            }
+            catch (Exception exception)
+            {
+                success = false; evidence.status = "Failed"; error = evidence.error = exception.ToString();
+                Debug.LogError("UI evidence could not be completed: " + error);
+            }
             session?.Dispose(); session = null;
             if (target) { target.Release(); UnityEngine.Object.Destroy(target); }
             if (host) UnityEngine.Object.Destroy(host);

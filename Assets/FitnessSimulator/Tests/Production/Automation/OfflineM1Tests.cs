@@ -1,3 +1,4 @@
+using FitnessSimulator.Automation;
 using System;
 using System.IO;
 using System.Linq;
@@ -24,25 +25,27 @@ namespace FitnessSimulator.Game.Tests.Automation
             int targetDays = int.TryParse(Environment.GetEnvironmentVariable("FITNESS_OFFLINE_DAYS"), out int configuredDays) ? configuredDays : 3;
             int secondsBudget = int.TryParse(Environment.GetEnvironmentVariable("FITNESS_OFFLINE_SECONDS"), out int configuredSeconds) ? configuredSeconds : 180;
             int stepBudget = Math.Max(100000, targetDays * 40000);
-            string outputRoot = Environment.GetEnvironmentVariable("FITNESS_OFFLINE_OUTPUT") ?? Path.Combine(Path.GetTempPath(), "Fitness-Offline");
+            string outputRoot = Environment.GetEnvironmentVariable("FITNESS_RUN_OUTPUT_ROOT") != null
+                ? Path.Combine(AutomationEvidence.OutputRoot, "Fitness-Offline")
+                : Environment.GetEnvironmentVariable("FITNESS_OFFLINE_OUTPUT") ?? Path.Combine(AutomationEvidence.OutputRoot, "Fitness-Offline");
             string directory = Path.Combine(outputRoot, Guid.NewGuid().ToString("N"));
-            Directory.CreateDirectory(directory);
+            AutomationEvidence.RegisterDirectory(directory);
             var clock = Stopwatch.StartNew();
             bool trusted = Environment.GetEnvironmentVariable("FITNESS_OFFLINE_SOURCE") == "trusted";
             bool paid = Environment.GetEnvironmentVariable("FITNESS_OFFLINE_STRATEGY") == "paid-rest-auto";
-            Func<GameSession> open = () => trusted ? GameSession.OpenAutomation(directory, seed) : GameSession.OpenTest(directory, seed);
+            Func<GameSession> open = () => trusted ? AutomationEvidenceSession.OpenAutomation(directory, seed) : AutomationEvidenceSession.OpenTest(directory, seed);
             GameSession session = open();
             int paidMeals = 0, rests = 0, automaticSets = 0, shopLeaves = 0, itemPoints = 0;
             bool restedBeforeSet = false;
             int commands = 0, days = 0, stagnant = 0, recoveries = 0, settledSets = 0, kernelTicks = 0;
             long lastRevision = -1;
             string outcome = "BudgetExhausted";
-            using (var trace = new StreamWriter(Path.Combine(directory, "trace.jsonl"))) {
+            using (var trace = new EvidenceTrace(Path.Combine(directory, "trace.jsonl"))) {
                 Action<string, string, int> send = (id, value, number) => {
                     var view = session.ReadView();
                     var action = new FrontendAction { OperationId = "offline/" + (++commands), RunId = view.RunId, ExpectedRevision = view.Revision, ActionId = id, StringValue = value, IntValue = number };
                     trace.WriteLine(JsonUtility.ToJson(view));
-                    var reply = session.Execute(action);
+                    var reply = AutomationEvidenceSession.Execute(session,action);
                     trace.WriteLine(JsonUtility.ToJson(action));
                     trace.WriteLine(JsonUtility.ToJson(reply));
                     Assert.That(reply.Accepted, Is.True, id + ": " + reply.Message);
@@ -102,8 +105,8 @@ namespace FitnessSimulator.Game.Tests.Automation
                     if (paid) { Assert.That(paidMeals, Is.GreaterThan(0), "CoverageMissing: paid meal"); Assert.That(rests, Is.GreaterThan(0), "CoverageMissing: rest"); if (trusted) Assert.That(automaticSets, Is.GreaterThan(0), "CoverageMissing: earned automatic capacity"); }
                 } catch (Exception ex) { outcome = ex.ToString(); throw; }
                 finally {
-                    File.WriteAllText(Path.Combine(directory, "final-state.json"), session.InspectSnapshot() == null ? "null" : JsonUtility.ToJson(session.InspectSnapshot(), true));
-                    File.WriteAllText(Path.Combine(directory, "report.txt"), "seed=" + seed + "\nstrategy=" + (paid ? "paid-rest-auto-v1" : "first-enabled-real-bench-v1") + "\nsource=" + (trusted ? "Test/TrustedAutomationInput" : "Test/ScriptReplay") + "\nshopLeaves=" + shopLeaves + "\nitemPoints=" + itemPoints + "\npaidMeals=" + paidMeals + "\nrests=" + rests + "\nautomaticSets=" + automaticSets + "\nconfig=" + session.InspectSnapshot()?.ContentVersion + "\ndays=" + days + "\nrecoveries=" + recoveries + "\nsettledSets=" + settledSets + "\nkernelTicks=" + kernelTicks + "\ncommands=" + commands + "\nexit=" + outcome + "\ncoverage=M1-only; endings,NPC,other-exercises,mid-set-comparison,shop-purchase,study-route missing");
+                    AutomationEvidence.WriteAllText(Path.Combine(directory, "final-state.json"), session.InspectSnapshot() == null ? "null" : JsonUtility.ToJson(session.InspectSnapshot(), true));
+                    AutomationEvidence.WriteAllText(Path.Combine(directory, "report.txt"), "seed=" + seed + "\nstrategy=" + (paid ? "paid-rest-auto-v1" : "first-enabled-real-bench-v1") + "\nsource=" + (trusted ? "Test/TrustedAutomationInput" : "Test/ScriptReplay") + "\nshopLeaves=" + shopLeaves + "\nitemPoints=" + itemPoints + "\npaidMeals=" + paidMeals + "\nrests=" + rests + "\nautomaticSets=" + automaticSets + "\nconfig=" + session.InspectSnapshot()?.ContentVersion + "\ndays=" + days + "\nrecoveries=" + recoveries + "\nsettledSets=" + settledSets + "\nkernelTicks=" + kernelTicks + "\ncommands=" + commands + "\nexit=" + outcome + "\ncoverage=M1-only; endings,NPC,other-exercises,mid-set-comparison,shop-purchase,study-route missing");
                     session.Dispose(); TestContext.WriteLine("Offline evidence: " + directory);
                 }
             }

@@ -1,5 +1,19 @@
 # [FRAME] 环境与验证记录
 
+## [FRAME] 现行轻量验证流程
+
+[FRAME] 日常验证在当前工程串行运行，只选择受影响的测试；不自动复制工程，不为普通反馈构建安装包。编辑器正被用户使用时，不启动第二个批处理抢占；需要隔离时由架构安排一个可复用目录，不按批次新建工程。测试存档与玩家存档分开。
+
+[FRAME] `Tools/Game.ps1` 每次写入 `TestResults/<stage>/runs/<action-id>/`。`version.json` 保存 Git 提交号、工作区状态与文件哈希，运行前后检查漂移；不创建 `source-copy`。正式验收使用 `-RequireCleanSource`，必须从已提交的干净版本运行。未提交工作区仅可自测，标记 `SelfTestOnly`：哈希能识别内容，但不能替代未提交内容本身或证明提交号可复现。需要复现时先提交对应变更。
+
+[FRAME] 默认预算：单条追踪文件16 MiB，单快照8 MiB，存档集合64 MiB，运行日志16 MiB，本次证据总量128 MiB。参数为 `TraceMaxBytes`、`SnapshotMaxBytes`、`SnapshotSetMaxBytes`、`RunLogMaxBytes`、`RunMaxBytes`；测试范围确有需要才显式调整并记录。受控写入预检容量，生产存档和编辑器日志由测试边界／运行监控核验；外部写入可能在检查间隔内暂时超限，超限须标失败，不能截断数据后仍宣称通过。汇总必须区分测试失败、证据预算耗尽与正常通过。
+
+[FRAME] 产证只保留一份。`Tools/Testing/Seal-Evidence.ps1 -Action Create -ManifestPath <清单路径> -Paths <证据文件列表>` 生成相对路径／长度／SHA256引用清单，不复制证据；`-Action Verify` 核验同一清单。清单引用的文件视为不可变，清理时不得删除；需交付到其他机器时再显式打包完整引用集合。报告、测试XML、版本清单与必要失败现场优先保留，不默认记录每帧完整状态。
+
+[FRAME] 历史维护入口为 `Tools/Testing/Maintain-Evidence.ps1 -Action Plan|Apply|Verify`。默认仅形成计划；计划经独立审查后才执行。仅清理允许列表中的隔离工程 `Library`／`UpmCache`，`IsolatedTemp` 可能包含有效测试现场，不作为缓存删除。历史源码快照仅对字节相同内容建立硬链接，保留旧路径、不同版本和原有manifest；不得原地编辑去重后的历史源码，需要复现时复制到新的工作目录。真实存档不做硬链接。执行前后逐文件核对保留证据哈希，输出清理回执；不会修改主工程缓存或玩家存档。
+
+[FRAME] 以下是历史验收记录，旧目录与旧封存格式仅用于追溯，不再作为新批次产证方式。
+
 ## [COMPUTED｜HIGH] 最新M3R1七项修改验收（2026-10-23）
 
 [COMPUTED｜HIGH] 短批105355-155：67/67 Passed、exit0/sourceDrift0；真实两日六餐／晚上改计划／八次重开，玩家实际半日收入50、餐费100、余额250，第二日休息无薪。工作故障、旧E01、计划旧值／新编辑和导航边界分别有领域或明确结构测试。89文件封存清单SHA A4804DC43C2043E0E7F8791C9B08E3FDFA0B475983AD1DAF884A4DBDD56B2221。

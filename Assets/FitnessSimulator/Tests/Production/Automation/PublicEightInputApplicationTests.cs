@@ -1,3 +1,4 @@
+using FitnessSimulator.Automation;
 using System;
 using System.IO;
 using System.Linq;
@@ -15,12 +16,12 @@ public sealed class PublicEightInputApplicationTests {
  [Timeout(660000)]
  public void PublicInputSettlesAndEarnsCapacityExactlyOnce(string exercise) {
   const uint seed=1;const int maxDays=8,maxSteps=100000,maxSeconds=600;
-  string dir=Path.Combine(Path.GetTempPath(),"Fitness-Public-Eight",exercise,Guid.NewGuid().ToString("N"));Directory.CreateDirectory(dir);
-  var s=GameSession.OpenAutomation(dir,seed);var clock=Stopwatch.StartNew();int count=0,days=0,inputCommands=0,inputClockCalls=0;string exit="BudgetExhausted";
-  using(var trace=new StreamWriter(Path.Combine(dir,"trace.jsonl"))) {
+  string dir=Path.Combine(AutomationEvidence.OutputRoot,"Fitness-Public-Eight",exercise,Guid.NewGuid().ToString("N"));AutomationEvidence.RegisterDirectory(dir);
+  var s=AutomationEvidenceSession.OpenAutomation(dir,seed);var clock=Stopwatch.StartNew();int count=0,days=0,inputCommands=0,inputClockCalls=0;string exit="BudgetExhausted";
+  using(var trace=new EvidenceTrace(Path.Combine(dir,"trace.jsonl"))) {
    Func<string,TrainingDayState> training=ignored=>JsonUtility.FromJson<TrainingDayState>(s.InspectSnapshot().FindFragment("training","player").Json);
    Func<long> strength=()=>JsonUtility.FromJson<BodyState>(s.InspectSnapshot().FindFragment("body","player").Json).Regions.Sum(r=>r.StrengthMicro);
-   Func<FrontendOption,FrontendAction> send=o=>{var v=s.ReadView();var a=new FrontendAction {OperationId="eight/"+(++count),RunId=v.RunId,ExpectedRevision=v.Revision,ActionId=o.Id,StringValue=o.StringValue,IntValue=o.IntValue};trace.WriteLine(JsonUtility.ToJson(v));trace.WriteLine(JsonUtility.ToJson(a));var reply=s.Execute(a);trace.WriteLine(JsonUtility.ToJson(reply));Assert.That(reply.Accepted,Is.True,reply.Message);return a;};
+   Func<FrontendOption,FrontendAction> send=o=>{var v=s.ReadView();var a=new FrontendAction {OperationId="eight/"+(++count),RunId=v.RunId,ExpectedRevision=v.Revision,ActionId=o.Id,StringValue=o.StringValue,IntValue=o.IntValue};trace.WriteLine(JsonUtility.ToJson(v));trace.WriteLine(JsonUtility.ToJson(a));var reply=AutomationEvidenceSession.Execute(s,a);trace.WriteLine(JsonUtility.ToJson(reply));Assert.That(reply.Accepted,Is.True,reply.Message);return a;};
    try {
     for(int step=0;step<maxSteps && clock.Elapsed.TotalSeconds<maxSeconds;step++) {
      var v=s.ReadView();Assert.That(v.ScreenId,Is.Not.EqualTo("error"),v.Body);var options=v.Actions.Where(a=>a.Enabled).ToArray();
@@ -30,7 +31,7 @@ public sealed class PublicEightInputApplicationTests {
       var ready=training(null).Workout;Assert.That(ready.Phase,Is.EqualTo(WorkoutPhase.ResultReady));Assert.That(ready.PendingResult.Producer,Is.EqualTo(TrainingProducer.TrustedAutomationInput));Assert.That(ready.PendingResult.Success,Is.True);Assert.That(ready.PendingResult.EffectiveReps,Is.EqualTo(ready.PendingRequest.TargetReps));
       string setId=ready.PendingRequest.SetId;int tier=ready.PendingRequest.Tier;long before=strength();var command=send(settle);
       Assert.That(strength(),Is.GreaterThan(before));Assert.That(training(null).Workout.SettledSetIds.Count(x=>x==setId),Is.EqualTo(1));Assert.That(training(null).Progress.Exercise(exercise).AutomaticTiers[tier-1],Is.True);
-      string saved=JsonUtility.ToJson(s.InspectSnapshot());var retry=s.Execute(command);Assert.That(retry.Accepted,Is.True);Assert.That(JsonUtility.ToJson(s.InspectSnapshot()),Is.EqualTo(saved));exit="RealSetSettledAndQualified";break;
+      string saved=JsonUtility.ToJson(s.InspectSnapshot());var retry=AutomationEvidenceSession.Execute(s,command);Assert.That(retry.Accepted,Is.True);Assert.That(JsonUtility.ToJson(s.InspectSnapshot()),Is.EqualTo(saved));exit="RealSetSettledAndQualified";break;
      }
      FrontendOption o=null;
      if(v.ScreenId=="menu")o=options.FirstOrDefault(a=>a.Id=="new-game");
@@ -42,7 +43,7 @@ public sealed class PublicEightInputApplicationTests {
     }
     Assert.That(exit,Is.EqualTo("RealSetSettledAndQualified"));
    }catch(Exception ex){exit=ex.ToString();throw;}
-   finally{File.WriteAllText(Path.Combine(dir,"final.json"),JsonUtility.ToJson(s.InspectSnapshot(),true));File.WriteAllText(Path.Combine(dir,"report.txt"),"strategy=public-ui-input-v1\nseed=1\nexercise="+exercise+"\nmaxDays=8\nmaxSteps=100000\nmaxSeconds=600\ninputMaxCommandsPerSet=100000\ninputMaxClockCallsPerSet=100000\nbusinessCommands="+count+"\ninputCommands="+inputCommands+"\ninputClockCalls="+inputClockCalls+"\nexit="+exit);s.Dispose();TestContext.WriteLine(dir);}
+   finally{AutomationEvidence.WriteAllText(Path.Combine(dir,"final.json"),JsonUtility.ToJson(s.InspectSnapshot(),true));AutomationEvidence.WriteAllText(Path.Combine(dir,"report.txt"),"strategy=public-ui-input-v1\nseed=1\nexercise="+exercise+"\nmaxDays=8\nmaxSteps=100000\nmaxSeconds=600\ninputMaxCommandsPerSet=100000\ninputMaxClockCallsPerSet=100000\nbusinessCommands="+count+"\ninputCommands="+inputCommands+"\ninputClockCalls="+inputClockCalls+"\nexit="+exit);s.Dispose();TestContext.WriteLine(dir);}
   }
  }
 }

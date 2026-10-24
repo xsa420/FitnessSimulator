@@ -1,0 +1,9 @@
+{
+  "name": "FitnessSimulator.Automation.Evidence",
+  "rootNamespace": "FitnessSimulator.Automation",
+  "references": [],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "autoReferenced": false
+}

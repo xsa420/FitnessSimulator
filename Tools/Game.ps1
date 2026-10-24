@@ -11,7 +11,13 @@ param(
     [switch]$SaveFeedbackSmoke,
     [ValidateSet('M1','M3','M3R1','ConfigR1','SaveR1')][string]$BuildStage = 'M1',
     [ValidateSet('M1','ConfigR1','SaveR1')][string]$EvidenceStage = 'ConfigR1',
-    [switch]$DevelopmentBuild
+    [switch]$DevelopmentBuild,
+    [switch]$RequireCleanSource,
+    [ValidateRange(1,[long]::MaxValue)][long]$TraceMaxBytes=16777216,
+    [ValidateRange(1,[long]::MaxValue)][long]$SnapshotMaxBytes=8388608,
+    [ValidateRange(1,[long]::MaxValue)][long]$SnapshotSetMaxBytes=67108864,
+    [ValidateRange(1,[long]::MaxValue)][long]$RunLogMaxBytes=16777216,
+    [ValidateRange(1,[long]::MaxValue)][long]$RunMaxBytes=134217728
 )
 
 $ErrorActionPreference = 'Stop'
@@ -21,6 +27,7 @@ if ($ConfigurationLayoutSmoke -and ($Action -ne 'ui-smoke' -or $RelationshipLayo
 $isBuild = $Action -in @('build-android','build-proxy')
 if (($BuildStage -ne 'M1' -or $DevelopmentBuild) -and -not $isBuild) { throw 'BuildStage and DevelopmentBuild require a build action.' }
 $projectRoot = [IO.Path]::GetFullPath((Split-Path $PSScriptRoot -Parent))
+. (Join-Path $PSScriptRoot 'Testing/Evidence.ps1')
 $versionLine = Get-Content (Join-Path $projectRoot 'ProjectSettings/ProjectVersion.txt') | Where-Object { $_ -match '^m_EditorVersion:' }
 $version = ($versionLine -split ':', 2)[1].Trim()
 if (-not $EditorPath) { $EditorPath = "C:\Program Files\Unity\Hub\Editor\$version\Editor\Unity.exe" }
@@ -41,8 +48,28 @@ try {
 try {
     $started = [DateTime]::UtcNow
     $stamp = $started.ToString('yyyyMMdd-HHmmss-fff')
+    $runRoot = Join-Path $resultRoot "runs/$Action-$stamp-$([Guid]::NewGuid().ToString('N').Substring(0,8))"
+    New-Item -ItemType Directory -Path $runRoot | Out-Null
+    $budgetEnvironment = @{
+        FITNESS_TRACE_MAX_BYTES="$TraceMaxBytes"; FITNESS_SNAPSHOT_MAX_BYTES="$SnapshotMaxBytes"
+        FITNESS_SNAPSHOT_SET_MAX_BYTES="$SnapshotSetMaxBytes"; FITNESS_RUN_LOG_MAX_BYTES="$RunLogMaxBytes"
+        FITNESS_RUN_MAX_BYTES="$RunMaxBytes"; FITNESS_RUN_OUTPUT_ROOT=(Join-Path $runRoot 'artifacts')
+    }
+    $previousBudgetEnvironment=@{}
+    foreach ($key in $budgetEnvironment.Keys) {
+        $previousBudgetEnvironment[$key]=[Environment]::GetEnvironmentVariable($key)
+        [Environment]::SetEnvironmentVariable($key,$budgetEnvironment[$key])
+    }
     $logPath = Join-Path $logRoot "$Action-$stamp.log"
-    $reportPath = Join-Path $resultRoot "editmode-$stamp.xml"
+    $reportPath = Join-Path $runRoot "editmode-$stamp.xml"
+    $summaryPath = Join-Path $runRoot "$Action-$stamp.json"
+    $summary = [ordered]@{ action=$Action; startedUtc=$started.ToString('o'); log=$logPath; validation='Pending'; runRoot=$runRoot }
+    $versionManifest = Get-EvidenceVersion -ProjectRoot $projectRoot
+    $versionManifestPath = Join-Path $runRoot 'version.json'
+    $versionManifest | ConvertTo-Json -Depth 8 | Set-Content -LiteralPath $versionManifestPath -Encoding UTF8
+    $summary.versionManifest=$versionManifestPath
+    $summary.certification=if ($versionManifest.dirty) { 'SelfTestOnly' } else { 'CleanGitVersion' }
+    if ($RequireCleanSource -and $versionManifest.dirty) { throw 'Formal certification requires a clean Git working tree. Run without -RequireCleanSource for a hash-identified self-test.' }
     $sourceRoots = @('Assets/FitnessSimulator/Production','Assets/FitnessSimulator/Tests/Production','Assets/FitnessSimulator/Editor/PlayerBuild','Assets/FitnessSimulator/Editor/Automation','Tools/Automation','Tools/Game.ps1')
     function Get-FormalSourceManifest {
         foreach ($sourceRoot in $sourceRoots) {
@@ -54,16 +81,8 @@ try {
         }
     }
     $sourceManifest = @(Get-FormalSourceManifest)
-    $sourceManifestPath = Join-Path $resultRoot "$Action-$stamp-sources.json"
+    $sourceManifestPath = Join-Path $runRoot "$Action-$stamp-sources.json"
     $sourceManifest | ConvertTo-Json -Depth 4 | Set-Content -LiteralPath $sourceManifestPath -Encoding UTF8
-    $sourceCopyRoot = Join-Path $resultRoot "$Action-$stamp-source-copy"
-    foreach ($entry in $sourceManifest) {
-        $relative = $entry.path.Substring($projectRoot.Length).TrimStart([IO.Path]::DirectorySeparatorChar)
-        $copyPath = Join-Path $sourceCopyRoot $relative
-        New-Item -ItemType Directory -Force -Path (Split-Path $copyPath -Parent) | Out-Null
-        Copy-Item -LiteralPath $entry.path -Destination $copyPath
-        if ((Get-FileHash -LiteralPath $copyPath -Algorithm SHA256).Hash -ne $entry.sha256) { throw 'Source copy changed while freezing run.' }
-    }
     $configurationManifestPath = $null
     function Get-BuildConfigurationManifest {
         foreach ($relative in @('Packages','ProjectSettings','Assets/Settings','Assets/FitnessSimulator/Scenes/Player','Assets/FitnessSimulator/Production')) {
@@ -76,7 +95,7 @@ try {
     }
     if ($isBuild -and $BuildStage -in @('M3','M3R1','ConfigR1','SaveR1')) {
         $configurationManifest = @(Get-BuildConfigurationManifest)
-        $configurationManifestPath = Join-Path $resultRoot "$Action-$stamp-configuration.json"
+        $configurationManifestPath = Join-Path $runRoot "$Action-$stamp-configuration.json"
         $configurationManifest | ConvertTo-Json -Depth 4 | Set-Content -LiteralPath $configurationManifestPath -Encoding UTF8
     }
     $arguments = @('-batchmode','-projectPath',"`"$projectRoot`"",'-logFile',"`"$logPath`"")
@@ -98,16 +117,28 @@ try {
         if ($isBuild -and $BuildStage -ne 'M1') { $arguments += @('-fitnessBuildStage', $BuildStage) }
         if ($DevelopmentBuild) { $arguments += '-fitnessDevelopmentBuild' }
     }
+    $null=Assert-EvidenceBudget -RunRoot $runRoot -LogPath $logPath -RunMaxBytes $RunMaxBytes -LogMaxBytes $RunLogMaxBytes
     $process = Start-Process -FilePath $EditorPath -ArgumentList $arguments -WorkingDirectory $projectRoot -WindowStyle Hidden -PassThru
     # Wait for the editor itself. Start-Process -Wait can retain a finished batch's
     # project lock while unrelated child services outlive a compilation failure.
-    $process.WaitForExit()
-    $summary = [ordered]@{ action=$Action; startedUtc=$started.ToString('o'); finishedUtc=[DateTime]::UtcNow.ToString('o'); log=$logPath; exitCode=$process.ExitCode }
+    try {
+        while (-not $process.WaitForExit(1000)) {
+            $null=Assert-EvidenceBudget -RunRoot $runRoot -LogPath $logPath -RunMaxBytes $RunMaxBytes -LogMaxBytes $RunLogMaxBytes
+        }
+        $null=Assert-EvidenceBudget -RunRoot $runRoot -LogPath $logPath -RunMaxBytes $RunMaxBytes -LogMaxBytes $RunLogMaxBytes
+    } catch {
+        # Only the batch process created above is stopped; never discover/kill another editor.
+        if (-not $process.HasExited) { $process.Kill(); $null=$process.WaitForExit(10000) }
+        throw
+    }
+    $summary.finishedUtc=[DateTime]::UtcNow.ToString('o')
+    $summary.exitCode=$process.ExitCode
     $summary.sourceManifest=$sourceManifestPath
     $afterManifest = @(Get-FormalSourceManifest)
     $sourceDrift = @($sourceManifest | Where-Object { $beforeSource = $_; -not ($afterManifest | Where-Object { $_.path -eq $beforeSource.path -and $_.sha256 -eq $beforeSource.sha256 }) })
     $sourceDrift += @($afterManifest | Where-Object { $_.path -notin $sourceManifest.path })
     $summary.sourceDrift=$sourceDrift.Count
+    $summary.versionDrift=Get-EvidenceVersionDrift $versionManifest (Get-EvidenceVersion -ProjectRoot $projectRoot)
     if ($isBuild) { $summary.buildStage=$BuildStage; $summary.developmentBuild=[bool]$DevelopmentBuild }
     if ($configurationManifestPath) {
         $configurationAfter = @(Get-BuildConfigurationManifest)
@@ -115,10 +146,9 @@ try {
         $configurationDrift += @($configurationAfter | Where-Object { $_.path -notin $configurationManifest.path })
         $summary.configurationManifest=$configurationManifestPath
         $summary.configurationDrift=$configurationDrift.Count
-        $configurationAfter | ConvertTo-Json -Depth 4 | Set-Content -LiteralPath (Join-Path $resultRoot "$Action-$stamp-configuration-after.json") -Encoding UTF8
+        $configurationAfter | ConvertTo-Json -Depth 4 | Set-Content -LiteralPath (Join-Path $runRoot "$Action-$stamp-configuration-after.json") -Encoding UTF8
     }
     $summary.validation='Pending'
-    $summaryPath = Join-Path $resultRoot "$Action-$stamp.json"
     if ($Action -eq 'test' -and (Test-Path -LiteralPath $reportPath)) {
         [xml]$preliminaryReport = Get-Content -LiteralPath $reportPath
         $summary.testReport=$reportPath
@@ -132,6 +162,7 @@ try {
     if (-not (Test-Path -LiteralPath $logPath) -or (Get-Item -LiteralPath $logPath).LastWriteTimeUtc -lt $started) { throw 'Missing or stale editor log.' }
     if (Select-String -LiteralPath $logPath -Pattern 'error CS\d+|Scripts have compiler errors' -Quiet) { throw "Compilation failed: $logPath" }
     if ($sourceDrift.Count -gt 0) { throw "Source changed during operation; result cannot certify current source. Manifest: $sourceManifestPath" }
+    if ($summary.versionDrift -gt 0) { throw "Versioned working files changed during operation: $versionManifestPath" }
     if ($configurationManifestPath -and $configurationDrift.Count -gt 0) { throw "Configuration changed during build; inspect before/after manifests: $configurationManifestPath" }
     if ($Action -eq 'test') {
         if (-not (Test-Path -LiteralPath $reportPath) -or (Get-Item -LiteralPath $reportPath).LastWriteTimeUtc -lt $started) { throw 'Missing or stale test report.' }
@@ -172,28 +203,25 @@ try {
     if ($Action -eq 'validate' -and -not (Select-String -LiteralPath $logPath -Pattern 'FITNESS_PLAYER_CONTENT_OK' -Quiet)) { throw 'Content validation marker missing.' }
     if ($Action -eq 'ui-smoke') {
         if (-not (Select-String -LiteralPath $logPath -Pattern 'FITNESS_UI_SMOKE_OK' -Quiet)) { throw 'UI smoke completion marker missing.' }
-        $uiReport = Get-ChildItem -LiteralPath (Join-Path $resultRoot 'Captures') -Filter 'ui-evidence.json' -Recurse | Where-Object LastWriteTimeUtc -ge $started | Sort-Object LastWriteTimeUtc -Descending | Select-Object -First 1
+        $uiReport = Get-ChildItem -LiteralPath (Join-Path $runRoot 'artifacts') -Filter 'ui-evidence.json' -Recurse | Where-Object LastWriteTimeUtc -ge $started | Sort-Object LastWriteTimeUtc -Descending | Select-Object -First 1
         if (-not $uiReport) { throw 'No fresh UI evidence report.' }
         $summary.uiEvidence=$uiReport.FullName
     }
     $summary.validation='Passed'
     $summary | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath $summaryPath -Encoding UTF8
+    $summary.evidenceBytes=Assert-EvidenceBudget -RunRoot $runRoot -LogPath $logPath -RunMaxBytes $RunMaxBytes -LogMaxBytes $RunLogMaxBytes
+    $summary | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath $summaryPath -Encoding UTF8
+    $null=Assert-EvidenceBudget -RunRoot $runRoot -LogPath $logPath -RunMaxBytes $RunMaxBytes -LogMaxBytes $RunLogMaxBytes
     if ($isBuild -and $BuildStage -in @('M3','M3R1','ConfigR1','SaveR1')) {
         $artifactDirectory = Split-Path $packagePath -Parent
         $artifacts = @(
+            @{ source=$versionManifestPath; name='version.json' },
             @{ source=$sourceManifestPath; name='source-manifest.json' },
             @{ source=$configurationManifestPath; name='configuration-manifest.json' },
             @{ source=$buildPath; name='build-evidence.json' },
             @{ source=$summaryPath; name='verification-summary.json' }
         )
-        $published = @()
-        foreach ($artifact in $artifacts) {
-            $destination = Join-Path $artifactDirectory $artifact.name
-            Copy-Item -LiteralPath $artifact.source -Destination $destination
-            $hash = (Get-FileHash -LiteralPath $artifact.source -Algorithm SHA256).Hash
-            if ((Get-FileHash -LiteralPath $destination -Algorithm SHA256).Hash -ne $hash) { throw 'Artifact copy hash mismatch.' }
-            $published += [ordered]@{ file=$artifact.name; sha256=$hash }
-        }
+        $published = @($artifacts | ForEach-Object { [ordered]@{ file=$_.source; sha256=(Get-FileHash -LiteralPath $_.source -Algorithm SHA256).Hash; referenceOnly=$true } })
         [ordered]@{ stage=$BuildStage; package=(Split-Path $packagePath -Leaf); packageSha256=$build.sha256; sourceDrift=0; configurationDrift=0; evidence=$published; deviceInstalled=$false; deviceTested=$false } | ConvertTo-Json -Depth 6 | Set-Content -LiteralPath (Join-Path $artifactDirectory 'release-manifest.json') -Encoding UTF8
     }
     $summary | ConvertTo-Json -Depth 5
@@ -205,6 +233,7 @@ try {
     }
     throw
 } finally {
+    if ($previousBudgetEnvironment) { foreach ($key in $previousBudgetEnvironment.Keys) { [Environment]::SetEnvironmentVariable($key,$previousBudgetEnvironment[$key]) } }
     if ($batchLock) { $batchLock.Dispose() }
 }
 

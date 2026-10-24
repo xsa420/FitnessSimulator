@@ -22,6 +22,8 @@ powershell -NoProfile -File Tools/Game.ps1 -Action build-android
 powershell -NoProfile -File Tools/Game.ps1 -Action build-proxy
 ```
 
+[FRAME] 测试按[现行轻量验证流程](Docs/Verification.md)执行：不复制源码、不重复封存；默认限制追踪、快照和运行证据体积。正式验收先提交变更，再给测试命令加 `-RequireCleanSource`。未提交工作区仅生成自测证据。
+
 [FRAME] 命令由同一进程锁串行运行。图形烟测使用实际界面和隔离测试存档，属于桌面脚本重放，不是安卓触摸。正式构建目标目录是 `Builds/M1`；是否实际生成成功以[最新验证证据](Docs/Verification.md)为准。
 
 ![COMPUTED：Windows 实际运行截图](Docs/Preview/bench-press.png)

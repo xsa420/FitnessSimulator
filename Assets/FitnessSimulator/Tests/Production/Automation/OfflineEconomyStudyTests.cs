@@ -1,3 +1,4 @@
+using FitnessSimulator.Automation;
 using System;
 using System.IO;
 using System.Linq;
@@ -17,16 +18,16 @@ namespace FitnessSimulator.Game.Tests.Automation {
   [Test, Timeout(660000)] public void FixedSeedPurchaseNotebookThenStudyWithRecovery() {
    const uint seed=1; const int maxCommands=20000, maxSeconds=600;
    int maxDays=int.TryParse(Environment.GetEnvironmentVariable("FITNESS_ECONOMY_DAYS"),out int d)?d:14;
-   string dir=Path.Combine(Path.GetTempPath(),"Fitness-Economy-Study",Guid.NewGuid().ToString("N")); Directory.CreateDirectory(dir);
-   GameSession s=GameSession.OpenAutomation(dir,seed); var watch=Stopwatch.StartNew();
+   string dir=Path.Combine(AutomationEvidence.OutputRoot,"Fitness-Economy-Study",Guid.NewGuid().ToString("N")); AutomationEvidence.RegisterDirectory(dir);
+   GameSession s=AutomationEvidenceSession.OpenAutomation(dir,seed); var watch=Stopwatch.StartNew();
    int ordinal=0,days=0,meals=0,recoveries=0,study=0; bool purchased=false,used=false; string outcome="BudgetExhausted";
-   using(var log=new StreamWriter(Path.Combine(dir,"trace.jsonl"))) {
+   using(var log=new EvidenceTrace(Path.Combine(dir,"trace.jsonl"))) {
     Action<FrontendOption> send=o=>{
      var v=s.ReadView(); log.WriteLine(JsonUtility.ToJson(v));
      var a=new FrontendAction {OperationId="economy/"+(++ordinal),RunId=v.RunId,ExpectedRevision=v.Revision,ActionId=o.Id,StringValue=o.StringValue,IntValue=o.IntValue};
-     Assert.That(ordinal,Is.LessThanOrEqualTo(maxCommands),"CommandBudgetExhausted"); log.WriteLine(JsonUtility.ToJson(a)); var r=s.Execute(a); log.WriteLine(JsonUtility.ToJson(r)); Assert.That(r.Accepted,Is.True,r.Message);
+     Assert.That(ordinal,Is.LessThanOrEqualTo(maxCommands),"CommandBudgetExhausted"); log.WriteLine(JsonUtility.ToJson(a)); var r=AutomationEvidenceSession.Execute(s,a); log.WriteLine(JsonUtility.ToJson(r)); Assert.That(r.Accepted,Is.True,r.Message);
     };
-    Action restart=()=>{string before=JsonUtility.ToJson(s.InspectSnapshot()); s.Dispose();s=GameSession.OpenAutomation(dir,seed);Assert.That(JsonUtility.ToJson(s.InspectSnapshot()),Is.EqualTo(before));recoveries++;send(s.ReadView().Actions.Single(a=>a.Id=="continue-game"));};
+    Action restart=()=>{string before=JsonUtility.ToJson(s.InspectSnapshot()); s.Dispose();s=AutomationEvidenceSession.OpenAutomation(dir,seed);Assert.That(JsonUtility.ToJson(s.InspectSnapshot()),Is.EqualTo(before));recoveries++;send(s.ReadView().Actions.Single(a=>a.Id=="continue-game"));};
     try {
      for(int step=0;step<maxCommands && watch.Elapsed.TotalSeconds<maxSeconds;step++) {
       var v=s.ReadView();log.WriteLine(JsonUtility.ToJson(v)); Assert.That(v.ScreenId,Is.Not.EqualTo("error"),v.Body);
@@ -64,7 +65,7 @@ namespace FitnessSimulator.Game.Tests.Automation {
      }
      Assert.That(outcome,Is.EqualTo("PurchaseUseStudyReached"));Assert.That(meals,Is.EqualTo(days*3));
     } catch(Exception ex){outcome=ex.ToString();throw;}
-    finally{File.WriteAllText(Path.Combine(dir,"final.json"),JsonUtility.ToJson(s.InspectSnapshot(),true));File.WriteAllText(Path.Combine(dir,"report.txt"),"strategy=economy-study-v1\nseed=1\nmaxCommands="+maxCommands+"\nmaxSeconds="+maxSeconds+"\nelapsedSeconds="+watch.Elapsed.TotalSeconds+"\nmaxDays="+maxDays+"\ndays="+days+"\nrecoveries="+recoveries+"\ncommands="+ordinal+"\nexit="+outcome+"\nmissing=H7200,total meal cost/calories,stale-operation retry,shop package stock delta");s.Dispose();TestContext.WriteLine(dir);}
+    finally{AutomationEvidence.WriteAllText(Path.Combine(dir,"final.json"),JsonUtility.ToJson(s.InspectSnapshot(),true));AutomationEvidence.WriteAllText(Path.Combine(dir,"report.txt"),"strategy=economy-study-v1\nseed=1\nmaxCommands="+maxCommands+"\nmaxSeconds="+maxSeconds+"\nelapsedSeconds="+watch.Elapsed.TotalSeconds+"\nmaxDays="+maxDays+"\ndays="+days+"\nrecoveries="+recoveries+"\ncommands="+ordinal+"\nexit="+outcome+"\nmissing=H7200,total meal cost/calories,stale-operation retry,shop package stock delta");s.Dispose();TestContext.WriteLine(dir);}
    }
   }
  }
