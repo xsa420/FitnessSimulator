@@ -10,10 +10,10 @@
 
 | ID | 验收条件／反馈映射 | 实施负责人／唯一文件范围 | 依赖 | 独立验收人 | 状态 | 证据与结论 |
 | --- | --- | --- | --- | --- | --- | --- |
-| LITE-01 | 取消每次源码复制、提供引用式封存与可追溯版本记录；运行日志/证据预算有明确失败语义 | 工具程序：Tools/Game.ps1、Tools/Automation/Run.ps1、Tools/Testing下新增工具与测试（Test-MaintainEvidence.ps1归独立验收人） | 无 | 独立测试代理 | 待验收 | TestResults/Lightweight/LITE-20261024 |
-| LITE-02 | 自动化追踪与快照输出受限，不静默截断有效证据、保留业务断言 | 测试设施程序：Assets/FitnessSimulator/Tests/Production/Automation、Assets/FitnessSimulator/Editor/Automation、GameUiSmoke产证、两个测试/编辑器asmdef引用 | 与LITE-01约定预算 | 独立测试代理 | 待验收 | 同上 |
-| LITE-03 | 清理缓存与可验证冗余副本，历史证据可定位、可核验；更新流程说明 | 架构：Tools/Testing/Maintain-Evidence.ps1、README.md、Docs/Verification.md、TODOLIST.md、TestResults历史迁移 | LITE-01、02；清理先审查 | 独立测试代理 | 实施中 | 同上 |
-| LITE-04 | 有限验收通过后提交推送，远端与本地一致 | 架构：Git提交推送、本清单 | LITE-01至03 | 独立测试代理 | 待做 | 同上 |
+| LITE-01 | 取消每次源码复制、提供引用式封存与可追溯版本记录；运行日志/证据预算有明确失败语义 | 工具程序：Tools/Game.ps1、Tools/Automation/Run.ps1、Tools/Testing下新增工具与测试（Test-MaintainEvidence.ps1归独立验收人） | 无 | 独立测试代理 | 已验收 | [独立验收](TestResults/Lightweight/LITE-20261024/acceptance.json)：版本追溯、引用封存、预算与实际入口通过 |
+| LITE-02 | 自动化追踪与快照输出受限，不静默截断有效证据、保留业务断言 | 测试设施程序：Assets/FitnessSimulator/Tests/Production/Automation、Assets/FitnessSimulator/Editor/Automation、GameUiSmoke产证、两个测试/编辑器asmdef引用 | 与LITE-01约定预算 | 独立测试代理 | 已验收 | 同一独立验收：预算边界与两日业务回归通过；未跑长线、图形烟测或设备 |
+| LITE-03 | 清理缓存与可验证冗余副本，历史证据可定位、可核验；更新流程说明 | 架构：Tools/Testing/Maintain-Evidence.ps1、README.md、Docs/Verification.md、TODOLIST.md、TestResults历史迁移 | LITE-01、02；清理先审查 | 独立测试代理 | 已验收 | 同一独立验收及[清理回执](TestResults/Lightweight/LITE-20261024/maintenance/applied.json)：历史证据完整；本轮编译缓存约19MB因自动审批拒绝删除而保留，不上传 |
+| LITE-04 | 有限验收通过后提交推送，远端与本地一致 | 架构：Git提交推送、本清单 | LITE-01至03 | 独立测试代理 | 待验收 | 代码已独立验收；待远端一致性核验，证据TestResults/Lightweight/LITE-20261024/push-verification.json |
 
 ## [FRAME] 后续批次填写约定
 
