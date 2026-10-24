@@ -1,0 +1,130 @@
+{
+  "Version": "life.v1",
+  "StateVersion": "LifeM1.v1",
+  "WorkReceiptVersion": "LifeWorkIncome.v1",
+  "DefaultWorkEffectId": "work",
+  "LegacyBaseDailyIncome": 100,
+  "LegacyIncomePerAffluence": 2,
+  "WorkEffects": [
+    {
+      "BaseAmount": 50,
+      "Anchors": [
+        "morning",
+        "afternoon"
+      ],
+      "Id": "work",
+      "PerAffluence": 1
+    }
+  ],
+  "Meals": [
+    {
+      "Options": [
+        {
+          "DisplayName": "不吃",
+          "Price": 0,
+          "Id": "skip",
+          "IntakeKcal": 0,
+          "Slot": 0
+        },
+        {
+          "DisplayName": "粥与鸡蛋",
+          "Price": 10,
+          "Id": "porridge_egg",
+          "IntakeKcal": 500,
+          "Slot": 0
+        },
+        {
+          "DisplayName": "三明治",
+          "Price": 15,
+          "Id": "sandwich",
+          "IntakeKcal": 650,
+          "Slot": 0
+        },
+        {
+          "DisplayName": "丰盛早餐",
+          "Price": 20,
+          "Id": "large_breakfast",
+          "IntakeKcal": 800,
+          "Slot": 0
+        }
+      ],
+      "Slot": 0
+    },
+    {
+      "Options": [
+        {
+          "DisplayName": "不吃",
+          "Price": 0,
+          "Id": "skip",
+          "IntakeKcal": 0,
+          "Slot": 1
+        },
+        {
+          "DisplayName": "家常饭",
+          "Price": 20,
+          "Id": "home_rice",
+          "IntakeKcal": 750,
+          "Slot": 1
+        },
+        {
+          "DisplayName": "鸡肉饭",
+          "Price": 28,
+          "Id": "chicken_rice",
+          "IntakeKcal": 900,
+          "Slot": 1
+        },
+        {
+          "DisplayName": "大份套餐",
+          "Price": 35,
+          "Id": "large_lunch",
+          "IntakeKcal": 1100,
+          "Slot": 1
+        }
+      ],
+      "Slot": 1
+    },
+    {
+      "Options": [
+        {
+          "DisplayName": "不吃",
+          "Price": 0,
+          "Id": "skip",
+          "IntakeKcal": 0,
+          "Slot": 2
+        },
+        {
+          "DisplayName": "家常面",
+          "Price": 20,
+          "Id": "home_noodles",
+          "IntakeKcal": 750,
+          "Slot": 2
+        },
+        {
+          "DisplayName": "鱼肉饭",
+          "Price": 28,
+          "Id": "fish_rice",
+          "IntakeKcal": 900,
+          "Slot": 2
+        },
+        {
+          "DisplayName": "大份套餐",
+          "Price": 35,
+          "Id": "large_dinner",
+          "IntakeKcal": 1100,
+          "Slot": 2
+        }
+      ],
+      "Slot": 2
+    }
+  ],
+  "Nutrition": {
+    "LocalBaseNumerator": 2000,
+    "BodyDenominator": 8000,
+    "LocalPerKcal": 3,
+    "MinimumIntakeKcal": 2000,
+    "BodyPerKcal": 3,
+    "DeficitStressNumerator": 8,
+    "LocalDenominator": 8000,
+    "BodyBaseNumerator": 2000
+  }
+}

@@ -1,0 +1,54 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Fitness: environment",
+            "type": "process",
+            "command": "powershell.exe",
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/Tools/Environment.ps1"],
+            "options": { "cwd": "${workspaceFolder}" },
+            "problemMatcher": []
+        },
+        {
+            "label": "Fitness: validate",
+            "type": "process",
+            "command": "powershell.exe",
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/Tools/Unity.ps1", "-Action", "validate"],
+            "options": { "cwd": "${workspaceFolder}" },
+            "problemMatcher": []
+        },
+        {
+            "label": "Fitness: test",
+            "type": "process",
+            "command": "powershell.exe",
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/Tools/Unity.ps1", "-Action", "test"],
+            "options": { "cwd": "${workspaceFolder}" },
+            "group": "test",
+            "problemMatcher": []
+        },
+        {
+            "label": "Fitness: check",
+            "dependsOrder": "sequence",
+            "dependsOn": ["Fitness: environment", "Fitness: validate", "Fitness: test"],
+            "problemMatcher": []
+        },
+        {
+            "label": "Fitness: build Windows",
+            "type": "process",
+            "command": "powershell.exe",
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/Tools/Unity.ps1", "-Action", "build-windows"],
+            "options": { "cwd": "${workspaceFolder}" },
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": []
+        },
+        {
+            "label": "Fitness: build Android",
+            "type": "process",
+            "command": "powershell.exe",
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/Tools/Unity.ps1", "-Action", "build-android"],
+            "options": { "cwd": "${workspaceFolder}" },
+            "group": "build",
+            "problemMatcher": []
+        }
+    ]
+}

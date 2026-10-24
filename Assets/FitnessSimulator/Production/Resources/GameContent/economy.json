@@ -1,0 +1,191 @@
+{
+  "Version": "economy.v1",
+  "StateVersion": "LifeEconomyM2.v1",
+  "InitialInventory": {
+    "Items": [
+      {
+        "ItemId": "training_notebook",
+        "Quantity": 0
+      },
+      {
+        "ItemId": "commemorative_bookmark",
+        "Quantity": 0
+      }
+    ],
+    "Id": "LC.empty-notebook0-bookmark0.v1"
+  },
+  "Items": [
+    {
+      "EffectId": "notebook_all_knowledge",
+      "Id": "training_notebook",
+      "Name": "训练笔记",
+      "Kind": 0
+    },
+    {
+      "EffectId": "",
+      "Id": "commemorative_bookmark",
+      "Name": "纪念书签",
+      "Kind": 1
+    }
+  ],
+  "Effects": [
+    {
+      "ExerciseIds": [
+        "bench_press",
+        "dumbbell_curl",
+        "lat_pulldown",
+        "triceps_pushdown",
+        "squat",
+        "hip_thrust",
+        "shoulder_press",
+        "lateral_raise"
+      ],
+      "Id": "notebook_all_knowledge",
+      "ConfigVersion": "LifeEconomyM2.v1",
+      "Kind": "AllExerciseKnowledge",
+      "KnowledgeMicroPerExercise": 2000000
+    }
+  ],
+  "Shops": [
+    {
+      "RefreshPeriod": 3,
+      "Id": "shop_gym",
+      "Products": [
+        {
+          "Unlock": {
+            "Key": "",
+            "Children": [],
+            "Op": "True",
+            "Value": ""
+          },
+          "Product": {
+            "ShopId": "shop_gym",
+            "ItemId": "training_notebook",
+            "PackagesPerRefresh": 3,
+            "Id": "gym_note_1",
+            "UnitsPerPackage": 1,
+            "Price": 60
+          }
+        },
+        {
+          "Unlock": {
+            "Key": "day",
+            "Children": [],
+            "Op": "Gte",
+            "Value": "8"
+          },
+          "Product": {
+            "ShopId": "shop_gym",
+            "ItemId": "training_notebook",
+            "PackagesPerRefresh": 1,
+            "Id": "gym_note_3",
+            "UnitsPerPackage": 3,
+            "Price": 165
+          }
+        },
+        {
+          "Unlock": {
+            "Key": "veteranAffection",
+            "Children": [],
+            "Op": "Gte",
+            "Value": "40"
+          },
+          "Product": {
+            "ShopId": "shop_gym",
+            "ItemId": "training_notebook",
+            "PackagesPerRefresh": 1,
+            "Id": "gym_note_5",
+            "UnitsPerPackage": 5,
+            "Price": 260
+          }
+        }
+      ],
+      "OfferSlots": 2,
+      "InitiallyUnlockedProductIds": [
+        "gym_note_1"
+      ],
+      "Name": "健身房书架"
+    },
+    {
+      "RefreshPeriod": 5,
+      "Id": "shop_corner",
+      "Products": [
+        {
+          "Unlock": {
+            "Key": "",
+            "Children": [],
+            "Op": "True",
+            "Value": ""
+          },
+          "Product": {
+            "ShopId": "shop_corner",
+            "ItemId": "training_notebook",
+            "PackagesPerRefresh": 2,
+            "Id": "corner_note_1",
+            "UnitsPerPackage": 1,
+            "Price": 65
+          }
+        },
+        {
+          "Unlock": {
+            "Key": "beginnerAffection",
+            "Children": [],
+            "Op": "Gte",
+            "Value": "40"
+          },
+          "Product": {
+            "ShopId": "shop_corner",
+            "ItemId": "commemorative_bookmark",
+            "PackagesPerRefresh": 1,
+            "Id": "corner_bookmark_1",
+            "UnitsPerPackage": 1,
+            "Price": 120
+          }
+        },
+        {
+          "Unlock": {
+            "Key": "",
+            "Children": [
+              {
+                "Key": "day",
+                "Children": [],
+                "Op": "Gte",
+                "Value": "28"
+              },
+              {
+                "Key": "beginnerAffection",
+                "Children": [],
+                "Op": "Gte",
+                "Value": "80"
+              }
+            ],
+            "Op": "All",
+            "Value": ""
+          },
+          "Product": {
+            "ShopId": "shop_corner",
+            "ItemId": "commemorative_bookmark",
+            "PackagesPerRefresh": 1,
+            "Id": "corner_bookmark_2",
+            "UnitsPerPackage": 2,
+            "Price": 230
+          }
+        }
+      ],
+      "OfferSlots": 2,
+      "InitiallyUnlockedProductIds": [
+        "corner_note_1"
+      ],
+      "Name": "街角书屋"
+    }
+  ],
+  "OperationPoints": [
+    {
+      "AllowedItemIds": [
+        "training_notebook"
+      ],
+      "Id": "learning_notebook"
+    }
+  ],
+  "DefaultOperationPointId": "learning_notebook"
+}

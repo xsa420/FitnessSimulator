@@ -1,0 +1,51 @@
+{
+  "startedAtUtc": "2026-10-23T00:21:09.9495521Z",
+  "milestone": "M1",
+  "firstGame": "bench-press",
+  "baseline": [
+    {
+      "path": "D:\\FitnessSimulator\\Docs\\Technical\\FirstReleaseTechnicalPlan.md",
+      "sha256": "0ACE4E8CB4D51789F26778D42A779915D3C658E857FCB64B4A9589C381E6A41F"
+    },
+    {
+      "path": "D:\\FitnessSimulator\\Docs\\Technical\\FlowPersistenceContracts.md",
+      "sha256": "E94652D7C2CA91B4A5AD353C2C897CB2403567BA7A04F5F201A1F728A34ADA6E"
+    },
+    {
+      "path": "D:\\FitnessSimulator\\Docs\\Technical\\TrainingGrowthContracts.md",
+      "sha256": "20890557C1A5236082FF2E26B4BD01F9D99810C675041E3DE2DB3E2960753763"
+    },
+    {
+      "path": "D:\\FitnessSimulator\\Docs\\Technical\\LifeActorsContracts.md",
+      "sha256": "F81966A2D95089B294F141C8D51C8774582ADE83A392F3AC81E63C6E45B367C2"
+    },
+    {
+      "path": "D:\\FitnessSimulator\\Docs\\Technical\\PlanningCompetitionContracts.md",
+      "sha256": "EBB9464E10309D480DED36E32BEF2B7E71C0B407106E1ACE94F138A2FEE54801"
+    },
+    {
+      "path": "D:\\FitnessSimulator\\Docs\\Technical\\PresentationVerificationPlan.md",
+      "sha256": "CAB56BFBC2FEF286ADD80E75DC6DF58E5FCA220411558FDD5C9189122AD15CE3"
+    },
+    {
+      "path": "D:\\FitnessSimulator\\Docs\\Design\\CompetitionAndStartSpec.md",
+      "sha256": "4116AB5DF5DD9CB64E1F9335687484B991047A23537DE6AD1D4FDE7C77C33697"
+    },
+    {
+      "path": "D:\\FitnessSimulator\\Docs\\Design\\FlowAndRecoverySpec.md",
+      "sha256": "BD56CB33FECA99E2E47D4FE7554BE39E23F6533ABB708DCD9965CBFBD8628DA8"
+    },
+    {
+      "path": "D:\\FitnessSimulator\\Docs\\Design\\LifeAndCharactersSpec.md",
+      "sha256": "571BB8127D33E016333005C1EDEC8DB31A89E922951A6DFC3AC0E2B934F60467"
+    },
+    {
+      "path": "D:\\FitnessSimulator\\Docs\\Design\\TextExperienceAndAcceptance.md",
+      "sha256": "CDFA2DA01BDC59A9588A943E3C55410EA7A3996E84D02A900CF4BFA555E78725"
+    },
+    {
+      "path": "D:\\FitnessSimulator\\Docs\\Design\\TrainingAndGrowthSpec.md",
+      "sha256": "B243E2F300D164F5EE4009E9593364E147EBA02BC13053AFB508EEA2238C5BAB"
+    }
+  ]
+}

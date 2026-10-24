@@ -1,0 +1,10 @@
+{
+  "Version": "Endings.v1",
+  "Endings": [
+    { "Id": "competition_failed", "Order": 10, "Title": "比赛失败", "ConditionKey": "competition.non_champion", "Terminal": true, "PresentationSegments": ["competition_failed.presentation.1"], "UnlockTemplateIds": [] },
+    { "Id": "competition_unfulfilled", "Order": 20, "Title": "未履约", "ConditionKey": "competition.unfulfilled", "Terminal": true, "PresentationSegments": ["competition_unfulfilled.presentation.1"], "UnlockTemplateIds": [] },
+    { "Id": "bodybuilding_champion", "Order": 30, "Title": "健美冠军", "ConditionKey": "competition.bodybuilding_champion", "Terminal": false, "PresentationSegments": ["bodybuilding_champion.presentation.1"], "UnlockTemplateIds": ["strength_foundation"] },
+    { "Id": "lean_champion", "Order": 40, "Title": "薄肌战神", "ConditionKey": "competition.lean_champion", "Terminal": false, "PresentationSegments": ["lean_champion.presentation.1"], "UnlockTemplateIds": ["lean_social"] },
+    { "Id": "romance_success", "Order": 50, "Title": "恋爱成功", "ConditionKey": "relationship.romance_success", "Terminal": false, "PresentationSegments": ["romance_success.presentation.1"], "UnlockTemplateIds": ["lean_social"] }
+  ]
+}

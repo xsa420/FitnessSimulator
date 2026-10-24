@@ -1,0 +1,53 @@
+{
+  "Version": "knowledge.zh-CN.20261023.1",
+  "Cards": [
+    {
+      "Id": "RK01",
+      "Title": "日常活动也算",
+      "Body": "身体活动不限于健身房训练，也包括步行、骑行、通勤和家务中的身体活动。做一些活动比完全不动更好。",
+      "SourceOrganization": "世界卫生组织",
+      "SourceDocument": "Physical activity",
+      "SourceUrl": "https://www.who.int/news-room/fact-sheets/detail/physical-activity/",
+      "SourceDate": "2024-06-26",
+      "GameDifference": "本游戏只按已配置事件结算；现实步行不映射成游戏力量或知识奖励。",
+      "Trigger": "ordinary-complete",
+      "Version": "1",
+      "Category": "reality",
+      "VerifiedAt": "2026-10-23",
+      "ScopeNote": "一般成年人活动知识，不是个人训练处方。",
+      "DisplayOrder": 1
+    },
+    {
+      "Id": "RK02",
+      "Title": "可以分段累积",
+      "Body": "成人每周的身体活动可以分散到不同日子，也可以拆成较短时段完成，不必一次做完。",
+      "SourceOrganization": "美国疾病控制与预防中心",
+      "SourceDocument": "Adult Activity: An Overview",
+      "SourceUrl": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html",
+      "SourceDate": "2023-12-20",
+      "GameDifference": "游戏5—10分钟分段是游玩目标，不是现实训练最低时长；界面等待不产生训练量。",
+      "Trigger": "day-end",
+      "Version": "1",
+      "Category": "reality",
+      "VerifiedAt": "2026-10-23",
+      "ScopeNote": "一般成年人活动知识，不是个人训练处方。",
+      "DisplayOrder": 2
+    },
+    {
+      "Id": "RK03",
+      "Title": "力量活动关注全身",
+      "Body": "成人活动指南把肌肉强化活动作为有氧活动之外的一部分，建议每周至少两天，并覆盖腿、髋、背、腹、胸、肩和手臂等主要肌群。",
+      "SourceOrganization": "美国疾病控制与预防中心",
+      "SourceDocument": "Adult Activity: An Overview",
+      "SourceUrl": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html",
+      "SourceDate": "2023-12-20",
+      "GameDifference": "游戏21区、八动作发力比例及疲劳80／100／150都是设计数值，不是该指南给出的现实刻度。",
+      "Trigger": "body-exit",
+      "Version": "1",
+      "Category": "reality",
+      "VerifiedAt": "2026-10-23",
+      "ScopeNote": "一般成年人活动知识，不是个人训练处方。",
+      "DisplayOrder": 3
+    }
+  ]
+}

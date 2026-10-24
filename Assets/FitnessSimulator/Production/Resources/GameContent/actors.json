@@ -1,0 +1,2142 @@
+{
+  "Version": "actors.v1",
+  "Characters": [
+    {
+      "InitialStateRef": "rival.initial",
+      "BasePlanRef": "npc-rival",
+      "Role": "竞争者",
+      "Sex": "male",
+      "PolicyRef": "rival.decision",
+      "Type": "rival",
+      "RelationshipRef": "LC.initial-unmet-zero-no-partner.v1",
+      "Id": "rival",
+      "Name": "周竞",
+      "InventoryRef": "LC.empty-notebook0-bookmark0.v1",
+      "InputPolicyRefs": [
+        "rival.input.bench_press",
+        "rival.input.dumbbell_curl",
+        "rival.input.lat_pulldown",
+        "rival.input.triceps_pushdown",
+        "rival.input.squat",
+        "rival.input.hip_thrust",
+        "rival.input.shoulder_press",
+        "rival.input.lateral_raise"
+      ]
+    },
+    {
+      "InitialStateRef": "beginner.initial",
+      "BasePlanRef": "npc-beginner",
+      "Role": "初学者 · 恋爱对象",
+      "Sex": "female",
+      "PolicyRef": "beginner.decision",
+      "Type": "beginner",
+      "RelationshipRef": "LC.initial-unmet-zero-no-partner.v1",
+      "Id": "beginner",
+      "Name": "林悦",
+      "InventoryRef": "LC.empty-notebook0-bookmark0.v1",
+      "InputPolicyRefs": [
+        "beginner.input.bench_press",
+        "beginner.input.dumbbell_curl",
+        "beginner.input.lat_pulldown",
+        "beginner.input.triceps_pushdown",
+        "beginner.input.squat",
+        "beginner.input.hip_thrust",
+        "beginner.input.shoulder_press",
+        "beginner.input.lateral_raise"
+      ]
+    },
+    {
+      "InitialStateRef": "veteran.initial",
+      "BasePlanRef": "npc-veteran",
+      "Role": "老手",
+      "Sex": "male",
+      "PolicyRef": "veteran.decision",
+      "Type": "veteran",
+      "RelationshipRef": "LC.initial-unmet-zero-no-partner.v1",
+      "Id": "veteran",
+      "Name": "陈砺",
+      "InventoryRef": "LC.empty-notebook0-bookmark0.v1",
+      "InputPolicyRefs": [
+        "veteran.input.bench_press",
+        "veteran.input.dumbbell_curl",
+        "veteran.input.lat_pulldown",
+        "veteran.input.triceps_pushdown",
+        "veteran.input.squat",
+        "veteran.input.hip_thrust",
+        "veteran.input.shoulder_press",
+        "veteran.input.lateral_raise"
+      ]
+    },
+    {
+      "InitialStateRef": "coach.initial",
+      "BasePlanRef": "npc-coach",
+      "Role": "教练",
+      "Sex": "male",
+      "PolicyRef": "coach.decision",
+      "Type": "coach",
+      "RelationshipRef": "LC.initial-unmet-zero-no-partner.v1",
+      "Id": "coach",
+      "Name": "许衡",
+      "InventoryRef": "LC.empty-notebook0-bookmark0.v1",
+      "InputPolicyRefs": [
+        "coach.input.bench_press",
+        "coach.input.dumbbell_curl",
+        "coach.input.lat_pulldown",
+        "coach.input.triceps_pushdown",
+        "coach.input.squat",
+        "coach.input.hip_thrust",
+        "coach.input.shoulder_press",
+        "coach.input.lateral_raise"
+      ]
+    }
+  ],
+  "InitialStates": [
+    {
+      "Balance": 480,
+      "BodyFatMicro": 22000000,
+      "Regions": [
+        {
+          "RegionId": "chest_upper",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 11000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "chest_middle",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 11000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "chest_lower",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 11000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "back_upper",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 11000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "back_middle",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 11000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "back_lats",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 11000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "back_lower",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 11000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "leg_quads",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 11000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "leg_hamstrings",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 11000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "leg_adductors",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 11000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "leg_calves",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 11000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "shoulder_front",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 11000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "shoulder_side",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 11000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "shoulder_rear",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 11000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "biceps_long",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 11000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "biceps_short",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 11000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "triceps_long",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 11000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "triceps_lateral",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 11000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "triceps_medial",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 11000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "abs",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 11000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "glutes",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 11000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        }
+      ],
+      "MentalStressMicro": 15000000,
+      "Id": "rival.initial",
+      "Exercises": [
+        {
+          "ExerciseId": "bench_press",
+          "KnowledgeMicro": 10000000,
+          "ProficiencyMicro": 0
+        },
+        {
+          "ExerciseId": "dumbbell_curl",
+          "KnowledgeMicro": 10000000,
+          "ProficiencyMicro": 0
+        },
+        {
+          "ExerciseId": "lat_pulldown",
+          "KnowledgeMicro": 10000000,
+          "ProficiencyMicro": 0
+        },
+        {
+          "ExerciseId": "triceps_pushdown",
+          "KnowledgeMicro": 10000000,
+          "ProficiencyMicro": 0
+        },
+        {
+          "ExerciseId": "squat",
+          "KnowledgeMicro": 10000000,
+          "ProficiencyMicro": 0
+        },
+        {
+          "ExerciseId": "hip_thrust",
+          "KnowledgeMicro": 10000000,
+          "ProficiencyMicro": 0
+        },
+        {
+          "ExerciseId": "shoulder_press",
+          "KnowledgeMicro": 10000000,
+          "ProficiencyMicro": 0
+        },
+        {
+          "ExerciseId": "lateral_raise",
+          "KnowledgeMicro": 10000000,
+          "ProficiencyMicro": 0
+        }
+      ],
+      "Affluence": 30,
+      "BaseCharmMicro": 45000000,
+      "Training": [
+        {
+          "ExerciseId": "bench_press",
+          "AutomaticTiers": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "HighestUnlockedTier": 1
+        },
+        {
+          "ExerciseId": "dumbbell_curl",
+          "AutomaticTiers": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "HighestUnlockedTier": 1
+        },
+        {
+          "ExerciseId": "lat_pulldown",
+          "AutomaticTiers": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "HighestUnlockedTier": 1
+        },
+        {
+          "ExerciseId": "triceps_pushdown",
+          "AutomaticTiers": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "HighestUnlockedTier": 1
+        },
+        {
+          "ExerciseId": "squat",
+          "AutomaticTiers": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "HighestUnlockedTier": 1
+        },
+        {
+          "ExerciseId": "hip_thrust",
+          "AutomaticTiers": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "HighestUnlockedTier": 1
+        },
+        {
+          "ExerciseId": "shoulder_press",
+          "AutomaticTiers": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "HighestUnlockedTier": 1
+        },
+        {
+          "ExerciseId": "lateral_raise",
+          "AutomaticTiers": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "HighestUnlockedTier": 1
+        }
+      ],
+      "StressMicro": 0
+    },
+    {
+      "Balance": 450,
+      "BodyFatMicro": 25000000,
+      "Regions": [
+        {
+          "RegionId": "chest_upper",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 10000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "chest_middle",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 10000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "chest_lower",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 10000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "back_upper",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 10000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "back_middle",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 10000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "back_lats",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 10000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "back_lower",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 10000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "leg_quads",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 10000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "leg_hamstrings",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 10000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "leg_adductors",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 10000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "leg_calves",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 10000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "shoulder_front",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 10000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "shoulder_side",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 10000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "shoulder_rear",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 10000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "biceps_long",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 10000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "biceps_short",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 10000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "triceps_long",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 10000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "triceps_lateral",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 10000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "triceps_medial",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 10000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "abs",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 10000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "glutes",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 10000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        }
+      ],
+      "MentalStressMicro": 15000000,
+      "Id": "beginner.initial",
+      "Exercises": [
+        {
+          "ExerciseId": "bench_press",
+          "KnowledgeMicro": 0,
+          "ProficiencyMicro": 0
+        },
+        {
+          "ExerciseId": "dumbbell_curl",
+          "KnowledgeMicro": 0,
+          "ProficiencyMicro": 0
+        },
+        {
+          "ExerciseId": "lat_pulldown",
+          "KnowledgeMicro": 0,
+          "ProficiencyMicro": 0
+        },
+        {
+          "ExerciseId": "triceps_pushdown",
+          "KnowledgeMicro": 0,
+          "ProficiencyMicro": 0
+        },
+        {
+          "ExerciseId": "squat",
+          "KnowledgeMicro": 0,
+          "ProficiencyMicro": 0
+        },
+        {
+          "ExerciseId": "hip_thrust",
+          "KnowledgeMicro": 0,
+          "ProficiencyMicro": 0
+        },
+        {
+          "ExerciseId": "shoulder_press",
+          "KnowledgeMicro": 0,
+          "ProficiencyMicro": 0
+        },
+        {
+          "ExerciseId": "lateral_raise",
+          "KnowledgeMicro": 0,
+          "ProficiencyMicro": 0
+        }
+      ],
+      "Affluence": 25,
+      "BaseCharmMicro": 60000000,
+      "Training": [
+        {
+          "ExerciseId": "bench_press",
+          "AutomaticTiers": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "HighestUnlockedTier": 1
+        },
+        {
+          "ExerciseId": "dumbbell_curl",
+          "AutomaticTiers": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "HighestUnlockedTier": 1
+        },
+        {
+          "ExerciseId": "lat_pulldown",
+          "AutomaticTiers": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "HighestUnlockedTier": 1
+        },
+        {
+          "ExerciseId": "triceps_pushdown",
+          "AutomaticTiers": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "HighestUnlockedTier": 1
+        },
+        {
+          "ExerciseId": "squat",
+          "AutomaticTiers": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "HighestUnlockedTier": 1
+        },
+        {
+          "ExerciseId": "hip_thrust",
+          "AutomaticTiers": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "HighestUnlockedTier": 1
+        },
+        {
+          "ExerciseId": "shoulder_press",
+          "AutomaticTiers": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "HighestUnlockedTier": 1
+        },
+        {
+          "ExerciseId": "lateral_raise",
+          "AutomaticTiers": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "HighestUnlockedTier": 1
+        }
+      ],
+      "StressMicro": 0
+    },
+    {
+      "Balance": 540,
+      "BodyFatMicro": 20000000,
+      "Regions": [
+        {
+          "RegionId": "chest_upper",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 32000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "chest_middle",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 32000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "chest_lower",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 32000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "back_upper",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 32000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "back_middle",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 32000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "back_lats",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 32000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "back_lower",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 32000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "leg_quads",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 32000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "leg_hamstrings",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 32000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "leg_adductors",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 32000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "leg_calves",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 32000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "shoulder_front",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 32000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "shoulder_side",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 32000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "shoulder_rear",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 32000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "biceps_long",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 32000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "biceps_short",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 32000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "triceps_long",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 32000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "triceps_lateral",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 32000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "triceps_medial",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 32000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "abs",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 32000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "glutes",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 32000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        }
+      ],
+      "MentalStressMicro": 10000000,
+      "Id": "veteran.initial",
+      "Exercises": [
+        {
+          "ExerciseId": "bench_press",
+          "KnowledgeMicro": 35000000,
+          "ProficiencyMicro": 100000000
+        },
+        {
+          "ExerciseId": "dumbbell_curl",
+          "KnowledgeMicro": 35000000,
+          "ProficiencyMicro": 100000000
+        },
+        {
+          "ExerciseId": "lat_pulldown",
+          "KnowledgeMicro": 35000000,
+          "ProficiencyMicro": 100000000
+        },
+        {
+          "ExerciseId": "triceps_pushdown",
+          "KnowledgeMicro": 35000000,
+          "ProficiencyMicro": 100000000
+        },
+        {
+          "ExerciseId": "squat",
+          "KnowledgeMicro": 35000000,
+          "ProficiencyMicro": 100000000
+        },
+        {
+          "ExerciseId": "hip_thrust",
+          "KnowledgeMicro": 35000000,
+          "ProficiencyMicro": 100000000
+        },
+        {
+          "ExerciseId": "shoulder_press",
+          "KnowledgeMicro": 35000000,
+          "ProficiencyMicro": 100000000
+        },
+        {
+          "ExerciseId": "lateral_raise",
+          "KnowledgeMicro": 35000000,
+          "ProficiencyMicro": 100000000
+        }
+      ],
+      "Affluence": 40,
+      "BaseCharmMicro": 45000000,
+      "Training": [
+        {
+          "ExerciseId": "bench_press",
+          "AutomaticTiers": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "HighestUnlockedTier": 1
+        },
+        {
+          "ExerciseId": "dumbbell_curl",
+          "AutomaticTiers": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "HighestUnlockedTier": 1
+        },
+        {
+          "ExerciseId": "lat_pulldown",
+          "AutomaticTiers": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "HighestUnlockedTier": 1
+        },
+        {
+          "ExerciseId": "triceps_pushdown",
+          "AutomaticTiers": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "HighestUnlockedTier": 1
+        },
+        {
+          "ExerciseId": "squat",
+          "AutomaticTiers": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "HighestUnlockedTier": 1
+        },
+        {
+          "ExerciseId": "hip_thrust",
+          "AutomaticTiers": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "HighestUnlockedTier": 1
+        },
+        {
+          "ExerciseId": "shoulder_press",
+          "AutomaticTiers": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "HighestUnlockedTier": 1
+        },
+        {
+          "ExerciseId": "lateral_raise",
+          "AutomaticTiers": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "HighestUnlockedTier": 1
+        }
+      ],
+      "StressMicro": 0
+    },
+    {
+      "Balance": 600,
+      "BodyFatMicro": 20000000,
+      "Regions": [
+        {
+          "RegionId": "chest_upper",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 28000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "chest_middle",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 28000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "chest_lower",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 28000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "back_upper",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 28000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "back_middle",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 28000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "back_lats",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 28000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "back_lower",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 28000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "leg_quads",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 28000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "leg_hamstrings",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 28000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "leg_adductors",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 28000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "leg_calves",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 28000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "shoulder_front",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 28000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "shoulder_side",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 28000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "shoulder_rear",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 28000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "biceps_long",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 28000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "biceps_short",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 28000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "triceps_long",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 28000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "triceps_lateral",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 28000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "triceps_medial",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 28000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "abs",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 28000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        },
+        {
+          "RegionId": "glutes",
+          "ExpiresAtStartOfDay": 0,
+          "InjuredDay": 0,
+          "StrengthMicro": 28000000,
+          "TemporaryRemainderDenominator": "1",
+          "LocalFatigueMicro": 0,
+          "TemporaryRemainderNumerator": "0",
+          "TemporaryFatigueMicro": 0
+        }
+      ],
+      "MentalStressMicro": 5000000,
+      "Id": "coach.initial",
+      "Exercises": [
+        {
+          "ExerciseId": "bench_press",
+          "KnowledgeMicro": 60000000,
+          "ProficiencyMicro": 300000000
+        },
+        {
+          "ExerciseId": "dumbbell_curl",
+          "KnowledgeMicro": 60000000,
+          "ProficiencyMicro": 300000000
+        },
+        {
+          "ExerciseId": "lat_pulldown",
+          "KnowledgeMicro": 60000000,
+          "ProficiencyMicro": 300000000
+        },
+        {
+          "ExerciseId": "triceps_pushdown",
+          "KnowledgeMicro": 60000000,
+          "ProficiencyMicro": 300000000
+        },
+        {
+          "ExerciseId": "squat",
+          "KnowledgeMicro": 60000000,
+          "ProficiencyMicro": 300000000
+        },
+        {
+          "ExerciseId": "hip_thrust",
+          "KnowledgeMicro": 60000000,
+          "ProficiencyMicro": 300000000
+        },
+        {
+          "ExerciseId": "shoulder_press",
+          "KnowledgeMicro": 60000000,
+          "ProficiencyMicro": 300000000
+        },
+        {
+          "ExerciseId": "lateral_raise",
+          "KnowledgeMicro": 60000000,
+          "ProficiencyMicro": 300000000
+        }
+      ],
+      "Affluence": 50,
+      "BaseCharmMicro": 55000000,
+      "Training": [
+        {
+          "ExerciseId": "bench_press",
+          "AutomaticTiers": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "HighestUnlockedTier": 1
+        },
+        {
+          "ExerciseId": "dumbbell_curl",
+          "AutomaticTiers": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "HighestUnlockedTier": 1
+        },
+        {
+          "ExerciseId": "lat_pulldown",
+          "AutomaticTiers": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "HighestUnlockedTier": 1
+        },
+        {
+          "ExerciseId": "triceps_pushdown",
+          "AutomaticTiers": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "HighestUnlockedTier": 1
+        },
+        {
+          "ExerciseId": "squat",
+          "AutomaticTiers": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "HighestUnlockedTier": 1
+        },
+        {
+          "ExerciseId": "hip_thrust",
+          "AutomaticTiers": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "HighestUnlockedTier": 1
+        },
+        {
+          "ExerciseId": "shoulder_press",
+          "AutomaticTiers": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "HighestUnlockedTier": 1
+        },
+        {
+          "ExerciseId": "lateral_raise",
+          "AutomaticTiers": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "HighestUnlockedTier": 1
+        }
+      ],
+      "StressMicro": 0
+    }
+  ],
+  "Policies": [
+    {
+      "MaximumExtraRests": 2,
+      "ChallengeFatigueMicro": 90000000,
+      "StudyDenominator": 3,
+      "ChallengeProficiencyMicro": 0,
+      "StopBuyingAtKnowledgeMicro": 30000000,
+      "PurchaseReserve": 50,
+      "StopStressMicro": 75000000,
+      "StudyNumerator": 1,
+      "Id": "rival.decision",
+      "NormalRestSeconds": 30,
+      "ExtraRestSeconds": 180,
+      "RestFatigueMicro": 80000000,
+      "Meals": [
+        {
+          "BasicOptionId": "porridge_egg",
+          "Slot": 0,
+          "UpgradeOptionId": "porridge_egg",
+          "Reserve": 40,
+          "SkipOptionId": "skip",
+          "UpgradeBalance": 0
+        },
+        {
+          "BasicOptionId": "home_rice",
+          "Slot": 1,
+          "UpgradeOptionId": "chicken_rice",
+          "Reserve": 20,
+          "SkipOptionId": "skip",
+          "UpgradeBalance": 200
+        },
+        {
+          "BasicOptionId": "home_noodles",
+          "Slot": 2,
+          "UpgradeOptionId": "home_noodles",
+          "Reserve": 0,
+          "SkipOptionId": "skip",
+          "UpgradeBalance": 0
+        }
+      ],
+      "WantedNotebookUnits": 1
+    },
+    {
+      "MaximumExtraRests": 2,
+      "ChallengeFatigueMicro": 60000000,
+      "StudyDenominator": 3,
+      "ChallengeProficiencyMicro": 100000000,
+      "StopBuyingAtKnowledgeMicro": 30000000,
+      "PurchaseReserve": 50,
+      "StopStressMicro": 75000000,
+      "StudyNumerator": 2,
+      "Id": "beginner.decision",
+      "NormalRestSeconds": 180,
+      "ExtraRestSeconds": 180,
+      "RestFatigueMicro": 55000000,
+      "Meals": [
+        {
+          "BasicOptionId": "porridge_egg",
+          "Slot": 0,
+          "UpgradeOptionId": "sandwich",
+          "Reserve": 40,
+          "SkipOptionId": "skip",
+          "UpgradeBalance": 160
+        },
+        {
+          "BasicOptionId": "home_rice",
+          "Slot": 1,
+          "UpgradeOptionId": "home_rice",
+          "Reserve": 20,
+          "SkipOptionId": "skip",
+          "UpgradeBalance": 0
+        },
+        {
+          "BasicOptionId": "home_noodles",
+          "Slot": 2,
+          "UpgradeOptionId": "home_noodles",
+          "Reserve": 0,
+          "SkipOptionId": "skip",
+          "UpgradeBalance": 0
+        }
+      ],
+      "WantedNotebookUnits": 1
+    },
+    {
+      "MaximumExtraRests": 2,
+      "ChallengeFatigueMicro": 70000000,
+      "StudyDenominator": 3,
+      "ChallengeProficiencyMicro": 300000000,
+      "StopBuyingAtKnowledgeMicro": 30000000,
+      "PurchaseReserve": 50,
+      "StopStressMicro": 75000000,
+      "StudyNumerator": 2,
+      "Id": "veteran.decision",
+      "NormalRestSeconds": 180,
+      "ExtraRestSeconds": 180,
+      "RestFatigueMicro": 60000000,
+      "Meals": [
+        {
+          "BasicOptionId": "porridge_egg",
+          "Slot": 0,
+          "UpgradeOptionId": "porridge_egg",
+          "Reserve": 40,
+          "SkipOptionId": "skip",
+          "UpgradeBalance": 0
+        },
+        {
+          "BasicOptionId": "home_rice",
+          "Slot": 1,
+          "UpgradeOptionId": "home_rice",
+          "Reserve": 20,
+          "SkipOptionId": "skip",
+          "UpgradeBalance": 0
+        },
+        {
+          "BasicOptionId": "home_noodles",
+          "Slot": 2,
+          "UpgradeOptionId": "fish_rice",
+          "Reserve": 0,
+          "SkipOptionId": "skip",
+          "UpgradeBalance": 250
+        }
+      ],
+      "WantedNotebookUnits": 3
+    },
+    {
+      "MaximumExtraRests": 2,
+      "ChallengeFatigueMicro": 75000000,
+      "StudyDenominator": 4,
+      "ChallengeProficiencyMicro": 300000000,
+      "StopBuyingAtKnowledgeMicro": 30000000,
+      "PurchaseReserve": 50,
+      "StopStressMicro": 75000000,
+      "StudyNumerator": 3,
+      "Id": "coach.decision",
+      "NormalRestSeconds": 90,
+      "ExtraRestSeconds": 180,
+      "RestFatigueMicro": 65000000,
+      "Meals": [
+        {
+          "BasicOptionId": "porridge_egg",
+          "Slot": 0,
+          "UpgradeOptionId": "porridge_egg",
+          "Reserve": 40,
+          "SkipOptionId": "skip",
+          "UpgradeBalance": 0
+        },
+        {
+          "BasicOptionId": "home_rice",
+          "Slot": 1,
+          "UpgradeOptionId": "chicken_rice",
+          "Reserve": 20,
+          "SkipOptionId": "skip",
+          "UpgradeBalance": 250
+        },
+        {
+          "BasicOptionId": "home_noodles",
+          "Slot": 2,
+          "UpgradeOptionId": "home_noodles",
+          "Reserve": 0,
+          "SkipOptionId": "skip",
+          "UpgradeBalance": 0
+        }
+      ],
+      "WantedNotebookUnits": 3
+    }
+  ],
+  "InputPolicies": [
+    {
+      "ExerciseId": "bench_press",
+      "Id": "rival.input.bench_press",
+      "TimingErrorMilliseconds": 0,
+      "AdapterId": "bench_press",
+      "TickMilliseconds": 50,
+      "ErrorAmplitude": 0.9,
+      "FailureTimingMilliseconds": 0,
+      "ControlIntervalMilliseconds": 100,
+      "FailurePositionOffset": 0.0,
+      "MistakeProbability": 0.08,
+      "PositionError": 0.08,
+      "ReactionMilliseconds": 0,
+      "MaximumTicksPerAttempt": 300
+    },
+    {
+      "ExerciseId": "dumbbell_curl",
+      "Id": "rival.input.dumbbell_curl",
+      "TimingErrorMilliseconds": 220,
+      "AdapterId": "dumbbell_curl",
+      "TickMilliseconds": 50,
+      "ErrorAmplitude": 0.9,
+      "FailureTimingMilliseconds": 0,
+      "ControlIntervalMilliseconds": 50,
+      "FailurePositionOffset": 0.0,
+      "MistakeProbability": 0.08,
+      "PositionError": 0.0,
+      "ReactionMilliseconds": 0,
+      "MaximumTicksPerAttempt": 300
+    },
+    {
+      "ExerciseId": "lat_pulldown",
+      "Id": "rival.input.lat_pulldown",
+      "TimingErrorMilliseconds": 0,
+      "AdapterId": "lat_pulldown",
+      "TickMilliseconds": 50,
+      "ErrorAmplitude": 0.9,
+      "FailureTimingMilliseconds": 0,
+      "ControlIntervalMilliseconds": 50,
+      "FailurePositionOffset": 0.3,
+      "MistakeProbability": 0.08,
+      "PositionError": 0.12,
+      "ReactionMilliseconds": 0,
+      "MaximumTicksPerAttempt": 300
+    },
+    {
+      "ExerciseId": "triceps_pushdown",
+      "Id": "rival.input.triceps_pushdown",
+      "TimingErrorMilliseconds": 420,
+      "AdapterId": "triceps_pushdown",
+      "TickMilliseconds": 50,
+      "ErrorAmplitude": 0.9,
+      "FailureTimingMilliseconds": 400,
+      "ControlIntervalMilliseconds": 50,
+      "FailurePositionOffset": 0.0,
+      "MistakeProbability": 0.08,
+      "PositionError": 0.0,
+      "ReactionMilliseconds": 150,
+      "MaximumTicksPerAttempt": 300
+    },
+    {
+      "ExerciseId": "squat",
+      "Id": "rival.input.squat",
+      "TimingErrorMilliseconds": 0,
+      "AdapterId": "squat",
+      "TickMilliseconds": 50,
+      "ErrorAmplitude": 0.9,
+      "FailureTimingMilliseconds": 0,
+      "ControlIntervalMilliseconds": 50,
+      "FailurePositionOffset": 0.0,
+      "MistakeProbability": 0.08,
+      "PositionError": 0.0,
+      "ReactionMilliseconds": 0,
+      "MaximumTicksPerAttempt": 300
+    },
+    {
+      "ExerciseId": "hip_thrust",
+      "Id": "rival.input.hip_thrust",
+      "TimingErrorMilliseconds": 240,
+      "AdapterId": "hip_thrust",
+      "TickMilliseconds": 50,
+      "ErrorAmplitude": 0.9,
+      "FailureTimingMilliseconds": 500,
+      "ControlIntervalMilliseconds": 50,
+      "FailurePositionOffset": 0.0,
+      "MistakeProbability": 0.08,
+      "PositionError": 0.0,
+      "ReactionMilliseconds": 0,
+      "MaximumTicksPerAttempt": 300
+    },
+    {
+      "ExerciseId": "shoulder_press",
+      "Id": "rival.input.shoulder_press",
+      "TimingErrorMilliseconds": 0,
+      "AdapterId": "shoulder_press",
+      "TickMilliseconds": 50,
+      "ErrorAmplitude": 0.9,
+      "FailureTimingMilliseconds": 0,
+      "ControlIntervalMilliseconds": 50,
+      "FailurePositionOffset": 0.25,
+      "MistakeProbability": 0.08,
+      "PositionError": 0.02,
+      "ReactionMilliseconds": 0,
+      "MaximumTicksPerAttempt": 300
+    },
+    {
+      "ExerciseId": "lateral_raise",
+      "Id": "rival.input.lateral_raise",
+      "TimingErrorMilliseconds": 400,
+      "AdapterId": "lateral_raise",
+      "TickMilliseconds": 50,
+      "ErrorAmplitude": 0.9,
+      "FailureTimingMilliseconds": 600,
+      "ControlIntervalMilliseconds": 50,
+      "FailurePositionOffset": 0.0,
+      "MistakeProbability": 0.08,
+      "PositionError": 0.0,
+      "ReactionMilliseconds": 0,
+      "MaximumTicksPerAttempt": 300
+    },
+    {
+      "ExerciseId": "bench_press",
+      "Id": "beginner.input.bench_press",
+      "TimingErrorMilliseconds": 0,
+      "AdapterId": "bench_press",
+      "TickMilliseconds": 50,
+      "ErrorAmplitude": 1.1,
+      "FailureTimingMilliseconds": 0,
+      "ControlIntervalMilliseconds": 100,
+      "FailurePositionOffset": 0.0,
+      "MistakeProbability": 0.12,
+      "PositionError": 0.08,
+      "ReactionMilliseconds": 0,
+      "MaximumTicksPerAttempt": 300
+    },
+    {
+      "ExerciseId": "dumbbell_curl",
+      "Id": "beginner.input.dumbbell_curl",
+      "TimingErrorMilliseconds": 220,
+      "AdapterId": "dumbbell_curl",
+      "TickMilliseconds": 50,
+      "ErrorAmplitude": 1.1,
+      "FailureTimingMilliseconds": 0,
+      "ControlIntervalMilliseconds": 50,
+      "FailurePositionOffset": 0.0,
+      "MistakeProbability": 0.12,
+      "PositionError": 0.0,
+      "ReactionMilliseconds": 0,
+      "MaximumTicksPerAttempt": 300
+    },
+    {
+      "ExerciseId": "lat_pulldown",
+      "Id": "beginner.input.lat_pulldown",
+      "TimingErrorMilliseconds": 0,
+      "AdapterId": "lat_pulldown",
+      "TickMilliseconds": 50,
+      "ErrorAmplitude": 1.1,
+      "FailureTimingMilliseconds": 0,
+      "ControlIntervalMilliseconds": 50,
+      "FailurePositionOffset": 0.3,
+      "MistakeProbability": 0.12,
+      "PositionError": 0.12,
+      "ReactionMilliseconds": 0,
+      "MaximumTicksPerAttempt": 300
+    },
+    {
+      "ExerciseId": "triceps_pushdown",
+      "Id": "beginner.input.triceps_pushdown",
+      "TimingErrorMilliseconds": 420,
+      "AdapterId": "triceps_pushdown",
+      "TickMilliseconds": 50,
+      "ErrorAmplitude": 1.1,
+      "FailureTimingMilliseconds": 400,
+      "ControlIntervalMilliseconds": 50,
+      "FailurePositionOffset": 0.0,
+      "MistakeProbability": 0.12,
+      "PositionError": 0.0,
+      "ReactionMilliseconds": 150,
+      "MaximumTicksPerAttempt": 300
+    },
+    {
+      "ExerciseId": "squat",
+      "Id": "beginner.input.squat",
+      "TimingErrorMilliseconds": 0,
+      "AdapterId": "squat",
+      "TickMilliseconds": 50,
+      "ErrorAmplitude": 1.1,
+      "FailureTimingMilliseconds": 0,
+      "ControlIntervalMilliseconds": 50,
+      "FailurePositionOffset": 0.0,
+      "MistakeProbability": 0.12,
+      "PositionError": 0.0,
+      "ReactionMilliseconds": 0,
+      "MaximumTicksPerAttempt": 300
+    },
+    {
+      "ExerciseId": "hip_thrust",
+      "Id": "beginner.input.hip_thrust",
+      "TimingErrorMilliseconds": 240,
+      "AdapterId": "hip_thrust",
+      "TickMilliseconds": 50,
+      "ErrorAmplitude": 1.1,
+      "FailureTimingMilliseconds": 500,
+      "ControlIntervalMilliseconds": 50,
+      "FailurePositionOffset": 0.0,
+      "MistakeProbability": 0.12,
+      "PositionError": 0.0,
+      "ReactionMilliseconds": 0,
+      "MaximumTicksPerAttempt": 300
+    },
+    {
+      "ExerciseId": "shoulder_press",
+      "Id": "beginner.input.shoulder_press",
+      "TimingErrorMilliseconds": 0,
+      "AdapterId": "shoulder_press",
+      "TickMilliseconds": 50,
+      "ErrorAmplitude": 1.1,
+      "FailureTimingMilliseconds": 0,
+      "ControlIntervalMilliseconds": 50,
+      "FailurePositionOffset": 0.25,
+      "MistakeProbability": 0.12,
+      "PositionError": 0.02,
+      "ReactionMilliseconds": 0,
+      "MaximumTicksPerAttempt": 300
+    },
+    {
+      "ExerciseId": "lateral_raise",
+      "Id": "beginner.input.lateral_raise",
+      "TimingErrorMilliseconds": 400,
+      "AdapterId": "lateral_raise",
+      "TickMilliseconds": 50,
+      "ErrorAmplitude": 1.1,
+      "FailureTimingMilliseconds": 600,
+      "ControlIntervalMilliseconds": 50,
+      "FailurePositionOffset": 0.0,
+      "MistakeProbability": 0.12,
+      "PositionError": 0.0,
+      "ReactionMilliseconds": 0,
+      "MaximumTicksPerAttempt": 300
+    },
+    {
+      "ExerciseId": "bench_press",
+      "Id": "veteran.input.bench_press",
+      "TimingErrorMilliseconds": 0,
+      "AdapterId": "bench_press",
+      "TickMilliseconds": 50,
+      "ErrorAmplitude": 0.55,
+      "FailureTimingMilliseconds": 0,
+      "ControlIntervalMilliseconds": 100,
+      "FailurePositionOffset": 0.0,
+      "MistakeProbability": 0.03,
+      "PositionError": 0.08,
+      "ReactionMilliseconds": 0,
+      "MaximumTicksPerAttempt": 300
+    },
+    {
+      "ExerciseId": "dumbbell_curl",
+      "Id": "veteran.input.dumbbell_curl",
+      "TimingErrorMilliseconds": 220,
+      "AdapterId": "dumbbell_curl",
+      "TickMilliseconds": 50,
+      "ErrorAmplitude": 0.55,
+      "FailureTimingMilliseconds": 0,
+      "ControlIntervalMilliseconds": 50,
+      "FailurePositionOffset": 0.0,
+      "MistakeProbability": 0.03,
+      "PositionError": 0.0,
+      "ReactionMilliseconds": 0,
+      "MaximumTicksPerAttempt": 300
+    },
+    {
+      "ExerciseId": "lat_pulldown",
+      "Id": "veteran.input.lat_pulldown",
+      "TimingErrorMilliseconds": 0,
+      "AdapterId": "lat_pulldown",
+      "TickMilliseconds": 50,
+      "ErrorAmplitude": 0.55,
+      "FailureTimingMilliseconds": 0,
+      "ControlIntervalMilliseconds": 50,
+      "FailurePositionOffset": 0.3,
+      "MistakeProbability": 0.03,
+      "PositionError": 0.12,
+      "ReactionMilliseconds": 0,
+      "MaximumTicksPerAttempt": 300
+    },
+    {
+      "ExerciseId": "triceps_pushdown",
+      "Id": "veteran.input.triceps_pushdown",
+      "TimingErrorMilliseconds": 420,
+      "AdapterId": "triceps_pushdown",
+      "TickMilliseconds": 50,
+      "ErrorAmplitude": 0.55,
+      "FailureTimingMilliseconds": 400,
+      "ControlIntervalMilliseconds": 50,
+      "FailurePositionOffset": 0.0,
+      "MistakeProbability": 0.03,
+      "PositionError": 0.0,
+      "ReactionMilliseconds": 150,
+      "MaximumTicksPerAttempt": 300
+    },
+    {
+      "ExerciseId": "squat",
+      "Id": "veteran.input.squat",
+      "TimingErrorMilliseconds": 0,
+      "AdapterId": "squat",
+      "TickMilliseconds": 50,
+      "ErrorAmplitude": 0.55,
+      "FailureTimingMilliseconds": 0,
+      "ControlIntervalMilliseconds": 50,
+      "FailurePositionOffset": 0.0,
+      "MistakeProbability": 0.03,
+      "PositionError": 0.0,
+      "ReactionMilliseconds": 0,
+      "MaximumTicksPerAttempt": 300
+    },
+    {
+      "ExerciseId": "hip_thrust",
+      "Id": "veteran.input.hip_thrust",
+      "TimingErrorMilliseconds": 240,
+      "AdapterId": "hip_thrust",
+      "TickMilliseconds": 50,
+      "ErrorAmplitude": 0.55,
+      "FailureTimingMilliseconds": 500,
+      "ControlIntervalMilliseconds": 50,
+      "FailurePositionOffset": 0.0,
+      "MistakeProbability": 0.03,
+      "PositionError": 0.0,
+      "ReactionMilliseconds": 0,
+      "MaximumTicksPerAttempt": 300
+    },
+    {
+      "ExerciseId": "shoulder_press",
+      "Id": "veteran.input.shoulder_press",
+      "TimingErrorMilliseconds": 0,
+      "AdapterId": "shoulder_press",
+      "TickMilliseconds": 50,
+      "ErrorAmplitude": 0.55,
+      "FailureTimingMilliseconds": 0,
+      "ControlIntervalMilliseconds": 50,
+      "FailurePositionOffset": 0.25,
+      "MistakeProbability": 0.03,
+      "PositionError": 0.02,
+      "ReactionMilliseconds": 0,
+      "MaximumTicksPerAttempt": 300
+    },
+    {
+      "ExerciseId": "lateral_raise",
+      "Id": "veteran.input.lateral_raise",
+      "TimingErrorMilliseconds": 400,
+      "AdapterId": "lateral_raise",
+      "TickMilliseconds": 50,
+      "ErrorAmplitude": 0.55,
+      "FailureTimingMilliseconds": 600,
+      "ControlIntervalMilliseconds": 50,
+      "FailurePositionOffset": 0.0,
+      "MistakeProbability": 0.03,
+      "PositionError": 0.0,
+      "ReactionMilliseconds": 0,
+      "MaximumTicksPerAttempt": 300
+    },
+    {
+      "ExerciseId": "bench_press",
+      "Id": "coach.input.bench_press",
+      "TimingErrorMilliseconds": 0,
+      "AdapterId": "bench_press",
+      "TickMilliseconds": 50,
+      "ErrorAmplitude": 0.4,
+      "FailureTimingMilliseconds": 0,
+      "ControlIntervalMilliseconds": 100,
+      "FailurePositionOffset": 0.0,
+      "MistakeProbability": 0.02,
+      "PositionError": 0.08,
+      "ReactionMilliseconds": 0,
+      "MaximumTicksPerAttempt": 300
+    },
+    {
+      "ExerciseId": "dumbbell_curl",
+      "Id": "coach.input.dumbbell_curl",
+      "TimingErrorMilliseconds": 220,
+      "AdapterId": "dumbbell_curl",
+      "TickMilliseconds": 50,
+      "ErrorAmplitude": 0.4,
+      "FailureTimingMilliseconds": 0,
+      "ControlIntervalMilliseconds": 50,
+      "FailurePositionOffset": 0.0,
+      "MistakeProbability": 0.02,
+      "PositionError": 0.0,
+      "ReactionMilliseconds": 0,
+      "MaximumTicksPerAttempt": 300
+    },
+    {
+      "ExerciseId": "lat_pulldown",
+      "Id": "coach.input.lat_pulldown",
+      "TimingErrorMilliseconds": 0,
+      "AdapterId": "lat_pulldown",
+      "TickMilliseconds": 50,
+      "ErrorAmplitude": 0.4,
+      "FailureTimingMilliseconds": 0,
+      "ControlIntervalMilliseconds": 50,
+      "FailurePositionOffset": 0.3,
+      "MistakeProbability": 0.02,
+      "PositionError": 0.12,
+      "ReactionMilliseconds": 0,
+      "MaximumTicksPerAttempt": 300
+    },
+    {
+      "ExerciseId": "triceps_pushdown",
+      "Id": "coach.input.triceps_pushdown",
+      "TimingErrorMilliseconds": 420,
+      "AdapterId": "triceps_pushdown",
+      "TickMilliseconds": 50,
+      "ErrorAmplitude": 0.4,
+      "FailureTimingMilliseconds": 400,
+      "ControlIntervalMilliseconds": 50,
+      "FailurePositionOffset": 0.0,
+      "MistakeProbability": 0.02,
+      "PositionError": 0.0,
+      "ReactionMilliseconds": 150,
+      "MaximumTicksPerAttempt": 300
+    },
+    {
+      "ExerciseId": "squat",
+      "Id": "coach.input.squat",
+      "TimingErrorMilliseconds": 0,
+      "AdapterId": "squat",
+      "TickMilliseconds": 50,
+      "ErrorAmplitude": 0.4,
+      "FailureTimingMilliseconds": 0,
+      "ControlIntervalMilliseconds": 50,
+      "FailurePositionOffset": 0.0,
+      "MistakeProbability": 0.02,
+      "PositionError": 0.0,
+      "ReactionMilliseconds": 0,
+      "MaximumTicksPerAttempt": 300
+    },
+    {
+      "ExerciseId": "hip_thrust",
+      "Id": "coach.input.hip_thrust",
+      "TimingErrorMilliseconds": 240,
+      "AdapterId": "hip_thrust",
+      "TickMilliseconds": 50,
+      "ErrorAmplitude": 0.4,
+      "FailureTimingMilliseconds": 500,
+      "ControlIntervalMilliseconds": 50,
+      "FailurePositionOffset": 0.0,
+      "MistakeProbability": 0.02,
+      "PositionError": 0.0,
+      "ReactionMilliseconds": 0,
+      "MaximumTicksPerAttempt": 300
+    },
+    {
+      "ExerciseId": "shoulder_press",
+      "Id": "coach.input.shoulder_press",
+      "TimingErrorMilliseconds": 0,
+      "AdapterId": "shoulder_press",
+      "TickMilliseconds": 50,
+      "ErrorAmplitude": 0.4,
+      "FailureTimingMilliseconds": 0,
+      "ControlIntervalMilliseconds": 50,
+      "FailurePositionOffset": 0.25,
+      "MistakeProbability": 0.02,
+      "PositionError": 0.02,
+      "ReactionMilliseconds": 0,
+      "MaximumTicksPerAttempt": 300
+    },
+    {
+      "ExerciseId": "lateral_raise",
+      "Id": "coach.input.lateral_raise",
+      "TimingErrorMilliseconds": 400,
+      "AdapterId": "lateral_raise",
+      "TickMilliseconds": 50,
+      "ErrorAmplitude": 0.4,
+      "FailureTimingMilliseconds": 600,
+      "ControlIntervalMilliseconds": 50,
+      "FailurePositionOffset": 0.0,
+      "MistakeProbability": 0.02,
+      "PositionError": 0.0,
+      "ReactionMilliseconds": 0,
+      "MaximumTicksPerAttempt": 300
+    }
+  ],
+  "EmptyState": {
+    "NutritionIntakeKcal": 0,
+    "LastIncome": {
+      "AffluenceAtExecution": 0,
+      "Amount": 0,
+      "Day": 0,
+      "SettlementKey": "",
+      "ConfigVersion": ""
+    },
+    "Meals": [],
+    "HasLastIncome": false,
+    "MoneyEffectReceipts": [],
+    "RememberedMeals": [
+      "",
+      "",
+      ""
+    ],
+    "WorkIncomeReceipts": []
+  }
+}

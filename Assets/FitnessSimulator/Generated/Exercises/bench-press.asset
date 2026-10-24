@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db407f22d21a5fb4c977649f2d447fc0, type: 3}
+  m_Name: bench-press
+  m_EditorClassIdentifier: FitnessSimulator.Runtime::FitnessSimulator.Training.ExercisePresentation
+  exerciseId: bench-press
+  displayName: Bench press
+  presentationNotes: Original motion blockout. Replaceable assets; no final minigame scoring or training instruction.
+  targetMuscleTags:
+  - chest
+  - triceps
+  stagePrefab: {fileID: 3685680628090691223, guid: 6746a49cd2e14e64492fc40e53c04a5c, type: 3}
+  demonstrationClip: {fileID: 7400000, guid: 7b76ded8039e1e840b169e09a0fcd115, type: 2}
+  demonstrationOnly: 1
+  referenceUrls:
+  - https://quaternius.com/packs/universalbasecharacters
+  - https://vnb3d.com/product/gym-set/

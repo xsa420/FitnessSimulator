@@ -1,0 +1,1798 @@
+{
+  "Version": "CS.templates.v1",
+  "DefaultId": "steady_beginner",
+  "StrengthId": "strength_foundation",
+  "SocialId": "lean_social",
+  "Templates": [
+    {
+      "Id": "steady_beginner",
+      "Name": "稳步新手",
+      "Description": "起点均衡，心理压力较低；力量与外形仍需逐步建立。",
+      "Advantage": "心理压力较低",
+      "Drawback": "力量与外形仍需逐步建立",
+      "LockedHint": "可直接选择",
+      "InitializationId": "steady_beginner-initial",
+      "Availability": {
+        "Op": "True",
+        "Key": "",
+        "Value": "",
+        "Children": []
+      },
+      "DisplayOrder": 0,
+      "Enabled": true
+    },
+    {
+      "Id": "strength_foundation",
+      "Name": "力量底子",
+      "Description": "力量较高；体脂、魅力和心理压力起点较差。",
+      "Advantage": "力量较高",
+      "Drawback": "体脂、魅力和心理压力起点较差",
+      "LockedHint": "取得健美冠军后开放",
+      "InitializationId": "strength_foundation-initial",
+      "Availability": {
+        "Op": "Eq",
+        "Key": "templateGrant:strength_foundation",
+        "Value": "true",
+        "Children": []
+      },
+      "DisplayOrder": 1,
+      "Enabled": true
+    },
+    {
+      "Id": "lean_social",
+      "Name": "轻体社交",
+      "Description": "体脂、魅力和收入起点较好；力量较低。",
+      "Advantage": "体脂、魅力和收入起点较好",
+      "Drawback": "力量较低",
+      "LockedHint": "取得薄肌冠军或恋爱成功后开放",
+      "InitializationId": "lean_social-initial",
+      "Availability": {
+        "Op": "Eq",
+        "Key": "templateGrant:lean_social",
+        "Value": "true",
+        "Children": []
+      },
+      "DisplayOrder": 2,
+      "Enabled": true
+    }
+  ],
+  "Initializations": [
+    {
+      "Id": "steady_beginner-initial",
+      "InventoryInitialRef": "LC.empty-notebook0-bookmark0.v1",
+      "RelationshipInitialRef": "LC.initial-unmet-zero-no-partner.v1",
+      "Body": {
+        "Regions": [
+          {
+            "RegionId": "chest_upper",
+            "StrengthMicro": {
+              "Value": 10000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "chest_middle",
+            "StrengthMicro": {
+              "Value": 10000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "chest_lower",
+            "StrengthMicro": {
+              "Value": 10000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "back_upper",
+            "StrengthMicro": {
+              "Value": 10000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "back_middle",
+            "StrengthMicro": {
+              "Value": 10000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "back_lats",
+            "StrengthMicro": {
+              "Value": 10000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "back_lower",
+            "StrengthMicro": {
+              "Value": 10000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "leg_quads",
+            "StrengthMicro": {
+              "Value": 10000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "leg_hamstrings",
+            "StrengthMicro": {
+              "Value": 10000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "leg_adductors",
+            "StrengthMicro": {
+              "Value": 10000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "leg_calves",
+            "StrengthMicro": {
+              "Value": 10000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "shoulder_front",
+            "StrengthMicro": {
+              "Value": 10000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "shoulder_side",
+            "StrengthMicro": {
+              "Value": 10000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "shoulder_rear",
+            "StrengthMicro": {
+              "Value": 10000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "biceps_long",
+            "StrengthMicro": {
+              "Value": 10000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "biceps_short",
+            "StrengthMicro": {
+              "Value": 10000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "triceps_long",
+            "StrengthMicro": {
+              "Value": 10000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "triceps_lateral",
+            "StrengthMicro": {
+              "Value": 10000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "triceps_medial",
+            "StrengthMicro": {
+              "Value": 10000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "abs",
+            "StrengthMicro": {
+              "Value": 10000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "glutes",
+            "StrengthMicro": {
+              "Value": 10000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          }
+        ],
+        "Exercises": [
+          {
+            "ExerciseId": "bench_press",
+            "KnowledgeMicro": {
+              "Value": 0
+            },
+            "ProficiencyMicro": {
+              "Value": 0
+            }
+          },
+          {
+            "ExerciseId": "lat_pulldown",
+            "KnowledgeMicro": {
+              "Value": 0
+            },
+            "ProficiencyMicro": {
+              "Value": 0
+            }
+          },
+          {
+            "ExerciseId": "squat",
+            "KnowledgeMicro": {
+              "Value": 0
+            },
+            "ProficiencyMicro": {
+              "Value": 0
+            }
+          },
+          {
+            "ExerciseId": "dumbbell_curl",
+            "KnowledgeMicro": {
+              "Value": 0
+            },
+            "ProficiencyMicro": {
+              "Value": 0
+            }
+          },
+          {
+            "ExerciseId": "triceps_pushdown",
+            "KnowledgeMicro": {
+              "Value": 0
+            },
+            "ProficiencyMicro": {
+              "Value": 0
+            }
+          },
+          {
+            "ExerciseId": "hip_thrust",
+            "KnowledgeMicro": {
+              "Value": 0
+            },
+            "ProficiencyMicro": {
+              "Value": 0
+            }
+          },
+          {
+            "ExerciseId": "shoulder_press",
+            "KnowledgeMicro": {
+              "Value": 0
+            },
+            "ProficiencyMicro": {
+              "Value": 0
+            }
+          },
+          {
+            "ExerciseId": "lateral_raise",
+            "KnowledgeMicro": {
+              "Value": 0
+            },
+            "ProficiencyMicro": {
+              "Value": 0
+            }
+          }
+        ],
+        "StressMicro": {
+          "Value": 0
+        },
+        "BodyFatMicro": {
+          "Value": 25000000
+        },
+        "BaseCharmMicro": {
+          "Value": 50000000
+        },
+        "MentalStressMicro": {
+          "Value": 10000000
+        }
+      },
+      "Training": {
+        "Exercises": [
+          {
+            "ExerciseId": "bench_press",
+            "HighestUnlockedTier": {
+              "Value": 1
+            },
+            "AutomaticTiers": [
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          {
+            "ExerciseId": "lat_pulldown",
+            "HighestUnlockedTier": {
+              "Value": 1
+            },
+            "AutomaticTiers": [
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          {
+            "ExerciseId": "squat",
+            "HighestUnlockedTier": {
+              "Value": 1
+            },
+            "AutomaticTiers": [
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          {
+            "ExerciseId": "dumbbell_curl",
+            "HighestUnlockedTier": {
+              "Value": 1
+            },
+            "AutomaticTiers": [
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          {
+            "ExerciseId": "triceps_pushdown",
+            "HighestUnlockedTier": {
+              "Value": 1
+            },
+            "AutomaticTiers": [
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          {
+            "ExerciseId": "hip_thrust",
+            "HighestUnlockedTier": {
+              "Value": 1
+            },
+            "AutomaticTiers": [
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          {
+            "ExerciseId": "shoulder_press",
+            "HighestUnlockedTier": {
+              "Value": 1
+            },
+            "AutomaticTiers": [
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          {
+            "ExerciseId": "lateral_raise",
+            "HighestUnlockedTier": {
+              "Value": 1
+            },
+            "AutomaticTiers": [
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        ]
+      },
+      "Affluence": {
+        "Value": 0
+      },
+      "Balance": {
+        "Value": 300
+      }
+    },
+    {
+      "Id": "strength_foundation-initial",
+      "InventoryInitialRef": "LC.empty-notebook0-bookmark0.v1",
+      "RelationshipInitialRef": "LC.initial-unmet-zero-no-partner.v1",
+      "Body": {
+        "Regions": [
+          {
+            "RegionId": "chest_upper",
+            "StrengthMicro": {
+              "Value": 13000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "chest_middle",
+            "StrengthMicro": {
+              "Value": 13000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "chest_lower",
+            "StrengthMicro": {
+              "Value": 13000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "back_upper",
+            "StrengthMicro": {
+              "Value": 13000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "back_middle",
+            "StrengthMicro": {
+              "Value": 13000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "back_lats",
+            "StrengthMicro": {
+              "Value": 13000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "back_lower",
+            "StrengthMicro": {
+              "Value": 13000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "leg_quads",
+            "StrengthMicro": {
+              "Value": 13000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "leg_hamstrings",
+            "StrengthMicro": {
+              "Value": 13000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "leg_adductors",
+            "StrengthMicro": {
+              "Value": 13000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "leg_calves",
+            "StrengthMicro": {
+              "Value": 13000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "shoulder_front",
+            "StrengthMicro": {
+              "Value": 13000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "shoulder_side",
+            "StrengthMicro": {
+              "Value": 13000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "shoulder_rear",
+            "StrengthMicro": {
+              "Value": 13000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "biceps_long",
+            "StrengthMicro": {
+              "Value": 13000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "biceps_short",
+            "StrengthMicro": {
+              "Value": 13000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "triceps_long",
+            "StrengthMicro": {
+              "Value": 13000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "triceps_lateral",
+            "StrengthMicro": {
+              "Value": 13000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "triceps_medial",
+            "StrengthMicro": {
+              "Value": 13000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "abs",
+            "StrengthMicro": {
+              "Value": 13000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "glutes",
+            "StrengthMicro": {
+              "Value": 13000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          }
+        ],
+        "Exercises": [
+          {
+            "ExerciseId": "bench_press",
+            "KnowledgeMicro": {
+              "Value": 0
+            },
+            "ProficiencyMicro": {
+              "Value": 0
+            }
+          },
+          {
+            "ExerciseId": "lat_pulldown",
+            "KnowledgeMicro": {
+              "Value": 0
+            },
+            "ProficiencyMicro": {
+              "Value": 0
+            }
+          },
+          {
+            "ExerciseId": "squat",
+            "KnowledgeMicro": {
+              "Value": 0
+            },
+            "ProficiencyMicro": {
+              "Value": 0
+            }
+          },
+          {
+            "ExerciseId": "dumbbell_curl",
+            "KnowledgeMicro": {
+              "Value": 0
+            },
+            "ProficiencyMicro": {
+              "Value": 0
+            }
+          },
+          {
+            "ExerciseId": "triceps_pushdown",
+            "KnowledgeMicro": {
+              "Value": 0
+            },
+            "ProficiencyMicro": {
+              "Value": 0
+            }
+          },
+          {
+            "ExerciseId": "hip_thrust",
+            "KnowledgeMicro": {
+              "Value": 0
+            },
+            "ProficiencyMicro": {
+              "Value": 0
+            }
+          },
+          {
+            "ExerciseId": "shoulder_press",
+            "KnowledgeMicro": {
+              "Value": 0
+            },
+            "ProficiencyMicro": {
+              "Value": 0
+            }
+          },
+          {
+            "ExerciseId": "lateral_raise",
+            "KnowledgeMicro": {
+              "Value": 0
+            },
+            "ProficiencyMicro": {
+              "Value": 0
+            }
+          }
+        ],
+        "StressMicro": {
+          "Value": 0
+        },
+        "BodyFatMicro": {
+          "Value": 29000000
+        },
+        "BaseCharmMicro": {
+          "Value": 40000000
+        },
+        "MentalStressMicro": {
+          "Value": 20000000
+        }
+      },
+      "Training": {
+        "Exercises": [
+          {
+            "ExerciseId": "bench_press",
+            "HighestUnlockedTier": {
+              "Value": 1
+            },
+            "AutomaticTiers": [
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          {
+            "ExerciseId": "lat_pulldown",
+            "HighestUnlockedTier": {
+              "Value": 1
+            },
+            "AutomaticTiers": [
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          {
+            "ExerciseId": "squat",
+            "HighestUnlockedTier": {
+              "Value": 1
+            },
+            "AutomaticTiers": [
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          {
+            "ExerciseId": "dumbbell_curl",
+            "HighestUnlockedTier": {
+              "Value": 1
+            },
+            "AutomaticTiers": [
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          {
+            "ExerciseId": "triceps_pushdown",
+            "HighestUnlockedTier": {
+              "Value": 1
+            },
+            "AutomaticTiers": [
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          {
+            "ExerciseId": "hip_thrust",
+            "HighestUnlockedTier": {
+              "Value": 1
+            },
+            "AutomaticTiers": [
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          {
+            "ExerciseId": "shoulder_press",
+            "HighestUnlockedTier": {
+              "Value": 1
+            },
+            "AutomaticTiers": [
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          {
+            "ExerciseId": "lateral_raise",
+            "HighestUnlockedTier": {
+              "Value": 1
+            },
+            "AutomaticTiers": [
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        ]
+      },
+      "Affluence": {
+        "Value": 0
+      },
+      "Balance": {
+        "Value": 300
+      }
+    },
+    {
+      "Id": "lean_social-initial",
+      "InventoryInitialRef": "LC.empty-notebook0-bookmark0.v1",
+      "RelationshipInitialRef": "LC.initial-unmet-zero-no-partner.v1",
+      "Body": {
+        "Regions": [
+          {
+            "RegionId": "chest_upper",
+            "StrengthMicro": {
+              "Value": 8000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "chest_middle",
+            "StrengthMicro": {
+              "Value": 8000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "chest_lower",
+            "StrengthMicro": {
+              "Value": 8000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "back_upper",
+            "StrengthMicro": {
+              "Value": 8000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "back_middle",
+            "StrengthMicro": {
+              "Value": 8000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "back_lats",
+            "StrengthMicro": {
+              "Value": 8000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "back_lower",
+            "StrengthMicro": {
+              "Value": 8000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "leg_quads",
+            "StrengthMicro": {
+              "Value": 8000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "leg_hamstrings",
+            "StrengthMicro": {
+              "Value": 8000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "leg_adductors",
+            "StrengthMicro": {
+              "Value": 8000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "leg_calves",
+            "StrengthMicro": {
+              "Value": 8000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "shoulder_front",
+            "StrengthMicro": {
+              "Value": 8000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "shoulder_side",
+            "StrengthMicro": {
+              "Value": 8000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "shoulder_rear",
+            "StrengthMicro": {
+              "Value": 8000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "biceps_long",
+            "StrengthMicro": {
+              "Value": 8000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "biceps_short",
+            "StrengthMicro": {
+              "Value": 8000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "triceps_long",
+            "StrengthMicro": {
+              "Value": 8000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "triceps_lateral",
+            "StrengthMicro": {
+              "Value": 8000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "triceps_medial",
+            "StrengthMicro": {
+              "Value": 8000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "abs",
+            "StrengthMicro": {
+              "Value": 8000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          },
+          {
+            "RegionId": "glutes",
+            "StrengthMicro": {
+              "Value": 8000000
+            },
+            "LocalFatigueMicro": {
+              "Value": 0
+            },
+            "TemporaryFatigueMicro": {
+              "Value": 0
+            },
+            "InjuredDay": {
+              "Value": 0
+            },
+            "ExpiresAtStartOfDay": {
+              "Value": 0
+            }
+          }
+        ],
+        "Exercises": [
+          {
+            "ExerciseId": "bench_press",
+            "KnowledgeMicro": {
+              "Value": 0
+            },
+            "ProficiencyMicro": {
+              "Value": 0
+            }
+          },
+          {
+            "ExerciseId": "lat_pulldown",
+            "KnowledgeMicro": {
+              "Value": 0
+            },
+            "ProficiencyMicro": {
+              "Value": 0
+            }
+          },
+          {
+            "ExerciseId": "squat",
+            "KnowledgeMicro": {
+              "Value": 0
+            },
+            "ProficiencyMicro": {
+              "Value": 0
+            }
+          },
+          {
+            "ExerciseId": "dumbbell_curl",
+            "KnowledgeMicro": {
+              "Value": 0
+            },
+            "ProficiencyMicro": {
+              "Value": 0
+            }
+          },
+          {
+            "ExerciseId": "triceps_pushdown",
+            "KnowledgeMicro": {
+              "Value": 0
+            },
+            "ProficiencyMicro": {
+              "Value": 0
+            }
+          },
+          {
+            "ExerciseId": "hip_thrust",
+            "KnowledgeMicro": {
+              "Value": 0
+            },
+            "ProficiencyMicro": {
+              "Value": 0
+            }
+          },
+          {
+            "ExerciseId": "shoulder_press",
+            "KnowledgeMicro": {
+              "Value": 0
+            },
+            "ProficiencyMicro": {
+              "Value": 0
+            }
+          },
+          {
+            "ExerciseId": "lateral_raise",
+            "KnowledgeMicro": {
+              "Value": 0
+            },
+            "ProficiencyMicro": {
+              "Value": 0
+            }
+          }
+        ],
+        "StressMicro": {
+          "Value": 0
+        },
+        "BodyFatMicro": {
+          "Value": 20000000
+        },
+        "BaseCharmMicro": {
+          "Value": 65000000
+        },
+        "MentalStressMicro": {
+          "Value": 15000000
+        }
+      },
+      "Training": {
+        "Exercises": [
+          {
+            "ExerciseId": "bench_press",
+            "HighestUnlockedTier": {
+              "Value": 1
+            },
+            "AutomaticTiers": [
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          {
+            "ExerciseId": "lat_pulldown",
+            "HighestUnlockedTier": {
+              "Value": 1
+            },
+            "AutomaticTiers": [
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          {
+            "ExerciseId": "squat",
+            "HighestUnlockedTier": {
+              "Value": 1
+            },
+            "AutomaticTiers": [
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          {
+            "ExerciseId": "dumbbell_curl",
+            "HighestUnlockedTier": {
+              "Value": 1
+            },
+            "AutomaticTiers": [
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          {
+            "ExerciseId": "triceps_pushdown",
+            "HighestUnlockedTier": {
+              "Value": 1
+            },
+            "AutomaticTiers": [
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          {
+            "ExerciseId": "hip_thrust",
+            "HighestUnlockedTier": {
+              "Value": 1
+            },
+            "AutomaticTiers": [
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          {
+            "ExerciseId": "shoulder_press",
+            "HighestUnlockedTier": {
+              "Value": 1
+            },
+            "AutomaticTiers": [
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          {
+            "ExerciseId": "lateral_raise",
+            "HighestUnlockedTier": {
+              "Value": 1
+            },
+            "AutomaticTiers": [
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        ]
+      },
+      "Affluence": {
+        "Value": 10
+      },
+      "Balance": {
+        "Value": 360
+      }
+    }
+  ]
+}

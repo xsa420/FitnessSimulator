@@ -1,0 +1,100 @@
+// TEMP ONLY. Promote after the architect releases the source freeze.
+using System;
+using System.Linq;
+using FitnessSimulator.Game.Application;
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+
+namespace FitnessSimulator.Game.Editor
+{
+    public static partial class GameUiSmoke
+    {
+        private static RelationshipLayoutFrontend relationshipLayout;
+        private static int relationshipLayoutStep;
+        private static readonly string[] RelationshipCaptures = {
+            "relationships-narrow-default-top", "relationships-narrow-default-bottom",
+            "relationships-narrow-large-top", "relationships-narrow-large-bottom",
+            "relationships-training-aux-disabled"
+        };
+
+        private sealed class RelationshipLayoutFrontend : IGameFrontend
+        {
+            public readonly FrontendView View = new FrontendView {
+                RunId = "layout-fixture-only", Revision = 1, ScreenId = "relationship-layout-fixture",
+                Title = "关系长文布局样本", Status = "布局夹具 · 非业务公开规则证据",
+                Body = "打开角色查看长文。此样本只验证实际界面滚动和字号。",
+                CanOpenAuxiliary = true,
+                BodyRows = Enumerable.Range(1, 4).SelectMany(index => new[] {
+                    "人物布局样本 " + index + " · 身份说明占位",
+                    "好感数值／当前搭子／次日搭子／生效日期：长文本排版样本",
+                    "已知周计划：训练与休息安排；计划不保证实际到场。",
+                    "书签库存／冷却最早日期／待表白状态：仅长度占位，不用于业务断言。"
+                }).Concat(Enumerable.Range(1, 21).Select(index => "身体区域样本 " + index + "：力量、疲劳及状态说明。"))
+                  .Concat(new[] { "【布局样本末尾】应能完整滚动至此，并点击返回。" }).ToArray()
+            };
+            public FrontendView ReadView() => View;
+            public FrontendReply Execute(FrontendAction action) => throw new InvalidOperationException("Layout fixture must not execute business commands.");
+            public void Advance(double seconds) { }
+            public void SetSuspended(bool value) { }
+        }
+
+        private static void TickRelationshipLayout(double now)
+        {
+            if (now < nextAction) return;
+            nextAction = now + .7;
+            var view = relationshipLayout.View;
+            switch (relationshipLayoutStep++)
+            {
+                case 0: Click("角色"); break;
+                case 1: Capture(RelationshipCaptures[0], view); ScrollRelationshipToBottom(); break;
+                case 2:
+                    Capture(RelationshipCaptures[1], view);
+                    Click("返回当前事件"); Click("字号"); break;
+                case 3: Click("角色"); break;
+                case 4: Capture(RelationshipCaptures[2], view); ScrollRelationshipToBottom(); break;
+                case 5:
+                    Capture(RelationshipCaptures[3], view); Click("返回当前事件");
+                    view.Revision++; view.ScreenId = "training-layout-fixture";
+                    // Deliberately true: verify the UI's own active-training guard.
+                    view.CanOpenAuxiliary = true;
+                    view.TrainingInput = new FrontendTrainingInputView {
+                        ExerciseId = "bench_press", Stage = "Balance", TargetReps = 8, Window = .2
+                    };
+                    inputs.Add("fixture:active-training-view-with-no-kernel-or-business-progression");
+                    break;
+                case 6:
+                    foreach (string caption in new[] { "角色", "计划", "当天安排" })
+                    {
+                        var button = host.GetComponentsInChildren<Button>(false).Single(x => x.name == caption);
+                        if (button.interactable) throw new InvalidOperationException("Auxiliary entry enabled during training: " + caption);
+                        // Even an unsolicited callback must not open the auxiliary modal.
+                        inputs.Add("synthetic-callback:disabled-auxiliary-guard:" + caption);
+                        button.onClick.Invoke();
+                    }
+                    if (host.GetComponentsInChildren<RectTransform>(false).Any(x => x.name == "Modal"))
+                        throw new InvalidOperationException("Auxiliary modal opened during training.");
+                    Capture(RelationshipCaptures[4], view); Finish(true, null); break;
+            }
+        }
+
+        private static void ScrollRelationshipToBottom()
+        {
+            var scroll = host.GetComponentsInChildren<ScrollRect>(false).Single(x => x.name == "ModalScroll");
+            Canvas.ForceUpdateCanvases();
+            if (scroll.content.rect.height <= scroll.viewport.rect.height)
+                throw new InvalidOperationException("Fixture does not overflow; scrolling has not been exercised.");
+            for (int count = 0; count < 200 && scroll.verticalNormalizedPosition > .001f; count++)
+            {
+                scroll.scrollSensitivity = 24;
+                ExecuteEvents.Execute(scroll.gameObject, new PointerEventData(EventSystem.current) { scrollDelta = new Vector2(0, -1) }, ExecuteEvents.scrollHandler);
+                Canvas.ForceUpdateCanvases();
+            }
+            if (scroll.verticalNormalizedPosition > .001f) throw new InvalidOperationException("Could not reach relationship text bottom.");
+            // The existing click guard checks viewport clipping and top-most raycast coverage.
+            VisiblePointer(FindButton("返回当前事件").gameObject, 70, false);
+            inputs.Add("scroll:relationship-layout-bottom-and-return-button-visible");
+        }
+    }
+}

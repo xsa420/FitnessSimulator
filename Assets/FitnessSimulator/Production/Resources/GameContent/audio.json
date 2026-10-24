@@ -1,0 +1,123 @@
+{
+  "Version": "audio.project-original.1",
+  "DefaultMusicEnabled": true,
+  "DefaultSfxEnabled": true,
+  "DefaultMusicVolume": 0.25,
+  "DefaultSfxVolume": 0.5,
+  "Entries": [
+    {
+      "Id": "daily",
+      "AssetRef": "GameAudio/daily",
+      "Kind": "music",
+      "Loop": true,
+      "Gain": 1,
+      "Source": "project-original",
+      "SourceRecord": "Docs/Content/AudioSources.md",
+      "Sha256": "6204387F9440BB435EA02B9F5458FC1259D5D65D46A9B0377BB1D97756B81600"
+    },
+    {
+      "Id": "competition",
+      "AssetRef": "GameAudio/competition",
+      "Kind": "music",
+      "Loop": true,
+      "Gain": 1,
+      "Source": "project-original",
+      "SourceRecord": "Docs/Content/AudioSources.md",
+      "Sha256": "0D9AEBC6F6C5464F2532EB6476D159AD33BEE5B304F8DA729DAF2CD23B02D5EA"
+    },
+    {
+      "Id": "confirm",
+      "AssetRef": "GameAudio/confirm",
+      "Kind": "sfx",
+      "Loop": false,
+      "Gain": 1,
+      "Source": "project-original",
+      "SourceRecord": "Docs/Content/AudioSources.md",
+      "Sha256": "8D0034691484367F48A53AD51EF588C123F37CA93EF2C34560DE3F05936DAC67"
+    },
+    {
+      "Id": "invalid",
+      "AssetRef": "GameAudio/invalid",
+      "Kind": "sfx",
+      "Loop": false,
+      "Gain": 1,
+      "Source": "project-original",
+      "SourceRecord": "Docs/Content/AudioSources.md",
+      "Sha256": "D4CFE29BBABDA690BB0442C48ED7D9608E27DB75A73DAD37D52A1C2CEE11EE50"
+    },
+    {
+      "Id": "training_valid",
+      "AssetRef": "GameAudio/training_valid",
+      "Kind": "sfx",
+      "Loop": false,
+      "Gain": 1,
+      "Source": "project-original",
+      "SourceRecord": "Docs/Content/AudioSources.md",
+      "Sha256": "CFBC52CC626ABE576D21870773393126FC9E221CD7470F89C473CBA4E785E20B"
+    },
+    {
+      "Id": "training_failed",
+      "AssetRef": "GameAudio/training_failed",
+      "Kind": "sfx",
+      "Loop": false,
+      "Gain": 1,
+      "Source": "project-original",
+      "SourceRecord": "Docs/Content/AudioSources.md",
+      "Sha256": "BCED9ED4F5A1070FC76C2ED9ED924B19B41ED69320A12174C7A74EB053DCFB2B"
+    },
+    {
+      "Id": "result",
+      "AssetRef": "GameAudio/result",
+      "Kind": "sfx",
+      "Loop": false,
+      "Gain": 1,
+      "Source": "project-original",
+      "SourceRecord": "Docs/Content/AudioSources.md",
+      "Sha256": "957A5EEB36164671B8CC03A53169C7E9DA5D9D7390674AD599D059CC3ECBCBA8"
+    },
+    {
+      "Id": "ending",
+      "AssetRef": "GameAudio/ending",
+      "Kind": "sfx",
+      "Loop": false,
+      "Gain": 1,
+      "Source": "project-original",
+      "SourceRecord": "Docs/Content/AudioSources.md",
+      "Sha256": "0E5607B1D0D3F0381F01ADE4DBD45B2CF2D315915641644F72369E67722FEBDF"
+    }
+  ],
+  "Cues": [
+    {
+      "Cue": "daily",
+      "AudioId": "daily"
+    },
+    {
+      "Cue": "competition",
+      "AudioId": "competition"
+    },
+    {
+      "Cue": "confirm",
+      "AudioId": "confirm"
+    },
+    {
+      "Cue": "invalid",
+      "AudioId": "invalid"
+    },
+    {
+      "Cue": "training_valid",
+      "AudioId": "training_valid"
+    },
+    {
+      "Cue": "training_failed",
+      "AudioId": "training_failed"
+    },
+    {
+      "Cue": "result",
+      "AudioId": "result"
+    },
+    {
+      "Cue": "ending",
+      "AudioId": "ending"
+    }
+  ]
+}

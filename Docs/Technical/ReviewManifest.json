@@ -1,0 +1,91 @@
+{
+  "reviewDate": "2026-10-23",
+  "status": "[FRAME] Design and product alignment complete; formal gameplay not implemented or accepted",
+  "productPageLastEditedUtc": "2026-10-22T16:50:45.864Z",
+  "progressPageLastEditedUtc": "2026-10-22T16:50:09.277Z",
+  "sourceAudit": {
+    "scope": [
+      "Assets",
+      "Packages",
+      "ProjectSettings",
+      "Tools"
+    ],
+    "files": 172,
+    "changed": 0,
+    "added": 0,
+    "removed": 0
+  },
+  "documentChecks": {
+    "markdownFiles": 16,
+    "localLinks": 80,
+    "brokenLinks": 0,
+    "scopeItems": 14,
+    "acceptanceItems": 15
+  },
+  "documents": [
+    {
+      "path": "D:\\FitnessSimulator\\README.md",
+      "sha256": "DD243D54A38C8006426450615C98C51CCB7E99629F3B79350FBEEC83E45019CF"
+    },
+    {
+      "path": "D:\\FitnessSimulator\\Docs\\Architecture.md",
+      "sha256": "FA75A23615EBDF25A86C5929DC9FC9AA726EF32BC25D926ABD5B86A11AEEA3E5"
+    },
+    {
+      "path": "D:\\FitnessSimulator\\Docs\\ProgramModulesAndDependencies.md",
+      "sha256": "156D33A529F4A54037682D68DFF251FE34BD4B5E48CA3732786AD849F1833B65"
+    },
+    {
+      "path": "D:\\FitnessSimulator\\Docs\\Technical\\FirstReleaseTechnicalPlan.md",
+      "sha256": "0ACE4E8CB4D51789F26778D42A779915D3C658E857FCB64B4A9589C381E6A41F"
+    },
+    {
+      "path": "D:\\FitnessSimulator\\Docs\\Technical\\FlowPersistenceContracts.md",
+      "sha256": "E94652D7C2CA91B4A5AD353C2C897CB2403567BA7A04F5F201A1F728A34ADA6E"
+    },
+    {
+      "path": "D:\\FitnessSimulator\\Docs\\Technical\\IntegrationReview.md",
+      "sha256": "BCAAE4147557555353CC3B13F123509C3365D8FB1D1B037658B5AB670D8AA082"
+    },
+    {
+      "path": "D:\\FitnessSimulator\\Docs\\Technical\\LifeActorsContracts.md",
+      "sha256": "F81966A2D95089B294F141C8D51C8774582ADE83A392F3AC81E63C6E45B367C2"
+    },
+    {
+      "path": "D:\\FitnessSimulator\\Docs\\Technical\\PlanningCompetitionContracts.md",
+      "sha256": "EBB9464E10309D480DED36E32BEF2B7E71C0B407106E1ACE94F138A2FEE54801"
+    },
+    {
+      "path": "D:\\FitnessSimulator\\Docs\\Technical\\PresentationVerificationPlan.md",
+      "sha256": "CAB56BFBC2FEF286ADD80E75DC6DF58E5FCA220411558FDD5C9189122AD15CE3"
+    },
+    {
+      "path": "D:\\FitnessSimulator\\Docs\\Technical\\TrainingGrowthContracts.md",
+      "sha256": "20890557C1A5236082FF2E26B4BD01F9D99810C675041E3DE2DB3E2960753763"
+    },
+    {
+      "path": "D:\\FitnessSimulator\\Docs\\Design\\CompetitionAndStartSpec.md",
+      "sha256": "71DB95C6E87B5311355C027DDE65237CC96FEE3A1CD911894B29F0C73E783471"
+    },
+    {
+      "path": "D:\\FitnessSimulator\\Docs\\Design\\FlowAndRecoverySpec.md",
+      "sha256": "66329A14B7C77760E657A959364C92BE039E0DC99F127B6774615E6BDA30D65E"
+    },
+    {
+      "path": "D:\\FitnessSimulator\\Docs\\Design\\LifeAndCharactersSpec.md",
+      "sha256": "FB4D191C67CE61EDAA6409BDBD49E4E831DE2750DD1182B40F50F717CC893F44"
+    },
+    {
+      "path": "D:\\FitnessSimulator\\Docs\\Design\\ProductionAlignment.md",
+      "sha256": "ED27CDE91E7F768C53CA7AACD484BB0157A261CAD25A40D528A2676A0B61FAB8"
+    },
+    {
+      "path": "D:\\FitnessSimulator\\Docs\\Design\\TextExperienceAndAcceptance.md",
+      "sha256": "5D5432ECB02833663896399E0F59B30923525B52431419E797E1DD8033F949BA"
+    },
+    {
+      "path": "D:\\FitnessSimulator\\Docs\\Design\\TrainingAndGrowthSpec.md",
+      "sha256": "2009EDF5B03CB9707DC02262DFD4EABB63E1677427E0039379F7915FAD5A7C80"
+    }
+  ]
+}

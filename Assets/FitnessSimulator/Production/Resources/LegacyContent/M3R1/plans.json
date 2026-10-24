@@ -1,0 +1,822 @@
+{
+  "Version": "PlanningM1.CS-TG.v1",
+  "DefaultTrainingAnchorId": "noon",
+  "SliceTemplateId": "bench-press-slice",
+  "DefaultVolume": 1,
+  "Templates": [
+    {
+      "Id": "default-week",
+      "Name": "自然周计划",
+      "Description": "自然周计划",
+      "DisplayOrder": 0,
+      "SlotIds": [
+        "default-week/slot-0",
+        "default-week/slot-1",
+        "default-week/slot-2",
+        "default-week/slot-3",
+        "default-week/slot-4",
+        "default-week/slot-5",
+        "default-week/slot-6"
+      ],
+      "Draft": {
+        "Mode": 0,
+        "Slots": [
+          {
+            "Index": 0,
+            "IsRest": false,
+            "AnchorId": "noon",
+            "Combination": 1,
+            "Volume": 1,
+            "Entries": [
+              {
+                "EntryId": "slot-0-entry-0",
+                "ExerciseId": "bench_press"
+              },
+              {
+                "EntryId": "slot-0-entry-1",
+                "ExerciseId": "dumbbell_curl"
+              }
+            ]
+          },
+          {
+            "Index": 1,
+            "IsRest": false,
+            "AnchorId": "noon",
+            "Combination": 2,
+            "Volume": 1,
+            "Entries": [
+              {
+                "EntryId": "slot-1-entry-0",
+                "ExerciseId": "lat_pulldown"
+              },
+              {
+                "EntryId": "slot-1-entry-1",
+                "ExerciseId": "triceps_pushdown"
+              }
+            ]
+          },
+          {
+            "Index": 2,
+            "IsRest": true,
+            "AnchorId": "",
+            "Combination": 0,
+            "Volume": 0,
+            "Entries": []
+          },
+          {
+            "Index": 3,
+            "IsRest": false,
+            "AnchorId": "noon",
+            "Combination": 3,
+            "Volume": 1,
+            "Entries": [
+              {
+                "EntryId": "slot-3-entry-0",
+                "ExerciseId": "squat"
+              },
+              {
+                "EntryId": "slot-3-entry-1",
+                "ExerciseId": "hip_thrust"
+              }
+            ]
+          },
+          {
+            "Index": 4,
+            "IsRest": true,
+            "AnchorId": "",
+            "Combination": 0,
+            "Volume": 0,
+            "Entries": []
+          },
+          {
+            "Index": 5,
+            "IsRest": false,
+            "AnchorId": "noon",
+            "Combination": 4,
+            "Volume": 1,
+            "Entries": [
+              {
+                "EntryId": "slot-5-entry-0",
+                "ExerciseId": "shoulder_press"
+              },
+              {
+                "EntryId": "slot-5-entry-1",
+                "ExerciseId": "lateral_raise"
+              }
+            ]
+          },
+          {
+            "Index": 6,
+            "IsRest": true,
+            "AnchorId": "",
+            "Combination": 0,
+            "Volume": 0,
+            "Entries": []
+          }
+        ]
+      }
+    },
+    {
+      "Id": "default-cycle",
+      "Name": "循环计划",
+      "Description": "循环计划",
+      "DisplayOrder": 1,
+      "SlotIds": [
+        "default-cycle/slot-0",
+        "default-cycle/slot-1",
+        "default-cycle/slot-2",
+        "default-cycle/slot-3",
+        "default-cycle/slot-4",
+        "default-cycle/slot-5"
+      ],
+      "Draft": {
+        "Mode": 1,
+        "Slots": [
+          {
+            "Index": 0,
+            "IsRest": false,
+            "AnchorId": "noon",
+            "Combination": 1,
+            "Volume": 1,
+            "Entries": [
+              {
+                "EntryId": "slot-0-entry-0",
+                "ExerciseId": "bench_press"
+              },
+              {
+                "EntryId": "slot-0-entry-1",
+                "ExerciseId": "dumbbell_curl"
+              }
+            ]
+          },
+          {
+            "Index": 1,
+            "IsRest": true,
+            "AnchorId": "",
+            "Combination": 0,
+            "Volume": 0,
+            "Entries": []
+          },
+          {
+            "Index": 2,
+            "IsRest": false,
+            "AnchorId": "noon",
+            "Combination": 2,
+            "Volume": 1,
+            "Entries": [
+              {
+                "EntryId": "slot-2-entry-0",
+                "ExerciseId": "lat_pulldown"
+              },
+              {
+                "EntryId": "slot-2-entry-1",
+                "ExerciseId": "triceps_pushdown"
+              }
+            ]
+          },
+          {
+            "Index": 3,
+            "IsRest": false,
+            "AnchorId": "noon",
+            "Combination": 3,
+            "Volume": 1,
+            "Entries": [
+              {
+                "EntryId": "slot-3-entry-0",
+                "ExerciseId": "squat"
+              },
+              {
+                "EntryId": "slot-3-entry-1",
+                "ExerciseId": "hip_thrust"
+              }
+            ]
+          },
+          {
+            "Index": 4,
+            "IsRest": false,
+            "AnchorId": "noon",
+            "Combination": 4,
+            "Volume": 1,
+            "Entries": [
+              {
+                "EntryId": "slot-4-entry-0",
+                "ExerciseId": "shoulder_press"
+              },
+              {
+                "EntryId": "slot-4-entry-1",
+                "ExerciseId": "lateral_raise"
+              }
+            ]
+          },
+          {
+            "Index": 5,
+            "IsRest": true,
+            "AnchorId": "",
+            "Combination": 0,
+            "Volume": 0,
+            "Entries": []
+          }
+        ]
+      }
+    },
+    {
+      "Id": "bench-press-slice",
+      "Name": "卧推单动作计划",
+      "Description": "卧推单动作计划",
+      "DisplayOrder": 2,
+      "SlotIds": [
+        "bench-press-slice/slot-0"
+      ],
+      "Draft": {
+        "Mode": 1,
+        "Slots": [
+          {
+            "Index": 0,
+            "IsRest": false,
+            "AnchorId": "noon",
+            "Combination": 0,
+            "Volume": 1,
+            "Entries": [
+              {
+                "EntryId": "slot-0-entry-0",
+                "ExerciseId": "bench_press"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "Id": "npc-rival",
+      "Name": "rival基础计划",
+      "Description": "rival基础计划",
+      "DisplayOrder": 3,
+      "SlotIds": [
+        "npc-rival/slot-0",
+        "npc-rival/slot-1",
+        "npc-rival/slot-2",
+        "npc-rival/slot-3",
+        "npc-rival/slot-4",
+        "npc-rival/slot-5",
+        "npc-rival/slot-6"
+      ],
+      "Draft": {
+        "Mode": 0,
+        "Slots": [
+          {
+            "Index": 0,
+            "IsRest": false,
+            "AnchorId": "noon",
+            "Combination": 1,
+            "Volume": 1,
+            "Entries": [
+              {
+                "EntryId": "slot-0-entry-0",
+                "ExerciseId": "bench_press"
+              },
+              {
+                "EntryId": "slot-0-entry-1",
+                "ExerciseId": "dumbbell_curl"
+              }
+            ]
+          },
+          {
+            "Index": 1,
+            "IsRest": false,
+            "AnchorId": "noon",
+            "Combination": 2,
+            "Volume": 1,
+            "Entries": [
+              {
+                "EntryId": "slot-1-entry-0",
+                "ExerciseId": "lat_pulldown"
+              },
+              {
+                "EntryId": "slot-1-entry-1",
+                "ExerciseId": "triceps_pushdown"
+              }
+            ]
+          },
+          {
+            "Index": 2,
+            "IsRest": true,
+            "AnchorId": "",
+            "Combination": 0,
+            "Volume": 0,
+            "Entries": []
+          },
+          {
+            "Index": 3,
+            "IsRest": false,
+            "AnchorId": "noon",
+            "Combination": 3,
+            "Volume": 1,
+            "Entries": [
+              {
+                "EntryId": "slot-3-entry-0",
+                "ExerciseId": "squat"
+              },
+              {
+                "EntryId": "slot-3-entry-1",
+                "ExerciseId": "hip_thrust"
+              }
+            ]
+          },
+          {
+            "Index": 4,
+            "IsRest": true,
+            "AnchorId": "",
+            "Combination": 0,
+            "Volume": 0,
+            "Entries": []
+          },
+          {
+            "Index": 5,
+            "IsRest": false,
+            "AnchorId": "noon",
+            "Combination": 4,
+            "Volume": 1,
+            "Entries": [
+              {
+                "EntryId": "slot-5-entry-0",
+                "ExerciseId": "shoulder_press"
+              },
+              {
+                "EntryId": "slot-5-entry-1",
+                "ExerciseId": "lateral_raise"
+              }
+            ]
+          },
+          {
+            "Index": 6,
+            "IsRest": true,
+            "AnchorId": "",
+            "Combination": 0,
+            "Volume": 0,
+            "Entries": []
+          }
+        ]
+      }
+    },
+    {
+      "Id": "npc-beginner",
+      "Name": "beginner基础计划",
+      "Description": "beginner基础计划",
+      "DisplayOrder": 4,
+      "SlotIds": [
+        "npc-beginner/slot-0",
+        "npc-beginner/slot-1",
+        "npc-beginner/slot-2",
+        "npc-beginner/slot-3",
+        "npc-beginner/slot-4",
+        "npc-beginner/slot-5",
+        "npc-beginner/slot-6"
+      ],
+      "Draft": {
+        "Mode": 0,
+        "Slots": [
+          {
+            "Index": 0,
+            "IsRest": false,
+            "AnchorId": "noon",
+            "Combination": 1,
+            "Volume": 0,
+            "Entries": [
+              {
+                "EntryId": "slot-0-entry-0",
+                "ExerciseId": "bench_press"
+              },
+              {
+                "EntryId": "slot-0-entry-1",
+                "ExerciseId": "dumbbell_curl"
+              }
+            ]
+          },
+          {
+            "Index": 1,
+            "IsRest": true,
+            "AnchorId": "",
+            "Combination": 0,
+            "Volume": 0,
+            "Entries": []
+          },
+          {
+            "Index": 2,
+            "IsRest": false,
+            "AnchorId": "noon",
+            "Combination": 3,
+            "Volume": 0,
+            "Entries": [
+              {
+                "EntryId": "slot-2-entry-0",
+                "ExerciseId": "squat"
+              },
+              {
+                "EntryId": "slot-2-entry-1",
+                "ExerciseId": "hip_thrust"
+              }
+            ]
+          },
+          {
+            "Index": 3,
+            "IsRest": true,
+            "AnchorId": "",
+            "Combination": 0,
+            "Volume": 0,
+            "Entries": []
+          },
+          {
+            "Index": 4,
+            "IsRest": true,
+            "AnchorId": "",
+            "Combination": 0,
+            "Volume": 0,
+            "Entries": []
+          },
+          {
+            "Index": 5,
+            "IsRest": false,
+            "AnchorId": "noon",
+            "Combination": 2,
+            "Volume": 0,
+            "Entries": [
+              {
+                "EntryId": "slot-5-entry-0",
+                "ExerciseId": "lat_pulldown"
+              },
+              {
+                "EntryId": "slot-5-entry-1",
+                "ExerciseId": "triceps_pushdown"
+              }
+            ]
+          },
+          {
+            "Index": 6,
+            "IsRest": true,
+            "AnchorId": "",
+            "Combination": 0,
+            "Volume": 0,
+            "Entries": []
+          }
+        ]
+      }
+    },
+    {
+      "Id": "npc-veteran",
+      "Name": "veteran基础计划",
+      "Description": "veteran基础计划",
+      "DisplayOrder": 5,
+      "SlotIds": [
+        "npc-veteran/slot-0",
+        "npc-veteran/slot-1",
+        "npc-veteran/slot-2",
+        "npc-veteran/slot-3",
+        "npc-veteran/slot-4",
+        "npc-veteran/slot-5",
+        "npc-veteran/slot-6"
+      ],
+      "Draft": {
+        "Mode": 0,
+        "Slots": [
+          {
+            "Index": 0,
+            "IsRest": true,
+            "AnchorId": "",
+            "Combination": 0,
+            "Volume": 0,
+            "Entries": []
+          },
+          {
+            "Index": 1,
+            "IsRest": false,
+            "AnchorId": "evening",
+            "Combination": 2,
+            "Volume": 1,
+            "Entries": [
+              {
+                "EntryId": "slot-1-entry-0",
+                "ExerciseId": "lat_pulldown"
+              },
+              {
+                "EntryId": "slot-1-entry-1",
+                "ExerciseId": "triceps_pushdown"
+              }
+            ]
+          },
+          {
+            "Index": 2,
+            "IsRest": true,
+            "AnchorId": "",
+            "Combination": 0,
+            "Volume": 0,
+            "Entries": []
+          },
+          {
+            "Index": 3,
+            "IsRest": false,
+            "AnchorId": "evening",
+            "Combination": 3,
+            "Volume": 1,
+            "Entries": [
+              {
+                "EntryId": "slot-3-entry-0",
+                "ExerciseId": "squat"
+              },
+              {
+                "EntryId": "slot-3-entry-1",
+                "ExerciseId": "hip_thrust"
+              }
+            ]
+          },
+          {
+            "Index": 4,
+            "IsRest": true,
+            "AnchorId": "",
+            "Combination": 0,
+            "Volume": 0,
+            "Entries": []
+          },
+          {
+            "Index": 5,
+            "IsRest": false,
+            "AnchorId": "evening",
+            "Combination": 4,
+            "Volume": 1,
+            "Entries": [
+              {
+                "EntryId": "slot-5-entry-0",
+                "ExerciseId": "shoulder_press"
+              },
+              {
+                "EntryId": "slot-5-entry-1",
+                "ExerciseId": "lateral_raise"
+              }
+            ]
+          },
+          {
+            "Index": 6,
+            "IsRest": true,
+            "AnchorId": "",
+            "Combination": 0,
+            "Volume": 0,
+            "Entries": []
+          }
+        ]
+      }
+    },
+    {
+      "Id": "npc-coach",
+      "Name": "coach基础计划",
+      "Description": "coach基础计划",
+      "DisplayOrder": 6,
+      "SlotIds": [
+        "npc-coach/slot-0",
+        "npc-coach/slot-1",
+        "npc-coach/slot-2",
+        "npc-coach/slot-3",
+        "npc-coach/slot-4",
+        "npc-coach/slot-5",
+        "npc-coach/slot-6"
+      ],
+      "Draft": {
+        "Mode": 0,
+        "Slots": [
+          {
+            "Index": 0,
+            "IsRest": false,
+            "AnchorId": "evening",
+            "Combination": 1,
+            "Volume": 1,
+            "Entries": [
+              {
+                "EntryId": "slot-0-entry-0",
+                "ExerciseId": "bench_press"
+              },
+              {
+                "EntryId": "slot-0-entry-1",
+                "ExerciseId": "dumbbell_curl"
+              }
+            ]
+          },
+          {
+            "Index": 1,
+            "IsRest": true,
+            "AnchorId": "",
+            "Combination": 0,
+            "Volume": 0,
+            "Entries": []
+          },
+          {
+            "Index": 2,
+            "IsRest": false,
+            "AnchorId": "evening",
+            "Combination": 2,
+            "Volume": 1,
+            "Entries": [
+              {
+                "EntryId": "slot-2-entry-0",
+                "ExerciseId": "lat_pulldown"
+              },
+              {
+                "EntryId": "slot-2-entry-1",
+                "ExerciseId": "triceps_pushdown"
+              }
+            ]
+          },
+          {
+            "Index": 3,
+            "IsRest": true,
+            "AnchorId": "",
+            "Combination": 0,
+            "Volume": 0,
+            "Entries": []
+          },
+          {
+            "Index": 4,
+            "IsRest": false,
+            "AnchorId": "evening",
+            "Combination": 3,
+            "Volume": 1,
+            "Entries": [
+              {
+                "EntryId": "slot-4-entry-0",
+                "ExerciseId": "squat"
+              },
+              {
+                "EntryId": "slot-4-entry-1",
+                "ExerciseId": "hip_thrust"
+              }
+            ]
+          },
+          {
+            "Index": 5,
+            "IsRest": true,
+            "AnchorId": "",
+            "Combination": 0,
+            "Volume": 0,
+            "Entries": []
+          },
+          {
+            "Index": 6,
+            "IsRest": false,
+            "AnchorId": "evening",
+            "Combination": 4,
+            "Volume": 1,
+            "Entries": [
+              {
+                "EntryId": "slot-6-entry-0",
+                "ExerciseId": "shoulder_press"
+              },
+              {
+                "EntryId": "slot-6-entry-1",
+                "ExerciseId": "lateral_raise"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "Combinations": [
+    {
+      "Kind": 0,
+      "Id": "free",
+      "Name": "自由训练",
+      "EditableRule": "TargetIntersection",
+      "DisplayOrder": 0,
+      "RegionIds": [
+        "chest_upper",
+        "chest_middle",
+        "chest_lower",
+        "back_upper",
+        "back_middle",
+        "back_lats",
+        "back_lower",
+        "leg_quads",
+        "leg_hamstrings",
+        "leg_adductors",
+        "leg_calves",
+        "shoulder_front",
+        "shoulder_side",
+        "shoulder_rear",
+        "biceps_long",
+        "biceps_short",
+        "triceps_long",
+        "triceps_lateral",
+        "triceps_medial",
+        "abs",
+        "glutes"
+      ],
+      "PrefillExerciseIds": [
+        "bench_press",
+        "lat_pulldown",
+        "squat",
+        "dumbbell_curl",
+        "triceps_pushdown",
+        "hip_thrust",
+        "shoulder_press",
+        "lateral_raise"
+      ]
+    },
+    {
+      "Kind": 1,
+      "Id": "chest-biceps",
+      "Name": "胸与二头",
+      "EditableRule": "TargetIntersection",
+      "DisplayOrder": 1,
+      "RegionIds": [
+        "chest_upper",
+        "chest_middle",
+        "chest_lower",
+        "biceps_long",
+        "biceps_short"
+      ],
+      "PrefillExerciseIds": [
+        "bench_press",
+        "dumbbell_curl"
+      ]
+    },
+    {
+      "Kind": 2,
+      "Id": "back-triceps",
+      "Name": "背与三头",
+      "EditableRule": "TargetIntersection",
+      "DisplayOrder": 2,
+      "RegionIds": [
+        "back_upper",
+        "back_middle",
+        "back_lats",
+        "back_lower",
+        "triceps_long",
+        "triceps_lateral",
+        "triceps_medial"
+      ],
+      "PrefillExerciseIds": [
+        "lat_pulldown",
+        "triceps_pushdown"
+      ]
+    },
+    {
+      "Kind": 3,
+      "Id": "legs-glutes",
+      "Name": "腿与臀",
+      "EditableRule": "TargetIntersection",
+      "DisplayOrder": 3,
+      "RegionIds": [
+        "leg_quads",
+        "leg_hamstrings",
+        "leg_adductors",
+        "leg_calves",
+        "glutes"
+      ],
+      "PrefillExerciseIds": [
+        "squat",
+        "hip_thrust"
+      ]
+    },
+    {
+      "Kind": 4,
+      "Id": "shoulders",
+      "Name": "肩",
+      "EditableRule": "TargetIntersection",
+      "DisplayOrder": 4,
+      "RegionIds": [
+        "shoulder_front",
+        "shoulder_side",
+        "shoulder_rear"
+      ],
+      "PrefillExerciseIds": [
+        "shoulder_press",
+        "lateral_raise"
+      ]
+    }
+  ],
+  "Defaults": [
+    {
+      "Mode": 0,
+      "TemplateId": "default-week"
+    },
+    {
+      "Mode": 1,
+      "TemplateId": "default-cycle"
+    }
+  ],
+  "NpcDefaults": [
+    {
+      "Preset": 0,
+      "TemplateId": "npc-rival"
+    },
+    {
+      "Preset": 1,
+      "TemplateId": "npc-beginner"
+    },
+    {
+      "Preset": 2,
+      "TemplateId": "npc-veteran"
+    },
+    {
+      "Preset": 3,
+      "TemplateId": "npc-coach"
+    }
+  ]
+}

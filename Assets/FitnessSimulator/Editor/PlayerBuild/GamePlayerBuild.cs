@@ -1,0 +1,264 @@
+using System;
+using System.IO;
+using System.Linq;
+using System.Security.Cryptography;
+using FitnessSimulator.Game.Bootstrap;
+using UnityEditor;
+using UnityEditor.Build;
+using UnityEditor.Build.Reporting;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+namespace FitnessSimulator.Game.Editor
+{
+    public static class GamePlayerBuild
+    {
+        public const string ScenePath = "Assets/FitnessSimulator/Scenes/Player/GameBootstrap.unity";
+        public const string FontPath = "Assets/FitnessSimulator/Production/Presentation/Fonts/NotoSansCJKsc-Regular.otf";
+        private const string CatalogPath = "Assets/FitnessSimulator/Resources/ExerciseCatalog.asset";
+        private const string QuarantinePath = "Assets/FitnessSimulator/Editor/PlayerBuild/Quarantine/ExerciseCatalog.asset";
+        private const string JournalPath = "Assets/FitnessSimulator/Editor/PlayerBuild/IsolationJournal.json";
+
+        [Serializable] private sealed class IsolationJournal
+        {
+            public string source, destination, guid, contentHash, status;
+        }
+        [Serializable] private sealed class BuildEvidence
+        {
+            public string result, outputPath, target, sha256, builtAtUtc;
+            public int errors;
+            public string stage, unityVersion, buildOptions, applicationId, scriptingBackend, architectures;
+            public string[] scenes, extraScriptingDefines;
+            public int minimumAndroidSdk;
+            public bool development, packedAssetsVerified;
+        }
+
+        private sealed class TemporarySettings : IDisposable
+        {
+            private readonly UIOrientation orientation = PlayerSettings.defaultInterfaceOrientation;
+            private readonly bool portrait = PlayerSettings.allowedAutorotateToPortrait;
+            private readonly bool upsideDown = PlayerSettings.allowedAutorotateToPortraitUpsideDown;
+            private readonly string androidId = PlayerSettings.GetApplicationIdentifier(NamedBuildTarget.Android);
+            private readonly AndroidArchitecture architectures = PlayerSettings.Android.targetArchitectures;
+            private readonly AndroidSdkVersions minimum = PlayerSettings.Android.minSdkVersion;
+            private readonly bool internet = PlayerSettings.Android.forceInternetPermission;
+            private readonly ScriptingImplementation backend = PlayerSettings.GetScriptingBackend(NamedBuildTarget.Android);
+            private readonly bool bundle = EditorUserBuildSettings.buildAppBundle;
+            public void Dispose()
+            {
+                PlayerSettings.defaultInterfaceOrientation = orientation;
+                PlayerSettings.allowedAutorotateToPortrait = portrait;
+                PlayerSettings.allowedAutorotateToPortraitUpsideDown = upsideDown;
+                PlayerSettings.SetApplicationIdentifier(NamedBuildTarget.Android, androidId);
+                PlayerSettings.Android.targetArchitectures = architectures;
+                PlayerSettings.Android.minSdkVersion = minimum;
+                PlayerSettings.Android.forceInternetPermission = internet;
+                PlayerSettings.SetScriptingBackend(NamedBuildTarget.Android, backend);
+                EditorUserBuildSettings.buildAppBundle = bundle;
+            }
+        }
+
+        [MenuItem("Fitness Simulator/Player/Create formal scene")]
+        public static void CreateScene()
+        {
+            Directory.CreateDirectory(Path.GetDirectoryName(ScenePath));
+            var font = AssetDatabase.LoadAssetAtPath<Font>(FontPath);
+            if (!font) throw new InvalidOperationException("Missing licensed Chinese font: " + FontPath);
+            // Only this owned formal scene may be created; historical Bootstrap is untouched.
+            if (File.Exists(ScenePath))
+            {
+                ValidateScene();
+                Debug.Log("FITNESS_PLAYER_SCENE_OK existing");
+                return;
+            }
+            var scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
+            var bootstrap = new GameObject("GameBootstrap").AddComponent<GameBootstrap>();
+            bootstrap.ChineseFont = font;
+            bootstrap.FontLicense = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/FitnessSimulator/Production/Presentation/Fonts/OFL.txt");
+            EditorSceneManager.SaveScene(scene, ScenePath);
+            AssetDatabase.SaveAssets();
+            ValidateContent();
+            Debug.Log("FITNESS_PLAYER_SCENE_OK created");
+        }
+
+        [MenuItem("Fitness Simulator/Player/Validate content")]
+        public static void ValidateContent()
+        {
+            if (!File.Exists(ScenePath)) throw new InvalidOperationException("Create formal GameBootstrap scene first.");
+            if (!File.Exists(Path.Combine(Path.GetDirectoryName(FontPath), "OFL.txt"))) throw new InvalidOperationException("Missing font redistribution license.");
+            var font = AssetDatabase.LoadAssetAtPath<Font>(FontPath);
+            if (!font || !font.HasCharacter('健') || !font.HasCharacter('卧') || !font.HasCharacter('疲'))
+                throw new InvalidOperationException("Formal font does not supply required Chinese glyphs.");
+            ValidateScene();
+            var dependencies = AssetDatabase.GetDependencies(ScenePath, true);
+            if (dependencies.Any(IsLabAsset)) throw new InvalidOperationException("Formal scene references experiment assets.");
+            Debug.Log("FITNESS_PLAYER_CONTENT_OK");
+        }
+
+        private static void ValidateScene()
+        {
+            var scene = SceneManager.GetSceneByPath(ScenePath);
+            bool alreadyLoaded = scene.IsValid() && scene.isLoaded;
+            if (!alreadyLoaded) scene = EditorSceneManager.OpenScene(ScenePath, OpenSceneMode.Additive);
+            try
+            {
+                var roots = scene.GetRootGameObjects();
+                var bootstraps = roots.SelectMany(x => x.GetComponentsInChildren<GameBootstrap>(true)).ToArray();
+                if (bootstraps.Length != 1 || !bootstraps[0].ChineseFont || !bootstraps[0].FontLicense) throw new InvalidOperationException("Expected one formal bootstrap with Chinese font and bundled license.");
+                if (roots.SelectMany(x => x.GetComponentsInChildren<MonoBehaviour>(true)).Any(x => x == null)) throw new InvalidOperationException("Missing script in formal scene.");
+            }
+            finally { if (!alreadyLoaded) EditorSceneManager.CloseScene(scene, true); }
+        }
+
+        public static void BuildAndroid() => BuildStage(BuildTarget.Android, "Android", ".apk");
+        public static void BuildWindowsProxy() => BuildStage(BuildTarget.StandaloneWindows64, "Windows", ".exe");
+
+        private static void BuildStage(BuildTarget target, string platform, string extension)
+        {
+            string stage = "M1";
+            var arguments = Environment.GetCommandLineArgs();
+            var indices = Enumerable.Range(0, arguments.Length).Where(i => arguments[i] == "-fitnessBuildStage").ToArray();
+            if (indices.Length > 1 || indices.Length == 1 && indices[0] + 1 >= arguments.Length)
+                throw new ArgumentException("Provide -fitnessBuildStage once, followed by M1, M3 or M3R1.");
+            if (indices.Length == 1) stage = arguments[indices[0] + 1];
+            if (stage != "M1" && stage != "M3" && stage != "M3R1" && stage != "ConfigR1" && stage != "SaveR1") throw new ArgumentException("Unsupported build stage: " + stage);
+            bool development = arguments.Contains("-fitnessDevelopmentBuild");
+            Build(target, "Builds/" + stage + "/" + platform + "/FitnessSimulator-" + stage + extension, stage, development);
+        }
+
+        private static void Build(BuildTarget target, string output, string stage, bool development)
+        {
+            ValidateContent();
+            RecoverIsolation();
+            // A permanent exclusion constraint in the legacy asmdef is owned by the parent.
+            const string legacyAssembly = "Assets/FitnessSimulator/Runtime/FitnessSimulator.Runtime.asmdef";
+            if (!File.ReadAllText(legacyAssembly).Contains("!FITNESS_PLAYER"))
+                throw new InvalidOperationException("Legacy runtime must exclude FITNESS_PLAYER builds before publishing.");
+            Directory.CreateDirectory(Path.GetDirectoryName(output));
+            string evidenceDirectory = "TestResults/" + stage;
+            Directory.CreateDirectory(evidenceDirectory);
+            var settings = new TemporarySettings();
+            var evidence = new BuildEvidence { target = target.ToString(), outputPath = output, result = "Failed", builtAtUtc = DateTime.UtcNow.ToString("O"),
+                stage = stage, development = development, unityVersion = UnityEngine.Application.unityVersion,
+                scenes = new[] { ScenePath }, extraScriptingDefines = new[] { "FITNESS_PLAYER" } };
+            try
+            {
+                BeginIsolation();
+                PlayerSettings.defaultInterfaceOrientation = UIOrientation.LandscapeLeft;
+                PlayerSettings.allowedAutorotateToPortrait = false;
+                PlayerSettings.allowedAutorotateToPortraitUpsideDown = false;
+                if (target == BuildTarget.Android)
+                {
+                    PlayerSettings.SetApplicationIdentifier(NamedBuildTarget.Android, "com.fitnesssimulator.game");
+                    PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARM64;
+                    PlayerSettings.Android.minSdkVersion = AndroidSdkVersions.AndroidApiLevel26;
+                    PlayerSettings.Android.forceInternetPermission = false;
+                    PlayerSettings.SetScriptingBackend(NamedBuildTarget.Android, ScriptingImplementation.IL2CPP);
+                    EditorUserBuildSettings.buildAppBundle = false;
+                }
+                var buildOptions = BuildOptions.StrictMode | BuildOptions.DetailedBuildReport;
+                if (development) buildOptions |= BuildOptions.Development;
+                evidence.buildOptions = buildOptions.ToString();
+                if (target == BuildTarget.Android)
+                {
+                    evidence.applicationId = PlayerSettings.GetApplicationIdentifier(NamedBuildTarget.Android);
+                    evidence.scriptingBackend = PlayerSettings.GetScriptingBackend(NamedBuildTarget.Android).ToString();
+                    evidence.architectures = PlayerSettings.Android.targetArchitectures.ToString();
+                    evidence.minimumAndroidSdk = (int)PlayerSettings.Android.minSdkVersion;
+                }
+                var report = BuildPipeline.BuildPlayer(new BuildPlayerOptions
+                {
+                    scenes = new[] { ScenePath }, locationPathName = output, target = target,
+                    options = buildOptions, extraScriptingDefines = new[] { "FITNESS_PLAYER" }
+                });
+                evidence.errors = report.summary.totalErrors;
+                if (report.summary.result != BuildResult.Succeeded) throw new InvalidOperationException("Formal build failed: " + report.summary.result);
+                foreach (var packed in report.packedAssets)
+                    if (packed.contents.Any(x => IsLabAsset(x.sourceAssetPath))) throw new InvalidOperationException("Experiment content detected in built package.");
+                evidence.packedAssetsVerified = true;
+                evidence.sha256 = Hash(output); evidence.result = "Succeeded";
+            }
+            catch { evidence.errors = Math.Max(1, evidence.errors); throw; }
+            finally
+            {
+                try { RecoverIsolation(); }
+                catch { evidence.result = "Failed"; evidence.errors = Math.Max(1, evidence.errors); throw; }
+                finally
+                {
+                    settings.Dispose();
+                    string json = JsonUtility.ToJson(evidence, true);
+                    File.WriteAllText(evidenceDirectory + "/build-" + target + ".json", json);
+                    if (stage == "M3" || stage == "M3R1" || stage == "ConfigR1" || stage == "SaveR1") File.WriteAllText(Path.Combine(Path.GetDirectoryName(output), "build-manifest.json"), json);
+                }
+            }
+            Debug.Log("FITNESS_PLAYER_BUILD_OK " + output);
+        }
+
+        private static bool IsLabAsset(string path) => !string.IsNullOrEmpty(path) &&
+            (path.StartsWith("Assets/FitnessSimulator/Generated/", StringComparison.Ordinal) ||
+             path.StartsWith("Assets/FitnessSimulator/Resources/", StringComparison.Ordinal) ||
+             path.StartsWith("Assets/FitnessSimulator/Runtime/", StringComparison.Ordinal) ||
+             path.StartsWith("Assets/FitnessSimulator/Scenes/Exercises/", StringComparison.Ordinal) ||
+             path == "Assets/FitnessSimulator/Scenes/Bootstrap.unity");
+
+        private static IsolationJournal BeginIsolation()
+        {
+            VerifyWorkspacePath(CatalogPath); VerifyWorkspacePath(QuarantinePath);
+            if (!File.Exists(CatalogPath) || File.Exists(QuarantinePath) || File.Exists(QuarantinePath + ".meta"))
+                throw new InvalidOperationException("Isolation source missing or destination occupied; recover journal before build.");
+            Directory.CreateDirectory(Path.GetDirectoryName(QuarantinePath)); AssetDatabase.Refresh();
+            var journal = new IsolationJournal { source = CatalogPath, destination = QuarantinePath, guid = AssetDatabase.AssetPathToGUID(CatalogPath), contentHash = Hash(CatalogPath), status = "Prepared" };
+            if (string.IsNullOrEmpty(journal.guid)) throw new InvalidOperationException("Catalog GUID unavailable.");
+            File.WriteAllText(JournalPath, JsonUtility.ToJson(journal, true));
+            string error = AssetDatabase.MoveAsset(CatalogPath, QuarantinePath);
+            if (!string.IsNullOrEmpty(error)) throw new IOException(error);
+            journal.status = "Moved"; File.WriteAllText(JournalPath, JsonUtility.ToJson(journal, true));
+            if (Hash(QuarantinePath) != journal.contentHash || AssetDatabase.AssetPathToGUID(QuarantinePath) != journal.guid)
+                throw new IOException("Isolation verification failed; journal preserved for recovery.");
+            return journal;
+        }
+
+        [MenuItem("Fitness Simulator/Player/Recover experiment resource isolation")]
+        public static void RecoverIsolation()
+        {
+            if (!File.Exists(JournalPath)) return;
+            var journal = JsonUtility.FromJson<IsolationJournal>(File.ReadAllText(JournalPath));
+            if (journal == null) throw new IOException("Unreadable isolation journal.");
+            if (journal.status != "Restored") Restore(journal);
+        }
+
+        private static void Restore(IsolationJournal journal)
+        {
+            if (journal.source != CatalogPath || journal.destination != QuarantinePath) throw new IOException("Unexpected isolation journal paths.");
+            VerifyWorkspacePath(journal.source); VerifyWorkspacePath(journal.destination);
+            bool source = File.Exists(journal.source), destination = File.Exists(journal.destination);
+            if (source && destination || !source && !destination) throw new IOException("Ambiguous isolation state; no files overwritten.");
+            string existing = source ? journal.source : journal.destination;
+            if (Hash(existing) != journal.contentHash || AssetDatabase.AssetPathToGUID(existing) != journal.guid)
+                throw new IOException("Isolation asset changed; manual inspection required, nothing overwritten.");
+            if (destination)
+            {
+                string error = AssetDatabase.MoveAsset(journal.destination, journal.source);
+                if (!string.IsNullOrEmpty(error)) throw new IOException(error);
+            }
+            if (Hash(journal.source) != journal.contentHash || AssetDatabase.AssetPathToGUID(journal.source) != journal.guid)
+                throw new IOException("Restored resource identity mismatch.");
+            journal.status = "Restored"; File.WriteAllText(JournalPath, JsonUtility.ToJson(journal, true));
+            AssetDatabase.Refresh();
+        }
+
+        private static void VerifyWorkspacePath(string relative)
+        {
+            string root = Path.GetFullPath(Path.Combine(UnityEngine.Application.dataPath, "..")) + Path.DirectorySeparatorChar;
+            string path = Path.GetFullPath(relative);
+            if (!path.StartsWith(root, StringComparison.OrdinalIgnoreCase)) throw new IOException("Asset path escapes workspace.");
+        }
+        private static string Hash(string path)
+        {
+            using (var sha = SHA256.Create()) using (var stream = File.OpenRead(path))
+                return BitConverter.ToString(sha.ComputeHash(stream)).Replace("-", "");
+        }
+    }
+}
+

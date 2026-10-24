@@ -1,0 +1,431 @@
+{
+  "Version": "presentation.zh-CN.1",
+  "Style": {
+    "BodySize": 18,
+    "SecondarySize": 16,
+    "TitleSize": 22,
+    "LineHeight": 1.15,
+    "ButtonMinHeight": 52,
+    "Gap": 8,
+    "SafeMargin": 16,
+    "CommittedFeedbackSeconds": 4
+  },
+  "Texts": [
+    {
+      "Id": "nav.menu",
+      "Text": "返回主菜单",
+      "Variables": []
+    },
+    {
+      "Id": "nav.body",
+      "Text": "角色",
+      "Variables": []
+    },
+    {
+      "Id": "nav.plan",
+      "Text": "计划",
+      "Variables": []
+    },
+    {
+      "Id": "name.early",
+      "Text": "清晨",
+      "Variables": []
+    },
+    {
+      "Id": "name.morning",
+      "Text": "上午",
+      "Variables": []
+    },
+    {
+      "Id": "name.noon",
+      "Text": "中午",
+      "Variables": []
+    },
+    {
+      "Id": "name.afternoon",
+      "Text": "下午",
+      "Variables": []
+    },
+    {
+      "Id": "name.evening",
+      "Text": "晚上",
+      "Variables": []
+    },
+    {
+      "Id": "name.late",
+      "Text": "后半夜",
+      "Variables": []
+    },
+    {
+      "Id": "name.bench_press",
+      "Text": "卧推",
+      "Variables": []
+    },
+    {
+      "Id": "name.dumbbell_curl",
+      "Text": "哑铃弯举",
+      "Variables": []
+    },
+    {
+      "Id": "name.lat_pulldown",
+      "Text": "高位下拉",
+      "Variables": []
+    },
+    {
+      "Id": "name.triceps_pushdown",
+      "Text": "绳索下压",
+      "Variables": []
+    },
+    {
+      "Id": "name.squat",
+      "Text": "深蹲",
+      "Variables": []
+    },
+    {
+      "Id": "name.hip_thrust",
+      "Text": "臀推",
+      "Variables": []
+    },
+    {
+      "Id": "name.shoulder_press",
+      "Text": "肩推",
+      "Variables": []
+    },
+    {
+      "Id": "name.lateral_raise",
+      "Text": "侧平举",
+      "Variables": []
+    },
+    {
+      "Id": "body.strength.base",
+      "Text": "基础",
+      "Variables": []
+    },
+    {
+      "Id": "body.strength.initial",
+      "Text": "初步增长",
+      "Variables": []
+    },
+    {
+      "Id": "body.strength.clear",
+      "Text": "明显增长",
+      "Variables": []
+    },
+    {
+      "Id": "body.strength.prominent",
+      "Text": "突出",
+      "Variables": []
+    },
+    {
+      "Id": "body.contour.clear",
+      "Text": "轮廓清晰",
+      "Variables": []
+    },
+    {
+      "Id": "body.contour.visible",
+      "Text": "轮廓可见",
+      "Variables": []
+    },
+    {
+      "Id": "body.contour.soft",
+      "Text": "轮廓较柔和",
+      "Variables": []
+    },
+    {
+      "Id": "feedback.meal",
+      "Text": "已进食{mealName}，支出{costMoney}元，摄入{energy}千卡。",
+      "Variables": [
+        "mealName",
+        "costMoney",
+        "energy"
+      ]
+    },
+    {
+      "Id": "feedback.no_meal",
+      "Text": "本餐选择不吃，支出0元，摄入0千卡。",
+      "Variables": []
+    },
+    {
+      "Id": "feedback.work",
+      "Text": "{anchor}工作已完成，收入{income}元，余额{balance}元。",
+      "Variables": [
+        "anchor",
+        "income",
+        "balance"
+      ]
+    },
+    {
+      "Id": "training.feedback.ValidRepetition",
+      "Text": "本次有效。",
+      "Variables": []
+    },
+    {
+      "Id": "training.feedback.Prepare",
+      "Text": "",
+      "Variables": []
+    },
+    {
+      "Id": "training.feedback.WrongStart",
+      "Text": "请从起点开始。",
+      "Variables": []
+    },
+    {
+      "Id": "training.feedback.EarlyRelease",
+      "Text": "过早松开。",
+      "Variables": []
+    },
+    {
+      "Id": "training.feedback.WrongDirection",
+      "Text": "方向不符。",
+      "Variables": []
+    },
+    {
+      "Id": "training.feedback.TimingWindow",
+      "Text": "未命中节拍。",
+      "Variables": []
+    },
+    {
+      "Id": "training.feedback.MissedBeat",
+      "Text": "未命中节拍。",
+      "Variables": []
+    },
+    {
+      "Id": "training.feedback.ReleaseWindow",
+      "Text": "松开时机不符。",
+      "Variables": []
+    },
+    {
+      "Id": "training.feedback.WatchFirst",
+      "Text": "先观察方向，再操作。",
+      "Variables": []
+    },
+    {
+      "Id": "training.feedback.ReturnToCenter",
+      "Text": "每次滑动后先回中心。",
+      "Variables": []
+    },
+    {
+      "Id": "training.feedback.ObstacleCollision",
+      "Text": "碰到障碍。",
+      "Variables": []
+    },
+    {
+      "Id": "training.feedback.OutsideChannel",
+      "Text": "请沿通道依序移动。",
+      "Variables": []
+    },
+    {
+      "Id": "training.feedback.SkippedPath",
+      "Text": "请沿通道依序移动。",
+      "Variables": []
+    },
+    {
+      "Id": "training.feedback.ArrivalSynchronization",
+      "Text": "双指需要同步。",
+      "Variables": []
+    },
+    {
+      "Id": "training.feedback.ReleaseSynchronization",
+      "Text": "双指需要同步。",
+      "Variables": []
+    },
+    {
+      "Id": "training.feedback.SynchronizationTimeout",
+      "Text": "双指需要同步。",
+      "Variables": []
+    },
+    {
+      "Id": "training.feedback.Timeout",
+      "Text": "本次操作超时。",
+      "Variables": []
+    },
+    {
+      "Id": "training.feedback.ResponseTimeout",
+      "Text": "本次操作超时。",
+      "Variables": []
+    },
+    {
+      "Id": "training.feedback.RepeatedButton",
+      "Text": "按键重复，请松开后重新操作。",
+      "Variables": []
+    },
+    {
+      "Id": "training.feedback.UnheldButton",
+      "Text": "请先按住对应按键。",
+      "Variables": []
+    },
+    {
+      "Id": "training.feedback.WrongButton",
+      "Text": "请使用当前动作对应按键。",
+      "Variables": []
+    },
+    {
+      "Id": "training.feedback.UnexpectedTouch",
+      "Text": "请按当前阶段提示操作。",
+      "Variables": []
+    },
+    {
+      "Id": "training.feedback.UnexpectedButton",
+      "Text": "此动作需要触点操作。",
+      "Variables": []
+    },
+    {
+      "Id": "training.feedback.ContactIdentity",
+      "Text": "请保持规定的触点数量。",
+      "Variables": []
+    },
+    {
+      "Id": "training.feedback.UnknownContact",
+      "Text": "请从起点重新按下。",
+      "Variables": []
+    },
+    {
+      "Id": "training.feedback.CrossedHalf",
+      "Text": "双指请保持在各自半区。",
+      "Variables": []
+    },
+    {
+      "Id": "training.feedback.BalanceLimit",
+      "Text": "平衡越界，本次未计有效次数。",
+      "Variables": []
+    },
+    {
+      "Id": "training.feedback.StabilityWindow",
+      "Text": "未进入稳定区间，本次未计有效次数。",
+      "Variables": []
+    },
+    {
+      "Id": "competition.comment.body_heng.balanced",
+      "Text": "全区发展较齐，最低部位影响了整体印象。",
+      "Variables": []
+    },
+    {
+      "Id": "competition.comment.body_heng.fallback",
+      "Text": "全区发展仍有短板，最低部位影响了整体印象。",
+      "Variables": []
+    },
+    {
+      "Id": "competition.comment.body_liang.preferred",
+      "Text": "胸背发展突出，其他区域仍计入总分。",
+      "Variables": []
+    },
+    {
+      "Id": "competition.comment.body_liang.fallback",
+      "Text": "胸背发展尚有空间，其他区域仍计入总分。",
+      "Variables": []
+    },
+    {
+      "Id": "competition.comment.body_su.preferred",
+      "Text": "肩臂表现突出，轮廓适配另行计分。",
+      "Variables": []
+    },
+    {
+      "Id": "competition.comment.body_su.fallback",
+      "Text": "肩臂表现尚有空间，轮廓适配另行计分。",
+      "Variables": []
+    },
+    {
+      "Id": "competition.comment.body_lu.preferred",
+      "Text": "下肢表现突出，单部位优势不能抵消全部短板。",
+      "Variables": []
+    },
+    {
+      "Id": "competition.comment.body_lu.fallback",
+      "Text": "下肢表现尚有空间，单部位优势不能抵消全部短板。",
+      "Variables": []
+    },
+    {
+      "Id": "competition.comment.thin_qing.fits",
+      "Text": "力量分布与适中程度契合本场口味。",
+      "Variables": []
+    },
+    {
+      "Id": "competition.comment.thin_qing.fallback",
+      "Text": "力量分布与适中程度偏离本场口味。",
+      "Variables": []
+    },
+    {
+      "Id": "competition.comment.thin_qiao.weak",
+      "Text": "肩背偏弱，更大不一定更合适。",
+      "Variables": []
+    },
+    {
+      "Id": "competition.comment.thin_qiao.strong",
+      "Text": "肩背偏强，更大不一定更合适。",
+      "Variables": []
+    },
+    {
+      "Id": "competition.comment.thin_qiao.fallback",
+      "Text": "肩背适中，更大不一定更合适。",
+      "Variables": []
+    },
+    {
+      "Id": "competition.comment.thin_wen.fallback",
+      "Text": "基础魅力与整体力量分别计分，体脂没有计两次。",
+      "Variables": []
+    },
+    {
+      "Id": "competition.comment.thin_jian.fits",
+      "Text": "下肢与整体的适中程度契合本场口味。",
+      "Variables": []
+    },
+    {
+      "Id": "competition.comment.thin_jian.fallback",
+      "Text": "下肢与整体的适中程度偏离本场口味。",
+      "Variables": []
+    }
+  ],
+  "StrengthBands": [
+    {
+      "Minimum": 0,
+      "Maximum": 20,
+      "IncludeMinimum": true,
+      "IncludeMaximum": false,
+      "TextRef": "body.strength.base"
+    },
+    {
+      "Minimum": 20,
+      "Maximum": 40,
+      "IncludeMinimum": true,
+      "IncludeMaximum": false,
+      "TextRef": "body.strength.initial"
+    },
+    {
+      "Minimum": 40,
+      "Maximum": 70,
+      "IncludeMinimum": true,
+      "IncludeMaximum": false,
+      "TextRef": "body.strength.clear"
+    },
+    {
+      "Minimum": 70,
+      "Maximum": 1.7976931348623157e+308,
+      "IncludeMinimum": true,
+      "IncludeMaximum": true,
+      "TextRef": "body.strength.prominent"
+    }
+  ],
+  "ContourBands": [
+    {
+      "Minimum": 0,
+      "Maximum": 15,
+      "IncludeMinimum": true,
+      "IncludeMaximum": false,
+      "TextRef": "body.contour.clear"
+    },
+    {
+      "Minimum": 15,
+      "Maximum": 20,
+      "IncludeMinimum": true,
+      "IncludeMaximum": true,
+      "TextRef": "body.contour.visible"
+    },
+    {
+      "Minimum": 20,
+      "Maximum": 100,
+      "IncludeMinimum": false,
+      "IncludeMaximum": true,
+      "TextRef": "body.contour.soft"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db407f22d21a5fb4c977649f2d447fc0, type: 3}
+  m_Name: lat-pulldown
+  m_EditorClassIdentifier: FitnessSimulator.Runtime::FitnessSimulator.Training.ExercisePresentation
+  exerciseId: lat-pulldown
+  displayName: Lat pulldown
+  presentationNotes: Original motion blockout. Replaceable assets; no final minigame scoring or training instruction.
+  targetMuscleTags:
+  - back
+  - biceps
+  stagePrefab: {fileID: 5779066073579493379, guid: 095e6034b982d7943b138880b63b888d, type: 3}
+  demonstrationClip: {fileID: 7400000, guid: a259f425c5411b847954d7a1259c7ef5, type: 2}
+  demonstrationOnly: 1
+  referenceUrls:
+  - https://quaternius.com/packs/universalbasecharacters
+  - https://vnb3d.com/product/gym-set/

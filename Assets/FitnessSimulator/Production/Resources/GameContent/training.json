@@ -1,0 +1,781 @@
+{
+  "Version": "training-v1",
+  "Exercises": [
+    {
+      "Id": "bench_press",
+      "Name": "卧推",
+      "KernelId": "bench_press",
+      "TargetRegionIds": [
+        "chest_upper",
+        "chest_middle",
+        "chest_lower",
+        "shoulder_front",
+        "triceps_long",
+        "triceps_lateral",
+        "triceps_medial"
+      ],
+      "WeightBasisPoints": [
+        2000,
+        3500,
+        1500,
+        1000,
+        800,
+        700,
+        500
+      ],
+      "Sets": [
+        2,
+        3,
+        4
+      ],
+      "Reps": [
+        6,
+        8,
+        10
+      ],
+      "SecondsPerRep": 6,
+      "FatiguePool": 12,
+      "StressPoolMicro": 2000000,
+      "FatLossPerRepMicro": 3000,
+      "DisplayLoadMicro": [
+        20000000,
+        35000000,
+        50000000,
+        70000000
+      ],
+      "LoadUnit": "kg",
+      "Thresholds": [
+        42,
+        98,
+        168,
+        266
+      ]
+    },
+    {
+      "Id": "dumbbell_curl",
+      "Name": "哑铃弯举",
+      "KernelId": "dumbbell_curl",
+      "TargetRegionIds": [
+        "biceps_long",
+        "biceps_short"
+      ],
+      "WeightBasisPoints": [
+        5500,
+        4500
+      ],
+      "Sets": [
+        2,
+        3,
+        4
+      ],
+      "Reps": [
+        8,
+        10,
+        12
+      ],
+      "SecondsPerRep": 4,
+      "FatiguePool": 8,
+      "StressPoolMicro": 1000000,
+      "FatLossPerRepMicro": 2000,
+      "DisplayLoadMicro": [
+        4000000,
+        7000000,
+        10000000,
+        14000000
+      ],
+      "LoadUnit": "kg/只",
+      "Thresholds": [
+        12,
+        28,
+        48,
+        76
+      ]
+    },
+    {
+      "Id": "lat_pulldown",
+      "Name": "高位下拉",
+      "KernelId": "lat_pulldown",
+      "TargetRegionIds": [
+        "back_upper",
+        "back_middle",
+        "back_lats",
+        "shoulder_rear",
+        "biceps_long",
+        "biceps_short"
+      ],
+      "WeightBasisPoints": [
+        1500,
+        2000,
+        3500,
+        1000,
+        1000,
+        1000
+      ],
+      "Sets": [
+        2,
+        3,
+        4
+      ],
+      "Reps": [
+        6,
+        8,
+        10
+      ],
+      "SecondsPerRep": 5,
+      "FatiguePool": 12,
+      "StressPoolMicro": 2000000,
+      "FatLossPerRepMicro": 3000,
+      "DisplayLoadMicro": [
+        15000000,
+        25000000,
+        40000000,
+        55000000
+      ],
+      "LoadUnit": "kg",
+      "Thresholds": [
+        36,
+        84,
+        144,
+        228
+      ]
+    },
+    {
+      "Id": "triceps_pushdown",
+      "Name": "绳索下压",
+      "KernelId": "triceps_pushdown",
+      "TargetRegionIds": [
+        "triceps_long",
+        "triceps_lateral",
+        "triceps_medial"
+      ],
+      "WeightBasisPoints": [
+        3500,
+        3500,
+        3000
+      ],
+      "Sets": [
+        2,
+        3,
+        4
+      ],
+      "Reps": [
+        8,
+        10,
+        12
+      ],
+      "SecondsPerRep": 4,
+      "FatiguePool": 8,
+      "StressPoolMicro": 1000000,
+      "FatLossPerRepMicro": 2000,
+      "DisplayLoadMicro": [
+        5000000,
+        10000000,
+        15000000,
+        22000000
+      ],
+      "LoadUnit": "kg",
+      "Thresholds": [
+        18,
+        42,
+        72,
+        114
+      ]
+    },
+    {
+      "Id": "squat",
+      "Name": "深蹲",
+      "KernelId": "squat",
+      "TargetRegionIds": [
+        "leg_quads",
+        "leg_hamstrings",
+        "leg_adductors",
+        "leg_calves",
+        "glutes",
+        "back_lower",
+        "abs"
+      ],
+      "WeightBasisPoints": [
+        3500,
+        1500,
+        1500,
+        1000,
+        1500,
+        500,
+        500
+      ],
+      "Sets": [
+        2,
+        3,
+        4
+      ],
+      "Reps": [
+        5,
+        6,
+        8
+      ],
+      "SecondsPerRep": 8,
+      "FatiguePool": 16,
+      "StressPoolMicro": 3000000,
+      "FatLossPerRepMicro": 5000,
+      "DisplayLoadMicro": [
+        20000000,
+        35000000,
+        55000000,
+        80000000
+      ],
+      "LoadUnit": "kg",
+      "Thresholds": [
+        42,
+        98,
+        168,
+        266
+      ]
+    },
+    {
+      "Id": "hip_thrust",
+      "Name": "臀推",
+      "KernelId": "hip_thrust",
+      "TargetRegionIds": [
+        "glutes",
+        "leg_hamstrings",
+        "back_lower",
+        "abs"
+      ],
+      "WeightBasisPoints": [
+        6000,
+        2000,
+        1000,
+        1000
+      ],
+      "Sets": [
+        2,
+        3,
+        4
+      ],
+      "Reps": [
+        6,
+        8,
+        10
+      ],
+      "SecondsPerRep": 6,
+      "FatiguePool": 12,
+      "StressPoolMicro": 2000000,
+      "FatLossPerRepMicro": 4000,
+      "DisplayLoadMicro": [
+        20000000,
+        40000000,
+        60000000,
+        85000000
+      ],
+      "LoadUnit": "kg",
+      "Thresholds": [
+        24,
+        56,
+        96,
+        152
+      ]
+    },
+    {
+      "Id": "shoulder_press",
+      "Name": "肩推",
+      "KernelId": "shoulder_press",
+      "TargetRegionIds": [
+        "shoulder_front",
+        "shoulder_side",
+        "triceps_long",
+        "triceps_lateral",
+        "triceps_medial"
+      ],
+      "WeightBasisPoints": [
+        4000,
+        2500,
+        1500,
+        1000,
+        1000
+      ],
+      "Sets": [
+        2,
+        3,
+        4
+      ],
+      "Reps": [
+        6,
+        8,
+        10
+      ],
+      "SecondsPerRep": 6,
+      "FatiguePool": 10,
+      "StressPoolMicro": 1500000,
+      "FatLossPerRepMicro": 3000,
+      "DisplayLoadMicro": [
+        4000000,
+        7000000,
+        10000000,
+        14000000
+      ],
+      "LoadUnit": "kg/只",
+      "Thresholds": [
+        30,
+        70,
+        120,
+        190
+      ]
+    },
+    {
+      "Id": "lateral_raise",
+      "Name": "侧平举",
+      "KernelId": "lateral_raise",
+      "TargetRegionIds": [
+        "shoulder_side",
+        "shoulder_rear",
+        "back_upper"
+      ],
+      "WeightBasisPoints": [
+        6500,
+        2500,
+        1000
+      ],
+      "Sets": [
+        2,
+        3,
+        4
+      ],
+      "Reps": [
+        8,
+        10,
+        12
+      ],
+      "SecondsPerRep": 4,
+      "FatiguePool": 8,
+      "StressPoolMicro": 1000000,
+      "FatLossPerRepMicro": 2000,
+      "DisplayLoadMicro": [
+        2000000,
+        3000000,
+        5000000,
+        7000000
+      ],
+      "LoadUnit": "kg/只",
+      "Thresholds": [
+        18,
+        42,
+        72,
+        114
+      ]
+    }
+  ],
+  "Kernels": [
+    {
+      "Id": "bench_press",
+      "PreparationMilliseconds": 350,
+      "ResumeMilliseconds": 350,
+      "Parameters": [
+        {
+          "Key": "window_base",
+          "Value": 0.4
+        },
+        {
+          "Key": "window_reduction",
+          "Value": 0.15
+        },
+        {
+          "Key": "force",
+          "Value": 1.2
+        },
+        {
+          "Key": "drift_base",
+          "Value": 0.2
+        },
+        {
+          "Key": "drift_gain",
+          "Value": 0.25
+        },
+        {
+          "Key": "drift_ms",
+          "Value": 500
+        },
+        {
+          "Key": "attempt_ms",
+          "Value": 2400
+        },
+        {
+          "Key": "tail_ms",
+          "Value": 300
+        },
+        {
+          "Key": "stable_ratio",
+          "Value": 0.8
+        },
+        {
+          "Key": "balance_limit",
+          "Value": 0.95
+        },
+        {
+          "Key": "initial_balance",
+          "Value": 0
+        },
+        {
+          "Key": "range_min",
+          "Value": -1
+        },
+        {
+          "Key": "range_max",
+          "Value": 1
+        }
+      ],
+      "Points": [],
+      "Choices": []
+    },
+    {
+      "Id": "dumbbell_curl",
+      "PreparationMilliseconds": 350,
+      "ResumeMilliseconds": 350,
+      "Parameters": [
+        {
+          "Key": "window_base",
+          "Value": 0.22
+        },
+        {
+          "Key": "window_reduction",
+          "Value": 0.1
+        },
+        {
+          "Key": "raise_ms",
+          "Value": 700
+        },
+        {
+          "Key": "lower_ms",
+          "Value": 1500
+        }
+      ],
+      "Points": [],
+      "Choices": []
+    },
+    {
+      "Id": "lat_pulldown",
+      "PreparationMilliseconds": 350,
+      "ResumeMilliseconds": 350,
+      "Parameters": [
+        {
+          "Key": "window_base",
+          "Value": 0.12
+        },
+        {
+          "Key": "window_reduction",
+          "Value": 0.05
+        },
+        {
+          "Key": "outside_ms",
+          "Value": 120
+        },
+        {
+          "Key": "timeout_ms",
+          "Value": 3500
+        }
+      ],
+      "Points": [
+        {
+          "X": 0.5,
+          "Y": 0.1
+        },
+        {
+          "X": 0.35,
+          "Y": 0.4
+        },
+        {
+          "X": 0.5,
+          "Y": 0.8
+        },
+        {
+          "X": 0.65,
+          "Y": 0.4
+        },
+        {
+          "X": 0.5,
+          "Y": 0.1
+        }
+      ],
+      "Choices": []
+    },
+    {
+      "Id": "triceps_pushdown",
+      "PreparationMilliseconds": 350,
+      "ResumeMilliseconds": 350,
+      "Parameters": [
+        {
+          "Key": "window_base",
+          "Value": 0.42
+        },
+        {
+          "Key": "window_reduction",
+          "Value": 0.2
+        },
+        {
+          "Key": "signal_min_ms",
+          "Value": 900
+        },
+        {
+          "Key": "signal_max_ms",
+          "Value": 1500
+        },
+        {
+          "Key": "return_ms",
+          "Value": 600
+        }
+      ],
+      "Points": [],
+      "Choices": []
+    },
+    {
+      "Id": "squat",
+      "PreparationMilliseconds": 350,
+      "ResumeMilliseconds": 350,
+      "Parameters": [
+        {
+          "Key": "window_base",
+          "Value": 1.2
+        },
+        {
+          "Key": "window_reduction",
+          "Value": 0.45
+        },
+        {
+          "Key": "cue_ms",
+          "Value": 450
+        },
+        {
+          "Key": "sequence_length",
+          "Value": 3
+        },
+        {
+          "Key": "center_radius",
+          "Value": 0.1
+        },
+        {
+          "Key": "target_max_y",
+          "Value": 0.45
+        },
+        {
+          "Key": "left_boundary",
+          "Value": 0.333333
+        },
+        {
+          "Key": "right_boundary",
+          "Value": 0.666667
+        }
+      ],
+      "Points": [
+        {
+          "X": 0.5,
+          "Y": 0.85
+        },
+        {
+          "X": 0.15,
+          "Y": 0.3
+        },
+        {
+          "X": 0.5,
+          "Y": 0.3
+        },
+        {
+          "X": 0.85,
+          "Y": 0.3
+        }
+      ],
+      "Choices": []
+    },
+    {
+      "Id": "hip_thrust",
+      "PreparationMilliseconds": 350,
+      "ResumeMilliseconds": 350,
+      "Parameters": [
+        {
+          "Key": "window_base",
+          "Value": 0.24
+        },
+        {
+          "Key": "window_reduction",
+          "Value": 0.12
+        },
+        {
+          "Key": "hold_ms",
+          "Value": 700
+        },
+        {
+          "Key": "visible_progress_ms",
+          "Value": 300
+        }
+      ],
+      "Points": [],
+      "Choices": [
+        800,
+        1100,
+        1400
+      ]
+    },
+    {
+      "Id": "shoulder_press",
+      "PreparationMilliseconds": 350,
+      "ResumeMilliseconds": 350,
+      "Parameters": [
+        {
+          "Key": "window_base",
+          "Value": 0.38
+        },
+        {
+          "Key": "window_reduction",
+          "Value": 0.16
+        },
+        {
+          "Key": "timeout_ms",
+          "Value": 3800
+        },
+        {
+          "Key": "first_barrier_y",
+          "Value": 0.65
+        },
+        {
+          "Key": "second_barrier_y",
+          "Value": 0.35
+        },
+        {
+          "Key": "block_width",
+          "Value": 0.06
+        },
+        {
+          "Key": "target_radius",
+          "Value": 0.06
+        }
+      ],
+      "Points": [
+        {
+          "X": 0.5,
+          "Y": 0.9
+        },
+        {
+          "X": 0.5,
+          "Y": 0.1
+        }
+      ],
+      "Choices": [
+        0.25,
+        0.5,
+        0.75
+      ]
+    },
+    {
+      "Id": "lateral_raise",
+      "PreparationMilliseconds": 350,
+      "ResumeMilliseconds": 350,
+      "Parameters": [
+        {
+          "Key": "window_base",
+          "Value": 0.4
+        },
+        {
+          "Key": "window_reduction",
+          "Value": 0.22
+        },
+        {
+          "Key": "timeout_ms",
+          "Value": 4000
+        },
+        {
+          "Key": "target_radius",
+          "Value": 0.09
+        },
+        {
+          "Key": "half_boundary",
+          "Value": 0.5
+        },
+        {
+          "Key": "hold_ms",
+          "Value": 300
+        }
+      ],
+      "Points": [
+        {
+          "X": 0.4,
+          "Y": 0.7
+        },
+        {
+          "X": 0.6,
+          "Y": 0.7
+        },
+        {
+          "X": 0.15,
+          "Y": 0.3
+        },
+        {
+          "X": 0.85,
+          "Y": 0.3
+        }
+      ],
+      "Choices": []
+    }
+  ],
+  "TierLoadMicro": [
+    1000000,
+    1200000,
+    1450000,
+    1750000
+  ],
+  "TierStrengthPoolMicro": [
+    1600000,
+    2400000,
+    3400000,
+    4600000
+  ],
+  "TierProficiencyPool": [
+    8,
+    10,
+    12,
+    14
+  ],
+  "Difficulty": {
+    "IntensityReductionMicro": 600000,
+    "IntensityWeightMicro": 600000,
+    "TemporaryWeightMicro": 400000,
+    "ProficiencyThresholdsMicro": [
+      0,
+      100000000,
+      300000000,
+      600000000,
+      1000000000
+    ],
+    "ProficiencyReductionMicro": [
+      0,
+      80000,
+      160000,
+      240000,
+      320000
+    ]
+  },
+  "Fatigue": {
+    "DailyQuotaMicro": 80000000,
+    "ChallengeMultiplierMicro": 1500000,
+    "FailureMultiplierMicro": 1500000,
+    "RestRecoveryPerSecondMicro": 100000,
+    "SafeMicro": 100000000,
+    "MandatoryInjuryMicro": 150000000,
+    "RestSeconds": [
+      30,
+      90,
+      180
+    ],
+    "StandardRestSeconds": 90,
+    "InjuryFullDays": 2,
+    "RiskCurve": "sqrt"
+  },
+  "Knowledge": {
+    "FailedChallengeMicro": 1000000,
+    "EveningStudyMicro": 3000000,
+    "FullDayStudyMicro": 12000000,
+    "NotebookMicro": 2000000,
+    "EveningStudySeconds": 900,
+    "MaxTeachingNominalMicro": 3000000,
+    "FullDayStudySecondsPerAnchor": 1800
+  },
+  "FailureLimit": 3,
+  "MaxTargetReps": 1000
+}

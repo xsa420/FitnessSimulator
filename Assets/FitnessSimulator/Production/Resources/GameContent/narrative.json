@@ -1,0 +1,808 @@
+{
+  "Version": "narrative.v1",
+  "Stories": [
+    {
+      "Id": "work_intro",
+      "Version": "1",
+      "Entry": "arrival",
+      "Recovery": "ordinary",
+      "Variables": [
+        {
+          "Name": "playerDisplayName",
+          "Type": "string"
+        },
+        {
+          "Name": "balance",
+          "Type": "int"
+        },
+        {
+          "Name": "income",
+          "Type": "int"
+        }
+      ],
+      "Nodes": [
+        {
+          "Id": "arrival",
+          "Kind": "line",
+          "Speaker": "旁白",
+          "Text": "{playerDisplayName}，你来到工作地点。目前余额{balance}元，本次预计收入{income}元；实际所得以完成后的回执为准。",
+          "Next": "return"
+        },
+        {
+          "Id": "return",
+          "Kind": "return",
+          "Result": "continue"
+        }
+      ]
+    },
+    {
+      "Id": "training_intro",
+      "Version": "1",
+      "Entry": "ready",
+      "Recovery": "ordinary",
+      "Variables": [
+        {
+          "Name": "exercise",
+          "Type": "string"
+        }
+      ],
+      "Nodes": [
+        {
+          "Id": "ready",
+          "Kind": "line",
+          "Speaker": "旁白",
+          "Text": "你准备进行{exercise}。请先查看组前说明，再开始本组。",
+          "Next": "return"
+        },
+        {
+          "Id": "return",
+          "Kind": "return",
+          "Result": "continue"
+        }
+      ]
+    },
+    {
+      "Id": "walk_intro",
+      "Version": "1",
+      "Entry": "arrival",
+      "Recovery": "ordinary",
+      "Variables": [],
+      "Nodes": [
+        {
+          "Id": "arrival",
+          "Kind": "line",
+          "Speaker": "旁白",
+          "Text": "你走到路边，停下来看看周围。",
+          "Next": "choice"
+        },
+        {
+          "Id": "choice",
+          "Kind": "choice",
+          "Speaker": "旁白",
+          "Text": "你想留意什么？",
+          "Choices": [
+            {
+              "Id": "trees",
+              "Text": "看看树影",
+              "Next": "trees",
+              "RequiresAccess": false
+            },
+            {
+              "Id": "street",
+              "Text": "看看街道",
+              "Next": "street",
+              "RequiresAccess": false
+            }
+          ]
+        },
+        {
+          "Id": "trees",
+          "Kind": "line",
+          "Speaker": "旁白",
+          "Text": "树影随着风轻轻移动。",
+          "Next": "return"
+        },
+        {
+          "Id": "street",
+          "Kind": "line",
+          "Speaker": "旁白",
+          "Text": "街道上的人们各自走向目的地。",
+          "Next": "return"
+        },
+        {
+          "Id": "return",
+          "Kind": "return",
+          "Result": "continue"
+        }
+      ]
+    },
+    {
+      "Id": "branch_example",
+      "Version": "1",
+      "Entry": "choose",
+      "Recovery": "ordinary",
+      "Variables": [],
+      "Nodes": [
+        {
+          "Id": "choose",
+          "Kind": "choice",
+          "Speaker": "旁白",
+          "Text": "你想怎样回应？",
+          "Choices": [
+            {
+              "Id": "listen",
+              "Text": "听完再说",
+              "Next": "listen",
+              "RequiresAccess": false
+            },
+            {
+              "Id": "ask",
+              "Text": "先问一个问题",
+              "Next": "ask",
+              "RequiresAccess": false
+            }
+          ]
+        },
+        {
+          "Id": "listen",
+          "Kind": "line",
+          "Speaker": "旁白",
+          "Text": "你听完了这段话。",
+          "Next": "return_listen"
+        },
+        {
+          "Id": "ask",
+          "Kind": "line",
+          "Speaker": "旁白",
+          "Text": "你提出了自己的疑问。",
+          "Next": "return_ask"
+        },
+        {
+          "Id": "return_listen",
+          "Kind": "return",
+          "Result": "listened"
+        },
+        {
+          "Id": "return_ask",
+          "Kind": "return",
+          "Result": "asked"
+        }
+      ]
+    },
+    {
+      "Id": "ending_reflection",
+      "Version": "1",
+      "Entry": "reflection",
+      "Recovery": "ending",
+      "Variables": [
+        {
+          "Name": "ending_title",
+          "Type": "string"
+        }
+      ],
+      "Nodes": [
+        {
+          "Id": "reflection",
+          "Kind": "line",
+          "Speaker": "旁白",
+          "Text": "你达成了「{ending_title}」。这一刻值得留在记录中。",
+          "Next": "return"
+        },
+        {
+          "Id": "return",
+          "Kind": "return",
+          "Result": "presentation_complete"
+        }
+      ]
+    },
+    {
+      "Id": "competition_failed.presentation.1",
+      "Version": "1",
+      "Entry": "presentation",
+      "Recovery": "ending",
+      "Variables": [],
+      "Nodes": [
+        {
+          "Id": "presentation",
+          "Kind": "line",
+          "Speaker": "旁白",
+          "Text": "这场比赛未能夺冠。本局旅程在此结束，已经取得的达成记录会保留。",
+          "Next": "return"
+        },
+        {
+          "Id": "return",
+          "Kind": "return",
+          "Result": "presentation_complete"
+        }
+      ]
+    },
+    {
+      "Id": "competition_unfulfilled.presentation.1",
+      "Version": "1",
+      "Entry": "presentation",
+      "Recovery": "ending",
+      "Variables": [],
+      "Nodes": [
+        {
+          "Id": "presentation",
+          "Kind": "line",
+          "Speaker": "旁白",
+          "Text": "本届最后一个参赛窗口已经关闭，你未实际出场。本局旅程在此结束。",
+          "Next": "return"
+        },
+        {
+          "Id": "return",
+          "Kind": "return",
+          "Result": "presentation_complete"
+        }
+      ]
+    },
+    {
+      "Id": "bodybuilding_champion.presentation.1",
+      "Version": "1",
+      "Entry": "presentation",
+      "Recovery": "ending",
+      "Variables": [],
+      "Nodes": [
+        {
+          "Id": "presentation",
+          "Kind": "line",
+          "Speaker": "旁白",
+          "Text": "你获得了健美冠军。力量底子模板已开放，当前生活仍可继续。",
+          "Next": "return"
+        },
+        {
+          "Id": "return",
+          "Kind": "return",
+          "Result": "presentation_complete"
+        }
+      ]
+    },
+    {
+      "Id": "lean_champion.presentation.1",
+      "Version": "1",
+      "Entry": "presentation",
+      "Recovery": "ending",
+      "Variables": [],
+      "Nodes": [
+        {
+          "Id": "presentation",
+          "Kind": "line",
+          "Speaker": "旁白",
+          "Text": "你获得了薄肌冠军，达成薄肌战神。轻体社交模板已开放，当前生活仍可继续。",
+          "Next": "return"
+        },
+        {
+          "Id": "return",
+          "Kind": "return",
+          "Result": "presentation_complete"
+        }
+      ]
+    },
+    {
+      "Id": "romance_success.presentation.1",
+      "Version": "1",
+      "Entry": "presentation",
+      "Recovery": "ending",
+      "Variables": [],
+      "Nodes": [
+        {
+          "Id": "presentation",
+          "Kind": "line",
+          "Speaker": "旁白",
+          "Text": "你的心意得到了回应，达成恋爱成功。轻体社交模板已开放；今后的参赛义务依然需要履行。",
+          "Next": "return"
+        },
+        {
+          "Id": "return",
+          "Kind": "return",
+          "Result": "presentation_complete"
+        }
+      ]
+    },
+    {
+      "Id": "relationship.rival.response.0",
+      "Version": "1",
+      "Entry": "response",
+      "Recovery": "ordinary",
+      "Variables": [],
+      "Nodes": [
+        {
+          "Id": "response",
+          "Kind": "line",
+          "Speaker": "周竞",
+          "Text": "今天练什么，按各自的计划来。",
+          "Next": "return"
+        },
+        {
+          "Id": "return",
+          "Kind": "return",
+          "Result": "continue"
+        }
+      ]
+    },
+    {
+      "Id": "relationship.rival.response.1",
+      "Version": "1",
+      "Entry": "response",
+      "Recovery": "ordinary",
+      "Variables": [],
+      "Nodes": [
+        {
+          "Id": "response",
+          "Kind": "line",
+          "Speaker": "周竞",
+          "Text": "比赛有输有赢，今天先把训练做好。",
+          "Next": "return"
+        },
+        {
+          "Id": "return",
+          "Kind": "return",
+          "Result": "continue"
+        }
+      ]
+    },
+    {
+      "Id": "relationship.rival.response.2",
+      "Version": "1",
+      "Entry": "response",
+      "Recovery": "ordinary",
+      "Variables": [],
+      "Nodes": [
+        {
+          "Id": "response",
+          "Kind": "line",
+          "Speaker": "周竞",
+          "Text": "这一组的难点，我也碰到过。",
+          "Next": "return"
+        },
+        {
+          "Id": "return",
+          "Kind": "return",
+          "Result": "continue"
+        }
+      ]
+    },
+    {
+      "Id": "relationship.rival.response.3",
+      "Version": "1",
+      "Entry": "response",
+      "Recovery": "ordinary",
+      "Variables": [],
+      "Nodes": [
+        {
+          "Id": "response",
+          "Kind": "line",
+          "Speaker": "周竞",
+          "Text": "谢谢你认真听我说。",
+          "Next": "return"
+        },
+        {
+          "Id": "return",
+          "Kind": "return",
+          "Result": "continue"
+        }
+      ]
+    },
+    {
+      "Id": "relationship.rival.familiar",
+      "Version": "1",
+      "Entry": "response",
+      "Recovery": "ordinary",
+      "Variables": [],
+      "Nodes": [
+        {
+          "Id": "response",
+          "Kind": "line",
+          "Speaker": "周竞",
+          "Text": "我们已经渐渐熟悉了，下次见面再聊。",
+          "Next": "return"
+        },
+        {
+          "Id": "return",
+          "Kind": "return",
+          "Result": "continue"
+        }
+      ]
+    },
+    {
+      "Id": "relationship.beginner.response.0",
+      "Version": "1",
+      "Entry": "response",
+      "Recovery": "ordinary",
+      "Variables": [],
+      "Nodes": [
+        {
+          "Id": "response",
+          "Kind": "line",
+          "Speaker": "林悦",
+          "Text": "谢谢你鼓励我，我会继续练。",
+          "Next": "return"
+        },
+        {
+          "Id": "return",
+          "Kind": "return",
+          "Result": "continue"
+        }
+      ]
+    },
+    {
+      "Id": "relationship.beginner.response.1",
+      "Version": "1",
+      "Entry": "response",
+      "Recovery": "ordinary",
+      "Variables": [],
+      "Nodes": [
+        {
+          "Id": "response",
+          "Kind": "line",
+          "Speaker": "林悦",
+          "Text": "嗯，今天先练到这里。",
+          "Next": "return"
+        },
+        {
+          "Id": "return",
+          "Kind": "return",
+          "Result": "continue"
+        }
+      ]
+    },
+    {
+      "Id": "relationship.beginner.response.2",
+      "Version": "1",
+      "Entry": "response",
+      "Recovery": "ordinary",
+      "Variables": [],
+      "Nodes": [
+        {
+          "Id": "response",
+          "Kind": "line",
+          "Speaker": "林悦",
+          "Text": "你说的这个练习感受，我明白了。",
+          "Next": "return"
+        },
+        {
+          "Id": "return",
+          "Kind": "return",
+          "Result": "continue"
+        }
+      ]
+    },
+    {
+      "Id": "relationship.beginner.response.3",
+      "Version": "1",
+      "Entry": "response",
+      "Recovery": "ordinary",
+      "Variables": [],
+      "Nodes": [
+        {
+          "Id": "response",
+          "Kind": "line",
+          "Speaker": "林悦",
+          "Text": "谢谢你愿意认真听我分享。",
+          "Next": "return"
+        },
+        {
+          "Id": "return",
+          "Kind": "return",
+          "Result": "continue"
+        }
+      ]
+    },
+    {
+      "Id": "relationship.beginner.familiar",
+      "Version": "1",
+      "Entry": "response",
+      "Recovery": "ordinary",
+      "Variables": [],
+      "Nodes": [
+        {
+          "Id": "response",
+          "Kind": "line",
+          "Speaker": "林悦",
+          "Text": "我们已经渐渐熟悉了，下次见面再聊。",
+          "Next": "return"
+        },
+        {
+          "Id": "return",
+          "Kind": "return",
+          "Result": "continue"
+        }
+      ]
+    },
+    {
+      "Id": "relationship.veteran.response.0",
+      "Version": "1",
+      "Entry": "response",
+      "Recovery": "ordinary",
+      "Variables": [],
+      "Nodes": [
+        {
+          "Id": "response",
+          "Kind": "line",
+          "Speaker": "陈砺",
+          "Text": "训练先把基础练稳。",
+          "Next": "return"
+        },
+        {
+          "Id": "return",
+          "Kind": "return",
+          "Result": "continue"
+        }
+      ]
+    },
+    {
+      "Id": "relationship.veteran.response.1",
+      "Version": "1",
+      "Entry": "response",
+      "Recovery": "ordinary",
+      "Variables": [],
+      "Nodes": [
+        {
+          "Id": "response",
+          "Kind": "line",
+          "Speaker": "陈砺",
+          "Text": "每个人都有自己的节奏。",
+          "Next": "return"
+        },
+        {
+          "Id": "return",
+          "Kind": "return",
+          "Result": "continue"
+        }
+      ]
+    },
+    {
+      "Id": "relationship.veteran.response.2",
+      "Version": "1",
+      "Entry": "response",
+      "Recovery": "ordinary",
+      "Variables": [],
+      "Nodes": [
+        {
+          "Id": "response",
+          "Kind": "line",
+          "Speaker": "陈砺",
+          "Text": "这段经验可以慢慢交流。",
+          "Next": "return"
+        },
+        {
+          "Id": "return",
+          "Kind": "return",
+          "Result": "continue"
+        }
+      ]
+    },
+    {
+      "Id": "relationship.veteran.response.3",
+      "Version": "1",
+      "Entry": "response",
+      "Recovery": "ordinary",
+      "Variables": [],
+      "Nodes": [
+        {
+          "Id": "response",
+          "Kind": "line",
+          "Speaker": "陈砺",
+          "Text": "你愿意认真讨论，我很高兴。",
+          "Next": "return"
+        },
+        {
+          "Id": "return",
+          "Kind": "return",
+          "Result": "continue"
+        }
+      ]
+    },
+    {
+      "Id": "relationship.veteran.familiar",
+      "Version": "1",
+      "Entry": "response",
+      "Recovery": "ordinary",
+      "Variables": [],
+      "Nodes": [
+        {
+          "Id": "response",
+          "Kind": "line",
+          "Speaker": "陈砺",
+          "Text": "我们已经渐渐熟悉了，下次见面再聊。",
+          "Next": "return"
+        },
+        {
+          "Id": "return",
+          "Kind": "return",
+          "Result": "continue"
+        }
+      ]
+    },
+    {
+      "Id": "relationship.coach.response.0",
+      "Version": "1",
+      "Entry": "response",
+      "Recovery": "ordinary",
+      "Variables": [],
+      "Nodes": [
+        {
+          "Id": "response",
+          "Kind": "line",
+          "Speaker": "许衡",
+          "Text": "先把动作做稳。",
+          "Next": "return"
+        },
+        {
+          "Id": "return",
+          "Kind": "return",
+          "Result": "continue"
+        }
+      ]
+    },
+    {
+      "Id": "relationship.coach.response.1",
+      "Version": "1",
+      "Entry": "response",
+      "Recovery": "ordinary",
+      "Variables": [],
+      "Nodes": [
+        {
+          "Id": "response",
+          "Kind": "line",
+          "Speaker": "许衡",
+          "Text": "今天还是专心训练。",
+          "Next": "return"
+        },
+        {
+          "Id": "return",
+          "Kind": "return",
+          "Result": "continue"
+        }
+      ]
+    },
+    {
+      "Id": "relationship.coach.response.2",
+      "Version": "1",
+      "Entry": "response",
+      "Recovery": "ordinary",
+      "Variables": [],
+      "Nodes": [
+        {
+          "Id": "response",
+          "Kind": "line",
+          "Speaker": "许衡",
+          "Text": "具体问题，我们认真分析。",
+          "Next": "return"
+        },
+        {
+          "Id": "return",
+          "Kind": "return",
+          "Result": "continue"
+        }
+      ]
+    },
+    {
+      "Id": "relationship.coach.response.3",
+      "Version": "1",
+      "Entry": "response",
+      "Recovery": "ordinary",
+      "Variables": [],
+      "Nodes": [
+        {
+          "Id": "response",
+          "Kind": "line",
+          "Speaker": "许衡",
+          "Text": "你对训练的思考越来越深入了。",
+          "Next": "return"
+        },
+        {
+          "Id": "return",
+          "Kind": "return",
+          "Result": "continue"
+        }
+      ]
+    },
+    {
+      "Id": "relationship.coach.familiar",
+      "Version": "1",
+      "Entry": "response",
+      "Recovery": "ordinary",
+      "Variables": [],
+      "Nodes": [
+        {
+          "Id": "response",
+          "Kind": "line",
+          "Speaker": "许衡",
+          "Text": "我们已经渐渐熟悉了，下次见面再聊。",
+          "Next": "return"
+        },
+        {
+          "Id": "return",
+          "Kind": "return",
+          "Result": "continue"
+        }
+      ]
+    },
+    {
+      "Id": "romance.failure",
+      "Version": "1",
+      "Entry": "response",
+      "Recovery": "ordinary",
+      "Variables": [],
+      "Nodes": [
+        {
+          "Id": "response",
+          "Kind": "line",
+          "Speaker": "林悦",
+          "Text": "谢谢你的心意，但现在我还不能答应。",
+          "Next": "return"
+        },
+        {
+          "Id": "return",
+          "Kind": "return",
+          "Result": "continue"
+        }
+      ]
+    },
+    {
+      "Id": "romance.success",
+      "Version": "1",
+      "Entry": "response",
+      "Recovery": "ordinary",
+      "Variables": [],
+      "Nodes": [
+        {
+          "Id": "response",
+          "Kind": "line",
+          "Speaker": "林悦",
+          "Text": "我也愿意和你一起走下去。",
+          "Next": "return"
+        },
+        {
+          "Id": "return",
+          "Kind": "return",
+          "Result": "continue"
+        }
+      ]
+    },
+    {
+      "Id": "romance.decline",
+      "Version": "1",
+      "Entry": "response",
+      "Recovery": "ordinary",
+      "Variables": [],
+      "Nodes": [
+        {
+          "Id": "response",
+          "Kind": "line",
+          "Speaker": "林悦",
+          "Text": "没关系，等你准备好再说。",
+          "Next": "return"
+        },
+        {
+          "Id": "return",
+          "Kind": "return",
+          "Result": "continue"
+        }
+      ]
+    },
+    {
+      "Id": "romance.pending",
+      "Version": "1",
+      "Entry": "response",
+      "Recovery": "ordinary",
+      "Variables": [],
+      "Nodes": [
+        {
+          "Id": "response",
+          "Kind": "line",
+          "Speaker": "林悦",
+          "Text": "我收到了这份心意。你想对我说什么？",
+          "Next": "return"
+        },
+        {
+          "Id": "return",
+          "Kind": "return",
+          "Result": "continue"
+        }
+      ]
+    }
+  ]
+}

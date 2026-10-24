@@ -1,0 +1,6 @@
+{
+  "name": "FitnessSimulator.Editor",
+  "rootNamespace": "FitnessSimulator.Editor",
+  "references": ["FitnessSimulator.Runtime"],
+  "includePlatforms": ["Editor"]
+}

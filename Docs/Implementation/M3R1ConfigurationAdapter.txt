@@ -1,0 +1,6 @@
+Explicit adapter m3r1-schema2-to-configr1.v1, created 2026-10-24.
+This directory is a migration target, not a claim that M3R1 originally shipped JSON.
+Future uninstantiated content uses this fixed ConfigR1 baseline. Existing frozen state remains authoritative.
+plans.Version remains PlanningM1.CS-TG.v1. training.Version is TG-0.3, matching the original ExerciseCatalog identity.
+Legacy source reference: Builds/M3R1/Android/source-manifest.json; hash-matching old definitions in the Fitness-WorkIncomeCompile-20261023 production-copy.
+Pinned semantic hash: 823f6155979d381c91f51148cd22c248703695dc263e7455a6ce67c5bbd78681 (actual archived ending migration batch 234436-926). Loader rejects changes under this migration ID. Active ending short recovery passed in 234436-926. Playing and ResultReady structural verification passed in 235455-453; actual old ResultReady settlement BodyState/TrainingProgress match archived g06-settled-once exactly, repeat operation/reopen do not duplicate settlement. These structural inputs are not claimed to be natural release-source-equivalent saves. Real M3R1 D2 complete-store migration also passed 235455-453.

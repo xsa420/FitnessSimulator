@@ -1,0 +1,96 @@
+diff --git a/Assets/FitnessSimulator/Editor/PlayerBuild/GamePlayerBuild.cs b/Docs/Implementation/Temp/GamePlayerBuild.M3.cs.utmp
+index e83987d..e9c6a13 100644
+--- a/Assets/FitnessSimulator/Editor/PlayerBuild/GamePlayerBuild.cs
++++ b/Docs/Implementation/Temp/GamePlayerBuild.M3.cs.utmp
+@@ -28,6 +28,10 @@ namespace FitnessSimulator.Game.Editor
+         {
+             public string result, outputPath, target, sha256, builtAtUtc;
+             public int errors;
++            public string stage, unityVersion, buildOptions, applicationId, scriptingBackend, architectures;
++            public string[] scenes, extraScriptingDefines;
++            public int minimumAndroidSdk;
++            public bool development, packedAssetsVerified;
+         }
+ 
+         private sealed class TemporarySettings : IDisposable
+@@ -107,10 +111,23 @@ namespace FitnessSimulator.Game.Editor
+             finally { if (!alreadyLoaded) EditorSceneManager.CloseScene(scene, true); }
+         }
+ 
+-        public static void BuildAndroid() => Build(BuildTarget.Android, "Builds/M1/Android/FitnessSimulator-M1.apk");
+-        public static void BuildWindowsProxy() => Build(BuildTarget.StandaloneWindows64, "Builds/M1/Windows/FitnessSimulator-M1.exe");
++        public static void BuildAndroid() => BuildStage(BuildTarget.Android, "Android", ".apk");
++        public static void BuildWindowsProxy() => BuildStage(BuildTarget.StandaloneWindows64, "Windows", ".exe");
+ 
+-        private static void Build(BuildTarget target, string output)
++        private static void BuildStage(BuildTarget target, string platform, string extension)
++        {
++            string stage = "M1";
++            var arguments = Environment.GetCommandLineArgs();
++            var indices = Enumerable.Range(0, arguments.Length).Where(i => arguments[i] == "-fitnessBuildStage").ToArray();
++            if (indices.Length > 1 || indices.Length == 1 && indices[0] + 1 >= arguments.Length)
++                throw new ArgumentException("Provide -fitnessBuildStage once, followed by M1 or M3.");
++            if (indices.Length == 1) stage = arguments[indices[0] + 1];
++            if (stage != "M1" && stage != "M3") throw new ArgumentException("Unsupported build stage: " + stage);
++            bool development = arguments.Contains("-fitnessDevelopmentBuild");
++            Build(target, "Builds/" + stage + "/" + platform + "/FitnessSimulator-" + stage + extension, stage, development);
++        }
++
++        private static void Build(BuildTarget target, string output, string stage, bool development)
+         {
+             ValidateContent();
+             RecoverIsolation();
+@@ -119,9 +136,12 @@ namespace FitnessSimulator.Game.Editor
+             if (!File.ReadAllText(legacyAssembly).Contains("!FITNESS_PLAYER"))
+                 throw new InvalidOperationException("Legacy runtime must exclude FITNESS_PLAYER builds before publishing.");
+             Directory.CreateDirectory(Path.GetDirectoryName(output));
+-            Directory.CreateDirectory("TestResults/M1");
++            string evidenceDirectory = "TestResults/" + stage;
++            Directory.CreateDirectory(evidenceDirectory);
+             var settings = new TemporarySettings();
+-            var evidence = new BuildEvidence { target = target.ToString(), outputPath = output, result = "Failed", builtAtUtc = DateTime.UtcNow.ToString("O") };
++            var evidence = new BuildEvidence { target = target.ToString(), outputPath = output, result = "Failed", builtAtUtc = DateTime.UtcNow.ToString("O"),
++                stage = stage, development = development, unityVersion = UnityEngine.Application.unityVersion,
++                scenes = new[] { ScenePath }, extraScriptingDefines = new[] { "FITNESS_PLAYER" } };
+             try
+             {
+                 BeginIsolation();
+@@ -137,15 +157,26 @@ namespace FitnessSimulator.Game.Editor
+                     PlayerSettings.SetScriptingBackend(NamedBuildTarget.Android, ScriptingImplementation.IL2CPP);
+                     EditorUserBuildSettings.buildAppBundle = false;
+                 }
++                var buildOptions = BuildOptions.StrictMode | BuildOptions.DetailedBuildReport;
++                if (development) buildOptions |= BuildOptions.Development;
++                evidence.buildOptions = buildOptions.ToString();
++                if (target == BuildTarget.Android)
++                {
++                    evidence.applicationId = PlayerSettings.GetApplicationIdentifier(NamedBuildTarget.Android);
++                    evidence.scriptingBackend = PlayerSettings.GetScriptingBackend(NamedBuildTarget.Android).ToString();
++                    evidence.architectures = PlayerSettings.Android.targetArchitectures.ToString();
++                    evidence.minimumAndroidSdk = (int)PlayerSettings.Android.minSdkVersion;
++                }
+                 var report = BuildPipeline.BuildPlayer(new BuildPlayerOptions
+                 {
+                     scenes = new[] { ScenePath }, locationPathName = output, target = target,
+-                    options = BuildOptions.StrictMode | BuildOptions.DetailedBuildReport, extraScriptingDefines = new[] { "FITNESS_PLAYER" }
++                    options = buildOptions, extraScriptingDefines = new[] { "FITNESS_PLAYER" }
+                 });
+                 evidence.errors = report.summary.totalErrors;
+                 if (report.summary.result != BuildResult.Succeeded) throw new InvalidOperationException("Formal build failed: " + report.summary.result);
+                 foreach (var packed in report.packedAssets)
+                     if (packed.contents.Any(x => IsLabAsset(x.sourceAssetPath))) throw new InvalidOperationException("Experiment content detected in built package.");
++                evidence.packedAssetsVerified = true;
+                 evidence.sha256 = Hash(output); evidence.result = "Succeeded";
+             }
+             catch { evidence.errors = Math.Max(1, evidence.errors); throw; }
+@@ -156,7 +187,9 @@ namespace FitnessSimulator.Game.Editor
+                 finally
+                 {
+                     settings.Dispose();
+-                    File.WriteAllText("TestResults/M1/build-" + target + ".json", JsonUtility.ToJson(evidence, true));
++                    string json = JsonUtility.ToJson(evidence, true);
++                    File.WriteAllText(evidenceDirectory + "/build-" + target + ".json", json);
++                    if (stage == "M3") File.WriteAllText(Path.Combine(Path.GetDirectoryName(output), "build-manifest.json"), json);
+                 }
+             }
+             Debug.Log("FITNESS_PLAYER_BUILD_OK " + output);

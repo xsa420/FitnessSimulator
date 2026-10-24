@@ -1,0 +1,81 @@
+{
+  "generatedAtUtc": "2026-10-23T00:48:16.5340157Z",
+  "scope": "Pure C# store; System.Text.Json codec; no Unity/NUnit execution; no Android durability claim",
+  "sourceHashes": [
+    {
+      "path": "D:\\FitnessSimulator\\Assets\\FitnessSimulator\\Production\\Core\\GameContracts.cs",
+      "sha256": "E29FA69EB47999259506DCC79215BE611D2BCCBFEF7367D2C8657E472818113F"
+    },
+    {
+      "path": "D:\\FitnessSimulator\\Assets\\FitnessSimulator\\Production\\Core\\SerialCommandDispatcher.cs",
+      "sha256": "B44C4CC4FC70A55DC24462AAC71964E42C1B772FF0E6B89192E36EE383DA12E2"
+    },
+    {
+      "path": "D:\\FitnessSimulator\\Assets\\FitnessSimulator\\Production\\Flow\\FlowEngine.cs",
+      "sha256": "E739124D0DB088A07C7692BFAE68FC0AD941CE96E1CF451FD7390967131D9C37"
+    },
+    {
+      "path": "D:\\FitnessSimulator\\Assets\\FitnessSimulator\\Production\\Persistence\\LocalCheckpointStore.cs",
+      "sha256": "8E12BF49EF403216FF4DBD6E65AA589F2462D8136EAB095A17371E8FAEF03173"
+    }
+  ],
+  "passed": true,
+  "cases": [
+    {
+      "Point": "BeforeLogAppend",
+      "Expected": "old",
+      "Restored": "old",
+      "Retry": "Committed",
+      "Passed": true
+    },
+    {
+      "Point": "AfterLogFlush",
+      "Expected": "old",
+      "Restored": "old",
+      "Retry": "Committed",
+      "Passed": true
+    },
+    {
+      "Point": "BeforeRootWrite",
+      "Expected": "old",
+      "Restored": "old",
+      "Retry": "Committed",
+      "Passed": true
+    },
+    {
+      "Point": "AfterRootFlush",
+      "Expected": "old",
+      "Restored": "old",
+      "Retry": "Committed",
+      "Passed": true
+    },
+    {
+      "Point": "BeforeCommitReceipt",
+      "Expected": "old",
+      "Restored": "old",
+      "Retry": "Committed",
+      "Passed": true
+    },
+    {
+      "Point": "DuringCommitReceipt",
+      "Expected": "old",
+      "Restored": "old",
+      "Retry": "Committed",
+      "Passed": true
+    },
+    {
+      "Point": "AfterCommitReceipt",
+      "Expected": "new",
+      "Restored": "new",
+      "Retry": "Committed",
+      "Passed": true
+    },
+    {
+      "Point": "BeforeAcknowledgement",
+      "Expected": "new",
+      "Restored": "new",
+      "Retry": "Committed",
+      "Passed": true
+    }
+  ]
+}

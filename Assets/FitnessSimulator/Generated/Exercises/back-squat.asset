@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db407f22d21a5fb4c977649f2d447fc0, type: 3}
+  m_Name: back-squat
+  m_EditorClassIdentifier: FitnessSimulator.Runtime::FitnessSimulator.Training.ExercisePresentation
+  exerciseId: back-squat
+  displayName: Back squat
+  presentationNotes: Original motion blockout. Replaceable assets; no final minigame scoring or training instruction.
+  targetMuscleTags:
+  - legs
+  - glutes
+  stagePrefab: {fileID: 7299231747577742295, guid: b87bfd26cf21d494db5d36d91a83b542, type: 3}
+  demonstrationClip: {fileID: 7400000, guid: 50e9045acbe050744b2b2a644bd5ba69, type: 2}
+  demonstrationOnly: 1
+  referenceUrls:
+  - https://quaternius.com/packs/universalbasecharacters
+  - https://vnb3d.com/product/gym-set/

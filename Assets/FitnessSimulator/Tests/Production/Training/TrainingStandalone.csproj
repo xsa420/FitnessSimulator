@@ -1,0 +1,18 @@
+<Project>
+  <PropertyGroup>
+    <BaseOutputPath>$(MSBuildThisFileDirectory).standalone/bin/</BaseOutputPath>
+    <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory).standalone/obj/</BaseIntermediateOutputPath>
+    <MSBuildProjectExtensionsPath>$(BaseIntermediateOutputPath)</MSBuildProjectExtensionsPath>
+  </PropertyGroup>
+  <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk"/>
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework><OutputType>Exe</OutputType>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems><DefineConstants>TRAINING_STANDALONE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../../Production/Numeric/*.cs"/><Compile Include="../../../Production/Body/*.cs"/><Compile Include="../../../Production/Training/*.cs"/>
+    <Compile Include="TrainingChecks.cs"/>
+  </ItemGroup>
+  <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk"/>
+</Project>
+

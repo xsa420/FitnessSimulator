@@ -1,0 +1,1989 @@
+{
+  "capturedUtc": "2026-10-23T04:18:42.5639029Z",
+  "files": [
+    {
+      "path": "Assets\\FitnessSimulator.meta",
+      "sha256": "363C349C66D161D7DCEF51EB9BA49FB9C5EFA3790597952E12EE38668E745BFC"
+    },
+    {
+      "path": "Assets\\InputSystem_Actions.inputactions",
+      "sha256": "1C6CBB519D65ECFE19A29231735B7F54741A20AC1A8AD4F46A18E1BFB28A3C39"
+    },
+    {
+      "path": "Assets\\InputSystem_Actions.inputactions.meta",
+      "sha256": "3B4E424A80F5B4FA76B6ABD774884A24285EAA61F22FF9BB20E5AD505FD8B569"
+    },
+    {
+      "path": "Assets\\Settings.meta",
+      "sha256": "73C8E19843240273FACB0AF6BDBF430D719E397ADED705629594060CE25CE7AD"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Editor.meta",
+      "sha256": "AF0BB0329D33D382B1EF8047E11DA96DE2DDA4F72CC8B4D181CAEFFC73839EB5"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated.meta",
+      "sha256": "DDCEA463E73692FCF192C16E41B7ACF771688FA5F49DF7A9DB55BD1DDE853768"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production.meta",
+      "sha256": "02A4E39205980D480ED013717D7F3771F14570B5854BE871616F5C223BC7A6AD"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Resources.meta",
+      "sha256": "9105BA32BB7BC2DAE2C90016FEF74222E364E7EFBA913F17C17146848D7810F6"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Runtime.meta",
+      "sha256": "DFA3F20448C5FD243044A292C5675A8CEA84D23FEE4F4D97B2C14F3ECAAC84A2"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Scenes.meta",
+      "sha256": "64A529642735B7816650580CE3B089AD9BB1E1EC7190C0353F7AD63FCB008252"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests.meta",
+      "sha256": "B78F700EBD437572042C9687D4F8D19FCB2CB16A7151B3D33EB91F09F5BCBA6F"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Editor\\FitnessSimulator.Editor.asmdef",
+      "sha256": "43014F6C7696A5FD63B1D018485BE93F3DAAD0D26142801D07B9878161BC1F65"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Editor\\FitnessSimulator.Editor.asmdef.meta",
+      "sha256": "A39B7636B987C8B61A1820457F74CC19F7F9D57AEB07F91931A5D98D661353C6"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Editor\\OfflineAndroidManifest.cs",
+      "sha256": "A9B339A029EEC2FD3AF943199DEE14822471540DD25287257B5CC150D56DB431"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Editor\\OfflineAndroidManifest.cs.meta",
+      "sha256": "82F6CCF3EDC9C3C9ABE3425401A89FE1251D46992E6035F941E6F2E5A6C1B669"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Editor\\PlayerBuild.meta",
+      "sha256": "E49A55463F8C9D995A857C6BADB0ADA148DD322F81F83A93E727AE09FDA5F658"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Editor\\ProjectSetup.cs",
+      "sha256": "B5D3F45D6447821D2B295806C8C7F01273E030FD6D44DEF6FDCAE623DEC09E35"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Editor\\ProjectSetup.cs.meta",
+      "sha256": "E6367791B3D9DCC6CBA6B9CD755F089192412E99A6E14A61C976337B835C7378"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Editor\\PrototypeStageFactory.cs",
+      "sha256": "6295A1BE15F2E6FB4F8B24501476B2DC23732D441928CEB6C21947D6D412688E"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Editor\\PrototypeStageFactory.cs.meta",
+      "sha256": "3B4E2F9FE1DD9B975A0EA5313AA15CADCC724A28CB015C774E01E0E51E097265"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Editor\\PlayerBuild\\FitnessSimulator.Game.Editor.asmdef",
+      "sha256": "403D7CBCFA78054F7F4F7B857848AC4B43EED0596A233130569818F32BEDE66F"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Editor\\PlayerBuild\\FitnessSimulator.Game.Editor.asmdef.meta",
+      "sha256": "57F422287816D6B8FD74965092F4AFA9961394DAD9F434D3B120AAFBCD8474B2"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Editor\\PlayerBuild\\GamePlayerBuild.cs",
+      "sha256": "71401A5E0AFEF7C2421402CBD2870D33A0F4ACE45DD11F00564F0367FB3A5DE7"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Editor\\PlayerBuild\\GamePlayerBuild.cs.meta",
+      "sha256": "24B3ED3DC2B7CC58ABA16B4C5292B2919CF31A4E00F88F8E7A4F452A12BC34C9"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Editor\\PlayerBuild\\GameUiSmoke.cs",
+      "sha256": "B14CB90B2666735FFCD249EEADCD38DA5D9245E3AFAA0ACB43D4469EF90006F9"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Editor\\PlayerBuild\\GameUiSmoke.cs.meta",
+      "sha256": "6B16F411862BCE8516FD04CC4B924F8DE5CBCD126D9F5E1ABEB36ADFC56F20BB"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Editor\\PlayerBuild\\IsolationJournal.json",
+      "sha256": "8D11E95F4C7DE9AE9985ED64A099C69500DE30CF2D56589837D565FEBC01DEA7"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Editor\\PlayerBuild\\IsolationJournal.json.meta",
+      "sha256": "27A7F47E98D154A447C0BBAEB31A3265D159AD3AB2A897198CCF5CC471E17CAD"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Editor\\PlayerBuild\\Quarantine.meta",
+      "sha256": "3BEC740C7D5F1BDF00713C9E80ACE286C8DD0C810D56B078C6EBB121A402E78C"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Animations.meta",
+      "sha256": "89005BEA74CFAE1FE8C606F2B153B52CFE11B2D92DC361353CFA6E8874BDA37A"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Exercises.meta",
+      "sha256": "44AB834D8F63F9C7D4F6E7B599AC71F623FB76BC43723E5963FD99B53B867F92"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Materials.meta",
+      "sha256": "88EA208D5136AA88C1BACE7682234AA5F5E72B9C33B16E02BFEA71804E5EBD7D"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Prefabs.meta",
+      "sha256": "D15430F0C5D11B6B0FB5BB34FB97B437EAEEA020FF106B28240C28B7F1DE2056"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Animations\\back-squat.anim",
+      "sha256": "0CD60C3D9E28B88FAC26877008A60E7AE0AD5554830B87BC8048194283D8B041"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Animations\\back-squat.anim.meta",
+      "sha256": "1D74E2842BE1D410DB4527F92205CC5EFF1D108E22EC434C73EA77EA696A9C77"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Animations\\bench-press.anim",
+      "sha256": "B279997B9A117EBDF62C160403290B535A791493FF8517E889B5CABE2E35A516"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Animations\\bench-press.anim.meta",
+      "sha256": "9F60A5E1A0B422CFAC5089B639CC28A1902072526E2F2B9C8193DCBAF1F280D5"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Animations\\dumbbell-curl.anim",
+      "sha256": "1906D454B537CD9C94ED0C8BCA10525344D4C794E953AB5CDC24EDED92474DA4"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Animations\\dumbbell-curl.anim.meta",
+      "sha256": "DA0BB18829F676EF10EDCFE77B79246085BB909AF458BC49663A7B9217AE26B4"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Animations\\hip-thrust.anim",
+      "sha256": "5C596E68DB661C78236BFDE4BA4447C7E6C7B6AFE0646138A6F8CCAABAE96DE8"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Animations\\hip-thrust.anim.meta",
+      "sha256": "E41BC669AF265E2661D714C90DD89F09F6EB5E257CD6F0AE738AB057ABB43534"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Animations\\lat-pulldown.anim",
+      "sha256": "9836A41E10DF6DBE21673BF73D0121874E802317AA51030D834AA0E55EBC89EA"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Animations\\lat-pulldown.anim.meta",
+      "sha256": "1051A0DC9562A2EFE1BA5A8F5C268B85DA078A8E4C14233A28443134373BA997"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Animations\\lateral-raise.anim",
+      "sha256": "3F028769FE1871F51D3104314DC42D10EDAB407072A047092511E47A5C62E6B1"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Animations\\lateral-raise.anim.meta",
+      "sha256": "82800858B25072277E7DBE9AE03C405355CCB351E2E0EC4EF24B1B22927F3D5D"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Animations\\shoulder-press.anim",
+      "sha256": "66EFC19119F822F721DF3FC2001810AC55CCF487A33A45F917F5A0BF3E797D4C"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Animations\\shoulder-press.anim.meta",
+      "sha256": "D9948103214FE0C232E8F6AACE5BE895D19950EF5352014150440648ED2ED09B"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Animations\\triceps-pushdown.anim",
+      "sha256": "6ED42E00F40DB9490053E2738DAEF6380C33624E96731FAA1E8DB433FE6D73FF"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Animations\\triceps-pushdown.anim.meta",
+      "sha256": "FC244F4A1491AB4B1709F11577D43CB4FD82AB388B573607911505DC7F06BE98"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Exercises\\back-squat.asset",
+      "sha256": "90FA5CECDAB10F8D8202170E84A6319C066BAEDE1720860A00D1869A208D02C5"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Exercises\\back-squat.asset.meta",
+      "sha256": "C401AEEEDB4BFB2386D8C5529A753F7D4895AB2F8AC87EB29EA128C3A5E9FEDD"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Exercises\\bench-press.asset",
+      "sha256": "0B43648C88EDC03CE8E7E30DF1049E694A8929E66E4720EA641B8E56E669B3AB"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Exercises\\bench-press.asset.meta",
+      "sha256": "B6FE0080B45B85FEB153D49CFF6BFAB6B178021D9E8EB059FBEBB67D89FA5461"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Exercises\\dumbbell-curl.asset",
+      "sha256": "20666403C2A190FD6D7EE1B99EDD634840FA99D4F304D86EC688EABF1E05CEC0"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Exercises\\dumbbell-curl.asset.meta",
+      "sha256": "7479DCC346BEA055D71D9960B4E0FA0E6F6E26D33607DF0EB608089AC31D6EFA"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Exercises\\hip-thrust.asset",
+      "sha256": "D08C4A9BDDBC83B78334BA9D1E8EDDB860B68B7CA0A3D3A9702B81DA86B47D3B"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Exercises\\hip-thrust.asset.meta",
+      "sha256": "AC51E67C12700BCF82BED2C0A192A783C3BA12E1EDAA3378234AEDDB9E0864AC"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Exercises\\lat-pulldown.asset",
+      "sha256": "C864F31F4343BC59A3CF18E473297F993556484EEED17DA1A61B6CEAA6F528C3"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Exercises\\lat-pulldown.asset.meta",
+      "sha256": "55611B284E4B1219210CE2E43898E374398842BC239CBF085E55550A526781E7"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Exercises\\lateral-raise.asset",
+      "sha256": "DF902D2211BFA23C777C1E0A96B0442C45676D5FFD7EE77BAA6E1A55C7090BA4"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Exercises\\lateral-raise.asset.meta",
+      "sha256": "F2B5932B099B191280D2F8EC60A978EA9BCA53F3B11EA93D962FB5D6AD54ED69"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Exercises\\shoulder-press.asset",
+      "sha256": "AD147AC168B5301DF66FD4F38CF008249B8215322F0C7EA57A790F3273889F54"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Exercises\\shoulder-press.asset.meta",
+      "sha256": "D0C5950A1785D86E07C27625FD3EF12379E281F2B249AAD7A700CC2D997D20C4"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Exercises\\triceps-pushdown.asset",
+      "sha256": "426805065E04F6DD25559F9BE414933F191566E6D523587BFA84A8044DDD5435"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Exercises\\triceps-pushdown.asset.meta",
+      "sha256": "6DAE86ACC10FDBB719C9B7A7B61934A0ABE40580D7D15805EE9C96F1B1549ECC"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Materials\\EquipmentSteel.mat",
+      "sha256": "81017F9F1A6A91B93C5146A063EC575B8CBE8EFC2860F6D874B4632B2154605A"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Materials\\EquipmentSteel.mat.meta",
+      "sha256": "F54945FED09D668F718AD3A9EE4DCAB8F4BADC34A3A78FF17C8E42448E305F43"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Materials\\Floor.mat",
+      "sha256": "43FD4CE7776F15F2A1590975EE8B7D11B11605034372281E013AE82286C6F85C"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Materials\\Floor.mat.meta",
+      "sha256": "CDBABD410A561176D951FB787910EC516886366F72ACDD1700C265279ACFA876"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Materials\\Rubber.mat",
+      "sha256": "DE6499790DFE5701A6F70CDCD9D769383F820BB98D4D010D6D124416A8B9FF63"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Materials\\Rubber.mat.meta",
+      "sha256": "52E3D8A6B98BF5F7A88BBF29AE796C6DFB922FE47C421CB9D667AE567750CF78"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Materials\\SafetyAmber.mat",
+      "sha256": "1CAECB544A93D673FA417DFD86335086728A1DBE142D1FE3984471FC91C357D7"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Materials\\SafetyAmber.mat.meta",
+      "sha256": "285FC9A20E2E63A08CE16D0C2F206AC49FBDFF051780A57096F4980E32A636A7"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Materials\\Shorts.mat",
+      "sha256": "815B4B2F3D1252093BDB1AE03E7332F8A9591641058D63EDC44762400DF9A32F"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Materials\\Shorts.mat.meta",
+      "sha256": "52A00151E80D5C5868E68950B7A450A6D41A91244CB234E18E632ABA3419DCF5"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Materials\\Skin.mat",
+      "sha256": "B5107A3EB0B9732C12EC6F1861E5EA10103C3179DBC547B5F1C7DF0FE7598DE8"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Materials\\Skin.mat.meta",
+      "sha256": "6D570CDEB2891B8E04CD9C54F8583839AC1C391F01A5BFB14D723F52DD3225B5"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Materials\\TrainingShirt.mat",
+      "sha256": "89EF99619AA65DA9280B305547283B06FC20E2271247A661CD24CD1627EBFCAE"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Materials\\TrainingShirt.mat.meta",
+      "sha256": "3F9CBA7F9C798D38D974F3932D0B7E97798C356F04912304AAF80224BD304EBD"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Prefabs\\back-squat.prefab",
+      "sha256": "210C41E1855CAD31DF84770FE43657556A83D02746FD3D34382259E4387B2F24"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Prefabs\\back-squat.prefab.meta",
+      "sha256": "1183E922A3EB482254A925B8FB68437F14A3405A6722C5A32C7FE048E7B7528E"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Prefabs\\bench-press.prefab",
+      "sha256": "804499BDA6087ACFDB626FF119E0D7F4DB5FBBFAEC0965E40872CCB7CB8E9C85"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Prefabs\\bench-press.prefab.meta",
+      "sha256": "4EC4769C6C0D8FAD13A829F2FB5525BBB72C6DEE51925DF1F50092780417C960"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Prefabs\\dumbbell-curl.prefab",
+      "sha256": "ADA522EFED3AF2CA9CEE29BDDC5F9B1C34DAA4EA876E0F7A0233C469716046B9"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Prefabs\\dumbbell-curl.prefab.meta",
+      "sha256": "11A6244A1DFD64E1696F731914CE458EB1595A787E4C7BF8849973368E02A35F"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Prefabs\\hip-thrust.prefab",
+      "sha256": "065448F7B80ABED335A1117BAF3B21938B556D53A298128C600B8C6C77A838A0"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Prefabs\\hip-thrust.prefab.meta",
+      "sha256": "3EDBC5D1302C23D2D4E5D183E21DB5E524ED191E5CE36EAC903BDA24728963F9"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Prefabs\\lat-pulldown.prefab",
+      "sha256": "338F798BE3BB7AF2493A1E49AABDA034F52DEE3642C49DE8262F1FEC0D83BE71"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Prefabs\\lat-pulldown.prefab.meta",
+      "sha256": "2AD49AC8FB1F918674F29A0661C68304310149FD932A351F3D30FE6BD195D71E"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Prefabs\\lateral-raise.prefab",
+      "sha256": "2E17856DF4B1B5B1F2D87CF582EFD9D1FA241C15CAA5620A4B28B32AD8863D30"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Prefabs\\lateral-raise.prefab.meta",
+      "sha256": "56FEE93F2356936F9C256C609630904779803EBD7A45B66E96881FB4C39E57D4"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Prefabs\\shoulder-press.prefab",
+      "sha256": "48522A1B302DA1B3D29831C9431B7963CCEE1F4D937EAFE5FBE9DD47D56A53F4"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Prefabs\\shoulder-press.prefab.meta",
+      "sha256": "3558A0C7B8B8F8E385C653C03CFBC33A60DB82958E8FFC3E4D2D4A673FE0B055"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Prefabs\\triceps-pushdown.prefab",
+      "sha256": "F72A32370E05B408E9E4987C044FFB73AA545B0E5560ABA64A7E08FB0FCB74C2"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Generated\\Prefabs\\triceps-pushdown.prefab.meta",
+      "sha256": "56C79CB4B30CD8198E58446CB2049F6AC14EB753124F48A5070D51726CF8CDE3"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Actors.meta",
+      "sha256": "6C5BB46AEFB990389F7C1557C9099405C5B4CDAFD8BA21D9BE2A46C7E94FEDAB"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Application.meta",
+      "sha256": "94EA8851E43AD6C37F83CBE3AE6E8AAC506F628E45C0496F8493EB772BC6CA6F"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Body.meta",
+      "sha256": "733C3822CCB3F71D68F2E9601FC38BD11DB0718BAC54F1BBD68EBDF516C833CE"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Bootstrap.meta",
+      "sha256": "039F47F07309C9D0557547BC779C1569E67AC2E208F0CF6031E04AA8B54DD7BC"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Competition.meta",
+      "sha256": "56EB8CD579ABD3692296FA4C8A6CB14D026E408AA154C316C5E0B23EB4656BDB"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Core.meta",
+      "sha256": "DD59FFBFA398E8C774CF6B86EE3863971BC3AAA85CC15DD60A280F251F47A5F9"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\FitnessSimulator.Game.asmdef",
+      "sha256": "CD099421E0F564261334362693A4D317C1E40AA841311E6506AB50A352518D8A"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\FitnessSimulator.Game.asmdef.meta",
+      "sha256": "7CAC3A35F05BFA0A5B194BAE3B5EDD2DB40650719EAA3C974B1816952567B504"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Flow.meta",
+      "sha256": "F3C5523DD3D0002A8061DBDD35ED5716E803A9747F5B554289C75309CE73F3D0"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Life.meta",
+      "sha256": "06BE38364CAEB6100C98187231D527CBB89944B32C073A9D34CCCD2124D4A147"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Numeric.meta",
+      "sha256": "5BAF6242A1BE941E18D1CFBDD48786BEE58C522714B03CC99AB4D8ED37D14B4E"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Persistence.meta",
+      "sha256": "37A84FD3C83B43127979ADEC17115EF4274EFAACACC51AAC64EAD36A844C23A2"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Planning.meta",
+      "sha256": "9D1F9C7C489026CABA27F99918F01D5F192BD4FC0565880A941F39FB9080A35A"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Presentation.meta",
+      "sha256": "BFC244DB6FADE6AD0D1186C2A4A84BF2F5A3FE622A2A1F1981C1115ED654AECA"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Progression.meta",
+      "sha256": "500E09438A2E5BFD452C31789B212BC885AA04039C2FC008308AF5116586D4BA"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Training.meta",
+      "sha256": "428E215C939EA5FE0C3B63697342D64AB681335DA29674C19502F3E33841C9B7"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Actors\\ActorInputPolicy.cs",
+      "sha256": "2F77A317045181FC31A7F2D8B17DDED0EA948969A7E3B0DCE7FB61ACB38632A1"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Actors\\ActorInputPolicy.cs.meta",
+      "sha256": "6D80B40B1D5C2FFCB24FAC7DA45523E2EBE07366CBBFFC151D098E24D7D2CEF6"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Actors\\ActorPolicies.cs",
+      "sha256": "80B7A347D33CB07D6C0712DC063CD6382E1D81ED4DAE448B3DEDC261B8FDA9CD"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Actors\\ActorPolicies.cs.meta",
+      "sha256": "1EF4ECDD3A983B179E35BD1ECF4437291568437722D53B8F639648F94C261868"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Application\\FrontendContracts.cs",
+      "sha256": "EB26B7B6CD105C72AC4C776D5B45EB8FB30F5D1429E9DB04C5BE3F84FC8EF6E4"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Application\\FrontendContracts.cs.meta",
+      "sha256": "E120ACD3CC44F9E4EA6781264E4A198AF5C43B149C0450F8894BC348B9EBE3DB"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Application\\GameSession.Competition.cs",
+      "sha256": "36B0EE0AE5A7ED4670CCB7DC220C6366F878D828DAF2E6410D8C47115B2893E3"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Application\\GameSession.Competition.cs.meta",
+      "sha256": "DA05338FD1BA323B3A39586E2FD7937D8159B3FE02E3FA1DE9B6AA43350A18C0"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Application\\GameSession.cs",
+      "sha256": "EF517C81F7309B35718BF2980E2D11B5EBF1E387FBA4311902D6E2D879468DD7"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Application\\GameSession.cs.meta",
+      "sha256": "A2AC5F498DBFC142916ACB6F4C48C4E5267A8483434083D34CA17B11B97AB000"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Application\\GameSession.Day.cs",
+      "sha256": "0D6D119493C85B7C6623FA5C0EEA7F5B2B24E0204268D7F17D707D3EE3581007"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Application\\GameSession.Day.cs.meta",
+      "sha256": "511E489217F49FAE20E109B651937F0AFF9E02F1546F14CA13DBFCF39F3C4FC3"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Application\\GameSession.Economy.cs",
+      "sha256": "BFDD29C04C54616B31AEDEE6B5F0771F1375F7B3B45CF7D1DDC7BAF3656F9343"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Application\\GameSession.Economy.cs.meta",
+      "sha256": "EF796072B5C137BBF89F23343A2D3D91A57081146C9364FFF06D3C94A4B119E7"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Application\\GameSession.Feedback.cs",
+      "sha256": "4D914EAEC4FBD1AFD1B3D6F235358AE86BCEDC7DAA90F567C6F503AA29475FA5"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Application\\GameSession.Feedback.cs.meta",
+      "sha256": "8D8E9C600CAB7C5B7C976F0044DA297A4A9C33429E65DCD5D243680FA46B8296"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Application\\GameSession.History.cs",
+      "sha256": "2D3AEC5DF062789BD29E396D5F01C65E11CF5D2A42A980600DC605D52E9E2287"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Application\\GameSession.History.cs.meta",
+      "sha256": "0114D3632C4B1B136A81B1FDB6ADB6D098F1833D02ABA4E337A35078C31FC697"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Application\\GameSession.Input.cs",
+      "sha256": "22D0BDD4A9F781F3FEF69A065FEB3B0CA287FE08822A7131E18EEB87D2DD8B2F"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Application\\GameSession.Input.cs.meta",
+      "sha256": "B0A5FE68D30794E9F6B8AEFC441C241FE0226C7F028CF359289CA283972CA5AB"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Application\\GameSession.NewGame.cs",
+      "sha256": "6AB81E28270E2E9390AFE35442FFA55F951141CEC63098616C1D9DA02FD67910"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Application\\GameSession.NewGame.cs.meta",
+      "sha256": "115CDC70C1B70EA98403DAFEDF8007967154790B466447F9BB4D05CC1574F87D"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Application\\GameSession.NpcPolicy.cs",
+      "sha256": "FBD4DA883FD8342D7AF74F623A4BFEBEC59F94F63FB651FD45B7FA095633E0C1"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Application\\GameSession.NpcPolicy.cs.meta",
+      "sha256": "B9686CBB0FED620DCDC54FB34819868A0A7F62F9A43125104D57A208CF3C491C"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Application\\GameSession.Progression.cs",
+      "sha256": "421446C49858F90D31298494A98AC635163787F73EEE23EC665B14D71B0EFA0C"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Application\\GameSession.Progression.cs.meta",
+      "sha256": "D5D20D987DC79CF0FD6F881E014564ECC8A13228676CC7E9A6C764D5DFEADC4B"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Application\\GameSession.Relationships.cs",
+      "sha256": "8B6E7E8970BAAD1D4BB56241CD9428B3A22A1B3E750657159852024614D74D47"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Application\\GameSession.Relationships.cs.meta",
+      "sha256": "C1EF04DCAB2FEDC3ACB482002C7682DA6715B9763C0E297444BA8D0344C73FED"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Application\\GameSession.View.cs",
+      "sha256": "C396C87EC10256D758C08ED21537699025671B478BB5F588F40BC75AE087C6E6"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Application\\GameSession.View.cs.meta",
+      "sha256": "D7FB0D40BDDF182B6FF2F953AB50B5DBEEBB4B2AE701120BA2A759EC86276711"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Application\\GameSession.World.cs",
+      "sha256": "DCDD06D1D034787252668D999980AE74F50AE49F8479144F7204647804D053B8"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Application\\GameSession.World.cs.meta",
+      "sha256": "77F2AF5FA0EC20A97CC112A1243E82A8BE22C2360430DE02DF98B5E791B404B7"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Application\\SessionContent.cs",
+      "sha256": "FBDE75CF598C045E2C4EB183BDE35E7E9EC39AA9AE95F81CDB70FEB7E031668F"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Application\\SessionContent.cs.meta",
+      "sha256": "EB9E6E1F060E8382C3745292E4D34B88A340E435166BA81193859F5687A08A77"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Application\\SessionState.cs",
+      "sha256": "E360F3532857ED1AA1D5CD543DBA0D349F4085A231CA89C3B6CAFC7C5FFE5C3D"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Application\\SessionState.cs.meta",
+      "sha256": "A0E7409C8C10101C84F28280A82FA2818BAA8BAD71EFC7CC2EF9D35DE4EFD36D"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Body\\BodyCalculator.cs",
+      "sha256": "95E7A65B679326E78DC45F764F523BDDEEF2368AFBFFEBA17C156C26DC91E0CD"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Body\\BodyCalculator.cs.meta",
+      "sha256": "4D0EA31E549EFE18A2BF04AA0408B4857610ECFAF3D9D74FEA1F3C98C4018D45"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Body\\BodyState.cs",
+      "sha256": "1DFA4D1CCC383F36EE6DF12EDD6140AC0B07E93B0CB429A5E246B7319B0AAFC3"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Body\\BodyState.cs.meta",
+      "sha256": "29B5316E1CE8118F0ADA55909FD8305B74021469E7D63939B31F6F782354A72C"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Bootstrap\\GameBootstrap.cs",
+      "sha256": "790622F9AD11739E6E421AC6D4A469A8FBC484C4C747672D33D97858A8A5032C"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Bootstrap\\GameBootstrap.cs.meta",
+      "sha256": "CC2C2C924EE6910DB35BE602E715EB466E413B6D8FCB76BAF47AFD3661491061"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Competition\\CompetitionContent.cs",
+      "sha256": "04B761701645EE7D9920A29665F085850CAB445C9EA84900040EDFA5E2F14D85"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Competition\\CompetitionContent.cs.meta",
+      "sha256": "3B2BBCC35A49B566F226F2DD74B3FC785F22FEE10DF92220D8FB2C64B496F6D6"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Competition\\CompetitionModels.cs",
+      "sha256": "7F2BACE74A6F79C26DECA1C229EF3B2AF30EA19474FF7DD0DCAE4812387E14A3"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Competition\\CompetitionModels.cs.meta",
+      "sha256": "F081C8C4A87D05CBCB6EFE1A90EE2FEA3562D4C8730501D73D4D6D81CF13F762"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Competition\\CompetitionQueries.cs",
+      "sha256": "8F404DFD8B3490A93047864BDA9095CE3828B8BBFDDC349D6B728A82C889E1F1"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Competition\\CompetitionQueries.cs.meta",
+      "sha256": "E09378534BBAE643675E5858384D52ADDC3FAE7FC96BA02F852310DE707DBC5E"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Competition\\CompetitionRules.cs",
+      "sha256": "CD1B5501CB431340EB257F4CF48E7D1C96AEAECF56E2416A336F49F5744415BA"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Competition\\CompetitionRules.cs.meta",
+      "sha256": "60E776F70861A0F599736A09220112D946AC690615A32CE13F60EFF919DA60B8"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Competition\\CompetitionScoring.cs",
+      "sha256": "6406E40B5CB12EC70A3DA4B5F49BEC1D64D88E4231B2D935FA29644C814221A7"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Competition\\CompetitionScoring.cs.meta",
+      "sha256": "EF9A79E2EC9B3FFE284873114F2BC35B357D4187683FEA7A4D8411C5A7CBB8C7"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Competition\\CompetitionValidation.cs",
+      "sha256": "7E6C654BF7AE39F7EDEA42BB4C46D6A42B93C9F853B8A3BAF066E407CEA7B17B"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Competition\\CompetitionValidation.cs.meta",
+      "sha256": "F0725D8C17B0430F7A49DA15A9FA2260C87C9C75A228F0A14A68797C8082BD41"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Core\\DomainRandom.cs",
+      "sha256": "E554D5C2489314912CD1D095D56D54A2B82ABD00EFD36668B23910BE5B891116"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Core\\DomainRandom.cs.meta",
+      "sha256": "21F205298E60281AC3852822CA590A5518BCDDC3089E8EA0E3B3E9CFDD3A6260"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Core\\GameContracts.cs",
+      "sha256": "E29FA69EB47999259506DCC79215BE611D2BCCBFEF7367D2C8657E472818113F"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Core\\GameContracts.cs.meta",
+      "sha256": "E5A4EE25CB5338267A07B8BFD3C0C5B76FE9FD9873B98E875EE908AD639C6FE3"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Core\\SerialCommandDispatcher.cs",
+      "sha256": "1F4104324EBBF3FA517459D8839231D3A28C7A9F4DEE230BD57BE8CCCA3AB67C"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Core\\SerialCommandDispatcher.cs.meta",
+      "sha256": "164F705835526C2238421FC068AE8DF91E35B0C200C234C75A576258853B6E8F"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Flow\\FlowEngine.cs",
+      "sha256": "E739124D0DB088A07C7692BFAE68FC0AD941CE96E1CF451FD7390967131D9C37"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Flow\\FlowEngine.cs.meta",
+      "sha256": "F2B666EF1DC76E3EBBDC562FD1D6DBC8D66307C741577C922C2E05C531C92B9A"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Flow\\WorldBarrier.cs",
+      "sha256": "DCEE34373F79D756723A5986833E09F5B36F592E038D4924E44B41B9D49C5421"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Flow\\WorldBarrier.cs.meta",
+      "sha256": "475337D21299F01F5E7F8EF3019826E0A43EF586357F167A194CC782C00A6612"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Life\\Economy.meta",
+      "sha256": "A79A059D3DC8146DF6807D9625638C732957CEBF62E4600A79CC28E6DED9E405"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Life\\LifeContent.cs",
+      "sha256": "83F3D7A74106168A8F2D65EF42A95E95EDA8B634EC82C2B5B2E1B5D7F9265B4D"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Life\\LifeContent.cs.meta",
+      "sha256": "7A90354931E3708F549534E09C0F928694742CA5BBEEE54FC9DF33E459267300"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Life\\LifeContracts.cs",
+      "sha256": "4320E8DA33EAC7F5A227047ADBE9CAD8C84F160D5141CC8BA664B1681DF1E07F"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Life\\LifeContracts.cs.meta",
+      "sha256": "927E9E2FFCD8E008152529DAF09A19000F6AFD7DE0D7284C4B5A937D7BBC4DD1"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Life\\LifeRules.cs",
+      "sha256": "F107F9FC349669770D07F4696098DADEB62CB6033D524D8649DD38D9D4F376F2"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Life\\LifeRules.cs.meta",
+      "sha256": "0423646DC5A19501405AD4DA699C9544069328F0CB427E6A2272E4CD74D58ED5"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Life\\Relationships.meta",
+      "sha256": "A031F7970F5BAF5FF0132B66D28E7985A3AF7F3AAA1C5CA9EEB43ABA7353CC6F"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Life\\Economy\\EconomyContent.cs",
+      "sha256": "327182B6282405B235727D798DFF6A77D3AFA75EC533A5DA7890E819D33F427F"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Life\\Economy\\EconomyContent.cs.meta",
+      "sha256": "097D41A7781B7101BD9ED703EBF31DBE36030549CE36B47E08423E72BB956F80"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Life\\Economy\\EconomyModels.cs",
+      "sha256": "D033C7903B98EFAD0CC5F4DF22D44EB845FC38D38A73B55599E4C69A3AC7DED6"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Life\\Economy\\EconomyModels.cs.meta",
+      "sha256": "4EABDACB51A2CDACAE9CE90CC401F905B81B7CD265AC7F9AD3F1BF1F043FCDB6"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Life\\Economy\\InventoryRules.cs",
+      "sha256": "E8FA41ED114153B68879E9513C54930CDD936F67D1E88E387BDB4D62224B0215"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Life\\Economy\\InventoryRules.cs.meta",
+      "sha256": "0F26FE726BF2B682591A51844EB825985395465C62A2247A307E8FE9206A970A"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Life\\Economy\\ShopRules.cs",
+      "sha256": "0CAE1CA9650A892263A81B37D2E5697D395EE4A8EC3BF8178019CB9C7A755155"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Life\\Economy\\ShopRules.cs.meta",
+      "sha256": "7E9E818FEFEB19437440C44D7F738D95EABB6DFA7DBA5E5CE76D36873DB7825D"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Life\\Relationships\\ConfessionRules.cs",
+      "sha256": "FB3EBEDD2CB0B1D88691F8F1645C16BBA54AF0860EC661DF2775C8E6D2E01EA4"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Life\\Relationships\\ConfessionRules.cs.meta",
+      "sha256": "A1D75909D196223ECE97363F56DE0FB8F7A23873F047BADFC015D95DD9A1741D"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Life\\Relationships\\RelationshipRules.cs",
+      "sha256": "5458BE883C7EFAF756D68B7B8C75E20FBD1F43FE571EE0B43A80685AB3D4F570"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Life\\Relationships\\RelationshipRules.cs.meta",
+      "sha256": "8EBF2BB2408CC975CFF6EF1D6AB1DC23F60B63B60D8B2B2DE8012B95FE10676D"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Life\\Relationships\\TeachingLedgerRules.cs",
+      "sha256": "D761227355AC8F2DB6391E4346B183BF8FCD232F32194C0E650EEBC664E0117F"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Life\\Relationships\\TeachingLedgerRules.cs.meta",
+      "sha256": "89D137F00B84E62D928DA550CE2AD820FA51297E42958E1F39BC825D271D8766"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Numeric\\Rational.cs",
+      "sha256": "3A2D08726FB486CA9DB826503B24660B862F3BF5A8C1BF1A36B90D458728F1D2"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Numeric\\Rational.cs.meta",
+      "sha256": "F3A2C811A881092172AAC960CD9C69F33FE2269A826A173F09532B10100F708C"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Persistence\\LocalCheckpointStore.cs",
+      "sha256": "8DE9398EE7A50DE16ED7B34C843A46BB998FAB88359B169E7A45ACD9D9410613"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Persistence\\LocalCheckpointStore.cs.meta",
+      "sha256": "16D3372F133B9E83C590C288B935DD0720A38103B3CE22E035D3CB3B92E2CF42"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Persistence\\UnityJsonStateCodec.cs",
+      "sha256": "0097083E970ED68406D4FBA992A0F5143CB48C2E8FE0E19A0CA96176043CFE0B"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Persistence\\UnityJsonStateCodec.cs.meta",
+      "sha256": "07B80550EE3663624F7CD3FAF0674F6E41000C611411FFDCE1ED1D7E4E73689E"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Planning\\ActorDayArrangementPersistence.cs",
+      "sha256": "03538D6FF4C0F7E5627AD90C0411F9FE4B2BF40695425A0A86EBCA2050140E2E"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Planning\\ActorDayArrangementPersistence.cs.meta",
+      "sha256": "882B74066DF19D2F82BF926604890D08CA21B006F31AE5676D0A463DA6F96E81"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Planning\\ActorDayPlans.cs",
+      "sha256": "5DC678268769676C6509C5DE1E0124D7F0016FBE76762F9C8018494B69129D2F"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Planning\\ActorDayPlans.cs.meta",
+      "sha256": "763FD590DAA3F99555C4B66D77F467A5099A2764AC3CCF907638E207C5109E95"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Planning\\PlanCatalog.cs",
+      "sha256": "D42808D4B70A9C3B7B04FDF46A09DF4C6869E7158BBF687D8FD4AEA57E4C183B"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Planning\\PlanCatalog.cs.meta",
+      "sha256": "EA8FE665D7586E701228C1908AC0DCF13921AE1AC19EEB0C7BE84D2F135DDE7B"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Planning\\PlanModels.cs",
+      "sha256": "E1258E93D6D035D687C6DCFA0D3327B3D6CBAA46C706FF0028A81802F688920C"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Planning\\PlanModels.cs.meta",
+      "sha256": "9911FB5859021D07211F822701BDB6A12D29BECACC378236C77C8A9C411C570A"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Planning\\PlanPersistence.cs",
+      "sha256": "2485EE4BA3B6EFD8ADA12E318E30A5A3A4F422798E58F0B7A7A3338007F74D7D"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Planning\\PlanPersistence.cs.meta",
+      "sha256": "B8D8C4B9E7504258608EC614C327874121AD93CA676253260ECA9C48481B80A0"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Planning\\PlanRules.cs",
+      "sha256": "D576AB4306B41A7C0A8E6C89D4754EE3A47D3918E9D0DD1C15E2F8F15545827E"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Planning\\PlanRules.cs.meta",
+      "sha256": "7E0BB227769AEC215C3EDBF748F3847BDEE18DED9A0BDA469C2BBA0C33F5FFDB"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Planning\\TrainingCatalogAdapter.cs",
+      "sha256": "A30E59899B49665CA87A92B442A9CFD1F0E2C38C524F99C7E5EBE2C0D05D7C7F"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Planning\\TrainingCatalogAdapter.cs.meta",
+      "sha256": "B4CC118CD8F5711E35271A199A433CDACD02241908DDD1E31987C806DF52421B"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Presentation\\Fonts.meta",
+      "sha256": "F3294EFE652CE2F81D6824378D7BB5B387600190D94722619E0792AC979FC4E5"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Presentation\\GameFrontendView.cs",
+      "sha256": "CF4B1B4F47E3A2805DF0638570EE975CC726642A3B6D0C38170F6EB57B9B7043"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Presentation\\GameFrontendView.cs.meta",
+      "sha256": "7BD002A2E7E9871838ECD53EDEDA6AC51DC223A8B5EE9BC40961B1C2D391F651"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Presentation\\GameFrontendView.Ending.cs",
+      "sha256": "40D485EA40F10D4679212895C1F20CF4899A805461CB757AC880CFCAF6C7DBFC"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Presentation\\GameFrontendView.Ending.cs.meta",
+      "sha256": "AF99D6F8CF0242B8B20BFEB40BAA1491D1F1043CB2716E7EA22A6FA5BA9AAB58"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Presentation\\GameFrontendView.PlanEditor.cs",
+      "sha256": "802869E999869DF60326B9DAEEDA9691BB2A87A87129DD9FCD2913139D95CE09"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Presentation\\GameFrontendView.PlanEditor.cs.meta",
+      "sha256": "AE4E9809ACB24299E575986F58F398BADE5DDEDE6771EE8DC7BF034687AC17A9"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Presentation\\GameFrontendView.Training.cs",
+      "sha256": "D80E2DC30E8C62EECD2D9838DE1738D870A75C129E875C187133F9C229A28118"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Presentation\\GameFrontendView.Training.cs.meta",
+      "sha256": "8192AFE6A7345927A19325E818A19B90138A0E9BD430EB1AD616D2D301D7572E"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Presentation\\HoldInputButton.cs",
+      "sha256": "167B1471984D42D6A2C30CD2E3869D6C7664C42307DDF9764AB1FD37FDA0F047"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Presentation\\HoldInputButton.cs.meta",
+      "sha256": "D509A0AC70FD84F557A5FE83626AD869F528DE2CA8B4A9366C8B33CA30C2B84E"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Presentation\\PointerHoldState.cs",
+      "sha256": "635011D7A746F022063251DF1E6C1FCA3705CAC9CC481D086B25377ACD43B20A"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Presentation\\PointerHoldState.cs.meta",
+      "sha256": "8EF39EF6CF84CF87C48E5011F50EF65BDA2A785F51CD4452DA0A499559158383"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Presentation\\TrainingPointerSurface.cs",
+      "sha256": "EAAE02C08665C04CBB4DAFED4FD08A2F470F819D304EAB40ACACE2EE831960F3"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Presentation\\TrainingPointerSurface.cs.meta",
+      "sha256": "C1ADF8C6031E6B327A30088EFE30EBD917A4258CEBBE7FA66E1FDF449B30D805"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Presentation\\Fonts\\NotoSansCJKsc-Regular.otf",
+      "sha256": "2C76254F6FC379FDDFCE0A7E84FB5385BB135D3E399294F6EEB6680D0365B74B"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Presentation\\Fonts\\NotoSansCJKsc-Regular.otf.meta",
+      "sha256": "69CCCCE9B1008EBE0F16B2ACA16B82F1C95515271DB909781431C0833FF65313"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Presentation\\Fonts\\OFL.txt",
+      "sha256": "6A73F9541C2DE74158C0E7CF6B0A58EF774F5A780BF191F2D7EC9CC53EFE2BF2"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Presentation\\Fonts\\OFL.txt.meta",
+      "sha256": "8C97FC1B5FAFE5B51C9F9E32871ABEB8B4EB7D194F2B5F68CCE57AED68FA872B"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Presentation\\Fonts\\Source.md",
+      "sha256": "FB9FFD33E6A9A45791206EEF05C23867773896D6379444B7F9C5A38FF7CB16AA"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Presentation\\Fonts\\Source.md.meta",
+      "sha256": "083B8B06E0A2D5005C0BD5180582985BC6B6ED971BF8CAB0A3E894CAEFF2F42D"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Progression\\EndingProgression.cs",
+      "sha256": "E40D95A7E07C0078B68D72D25A7422410871F41BD3E32D26991519D3981D4A87"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Progression\\EndingProgression.cs.meta",
+      "sha256": "D46F6DD4D5B740A7936C495A78895145B7F63F662D7356C6F1323160AFF03111"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Training\\BenchPressSession.cs",
+      "sha256": "2CF447A6B4CCCBD4AE259013840934A72E8DE287ED1E0342AF5405173746A58F"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Training\\BenchPressSession.cs.meta",
+      "sha256": "DC9520C1ED8EA601A8E69A974C066F686DEDC7CA2DE345D1C6B8B883834A7255"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Training\\ExerciseCatalog.cs",
+      "sha256": "59D6E9993985E6FB729F959F0FEC6E9B71952D9E873C4BF43F7B23296C528713"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Training\\ExerciseCatalog.cs.meta",
+      "sha256": "FB3AB4F66E7C35FC43B44B1C50E001391FBB2FBD88B67BC757C229C1F59FC15D"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Training\\ExerciseInputSession.cs",
+      "sha256": "BC16A6623F0941CAA74AA4E8579DA38CC17D42E97BA16FA569CC7C4EF3609445"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Training\\ExerciseInputSession.cs.meta",
+      "sha256": "55A3827DF83255E6FC202B62EE06FF338054E80D58FF9D62E005C1D3A7023956"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Training\\TrainingBenefits.cs",
+      "sha256": "5B8E47192893EE91833967C4765CA19F30A7B07791643DF7880B83127D5900B5"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Training\\TrainingBenefits.cs.meta",
+      "sha256": "67928D8B7624B7A83263663B9514AE61840D91324999B16B73374A887018BF9B"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Training\\TrainingDayClaim.cs",
+      "sha256": "2777C1ED5DCEBC8C4F8B7AEDCD3BF35998DC4AC08E79098B06169E3A6F8C4F81"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Training\\TrainingDayClaim.cs.meta",
+      "sha256": "3347D9626D4439144546BBCAF40FD2A33E1878C3CACCDD7F8DF92A475C4CC71B"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Training\\TrainingInputSession.cs",
+      "sha256": "16E19802D4EA4A88FFAFB33E3523993332CA1B863B46E0B4FE858A910AB0D85F"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Training\\TrainingInputSession.cs.meta",
+      "sha256": "14EA5E84CCB57803FBFB7394E879D4DF6FDB0B2EB039293C22AF58609CA86B73"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Training\\TrainingModels.cs",
+      "sha256": "1C0EB72ECDB0064D086C3C733F0FF17B9BC8327C8642669156F38329C5A4F10B"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Training\\TrainingModels.cs.meta",
+      "sha256": "5518735BFDE77EA6ABEB37E130B9D0E04EEA2786DED8D5C2C5094E9238F92C1E"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Training\\TrainingSession.cs",
+      "sha256": "03831CDC3F3451A8A98D1C7FF02D882E8A8A925AB17BB26FA62D906A6F84A720"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Training\\TrainingSession.cs.meta",
+      "sha256": "7C709D718D5C365EB6F7D46067FE1FC1AAFFFADABF90BE3939DC0E220BF0FE41"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Training\\TrainingSessionM2.cs",
+      "sha256": "73BA7D526465EB2248DA52643E0AB1807DE796EE79FE9B4012789B44B1334EBA"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Production\\Training\\TrainingSessionM2.cs.meta",
+      "sha256": "B5E684BAE6733814F4165795B9E147EF3981F5F5BA5E8A855F8436D61122521C"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Resources\\ExerciseCatalog.asset",
+      "sha256": "CAB8CE822024A1EA7A9D9140F966113EF8CA823B80E1AC6379D1070933F43761"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Resources\\ExerciseCatalog.asset.meta",
+      "sha256": "F3BE62EC2B57EDCB53BDF7FE6AACDFA8F935179B9A97570B71D77D5AB4963FA0"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Runtime\\FitnessSimulator.Runtime.asmdef",
+      "sha256": "AA20C48D4ED41569B1A711C4C06B64D2E7E70AF4E81A591DB87792C805E2141B"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Runtime\\FitnessSimulator.Runtime.asmdef.meta",
+      "sha256": "A4885A82233D3030D4D943952BCAC31513E4C8C367E4BD2036038A8E7F9AA4F0"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Runtime\\Persistence.meta",
+      "sha256": "A0FA3D08BFF4FD9393F2FCD8AAD2B3BB730FD7EE5F9893A327C0D63B6B521302"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Runtime\\Presentation.meta",
+      "sha256": "F752688F7AB00A23BCC1F397E9D642A422582C05DE5B36993560D68EC8BDB20E"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Runtime\\Training.meta",
+      "sha256": "0023DE0A3F727478C765CEDFFFC811D0957369BD524ED1BED1D59E70E8BF4AF2"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Runtime\\Persistence\\LocalJsonStore.cs",
+      "sha256": "9AE240E2AE254026F48ED59275249CE41E70F2D602C9F130F21CB162C9493742"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Runtime\\Persistence\\LocalJsonStore.cs.meta",
+      "sha256": "0A407D047550C8E161322A5EC6D5EF4394F48F38466D2F0CF48295008E633DF5"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Runtime\\Persistence\\SaveContracts.cs",
+      "sha256": "8DF3CCDE8DD172696FF563AD77C8A85B6323613E37CA3A02F6E731A60800C606"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Runtime\\Persistence\\SaveContracts.cs.meta",
+      "sha256": "A659A81E82E46DA8C1E17960C9B76C3288091D739226D93C39985FE46BD56475"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Runtime\\Presentation\\ResourceLab.cs",
+      "sha256": "1733A23AD8B88E23669CB4A7AF789C3DAC015872F51E4E277F42CF7AEEEAC23D"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Runtime\\Presentation\\ResourceLab.cs.meta",
+      "sha256": "370ECEE2AF52D268C1C61A95ED0A4E59D00010AF03DF7AF4CADF193570DE8B0E"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Runtime\\Training\\ExerciseCatalog.cs",
+      "sha256": "B00FA838716585C641569E175FC4097E6C3D26F2C944889B9F50F27CBE4D8811"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Runtime\\Training\\ExerciseCatalog.cs.meta",
+      "sha256": "DA3942C83D4FDF8E330F2D0444303B0633AA7079CA0B08EDEC9751F837D72A2C"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Runtime\\Training\\ExercisePresentation.cs",
+      "sha256": "86BF673FCB2D2F7C0F108280F22BAD153B2EC1082D51274558384FE32733C876"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Runtime\\Training\\ExercisePresentation.cs.meta",
+      "sha256": "A1A6EC8B607E553048A0BF0F1CEBAF3C47BB0033925938950363A28449CBB065"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Runtime\\Training\\TrainingContracts.cs",
+      "sha256": "A7DF81D6B2C9916D12F644C5CA65CD8E07B3F4922EAB2A6D6E8A28165CFBDF20"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Runtime\\Training\\TrainingContracts.cs.meta",
+      "sha256": "4E4EECB70DA645B494BF913D4399F17DE1879EAB3815AB26D639050DABBB4315"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Scenes\\Bootstrap.unity",
+      "sha256": "8593F02F5AC6823BCD0B83342D4BF122D75D2137FD035A9BDDC22C1B4AD4D689"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Scenes\\Bootstrap.unity.meta",
+      "sha256": "ECF69C357FC97D06CA30A1D5AAC0D2DB2DDCBB1CC7350CCAD6D2E3DEE36F8DC8"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Scenes\\Exercises.meta",
+      "sha256": "A893F50E2F5B4FE9C97F21C2A61BB7B03E24886C3E2D8997040E76B794F843EF"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Scenes\\Player.meta",
+      "sha256": "300EF6752B0AEA22A5CA11BE3692D6658DFAB1450B979791EFCEB8B56C46A504"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Scenes\\Exercises\\back-squat.unity",
+      "sha256": "DE44C00BF497D2F5772C359A651E752F8534E89DDB41BBBB27E8B986E2B09DD6"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Scenes\\Exercises\\back-squat.unity.meta",
+      "sha256": "AF3BB1C0E80D86541420F1937C94BBA4CC35C97C113924D27983130592608FC5"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Scenes\\Exercises\\bench-press.unity",
+      "sha256": "6C07EBA7BCF78B0FC53F2BD7FEDE644A03AE477D94143A04E1A09A962D48D48B"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Scenes\\Exercises\\bench-press.unity.meta",
+      "sha256": "10AC813EA31DD375EBDF985E7C8D20A10D8FD7724C62B1BD9E1FB1B0A33CE5F5"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Scenes\\Exercises\\dumbbell-curl.unity",
+      "sha256": "E25624F463B3FDD5997D1BD13CBDAA6CBEDFDD20910D9621EC67826A7A40EBF2"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Scenes\\Exercises\\dumbbell-curl.unity.meta",
+      "sha256": "D9C70194B185700D3AD396291777A1BF8021ADB2E84EC6F6358570D8262F4A21"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Scenes\\Exercises\\hip-thrust.unity",
+      "sha256": "FB990B382E751C742BC9F99F6206C1C0DD67EC42FF79CAC9E974A9FB290FC1F6"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Scenes\\Exercises\\hip-thrust.unity.meta",
+      "sha256": "79E5586C23B4D4E7FAE2AB8E5A5D70962CF995016F2BEEEA045AC6CEC27EAECC"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Scenes\\Exercises\\lat-pulldown.unity",
+      "sha256": "3A8F067965686FBAEE46D7A8BDEA8F11568706B10932D4C76E80617A9D9AA782"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Scenes\\Exercises\\lat-pulldown.unity.meta",
+      "sha256": "9D42320447B356B9073419CABA86B792453E6CC63CEE6A44DBB34A3446959CA5"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Scenes\\Exercises\\lateral-raise.unity",
+      "sha256": "7E2FE3082F2DADAB3E1113CDA4D5AE4553041107EE0A3A1867C632F1F5FF23B4"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Scenes\\Exercises\\lateral-raise.unity.meta",
+      "sha256": "30B29C9AA04E6613717E6AA201BD34889C7E6B17FAB03A34E9D0C57E2C4ECC5E"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Scenes\\Exercises\\shoulder-press.unity",
+      "sha256": "A5719525B76982A4A5148F07D63CEC19EECC6FAA2587F9CFE841456F22EF3BC3"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Scenes\\Exercises\\shoulder-press.unity.meta",
+      "sha256": "AE554B3863BD2BBFC50AE9EA26B26C8FB6059CA9ED90CCA9DD3A4325317433CD"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Scenes\\Exercises\\triceps-pushdown.unity",
+      "sha256": "71C5AE10148A5B7F4202D8CBD3A5EF9417B680D83BDAE04A1A2460E01274A229"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Scenes\\Exercises\\triceps-pushdown.unity.meta",
+      "sha256": "5B4528833860EA053725C4A66D0F02344E0E944F320C8A3000E52EF2C62DF7D3"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Scenes\\Player\\GameBootstrap.unity",
+      "sha256": "A475A30987C8F4400A7DFD6B358FEE417C055F22A899A65942B42885A176124F"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Scenes\\Player\\GameBootstrap.unity.meta",
+      "sha256": "36793777BEA86880E53D5D6AE036EA6C9645A1D60F732EA1878AE6A5B984940E"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\EditMode.meta",
+      "sha256": "BB5BD7798112D4B92EB3C5E61E40B79161AF244E7C23F650FB7CF2F83B573D1F"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production.meta",
+      "sha256": "1F1F946662BB375539EDF3DC1D6686C5E4D77453594193304F9E04A926E8DAA4"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\EditMode\\FitnessSimulator.EditModeTests.asmdef",
+      "sha256": "D82611DF62365C5A2E56498F491A088DAD7183C87369D9C3775839F8DB7E427C"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\EditMode\\FitnessSimulator.EditModeTests.asmdef.meta",
+      "sha256": "54A5692F81B0B2BF2D8731FA92F301AE0DBAC8F4B4FB5BBF3AF7315607517B04"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\EditMode\\FoundationTests.cs",
+      "sha256": "49B0FC647CD925DCB9D4A3F969D2D0BFD340B2F39DED4EFCE3E01CFE94A239EB"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\EditMode\\FoundationTests.cs.meta",
+      "sha256": "379AA875C7F17CB18395F58880B4DCC19C2F6CD7D2F290DBC7C8382A3A8DA23C"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Automation.meta",
+      "sha256": "AC473E45AE038D7CD5548F9E6E22EBA1265C7290580FE0EBBA7D460C773D0F22"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\FitnessSimulator.Game.Tests.asmdef",
+      "sha256": "61BBE8D0D50E257538C600FB01F88A7DE352B92AC03457C3CA915B807CE1FC4A"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\FitnessSimulator.Game.Tests.asmdef.meta",
+      "sha256": "31D2EA9088A901B4852A8851E77160281106D7462879AE675BC6424F0EA3D502"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\FlowPersistence.meta",
+      "sha256": "A30700F40834E9D030CDEB1EA33DF5F54D14C5D91D12D713DC65050B32E4917E"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Integration.meta",
+      "sha256": "70A14E7712E12408D22C0517A8A73CE8E5FE70D2EE787DC6AF8400EB5D9ABA09"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Life.meta",
+      "sha256": "733D4EA2DAE4511CC6596227DEE4974EC18B33994B7CBF7C6199483410BD6C60"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning.meta",
+      "sha256": "D068E79E51B48F6A8E4270CB67AC012E31AD9F34A890CA53D84A15174CD05726"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Presentation.meta",
+      "sha256": "BFDD357E3ADDB633F66D0FC5933F0F1A04A4137247F4425AC26F0B5E431407EE"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Training.meta",
+      "sha256": "AD5F0957575AEC11B2945C621F65568F9B65ECA2592DC9DDB3D3B3EB33A0347B"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Automation\\OfflineEconomyStudyTests.cs",
+      "sha256": "E9599EA4819B6DE74D48D23C582909E99DFB86E2110ADEA4FFB0E24A156890EE"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Automation\\OfflineEconomyStudyTests.cs.meta",
+      "sha256": "F2DBADEF9754F3EA8729DC308D875E29977909D8CE4A0F618646D0E8134115B1"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Automation\\OfflineM1Tests.cs",
+      "sha256": "6E435C0F7B7A76469BF53FDD5179A0470FC18CA79EEF883E538466B350C95515"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Automation\\OfflineM1Tests.cs.meta",
+      "sha256": "0E595CC4F3304B039C641CDFBC047318DEDE8EB2FDD608AAF611C1D392841FEF"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Automation\\PublicEightInputApplicationTests.cs",
+      "sha256": "77B3CCFB31C336B68FCC6AAA8A662185385313410A9E6ABF2EDF79481592850E"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Automation\\PublicEightInputDriver.cs",
+      "sha256": "C5534F6419D518EA5879D1CB455A28EED8A630097D7D5760C96EB3E6E0D302E2"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\FlowPersistence\\CheckpointRecoveryTests.cs",
+      "sha256": "93BD1154713CE8FEA6841BD93D1869719C99960D11639D9864A721F7F9CF3856"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\FlowPersistence\\CheckpointRecoveryTests.cs.meta",
+      "sha256": "B93FA486F8AAA7255A23E1ACC3E45E78105FF1B9C3187E0B5CEF99858D830AC7"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\FlowPersistence\\DomainRandomTests.cs",
+      "sha256": "764823A44392D87B987FD21950166BA69F1E1A576A0FCAED0C1D9352DAA87AED"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\FlowPersistence\\DomainRandomTests.cs.meta",
+      "sha256": "C54833590FCE8BA0ED82507DD2CCE41D6A3F7C20D20743819EDCF4B090A803C4"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\FlowPersistence\\EndingProgressionTests.cs",
+      "sha256": "47BFF7519FB59A5617AD020B77F5A35C97F9689848292E1613F0F5A89DBD17E2"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\FlowPersistence\\EndingProgressionTests.cs.meta",
+      "sha256": "ADB4EDBB4D75171CB0CFABAA06F91EB6A50694213559C6794B7C1248ADE2568B"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\FlowPersistence\\FlowEngineTests.cs",
+      "sha256": "449D8A1FCDD39BBF0208605FAD1BF646535A5D65B1F8FE65556457A60EC2AAB3"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\FlowPersistence\\FlowEngineTests.cs.meta",
+      "sha256": "A776A897E69355D67F8A63154DD409295A8D3F8C0CDA878820122C16C7B697DF"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\FlowPersistence\\PureSmokeResult.json",
+      "sha256": "858963CF918477F7D3E91503B7B17B9291C034AE21A5AABB7B469451F101148A"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\FlowPersistence\\PureSmokeResult.json.meta",
+      "sha256": "F883762D71C15E4D115AEBF8907D2FE811425D0E8314B1069FD50BD2375EB1A5"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\FlowPersistence\\ReceiptIndexTests.cs",
+      "sha256": "968F354A407087F8D026B56B56DF9C342012651AE783FD22BD8EADD15739270B"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\FlowPersistence\\ReceiptIndexTests.cs.meta",
+      "sha256": "35B7ED471BB76712CFCCEDDBF9C27F9E933A03DC0CBC9C293633D1DBDF328053"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\FlowPersistence\\Run-PurePersistenceSmoke.ps1",
+      "sha256": "382F3F555FD10D40A37A19F0FFB0456CDDEAC5B99AE0E5D05E57C534F9D9F15C"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\FlowPersistence\\Run-PurePersistenceSmoke.ps1.meta",
+      "sha256": "0D3E3AD25BF876AC528F386E72FAB560AA6E46509956AB0108D550CB9117BF71"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\FlowPersistence\\WorldBarrierTests.cs",
+      "sha256": "B6753B62880FF84BBC727E80801AD0F54BC2038F8CCDA0E0E6971BB3F3AD7719"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\FlowPersistence\\WorldBarrierTests.cs.meta",
+      "sha256": "475C605A2F39767BA41094CBD864BE7051979A107911F08D1FAD6EAC81999014"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Integration\\EconomyCommitTests.cs",
+      "sha256": "31948C95589C2CDFBCB210F20794E055B10586099E539112DE8D5FE18163D57D"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Integration\\EconomyCommitTests.cs.meta",
+      "sha256": "D4777B39E3D64447271B7701B811BEF6191924934533FC17AE85BF4E8AFA37E1"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Integration\\GameSessionActorsTests.cs",
+      "sha256": "371960035980763820E364DBC196BEE3E700E6BB793FD09CB6499774305520C9"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Integration\\GameSessionActorsTests.cs.meta",
+      "sha256": "A5ED8F870DF94428172BF23AB792D6250E2988D100791ACCD286466CF4E0E8F8"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Integration\\GameSessionCompetitionRouteTests.cs",
+      "sha256": "36279327A3CD8DD678373C90FB4348DF9746E8577ACD57DA6DBC407D9E5B9902"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Integration\\GameSessionCompetitionRouteTests.cs.meta",
+      "sha256": "E94538847DDE71895CEDE9AB5AA9C6BDC321AA56853792AA33781469715D0D41"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Integration\\GameSessionCompetitionTests.cs",
+      "sha256": "051A3B7220C04B28EF357890BFFEC34834924CC34399CA46D17AF8ADCFC0B314"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Integration\\GameSessionCompetitionTests.cs.meta",
+      "sha256": "14708A9C157317823C31796D0B0BEEF18C20EA27A5AB75B9C260982F7E97676A"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Integration\\GameSessionHistoryTests.cs",
+      "sha256": "A4A5E228CEB823D070F44BF9EE714D8DF43A19802C537F25DC55C560A4B85732"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Integration\\GameSessionHistoryTests.cs.meta",
+      "sha256": "CD5EED945CE2D10D5136D93B727BB9F20C37B59CCF58BF467CA433151074D728"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Integration\\GameSessionProgressionTests.cs",
+      "sha256": "FDB8048BB8F792502A3889FEE830C6F07DCA8E9E88910DB241280FF72E44E165"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Integration\\GameSessionProgressionTests.cs.meta",
+      "sha256": "2D3AE9909E19579C18E6E6422F84E3FCDDC1B8CDDF765A46287F8382E1C76007"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Integration\\GameSessionRelationshipRouteTests.cs",
+      "sha256": "1184DAB9A7DC0D493454D13D001954CCC3EEBFFA63567A979D62C272C666B425"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Integration\\GameSessionRelationshipRouteTests.cs.meta",
+      "sha256": "E543178EE5021386F56BD02C37A1970E64095FC8F8DCE246DF1FF15AB86706D9"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Integration\\GameSessionTests.cs",
+      "sha256": "73C483E7B5E8DBEAC24AAAFE29E926D3B4578C69EA291DBAE639F8D37B617F74"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Integration\\GameSessionTests.cs.meta",
+      "sha256": "B27F846EA319FCB5487B85904C5F64D9FA010899E7AF8DCCFBA789F7D259864B"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Integration\\GameSessionWorldTests.cs",
+      "sha256": "254164324144713EB3427646D34E79D465E193A2AB17D3B0D7BA3F182C2BDD99"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Integration\\GameSessionWorldTests.cs.meta",
+      "sha256": "2180AF6AFABD4105DC73A4BDF7C186E7D77FE5FDF6D80479BD324A1EF201069A"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Life\\ActorPolicyTests.cs",
+      "sha256": "E8E55D2422B2C924E1ADF6E5291C561D977C5E5C6013354798904473815AAD26"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Life\\ActorPolicyTests.cs.meta",
+      "sha256": "70D0CDDE9843261956783F1DC941E19B5FEB0572204D2B85998317ECBCCC5067"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Life\\EconomyRulesTests.cs",
+      "sha256": "14E76AD9D90CAD0599B09790AC3C0CB02F0DC1064D21735949BBACD5DEFC5BEB"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Life\\EconomyRulesTests.cs.meta",
+      "sha256": "EC5C644A218E6B29980F2584721DAB89FC65002CEB01544262C7074EFBD2943B"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Life\\LifeJsonRoundTripTests.cs",
+      "sha256": "6768B5CDA2ABDF011DEBC98FE506EBBEEDBF69884A94765B97196E38DAA7859E"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Life\\LifeJsonRoundTripTests.cs.meta",
+      "sha256": "F9A8BAFE2C7F9AC807252130ADECFCDEA3176246CF3998C26B7DF635F220267A"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Life\\LifeRulesTests.cs",
+      "sha256": "5F8B8662C7F4CBFCA38705AB0A2819A3043F177F1D362EF76015D41E439F6CB3"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Life\\LifeRulesTests.cs.meta",
+      "sha256": "4945DB2BB3D87C8346C3F94CCBAF7093635AFA653D77D4B189367E69FB6DBBAD"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Life\\RelationshipBoundaryTests.cs",
+      "sha256": "66376B470D6E784E4EBE2C7F00C7006B0D6158B45CB0E178CAC60C3F5A2D7355"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Life\\RelationshipBoundaryTests.cs.meta",
+      "sha256": "8E08E78C05F68124790B45B217813A22621C4C72277306113578CF239D695DAF"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Life\\RelationshipRulesTests.cs",
+      "sha256": "76B3ADE308533F0BB858A7BC176313E33CEBC1D4BDB9BAE667470A79E929EC75"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Life\\RelationshipRulesTests.cs.meta",
+      "sha256": "BF259A3B467D6EC92171ADABBA2E0903B1565BA5E666F2DD1A56D15AF800F7C4"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Life\\TeachingBodyIntegrationTests.cs",
+      "sha256": "4AD306F45B12C2CB9B77F5DBE0BB150A7F5FF983D3DE19F6B483A2827CECD49B"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Life\\TeachingBodyIntegrationTests.cs.meta",
+      "sha256": "D79EC3C28BBBDF998143B319105C22AE58612BAC937BDFC93840C5A84801DB24"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\ActorDayArrangementJsonTests.cs",
+      "sha256": "A58069C3460B5ACE366E78559B554174AB937675DA5A0D316CA6F7C070DC825C"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\ActorDayArrangementJsonTests.cs.meta",
+      "sha256": "3CDD5E61EC060259822F891F4C58DFBE705BE1B9E0D5ABA9E73622373E1BCA98"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\ActorDayPlansTests.cs",
+      "sha256": "0C54E06E1ECD6E311987838D72FE7249C1594543FA313739352AE38D5C8AB25A"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\ActorDayPlansTests.cs.meta",
+      "sha256": "F043CCC60EE1DB7A4A7E05017D7BC23CA0B26F9D89DC1D7C86F71E05C15AC3E2"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\CompetitionJsonTests.cs",
+      "sha256": "2556099C875DD918D06DF04FF4FF42E821E88B1CC7C78FE749F2331125C9AF79"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\CompetitionJsonTests.cs.meta",
+      "sha256": "77A2949388FD64E9D528CEA77CFDB44017B81953A9A293DD3E5B993EAC19D73F"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\CompetitionTests.cs",
+      "sha256": "53017296BA4F6C0CB114385D8CF7A29B6CD903FF5357A3F84E44D0032AE59B16"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\CompetitionTests.cs.meta",
+      "sha256": "FC1EA9A071F79B24859A623B95E05C9A828B10A3F85333BF15627E68AB7581A1"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\PlanJsonUtilityTests.cs",
+      "sha256": "7FC6A091D9D93518633AC8698562905AA2133B1A13C6789BDBB23A7B47E9A145"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\PlanJsonUtilityTests.cs.meta",
+      "sha256": "2A1160E18EB2EC04A59998F5EF5736969E9FADF6B41002C72B7CFA12D1E9D15B"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\PlanningTests.cs",
+      "sha256": "6A99286D5836FE271DE4C2189BA04F1D000B1F24E470E1EFD2BB89C25300920F"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\PlanningTests.cs.meta",
+      "sha256": "F12A2F4791C10A5007602C6B3BD5A54310605DD619B5E7359A9EFEFD3D50CD27"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone.meta",
+      "sha256": "566F29EA38D1816280DF86E50D3B18ED2C59A0DA7D98209351598985E23F8BFA"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone\\.gitignore",
+      "sha256": "BD8A173B09923E21DDB3C3F46BF89BE448241BB20E754BA21BD8ED996D0DA0B0"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone\\Directory.Build.props",
+      "sha256": "4FFE92B2956691A43FFC2F932A65B9A429F08117D49364A55CDF6CB3C55969FD"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone\\Directory.Build.props.meta",
+      "sha256": "A9DA074588411A1FDF42060E03D8069335898103BD771333B94B90AD79B6A0CA"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone\\Planning.Verify.csproj",
+      "sha256": "52B5814672CC567633B428CB660E94C6004C330F8FABC1EB03DF8696347C3A47"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone\\Planning.Verify.csproj.meta",
+      "sha256": "EE24A31A24420AB7385D6C396EB3B3F937E6381A70A83A21567034BFF46FA27B"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone\\Runner.cs.txt",
+      "sha256": "407DAC82E22EFC11FFD76A972C8C0871C25487D600E4B78992F2CF9D1F55A485"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone\\Runner.cs.txt.meta",
+      "sha256": "12A699374108E4AED2DE04C59FB5731AF831045B0816702D47F3673DAEEDD4B8"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone\\.build\\legacy-bin\\Release\\net9.0\\nunit.framework.dll",
+      "sha256": "A607364879B5F5C337B979E9DE23654459DF45BA1A7324D54AA9DF93540DC7A2"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone\\.build\\legacy-bin\\Release\\net9.0\\Planning.Verify.deps.json",
+      "sha256": "98DD0FE15DF315648FDAC4B2604F84E1B524EA3EB240F439C48C59CE0AA80B7F"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone\\.build\\legacy-bin\\Release\\net9.0\\Planning.Verify.dll",
+      "sha256": "57CF8639E8CCE76CF82513D35C36488E966F639C0A850476633C7D3A8AAE8E33"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone\\.build\\legacy-bin\\Release\\net9.0\\Planning.Verify.exe",
+      "sha256": "A952C58DA2925BFA4355279D08633791381F6280EE266D08E408D5845D6AF2C8"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone\\.build\\legacy-bin\\Release\\net9.0\\Planning.Verify.pdb",
+      "sha256": "AF2B2384353BC00A18490C23E6D50A9DB7A2589A0275D2637AD421CEBE605AC9"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone\\.build\\legacy-bin\\Release\\net9.0\\Planning.Verify.runtimeconfig.json",
+      "sha256": "3C0BF772B95C93363A0A14E5DF78E4EC408C90F04CB7103205AF97B2D276FAB0"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone\\.build\\legacy-obj\\Planning.Verify.csproj.nuget.dgspec.json",
+      "sha256": "740124622FC0D7CD49C6ACBE086E47F1E82C8CA439F42C0212CF83097F30E125"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone\\.build\\legacy-obj\\Planning.Verify.csproj.nuget.g.props",
+      "sha256": "B1AD4D78C75B52901AE0E28C1A8003EBD2FF8EAEE8C9608AACA19B93A8A7A513"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone\\.build\\legacy-obj\\Planning.Verify.csproj.nuget.g.targets",
+      "sha256": "971CC9B535384849B5C661D776CD7A80833A416265E32E8968E06C367368B8B5"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone\\.build\\legacy-obj\\project.assets.json",
+      "sha256": "757C2E2833915C98626C27474DA1EFAA1A105E0D23E8FC133173A998276004CE"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone\\.build\\legacy-obj\\project.nuget.cache",
+      "sha256": "969610ECFC971F16509A28D9DB0D5BDD76E044F9E4E6EF10E3DF34E2E116E304"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone\\.build\\legacy-obj\\Release\\net9.0\\.NETCoreApp,Version=v9.0.AssemblyAttributes.cs",
+      "sha256": "9E76499C4E5CB623AD4889EAA99B1A53D9C970EFCF902D8B096E78A19EE4285D"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone\\.build\\legacy-obj\\Release\\net9.0\\apphost.exe",
+      "sha256": "A952C58DA2925BFA4355279D08633791381F6280EE266D08E408D5845D6AF2C8"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone\\.build\\legacy-obj\\Release\\net9.0\\Planning.23D30F04.Up2Date",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone\\.build\\legacy-obj\\Release\\net9.0\\Planning.Verify.AssemblyInfo.cs",
+      "sha256": "6A4B6EA12557C27169D40E78BDE9B5AFA60C668C7763E6E45D2510E4675C2071"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone\\.build\\legacy-obj\\Release\\net9.0\\Planning.Verify.AssemblyInfoInputs.cache",
+      "sha256": "311F9486F8A5763C3B9C2983A66334AB3A4BEE29BD4F9B7EA871DF749D399749"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone\\.build\\legacy-obj\\Release\\net9.0\\Planning.Verify.assets.cache",
+      "sha256": "BDABD95A4D60B6F3E4C1E1995C5E05EEDB512B9B42566279C3FB5F0BC77E642B"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone\\.build\\legacy-obj\\Release\\net9.0\\Planning.Verify.csproj.AssemblyReference.cache",
+      "sha256": "95AC835E54C93505F9D469B0D7C2B5E74E868F4825D52DBAE75930B28E999102"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone\\.build\\legacy-obj\\Release\\net9.0\\Planning.Verify.csproj.CoreCompileInputs.cache",
+      "sha256": "B4E6AA34377DA9EC7DBB19E0FED40161104E460BCD7213B6369BBB4346B35809"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone\\.build\\legacy-obj\\Release\\net9.0\\Planning.Verify.csproj.FileListAbsolute.txt",
+      "sha256": "E5AD87CDBBA143FECE7AC3C0F5A06F8B965BCD286E1E24679DE78292A810C16C"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone\\.build\\legacy-obj\\Release\\net9.0\\Planning.Verify.dll",
+      "sha256": "57CF8639E8CCE76CF82513D35C36488E966F639C0A850476633C7D3A8AAE8E33"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone\\.build\\legacy-obj\\Release\\net9.0\\Planning.Verify.GeneratedMSBuildEditorConfig.editorconfig",
+      "sha256": "09D7A9299031A5B9CB1E6B94001FAAD110642DE721EF8E40BEC5FCEF6344CC6B"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone\\.build\\legacy-obj\\Release\\net9.0\\Planning.Verify.genruntimeconfig.cache",
+      "sha256": "B2FCD5EFC216466E0CD344E977B07CD761E90B5B73FA8ABD9EDC9AF6746B077F"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone\\.build\\legacy-obj\\Release\\net9.0\\Planning.Verify.pdb",
+      "sha256": "AF2B2384353BC00A18490C23E6D50A9DB7A2589A0275D2637AD421CEBE605AC9"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone\\.build\\legacy-obj\\Release\\net9.0\\Planning.Verify.sourcelink.json",
+      "sha256": "5F7CB6BFAE537B95B0ACD2C1E97118E8946748700A7D8D34BC0923CC3F2F7CCD"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone\\.build\\legacy-obj\\Release\\net9.0\\ref\\Planning.Verify.dll",
+      "sha256": "CCA1F1025328543D2B85C59C661561577D9E3078FB8FB7EC18DF833F0D7E3A92"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Planning\\Standalone\\.build\\legacy-obj\\Release\\net9.0\\refint\\Planning.Verify.dll",
+      "sha256": "CCA1F1025328543D2B85C59C661561577D9E3078FB8FB7EC18DF833F0D7E3A92"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Presentation\\ChineseFontTests.cs",
+      "sha256": "8A8DD45D3D0964905A268E987C028AD4ADFFE6839A235F7CB1C98AF515AE9D83"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Presentation\\ChineseFontTests.cs.meta",
+      "sha256": "5311CD6E88E84430E2570DC4ACF2F7DACFEBD29AD5CFA2B0FD507941F51C333F"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Presentation\\FrontendActionSerializationTests.cs",
+      "sha256": "772FC153B30A7FF4E3C7B01AF2F18C720320021F5A8B9DFEC672AC2D9BE799B5"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Presentation\\FrontendActionSerializationTests.cs.meta",
+      "sha256": "D8BB99EB2DE70FF95E9D40157B8A76D40E3C66968271BC6E759D976414E5F337"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Presentation\\PointerHoldStateTests.cs",
+      "sha256": "42F6526CC8317F18F0776761C7C1B85E399C8926738A621EF9505BFFF1A64926"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Presentation\\PointerHoldStateTests.cs.meta",
+      "sha256": "E22A871B6A77AD1126970F7E1FBBAC5FA1CDFCEAF501448BA36D611074FB4C24"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Presentation\\TrainingInputAdapterTests.cs",
+      "sha256": "942923ED568A6C309D931DC119CE3F2D5C0CD0628B6A306F1D8B3E3BE6E30881"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Presentation\\TrainingInputAdapterTests.cs.meta",
+      "sha256": "FF9D1F9ED8510B8F37DE11FEBF0D336D7AB2E75E19FB569B2A00FF0CFA7C7808"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Training\\obj.meta",
+      "sha256": "0EDD29FFB841A827CA328CFFFDA6BB21343588C55D52F42D227A985EF56C8768"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Training\\TrainingChecks.cs",
+      "sha256": "BD59E801ECF55617B399E8DF8487AF1680FBF72202B1441D3FB0CD9BA1C7FEF2"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Training\\TrainingChecks.cs.meta",
+      "sha256": "4B157E61A8D842640029BD36FAFC98AB75FF47515CDE5BD235C464F878B7A6E3"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Training\\TrainingDomainTests.cs",
+      "sha256": "015732AC3297E0B5018A0A10E261828E1BCB431EF45672B0517D9D54CFA5A720"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Training\\TrainingDomainTests.cs.meta",
+      "sha256": "57711B89F5B7F75048A4288EF81AC11188FB117098A9A00366B2E3DEEA9CEB7C"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Training\\TrainingInputChecks.cs",
+      "sha256": "E3E6492FE860032F2245D257B976A6C8FD67682B07A5F00F12B4C86C215BAFCC"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Training\\TrainingInputChecks.cs.meta",
+      "sha256": "8DB65D6F638C9FF9AD6323C2ACA228F49352E1B9894715FA54AC4673B05B06BD"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Training\\TrainingInputDomainTests.cs",
+      "sha256": "BE5F251859D9FD3E9A1A5E7A642014E949BAA0E7CEB7CFA573A53A6EA6988944"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Training\\TrainingInputDomainTests.cs.meta",
+      "sha256": "FA7B7986719DEFB0F03BC20DF6A375FEAA415860EBC37F8408D7A31ACA5F8A62"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Training\\TrainingInputStandalone.csproj",
+      "sha256": "5B34CEA69B0EACB8A2D5694882EE8C3B59496D5B33DA88EE5C85A35A04D1733D"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Training\\TrainingInputStandalone.csproj.meta",
+      "sha256": "8764BABE109C52CFEF3DDF9D2989F5E7C45D2C96B9196D58A86D69753380270C"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Training\\TrainingInputTraceReport.cs",
+      "sha256": "9A2C3F52B9F040E98536AA8ACCA5454F76423F49CCD1E32F720EF22E00E2DD10"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Training\\TrainingInputTraceReport.cs.meta",
+      "sha256": "2F859EC986D3F5E817E15194018AB14D8143824CA2E3D737624822C65DB2304D"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Training\\TrainingJsonUtilityTests.cs",
+      "sha256": "961C2ABBE28E6EE21E94D297450A8E406254A315DDCEE7F8C0A6BD123880BEE6"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Training\\TrainingJsonUtilityTests.cs.meta",
+      "sha256": "7D55FBCA48E7FA51FCEEFEB3B548B0D378EBC051AB11FCB68AFF5DD45D4FE988"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Training\\TrainingM2Checks.cs",
+      "sha256": "DAC73CD0D4930BF974C640E27B9B21FB74BE8BC4A3A9ED645D78D97EA7C70E5F"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Training\\TrainingM2Checks.cs.meta",
+      "sha256": "0E5E83E6B83A520A211AF8306BFED7CA67EF019B7459280F62983706D8CA0B6D"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Training\\TrainingM2DomainTests.cs",
+      "sha256": "39F812600BAB1C60D1A45C20B68316F1727EE8AF95708501EE78EB1C922F0A9C"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Training\\TrainingM2DomainTests.cs.meta",
+      "sha256": "6B4B9F8E993486D92D9E19529AAB50851D23B3544A9012F0AC7F3F1F54979A77"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Training\\TrainingM2JsonUtilityTests.cs",
+      "sha256": "965E5DB8F2DCF6F537B6E8024DEDF500B7F8D8795305F6643986C71451ABA1F6"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Training\\TrainingM2JsonUtilityTests.cs.meta",
+      "sha256": "BE23A0A48D1A5CC165028E18FF6544304FC0262B20E1C76168ADA155A9605CD5"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Training\\TrainingM2Standalone.csproj",
+      "sha256": "F4E52A27593422336E9E918C0B62D93D9C228A3551FF5716018E283830C9833E"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Training\\TrainingM2Standalone.csproj.meta",
+      "sha256": "B8E93EB5BB19C2DB52BF506D7DB088CBC28F96D00F93C226597E08EC2524B444"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Training\\TrainingStandalone.csproj",
+      "sha256": "828781F1C68B5FD670636905A8BD0D5CB1C6B2767C88EAB81020B7A0022B84D8"
+    },
+    {
+      "path": "Assets\\FitnessSimulator\\Tests\\Production\\Training\\TrainingStandalone.csproj.meta",
+      "sha256": "97B29BB5B38669DDA2FB43962D2FB0A279CEBB4FBFE75835E996D18B77F4C6CA"
+    },
+    {
+      "path": "Assets\\Settings\\DefaultVolumeProfile.asset",
+      "sha256": "463776C51AE49D4FEF980E8FD268081B2F505610D79315003FAAE1ACFF8F4115"
+    },
+    {
+      "path": "Assets\\Settings\\DefaultVolumeProfile.asset.meta",
+      "sha256": "EFBCB026CEE6B8E32FDF27018C06B0515296A6CCBB43969E792FEA270310700A"
+    },
+    {
+      "path": "Assets\\Settings\\Mobile_Renderer.asset",
+      "sha256": "AA93274C9521FA941170BECEC9E87C5FA36B8587EEFD5EEB5C0EED0D1D4B1DBE"
+    },
+    {
+      "path": "Assets\\Settings\\Mobile_Renderer.asset.meta",
+      "sha256": "A148EE2B4987B05B8FF7AE5F9BF84916184F77AEFDDC821DCEB551F5A69F8179"
+    },
+    {
+      "path": "Assets\\Settings\\Mobile_RPAsset.asset",
+      "sha256": "2DAE640482CED16E55B3549EEDB816C6CCAA7F7939E9962F588AE7D0FE734D9A"
+    },
+    {
+      "path": "Assets\\Settings\\Mobile_RPAsset.asset.meta",
+      "sha256": "53EA46647712C615FD1A3F2E0DDDFA8559EEEDC649E9A1DBF93FF913DE28544C"
+    },
+    {
+      "path": "Assets\\Settings\\PC_Renderer.asset",
+      "sha256": "3D0B01D8DED3327263B6690BE128A3DE58D17C514943AE42FE743A3E084A9C79"
+    },
+    {
+      "path": "Assets\\Settings\\PC_Renderer.asset.meta",
+      "sha256": "B5DF8DDB2708C6ED4C133A5FF9EE95A75CC20E4EE3ED6181366A61AEDBAF31EC"
+    },
+    {
+      "path": "Assets\\Settings\\PC_RPAsset.asset",
+      "sha256": "2B99310A25ACFF86040187DAE4C72DF3A2F049828FF64C40B203964F7659E9A6"
+    },
+    {
+      "path": "Assets\\Settings\\PC_RPAsset.asset.meta",
+      "sha256": "BB469B9B6F318E9E9BED29C3B2E73E79371C04743C6F95DD6603941F1CD3E53E"
+    },
+    {
+      "path": "Assets\\Settings\\SampleSceneProfile.asset",
+      "sha256": "A8677D4BAC051D24CAA11CD622E39F968155EE277BFCE132274F1DE225692FE9"
+    },
+    {
+      "path": "Assets\\Settings\\SampleSceneProfile.asset.meta",
+      "sha256": "2E23ABC214069F0ADBF2B2207F1DB54BE7876629EC2A3681D0F4AA5B61622EF0"
+    },
+    {
+      "path": "Assets\\Settings\\UniversalRenderPipelineGlobalSettings.asset",
+      "sha256": "E6B28084CAE6050BF984CE09B69A96287160DD19677658C259496530301DD1F9"
+    },
+    {
+      "path": "Assets\\Settings\\UniversalRenderPipelineGlobalSettings.asset.meta",
+      "sha256": "F61661D8BC8DBE531DAF09F6211EF978C7BA145C9207C8E76524396AE0722D7C"
+    },
+    {
+      "path": "Packages\\manifest.json",
+      "sha256": "011835F39AA55AFAF70359D675F60E0B434E286EB61470300F3B39E4EB937FB7"
+    },
+    {
+      "path": "Packages\\packages-lock.json",
+      "sha256": "405717D38A4860431896D18FB8BD90F2AE6CA5481C0B80BDCEDC1247789DA062"
+    },
+    {
+      "path": "ProjectSettings\\AudioManager.asset",
+      "sha256": "AEEDEB3243F07B61DBBE854AA08B5EF6F0B5274DD9852AD9F6129DDE3E105A31"
+    },
+    {
+      "path": "ProjectSettings\\ClusterInputManager.asset",
+      "sha256": "40E65DD214BF254955D2C8829CA8CE2130FD3510485560CE012E9A1DDD93E623"
+    },
+    {
+      "path": "ProjectSettings\\DynamicsManager.asset",
+      "sha256": "BF017B547BB77CE3443DD5287DDF2516A74FD167F4F2EE5D798340694F51776D"
+    },
+    {
+      "path": "ProjectSettings\\EditorBuildSettings.asset",
+      "sha256": "197277A32FAB3301E7146DF3E82DC134CD8A1294044EF3787EEADA416FDB3147"
+    },
+    {
+      "path": "ProjectSettings\\EditorSettings.asset",
+      "sha256": "BBEDCF93C32BCA12EABA9ED61189AB13F064217E9F2984A66772719FA73C56B5"
+    },
+    {
+      "path": "ProjectSettings\\GraphicsSettings.asset",
+      "sha256": "1AABAA3226AF3FDFDCD1BF936FF3EBF164870BF04B2FE230138634985CA62B1C"
+    },
+    {
+      "path": "ProjectSettings\\InputManager.asset",
+      "sha256": "7A1BB836A1008D26D0860D143E9D9DF7CA41731D30A72901B518063819C62DF2"
+    },
+    {
+      "path": "ProjectSettings\\MemorySettings.asset",
+      "sha256": "1E8379A461B10AE09F3F696911088C16875D63E87ED5F2D95DF9E1892703F9FD"
+    },
+    {
+      "path": "ProjectSettings\\MultiplayerManager.asset",
+      "sha256": "ABA89FD1A1DDAD182727AD82727E536D27372E90328A8196DA2A4560398983DD"
+    },
+    {
+      "path": "ProjectSettings\\NavMeshAreas.asset",
+      "sha256": "80106CFA7E6181A1928B142C075F3E510D527441E3D79BC83590E4AC91E7CD66"
+    },
+    {
+      "path": "ProjectSettings\\PackageManagerSettings.asset",
+      "sha256": "F281D96E785DF430D30CE0A515F4FE5C625EF44467125879F4B9F4CB087E1578"
+    },
+    {
+      "path": "ProjectSettings\\Physics2DSettings.asset",
+      "sha256": "D57A0FE55659C33879E8B70BC01C5EA9CDF082069DAB649905C6C5138531E6EB"
+    },
+    {
+      "path": "ProjectSettings\\PhysicsCoreProjectSettings2D.asset",
+      "sha256": "BEDC5339A832C60DC3F11B84ABC4F4384DBFA20B0CD9AD6C444B907E751FC35E"
+    },
+    {
+      "path": "ProjectSettings\\PresetManager.asset",
+      "sha256": "29C125923FE6E29F90190D4FCE1C82D660E7051546E2C9D02908D18C9CF2436C"
+    },
+    {
+      "path": "ProjectSettings\\ProjectAuditorSettings.asset",
+      "sha256": "9E68444B9BDA981E2927A98DF9EDF69EA88362F0C6B7F3C81B39B9D515D2A416"
+    },
+    {
+      "path": "ProjectSettings\\ProjectSettings.asset",
+      "sha256": "70870FB1C5F079C8AB52B846A981EBE36455088EFCA86F5913B80B7413C86E4C"
+    },
+    {
+      "path": "ProjectSettings\\ProjectVersion.txt",
+      "sha256": "C42304CCF9A727E75D565625E67A9D17E07CA408948B5385B940AD38BA04DA98"
+    },
+    {
+      "path": "ProjectSettings\\QualitySettings.asset",
+      "sha256": "E174097FC4262801BA256B5AA4CB448192C78F64AE46903F3F742FADC3A4803C"
+    },
+    {
+      "path": "ProjectSettings\\SceneTemplateSettings.json",
+      "sha256": "BB9098B3BFCDE78D93E264B96F7B77B5430E64E8C57A7AAD7F5A5D9C3945E16A"
+    },
+    {
+      "path": "ProjectSettings\\ShaderGraphSettings.asset",
+      "sha256": "CDBA1E5D65BCF6E3269D76ED3E60B6C21F98322002996642C9D74F1EB89F6B91"
+    },
+    {
+      "path": "ProjectSettings\\TagManager.asset",
+      "sha256": "23FC56B484AA3D7EDF5914CD3591F7A823CCEF5E3F3496F8A51F30388EAD63DC"
+    },
+    {
+      "path": "ProjectSettings\\TimeManager.asset",
+      "sha256": "1A83E54ADBBDA7C9F4851103A0C6AB7F6448A3343D4EA5B7620452FA08416ECD"
+    },
+    {
+      "path": "ProjectSettings\\UnityConnectSettings.asset",
+      "sha256": "7F2112B8C6EA0885DCC72B312C9726FFCD909F2E89D1EEAD61889274A4E5D1C0"
+    },
+    {
+      "path": "ProjectSettings\\URPProjectSettings.asset",
+      "sha256": "596D5C8BF4F957B03684C949BEBC252AE1918F25415A1147A00684C4B086EFDA"
+    },
+    {
+      "path": "ProjectSettings\\VersionControlSettings.asset",
+      "sha256": "E7BDA45BF7A394745FEE1316E6C71FA676004D591AD1F3AA247FD3E4CEB86071"
+    },
+    {
+      "path": "ProjectSettings\\VFXManager.asset",
+      "sha256": "F066C6483919961332415EE64204F74FE52F38C02E82892EB02B7A5B2E381F0E"
+    },
+    {
+      "path": "ProjectSettings\\XRSettings.asset",
+      "sha256": "EDD2BEB4A2E388312B4B7DA241AA51070434005D82C59363F1237DD2E567585F"
+    },
+    {
+      "path": "Tools\\Environment.ps1",
+      "sha256": "41E79C4B711039D7D6D468D947F6E4323D48783A5E5F42EE82FA894EA2C6FFA3"
+    },
+    {
+      "path": "Tools\\Game.ps1",
+      "sha256": "34988C5E74C0A79D29A3B5430E4D8DE63BA1A3E66FAF5DE24C1BFD582BA7DCF3"
+    },
+    {
+      "path": "Tools\\Unity.ps1",
+      "sha256": "2B5ADB52DA2EF05B1F393B4489899CFAC36309B37A7774469D6D1AFB22A6EA16"
+    },
+    {
+      "path": "Tools\\Automation\\OfflineEconomyStudyTests.cs.txt",
+      "sha256": "E9599EA4819B6DE74D48D23C582909E99DFB86E2110ADEA4FFB0E24A156890EE"
+    },
+    {
+      "path": "Tools\\Automation\\Run.ps1",
+      "sha256": "180418A2D044586741E99164095B565F9BCA7A3160BF570E1F4AEED182594531"
+    }
+  ]
+}

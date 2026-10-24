@@ -1,0 +1,6 @@
+{
+  "name": "FitnessSimulator.Game",
+  "rootNamespace": "FitnessSimulator.Game",
+  "references": ["Unity.InputSystem", "Unity.ugui"],
+  "autoReferenced": true
+}

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db407f22d21a5fb4c977649f2d447fc0, type: 3}
+  m_Name: shoulder-press
+  m_EditorClassIdentifier: FitnessSimulator.Runtime::FitnessSimulator.Training.ExercisePresentation
+  exerciseId: shoulder-press
+  displayName: Shoulder press
+  presentationNotes: Original motion blockout. Replaceable assets; no final minigame scoring or training instruction.
+  targetMuscleTags:
+  - shoulders
+  - triceps
+  stagePrefab: {fileID: 1592006403007142805, guid: f1b69322017f77e40b3d2f77a16b89ba, type: 3}
+  demonstrationClip: {fileID: 7400000, guid: 39bd808d6d6ba68459a358e77bdb8574, type: 2}
+  demonstrationOnly: 1
+  referenceUrls:
+  - https://quaternius.com/packs/universalbasecharacters
+  - https://vnb3d.com/product/gym-set/

@@ -1,0 +1,7 @@
+{
+  "name": "FitnessSimulator.Game.Editor",
+  "rootNamespace": "FitnessSimulator.Game.Editor",
+  "references": ["FitnessSimulator.Game", "Unity.ugui"],
+  "includePlatforms": ["Editor"],
+  "autoReferenced": true
+}

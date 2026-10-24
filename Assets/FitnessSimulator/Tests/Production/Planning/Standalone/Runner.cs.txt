@@ -1,0 +1,22 @@
+using System;
+using System.Linq;
+using System.Reflection;
+using FitnessSimulator.Game.Tests.Planning;
+using NUnit.Framework;
+
+// Small standalone runner for this fixture only; no Unity editor or game integration is exercised.
+internal static class Runner
+{
+    private static int Main()
+    {
+        int passed = 0, failed = 0;
+        foreach (var type in new[] { typeof(PlanningTests), typeof(ActorDayPlansTests), typeof(CompetitionTests) })
+        foreach (var method in type.GetMethods().Where(x => x.GetCustomAttribute<TestAttribute>() != null))
+        {
+            try { method.Invoke(Activator.CreateInstance(type), null); passed++; Console.WriteLine("PASS " + method.Name); }
+            catch (Exception e) { failed++; Console.WriteLine("FAIL " + method.Name + ": " + (e.InnerException ?? e)); }
+        }
+        Console.WriteLine($"Planning standalone: {passed} passed, {failed} failed.");
+        return failed == 0 ? 0 : 1;
+    }
+}

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db407f22d21a5fb4c977649f2d447fc0, type: 3}
+  m_Name: dumbbell-curl
+  m_EditorClassIdentifier: FitnessSimulator.Runtime::FitnessSimulator.Training.ExercisePresentation
+  exerciseId: dumbbell-curl
+  displayName: Dumbbell curl
+  presentationNotes: Original motion blockout. Replaceable assets; no final minigame scoring or training instruction.
+  targetMuscleTags:
+  - biceps
+  stagePrefab: {fileID: 3595317513085289997, guid: 12de805de72fe8147827d107aa297ffc, type: 3}
+  demonstrationClip: {fileID: 7400000, guid: dc7117623da88ed4fa1f19dab5f7b628, type: 2}
+  demonstrationOnly: 1
+  referenceUrls:
+  - https://quaternius.com/packs/universalbasecharacters
+  - https://vnb3d.com/product/gym-set/

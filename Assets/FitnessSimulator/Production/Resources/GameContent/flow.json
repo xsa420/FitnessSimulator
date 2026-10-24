@@ -1,0 +1,1791 @@
+{
+  "Version": "FlowConfig.v1",
+  "Anchors": [
+    {
+      "Id": "early",
+      "Name": "清晨",
+      "Kind": "ordinary",
+      "MealSlot": "",
+      "UnlockCondition": "early-unlock",
+      "Order": 0,
+      "StandardSeconds": 1800,
+      "TrainingAllowed": true,
+      "EditableTraining": true,
+      "PlanEditing": false,
+      "Entries": [
+        {
+          "EventId": "ordinary-walk",
+          "Condition": "",
+          "Enabled": true,
+          "IsChoice": false,
+          "Weight": 25,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": []
+        },
+        {
+          "EventId": "training-choice",
+          "Condition": "training-here",
+          "Enabled": true,
+          "IsChoice": true,
+          "Weight": 1,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": []
+        },
+        {
+          "EventId": "all-day-study",
+          "Condition": "rest-first",
+          "Enabled": true,
+          "IsChoice": true,
+          "Weight": 1,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": [
+            {
+              "AnchorId": "$ordinary",
+              "DayOffset": 0
+            }
+          ]
+        },
+        {
+          "EventId": "busy-visit",
+          "Condition": "overtime",
+          "Enabled": true,
+          "IsChoice": false,
+          "Weight": 20,
+          "MaximumStarts": 3,
+          "CooldownDays": 2,
+          "ExclusiveGroup": "",
+          "Consume": []
+        },
+        {
+          "EventId": "injury-notice",
+          "Condition": "injured",
+          "Enabled": true,
+          "IsChoice": false,
+          "Weight": 10,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": []
+        }
+      ],
+      "Defaults": [
+        {
+          "EventId": "ordinary-calm",
+          "Condition": "",
+          "Enabled": true,
+          "IsChoice": false,
+          "Weight": 25,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": []
+        }
+      ]
+    },
+    {
+      "Id": "breakfast",
+      "Name": "早餐",
+      "Kind": "meal",
+      "MealSlot": "Breakfast",
+      "UnlockCondition": "",
+      "Order": 1,
+      "StandardSeconds": 600,
+      "TrainingAllowed": false,
+      "EditableTraining": false,
+      "PlanEditing": false,
+      "Entries": [],
+      "Defaults": [
+        {
+          "EventId": "meal",
+          "Condition": "",
+          "Enabled": true,
+          "IsChoice": false,
+          "Weight": 25,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": []
+        }
+      ]
+    },
+    {
+      "Id": "morning",
+      "Name": "上午",
+      "Kind": "ordinary",
+      "MealSlot": "",
+      "UnlockCondition": "",
+      "Order": 2,
+      "StandardSeconds": 1800,
+      "TrainingAllowed": true,
+      "EditableTraining": false,
+      "PlanEditing": false,
+      "Entries": [
+        {
+          "EventId": "ordinary-work",
+          "Condition": "workday",
+          "Enabled": true,
+          "IsChoice": false,
+          "Weight": 25,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": []
+        },
+        {
+          "EventId": "ordinary-walk",
+          "Condition": "rest-day",
+          "Enabled": true,
+          "IsChoice": false,
+          "Weight": 25,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": []
+        },
+        {
+          "EventId": "training-choice",
+          "Condition": "training-here",
+          "Enabled": true,
+          "IsChoice": true,
+          "Weight": 1,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": []
+        },
+        {
+          "EventId": "all-day-study",
+          "Condition": "rest-first",
+          "Enabled": true,
+          "IsChoice": true,
+          "Weight": 1,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": [
+            {
+              "AnchorId": "$ordinary",
+              "DayOffset": 0
+            }
+          ]
+        },
+        {
+          "EventId": "busy-visit",
+          "Condition": "overtime",
+          "Enabled": true,
+          "IsChoice": false,
+          "Weight": 20,
+          "MaximumStarts": 3,
+          "CooldownDays": 2,
+          "ExclusiveGroup": "",
+          "Consume": []
+        },
+        {
+          "EventId": "injury-notice",
+          "Condition": "injured",
+          "Enabled": true,
+          "IsChoice": false,
+          "Weight": 10,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": []
+        }
+      ],
+      "Defaults": [
+        {
+          "EventId": "ordinary-work",
+          "Condition": "workday",
+          "Enabled": true,
+          "IsChoice": false,
+          "Weight": 25,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": []
+        },
+        {
+          "EventId": "ordinary-calm",
+          "Condition": "",
+          "Enabled": true,
+          "IsChoice": false,
+          "Weight": 25,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": []
+        }
+      ]
+    },
+    {
+      "Id": "lunch",
+      "Name": "午餐",
+      "Kind": "meal",
+      "MealSlot": "Lunch",
+      "UnlockCondition": "",
+      "Order": 3,
+      "StandardSeconds": 600,
+      "TrainingAllowed": false,
+      "EditableTraining": false,
+      "PlanEditing": false,
+      "Entries": [],
+      "Defaults": [
+        {
+          "EventId": "meal",
+          "Condition": "",
+          "Enabled": true,
+          "IsChoice": false,
+          "Weight": 25,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": []
+        }
+      ]
+    },
+    {
+      "Id": "noon",
+      "Name": "中午",
+      "Kind": "ordinary",
+      "MealSlot": "",
+      "UnlockCondition": "",
+      "Order": 4,
+      "StandardSeconds": 1800,
+      "TrainingAllowed": true,
+      "EditableTraining": true,
+      "PlanEditing": false,
+      "Entries": [
+        {
+          "EventId": "ordinary-walk",
+          "Condition": "",
+          "Enabled": true,
+          "IsChoice": false,
+          "Weight": 25,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": []
+        },
+        {
+          "EventId": "training-choice",
+          "Condition": "training-here",
+          "Enabled": true,
+          "IsChoice": true,
+          "Weight": 1,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": []
+        },
+        {
+          "EventId": "all-day-study",
+          "Condition": "rest-first",
+          "Enabled": true,
+          "IsChoice": true,
+          "Weight": 1,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": [
+            {
+              "AnchorId": "$ordinary",
+              "DayOffset": 0
+            }
+          ]
+        },
+        {
+          "EventId": "busy-visit",
+          "Condition": "overtime",
+          "Enabled": true,
+          "IsChoice": false,
+          "Weight": 20,
+          "MaximumStarts": 3,
+          "CooldownDays": 2,
+          "ExclusiveGroup": "",
+          "Consume": []
+        },
+        {
+          "EventId": "injury-notice",
+          "Condition": "injured",
+          "Enabled": true,
+          "IsChoice": false,
+          "Weight": 10,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": []
+        }
+      ],
+      "Defaults": [
+        {
+          "EventId": "ordinary-calm",
+          "Condition": "",
+          "Enabled": true,
+          "IsChoice": false,
+          "Weight": 25,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": []
+        }
+      ]
+    },
+    {
+      "Id": "afternoon",
+      "Name": "下午",
+      "Kind": "ordinary",
+      "MealSlot": "",
+      "UnlockCondition": "",
+      "Order": 5,
+      "StandardSeconds": 1800,
+      "TrainingAllowed": true,
+      "EditableTraining": false,
+      "PlanEditing": false,
+      "Entries": [
+        {
+          "EventId": "ordinary-work",
+          "Condition": "workday",
+          "Enabled": true,
+          "IsChoice": false,
+          "Weight": 25,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": []
+        },
+        {
+          "EventId": "ordinary-walk",
+          "Condition": "rest-day",
+          "Enabled": true,
+          "IsChoice": false,
+          "Weight": 25,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": []
+        },
+        {
+          "EventId": "training-choice",
+          "Condition": "training-here",
+          "Enabled": true,
+          "IsChoice": true,
+          "Weight": 1,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": []
+        },
+        {
+          "EventId": "corner-shop",
+          "Condition": "",
+          "Enabled": true,
+          "IsChoice": true,
+          "Weight": 1,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": []
+        },
+        {
+          "EventId": "all-day-study",
+          "Condition": "rest-first",
+          "Enabled": true,
+          "IsChoice": true,
+          "Weight": 1,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": [
+            {
+              "AnchorId": "$ordinary",
+              "DayOffset": 0
+            }
+          ]
+        },
+        {
+          "EventId": "busy-visit",
+          "Condition": "overtime",
+          "Enabled": true,
+          "IsChoice": false,
+          "Weight": 20,
+          "MaximumStarts": 3,
+          "CooldownDays": 2,
+          "ExclusiveGroup": "",
+          "Consume": []
+        },
+        {
+          "EventId": "injury-notice",
+          "Condition": "injured",
+          "Enabled": true,
+          "IsChoice": false,
+          "Weight": 10,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": []
+        }
+      ],
+      "Defaults": [
+        {
+          "EventId": "ordinary-work",
+          "Condition": "workday",
+          "Enabled": true,
+          "IsChoice": false,
+          "Weight": 25,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": []
+        },
+        {
+          "EventId": "ordinary-calm",
+          "Condition": "",
+          "Enabled": true,
+          "IsChoice": false,
+          "Weight": 25,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": []
+        }
+      ]
+    },
+    {
+      "Id": "dinner",
+      "Name": "晚餐",
+      "Kind": "meal",
+      "MealSlot": "Dinner",
+      "UnlockCondition": "",
+      "Order": 6,
+      "StandardSeconds": 600,
+      "TrainingAllowed": false,
+      "EditableTraining": false,
+      "PlanEditing": false,
+      "Entries": [],
+      "Defaults": [
+        {
+          "EventId": "meal",
+          "Condition": "",
+          "Enabled": true,
+          "IsChoice": false,
+          "Weight": 25,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": []
+        }
+      ]
+    },
+    {
+      "Id": "evening",
+      "Name": "晚上",
+      "Kind": "ordinary",
+      "MealSlot": "",
+      "UnlockCondition": "",
+      "Order": 7,
+      "StandardSeconds": 1800,
+      "TrainingAllowed": true,
+      "EditableTraining": true,
+      "PlanEditing": true,
+      "Entries": [
+        {
+          "EventId": "ordinary-walk",
+          "Condition": "",
+          "Enabled": true,
+          "IsChoice": false,
+          "Weight": 25,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": []
+        },
+        {
+          "EventId": "training-choice",
+          "Condition": "training-here",
+          "Enabled": true,
+          "IsChoice": true,
+          "Weight": 1,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": []
+        },
+        {
+          "EventId": "gym-shop",
+          "Condition": "",
+          "Enabled": true,
+          "IsChoice": true,
+          "Weight": 1,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": []
+        },
+        {
+          "EventId": "all-day-study",
+          "Condition": "rest-first",
+          "Enabled": true,
+          "IsChoice": true,
+          "Weight": 1,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": [
+            {
+              "AnchorId": "$ordinary",
+              "DayOffset": 0
+            }
+          ]
+        },
+        {
+          "EventId": "evening-study",
+          "Condition": "evening-study",
+          "Enabled": true,
+          "IsChoice": true,
+          "Weight": 1,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": []
+        },
+        {
+          "EventId": "busy-visit",
+          "Condition": "overtime",
+          "Enabled": true,
+          "IsChoice": false,
+          "Weight": 20,
+          "MaximumStarts": 3,
+          "CooldownDays": 2,
+          "ExclusiveGroup": "",
+          "Consume": []
+        },
+        {
+          "EventId": "injury-notice",
+          "Condition": "injured",
+          "Enabled": true,
+          "IsChoice": false,
+          "Weight": 10,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": []
+        }
+      ],
+      "Defaults": [
+        {
+          "EventId": "ordinary-calm",
+          "Condition": "",
+          "Enabled": true,
+          "IsChoice": false,
+          "Weight": 25,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": []
+        }
+      ]
+    },
+    {
+      "Id": "late",
+      "Name": "后半夜",
+      "Kind": "ordinary",
+      "MealSlot": "",
+      "UnlockCondition": "late-unlock",
+      "Order": 8,
+      "StandardSeconds": 1800,
+      "TrainingAllowed": true,
+      "EditableTraining": true,
+      "PlanEditing": false,
+      "Entries": [
+        {
+          "EventId": "ordinary-walk",
+          "Condition": "",
+          "Enabled": true,
+          "IsChoice": false,
+          "Weight": 25,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": []
+        },
+        {
+          "EventId": "training-choice",
+          "Condition": "training-here",
+          "Enabled": true,
+          "IsChoice": true,
+          "Weight": 1,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": []
+        },
+        {
+          "EventId": "all-day-study",
+          "Condition": "rest-first",
+          "Enabled": true,
+          "IsChoice": true,
+          "Weight": 1,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": [
+            {
+              "AnchorId": "$ordinary",
+              "DayOffset": 0
+            }
+          ]
+        },
+        {
+          "EventId": "busy-visit",
+          "Condition": "overtime",
+          "Enabled": true,
+          "IsChoice": false,
+          "Weight": 20,
+          "MaximumStarts": 3,
+          "CooldownDays": 2,
+          "ExclusiveGroup": "",
+          "Consume": []
+        },
+        {
+          "EventId": "injury-notice",
+          "Condition": "injured",
+          "Enabled": true,
+          "IsChoice": false,
+          "Weight": 10,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": []
+        }
+      ],
+      "Defaults": [
+        {
+          "EventId": "ordinary-calm",
+          "Condition": "",
+          "Enabled": true,
+          "IsChoice": false,
+          "Weight": 25,
+          "MaximumStarts": -1,
+          "CooldownDays": 0,
+          "ExclusiveGroup": "",
+          "Consume": []
+        }
+      ]
+    }
+  ],
+  "Events": [
+    {
+      "Id": "ordinary-work",
+      "Title": "上班",
+      "Root": "work",
+      "Nodes": [
+        {
+          "Id": "work",
+          "Handler": "work",
+          "Title": "",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "",
+            "ShopId": "",
+            "IncomeId": "work",
+            "TimeMode": "standard",
+            "Seconds": 0,
+            "Effects": []
+          }
+        }
+      ]
+    },
+    {
+      "Id": "ordinary-walk",
+      "Title": "散步",
+      "Root": "walk",
+      "Nodes": [
+        {
+          "Id": "walk",
+          "Handler": "walk",
+          "Title": "",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "fixed",
+            "Seconds": 300,
+            "Effects": []
+          }
+        }
+      ]
+    },
+    {
+      "Id": "ordinary-calm",
+      "Title": "平静时光",
+      "Root": "calm",
+      "Nodes": [
+        {
+          "Id": "calm",
+          "Handler": "calm",
+          "Title": "",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        }
+      ]
+    },
+    {
+      "Id": "meal",
+      "Title": "用餐",
+      "Root": "meal",
+      "Nodes": [
+        {
+          "Id": "meal",
+          "Handler": "meal",
+          "Title": "",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "standard",
+            "Seconds": 0,
+            "Effects": []
+          }
+        }
+      ]
+    },
+    {
+      "Id": "corner-shop",
+      "Title": "街角书屋",
+      "Root": "shop-enter",
+      "Nodes": [
+        {
+          "Id": "shop-enter",
+          "Handler": "shop-enter",
+          "Title": "",
+          "Next": "shop",
+          "Branches": [],
+          "Call": {
+            "StoryId": "",
+            "ShopId": "shop_corner",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        },
+        {
+          "Id": "shop",
+          "Handler": "shop",
+          "Title": "",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        }
+      ]
+    },
+    {
+      "Id": "gym-shop",
+      "Title": "馆内书架",
+      "Root": "shop-enter",
+      "Nodes": [
+        {
+          "Id": "shop-enter",
+          "Handler": "shop-enter",
+          "Title": "",
+          "Next": "shop",
+          "Branches": [],
+          "Call": {
+            "StoryId": "",
+            "ShopId": "shop_gym",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        },
+        {
+          "Id": "shop",
+          "Handler": "shop",
+          "Title": "",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        }
+      ]
+    },
+    {
+      "Id": "all-day-study",
+      "Title": "全天学习",
+      "Root": "study-item",
+      "Nodes": [
+        {
+          "Id": "study-item",
+          "Handler": "study-item",
+          "Title": "",
+          "Next": "study-all",
+          "Branches": [],
+          "Call": {
+            "StoryId": "",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        },
+        {
+          "Id": "study-all",
+          "Handler": "study-all",
+          "Title": "",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        }
+      ]
+    },
+    {
+      "Id": "evening-study",
+      "Title": "晚间学习",
+      "Root": "study-evening",
+      "Nodes": [
+        {
+          "Id": "study-evening",
+          "Handler": "study-evening",
+          "Title": "",
+          "Next": "evening-item",
+          "Branches": [],
+          "Call": {
+            "StoryId": "",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        },
+        {
+          "Id": "evening-item",
+          "Handler": "evening-item",
+          "Title": "",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        }
+      ]
+    },
+    {
+      "Id": "busy-visit",
+      "Title": "繁忙时光",
+      "Root": "busy",
+      "Nodes": [
+        {
+          "Id": "busy",
+          "Handler": "busy",
+          "Title": "",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        }
+      ]
+    },
+    {
+      "Id": "injury-notice",
+      "Title": "伤病提醒",
+      "Root": "injury-notice",
+      "Nodes": [
+        {
+          "Id": "injury-notice",
+          "Handler": "injury-notice",
+          "Title": "",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        }
+      ]
+    },
+    {
+      "Id": "branch-example",
+      "Title": "路边的选择",
+      "Root": "story",
+      "Nodes": [
+        {
+          "Id": "story",
+          "Handler": "narrative",
+          "Title": "",
+          "Next": "reward",
+          "Branches": [],
+          "Call": {
+            "StoryId": "branch_example",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        },
+        {
+          "Id": "reward",
+          "Handler": "effects",
+          "Title": "",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": [
+              {
+                "Kind": "money",
+                "Target": "self",
+                "Id": "branch-reward",
+                "Amount": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "Id": "relationship.rival.familiar",
+      "Title": "互动回应",
+      "Root": "response",
+      "Nodes": [
+        {
+          "Id": "response",
+          "Handler": "narrative",
+          "Title": "互动回应",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "relationship.rival.familiar",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        }
+      ]
+    },
+    {
+      "Id": "relationship.rival.response.0",
+      "Title": "互动回应",
+      "Root": "response",
+      "Nodes": [
+        {
+          "Id": "response",
+          "Handler": "narrative",
+          "Title": "互动回应",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "relationship.rival.response.0",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        }
+      ]
+    },
+    {
+      "Id": "relationship.rival.response.1",
+      "Title": "互动回应",
+      "Root": "response",
+      "Nodes": [
+        {
+          "Id": "response",
+          "Handler": "narrative",
+          "Title": "互动回应",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "relationship.rival.response.1",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        }
+      ]
+    },
+    {
+      "Id": "relationship.rival.response.2",
+      "Title": "互动回应",
+      "Root": "response",
+      "Nodes": [
+        {
+          "Id": "response",
+          "Handler": "narrative",
+          "Title": "互动回应",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "relationship.rival.response.2",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        }
+      ]
+    },
+    {
+      "Id": "relationship.rival.response.3",
+      "Title": "互动回应",
+      "Root": "response",
+      "Nodes": [
+        {
+          "Id": "response",
+          "Handler": "narrative",
+          "Title": "互动回应",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "relationship.rival.response.3",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        }
+      ]
+    },
+    {
+      "Id": "relationship.beginner.familiar",
+      "Title": "互动回应",
+      "Root": "response",
+      "Nodes": [
+        {
+          "Id": "response",
+          "Handler": "narrative",
+          "Title": "互动回应",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "relationship.beginner.familiar",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        }
+      ]
+    },
+    {
+      "Id": "relationship.beginner.response.0",
+      "Title": "互动回应",
+      "Root": "response",
+      "Nodes": [
+        {
+          "Id": "response",
+          "Handler": "narrative",
+          "Title": "互动回应",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "relationship.beginner.response.0",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        }
+      ]
+    },
+    {
+      "Id": "relationship.beginner.response.1",
+      "Title": "互动回应",
+      "Root": "response",
+      "Nodes": [
+        {
+          "Id": "response",
+          "Handler": "narrative",
+          "Title": "互动回应",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "relationship.beginner.response.1",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        }
+      ]
+    },
+    {
+      "Id": "relationship.beginner.response.2",
+      "Title": "互动回应",
+      "Root": "response",
+      "Nodes": [
+        {
+          "Id": "response",
+          "Handler": "narrative",
+          "Title": "互动回应",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "relationship.beginner.response.2",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        }
+      ]
+    },
+    {
+      "Id": "relationship.beginner.response.3",
+      "Title": "互动回应",
+      "Root": "response",
+      "Nodes": [
+        {
+          "Id": "response",
+          "Handler": "narrative",
+          "Title": "互动回应",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "relationship.beginner.response.3",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        }
+      ]
+    },
+    {
+      "Id": "relationship.veteran.familiar",
+      "Title": "互动回应",
+      "Root": "response",
+      "Nodes": [
+        {
+          "Id": "response",
+          "Handler": "narrative",
+          "Title": "互动回应",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "relationship.veteran.familiar",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        }
+      ]
+    },
+    {
+      "Id": "relationship.veteran.response.0",
+      "Title": "互动回应",
+      "Root": "response",
+      "Nodes": [
+        {
+          "Id": "response",
+          "Handler": "narrative",
+          "Title": "互动回应",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "relationship.veteran.response.0",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        }
+      ]
+    },
+    {
+      "Id": "relationship.veteran.response.1",
+      "Title": "互动回应",
+      "Root": "response",
+      "Nodes": [
+        {
+          "Id": "response",
+          "Handler": "narrative",
+          "Title": "互动回应",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "relationship.veteran.response.1",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        }
+      ]
+    },
+    {
+      "Id": "relationship.veteran.response.2",
+      "Title": "互动回应",
+      "Root": "response",
+      "Nodes": [
+        {
+          "Id": "response",
+          "Handler": "narrative",
+          "Title": "互动回应",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "relationship.veteran.response.2",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        }
+      ]
+    },
+    {
+      "Id": "relationship.veteran.response.3",
+      "Title": "互动回应",
+      "Root": "response",
+      "Nodes": [
+        {
+          "Id": "response",
+          "Handler": "narrative",
+          "Title": "互动回应",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "relationship.veteran.response.3",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        }
+      ]
+    },
+    {
+      "Id": "relationship.coach.familiar",
+      "Title": "互动回应",
+      "Root": "response",
+      "Nodes": [
+        {
+          "Id": "response",
+          "Handler": "narrative",
+          "Title": "互动回应",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "relationship.coach.familiar",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        }
+      ]
+    },
+    {
+      "Id": "relationship.coach.response.0",
+      "Title": "互动回应",
+      "Root": "response",
+      "Nodes": [
+        {
+          "Id": "response",
+          "Handler": "narrative",
+          "Title": "互动回应",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "relationship.coach.response.0",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        }
+      ]
+    },
+    {
+      "Id": "relationship.coach.response.1",
+      "Title": "互动回应",
+      "Root": "response",
+      "Nodes": [
+        {
+          "Id": "response",
+          "Handler": "narrative",
+          "Title": "互动回应",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "relationship.coach.response.1",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        }
+      ]
+    },
+    {
+      "Id": "relationship.coach.response.2",
+      "Title": "互动回应",
+      "Root": "response",
+      "Nodes": [
+        {
+          "Id": "response",
+          "Handler": "narrative",
+          "Title": "互动回应",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "relationship.coach.response.2",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        }
+      ]
+    },
+    {
+      "Id": "relationship.coach.response.3",
+      "Title": "互动回应",
+      "Root": "response",
+      "Nodes": [
+        {
+          "Id": "response",
+          "Handler": "narrative",
+          "Title": "互动回应",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "relationship.coach.response.3",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        }
+      ]
+    },
+    {
+      "Id": "romance.pending",
+      "Title": "互动回应",
+      "Root": "response",
+      "Nodes": [
+        {
+          "Id": "response",
+          "Handler": "narrative",
+          "Title": "互动回应",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "romance.pending",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        }
+      ]
+    },
+    {
+      "Id": "romance.success",
+      "Title": "互动回应",
+      "Root": "response",
+      "Nodes": [
+        {
+          "Id": "response",
+          "Handler": "narrative",
+          "Title": "互动回应",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "romance.success",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        }
+      ]
+    },
+    {
+      "Id": "romance.failure",
+      "Title": "互动回应",
+      "Root": "response",
+      "Nodes": [
+        {
+          "Id": "response",
+          "Handler": "narrative",
+          "Title": "互动回应",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "romance.failure",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        }
+      ]
+    },
+    {
+      "Id": "romance.decline",
+      "Title": "互动回应",
+      "Root": "response",
+      "Nodes": [
+        {
+          "Id": "response",
+          "Handler": "narrative",
+          "Title": "互动回应",
+          "Next": "",
+          "Branches": [],
+          "Call": {
+            "StoryId": "romance.decline",
+            "ShopId": "",
+            "IncomeId": "",
+            "TimeMode": "none",
+            "Seconds": 0,
+            "Effects": []
+          }
+        }
+      ]
+    }
+  ],
+  "Conditions": [
+    {
+      "Id": "workday",
+      "Rule": {
+        "Op": "Eq",
+        "Key": "restDay",
+        "Value": "false",
+        "Children": []
+      }
+    },
+    {
+      "Id": "rest-first",
+      "Rule": {
+        "Op": "All",
+        "Key": "",
+        "Value": "",
+        "Children": [
+          {
+            "Op": "Eq",
+            "Key": "restDay",
+            "Value": "true",
+            "Children": []
+          },
+          {
+            "Op": "Eq",
+            "Key": "firstOrdinary",
+            "Value": "true",
+            "Children": []
+          }
+        ]
+      }
+    },
+    {
+      "Id": "training-here",
+      "Rule": {
+        "Op": "Eq",
+        "Key": "trainingHere",
+        "Value": "true",
+        "Children": []
+      }
+    },
+    {
+      "Id": "evening-study",
+      "Rule": {
+        "Op": "All",
+        "Key": "",
+        "Value": "",
+        "Children": [
+          {
+            "Op": "Eq",
+            "Key": "restDay",
+            "Value": "false",
+            "Children": []
+          },
+          {
+            "Op": "Eq",
+            "Key": "fullDayStudy",
+            "Value": "false",
+            "Children": []
+          },
+          {
+            "Op": "Gt",
+            "Key": "practiced",
+            "Value": "0",
+            "Children": []
+          }
+        ]
+      }
+    },
+    {
+      "Id": "overtime",
+      "Rule": {
+        "Op": "Gt",
+        "Key": "overtime",
+        "Value": "0",
+        "Children": []
+      }
+    },
+    {
+      "Id": "injured",
+      "Rule": {
+        "Op": "Eq",
+        "Key": "hasInjury",
+        "Value": "true",
+        "Children": []
+      }
+    },
+    {
+      "Id": "early-unlock",
+      "Rule": {
+        "Op": "All",
+        "Key": "",
+        "Value": "",
+        "Children": [
+          {
+            "Op": "Gte",
+            "Key": "day",
+            "Value": "7",
+            "Children": []
+          },
+          {
+            "Op": "Eq",
+            "Key": "effectiveTraining",
+            "Value": "true",
+            "Children": []
+          }
+        ]
+      }
+    },
+    {
+      "Id": "late-unlock",
+      "Rule": {
+        "Op": "All",
+        "Key": "",
+        "Value": "",
+        "Children": [
+          {
+            "Op": "Gte",
+            "Key": "day",
+            "Value": "14",
+            "Children": []
+          },
+          {
+            "Op": "Gte",
+            "Key": "maxKnowledge",
+            "Value": "10000000",
+            "Children": []
+          }
+        ]
+      }
+    },
+    {
+      "Id": "rest-day",
+      "Rule": {
+        "Op": "Eq",
+        "Key": "restDay",
+        "Value": "true",
+        "Children": []
+      }
+    }
+  ],
+  "Training": {
+    "GroupNodes": [
+      {
+        "Id": "{prefix}story",
+        "Handler": "group-story",
+        "Title": "",
+        "Next": "{prefix}play",
+        "Branches": [
+          {
+            "ConditionKey": "workout-ended",
+            "TargetNodeId": "summary"
+          }
+        ],
+        "Call": {
+          "StoryId": "",
+          "ShopId": "",
+          "IncomeId": "",
+          "TimeMode": "none",
+          "Seconds": 0,
+          "Effects": []
+        }
+      },
+      {
+        "Id": "{prefix}play",
+        "Handler": "play",
+        "Title": "",
+        "Next": "{prefix}settle",
+        "Branches": [
+          {
+            "ConditionKey": "workout-ended",
+            "TargetNodeId": "summary"
+          }
+        ],
+        "Call": {
+          "StoryId": "",
+          "ShopId": "",
+          "IncomeId": "",
+          "TimeMode": "none",
+          "Seconds": 0,
+          "Effects": []
+        }
+      },
+      {
+        "Id": "{prefix}settle",
+        "Handler": "settle",
+        "Title": "",
+        "Next": "{prefix}followers",
+        "Branches": [],
+        "Call": {
+          "StoryId": "",
+          "ShopId": "",
+          "IncomeId": "",
+          "TimeMode": "none",
+          "Seconds": 0,
+          "Effects": []
+        }
+      },
+      {
+        "Id": "{prefix}followers",
+        "Handler": "followers",
+        "Title": "",
+        "Next": "{next}",
+        "Branches": [
+          {
+            "ConditionKey": "end-workout",
+            "TargetNodeId": "summary"
+          },
+          {
+            "ConditionKey": "workout-ended",
+            "TargetNodeId": "summary"
+          },
+          {
+            "ConditionKey": "end-action",
+            "TargetNodeId": "{nextAction}"
+          },
+          {
+            "ConditionKey": "action-changed",
+            "TargetNodeId": "{nextAction}"
+          }
+        ],
+        "Call": {
+          "StoryId": "",
+          "ShopId": "",
+          "IncomeId": "",
+          "TimeMode": "none",
+          "Seconds": 0,
+          "Effects": []
+        }
+      }
+    ],
+    "EntryNode": "{prefix}story",
+    "SummaryTitle": "训练结束"
+  },
+  "DayEndSteps": [
+    "close",
+    "income-summary",
+    "nutrition",
+    "recover-local",
+    "recover-stress",
+    "deficit-stress",
+    "clear-temporary",
+    "expiry",
+    "unlock",
+    "summary",
+    "await"
+  ],
+  "EnterDaySteps": [
+    "new-day",
+    "plans-quota",
+    "shops",
+    "competition",
+    "publish"
+  ],
+  "ChoiceGroupWeight": 100
+}

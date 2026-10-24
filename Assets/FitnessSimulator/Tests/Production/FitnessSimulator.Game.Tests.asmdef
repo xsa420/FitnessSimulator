@@ -1,0 +1,7 @@
+{
+  "name": "FitnessSimulator.Game.Tests",
+  "rootNamespace": "FitnessSimulator.Game.Tests",
+  "references": ["FitnessSimulator.Game"],
+  "includePlatforms": ["Editor"],
+  "optionalUnityReferences": ["TestAssemblies"]
+}

@@ -1,0 +1,417 @@
+{
+  "Version": "CS.competition-42day.v1",
+  "ScoringVersion": "CS.ScoreUnits4.TieUnits6.v1",
+  "NumericPolicyId": "ScoreUnits4.TieMicro6.MeanCents2",
+  "ScheduleId": "competition",
+  "FreezePhase": "DayOpenReady",
+  "ClosePhase": "AllAnchorsFinishedBeforeDayEnd",
+  "CycleDays": 42,
+  "OpenDay": 8,
+  "RegistrationCloseDay": 41,
+  "ContestDay": 42,
+  "StrengthNormalizer": 100,
+  "CharmNormalizer": 100,
+  "FatMinimum": 5,
+  "FatMaximum": 50,
+  "Contests": [
+    {
+      "Kind": 0,
+      "Id": "bodybuilding",
+      "Name": "健美赛",
+      "AnchorId": "morning",
+      "FormulaKind": "MUGT",
+      "JudgeIds": [
+        "body_heng",
+        "body_liang",
+        "body_su",
+        "body_lu"
+      ],
+      "ParticipantRefs": [
+        "player",
+        "rival"
+      ],
+      "DrawCount": 3
+    },
+    {
+      "Kind": 1,
+      "Id": "thin-build",
+      "Name": "薄肌赛",
+      "AnchorId": "afternoon",
+      "FormulaKind": "LHCT",
+      "JudgeIds": [
+        "thin_qing",
+        "thin_qiao",
+        "thin_wen",
+        "thin_jian"
+      ],
+      "ParticipantRefs": [
+        "player",
+        "rival"
+      ],
+      "DrawCount": 3
+    }
+  ],
+  "RevealStages": [
+    {
+      "Day": 14,
+      "Count": 1,
+      "Fields": [
+        "StrengthBucket"
+      ]
+    },
+    {
+      "Day": 28,
+      "Count": 2,
+      "Fields": [
+        "StrengthBucket",
+        "HighestGroups",
+        "LowestGroups",
+        "BalanceDescription",
+        "BodyFatBucket"
+      ]
+    },
+    {
+      "Day": 35,
+      "Count": 3,
+      "Fields": [
+        "StrengthBucket",
+        "HighestGroups",
+        "LowestGroups",
+        "BalanceDescription",
+        "BodyFatBucket",
+        "Regions",
+        "BodyFat",
+        "BaseCharm"
+      ]
+    }
+  ],
+  "Judges": [
+    {
+      "Id": "body_heng",
+      "Name": "衡岳",
+      "Description": "社区赛事评审；重全身均衡",
+      "CommentaryProfileId": "body_heng",
+      "Kind": 0,
+      "Balanced": true,
+      "PreferredRegions": [],
+      "WeightsPercent": [
+        55,
+        20,
+        5,
+        20
+      ],
+      "FatLower": 10,
+      "FatUpper": 16
+    },
+    {
+      "Id": "body_liang",
+      "Name": "梁川",
+      "Description": "上身项目评审；偏胸背",
+      "CommentaryProfileId": "body_liang",
+      "Kind": 0,
+      "Balanced": false,
+      "PreferredRegions": [
+        "chest_upper",
+        "chest_middle",
+        "chest_lower",
+        "back_upper",
+        "back_middle",
+        "back_lats",
+        "back_lower"
+      ],
+      "WeightsPercent": [
+        45,
+        15,
+        20,
+        20
+      ],
+      "FatLower": 8,
+      "FatUpper": 14
+    },
+    {
+      "Id": "body_su",
+      "Name": "苏岚",
+      "Description": "形体项目评审；偏肩臂",
+      "CommentaryProfileId": "body_su",
+      "Kind": 0,
+      "Balanced": false,
+      "PreferredRegions": [
+        "shoulder_front",
+        "shoulder_side",
+        "shoulder_rear",
+        "biceps_long",
+        "biceps_short",
+        "triceps_long",
+        "triceps_lateral",
+        "triceps_medial"
+      ],
+      "WeightsPercent": [
+        45,
+        15,
+        15,
+        25
+      ],
+      "FatLower": 10,
+      "FatUpper": 18
+    },
+    {
+      "Id": "body_lu",
+      "Name": "陆原",
+      "Description": "综合项目评审；偏下肢",
+      "CommentaryProfileId": "body_lu",
+      "Kind": 0,
+      "Balanced": false,
+      "PreferredRegions": [
+        "leg_quads",
+        "leg_hamstrings",
+        "leg_adductors",
+        "leg_calves",
+        "glutes"
+      ],
+      "WeightsPercent": [
+        45,
+        20,
+        20,
+        15
+      ],
+      "FatLower": 12,
+      "FatUpper": 18
+    },
+    {
+      "Id": "thin_qing",
+      "Name": "清禾",
+      "Description": "轻体展示评审；重整体适中",
+      "CommentaryProfileId": "thin_qing",
+      "Kind": 1,
+      "Balanced": true,
+      "PreferredRegions": [],
+      "WeightsPercent": [
+        45,
+        10,
+        20,
+        25
+      ],
+      "FatLower": 15,
+      "FatUpper": 20
+    },
+    {
+      "Id": "thin_qiao",
+      "Name": "乔宁",
+      "Description": "肩背展示评审；偏肩背",
+      "CommentaryProfileId": "thin_qiao",
+      "Kind": 1,
+      "Balanced": false,
+      "PreferredRegions": [
+        "back_upper",
+        "back_middle",
+        "back_lats",
+        "back_lower",
+        "shoulder_front",
+        "shoulder_side",
+        "shoulder_rear"
+      ],
+      "WeightsPercent": [
+        40,
+        20,
+        15,
+        25
+      ],
+      "FatLower": 12,
+      "FatUpper": 18
+    },
+    {
+      "Id": "thin_wen",
+      "Name": "闻夏",
+      "Description": "日常风格评审；重基础魅力与均衡",
+      "CommentaryProfileId": "thin_wen",
+      "Kind": 1,
+      "Balanced": true,
+      "PreferredRegions": [],
+      "WeightsPercent": [
+        40,
+        5,
+        30,
+        25
+      ],
+      "FatLower": 16,
+      "FatUpper": 22
+    },
+    {
+      "Id": "thin_jian",
+      "Name": "简行",
+      "Description": "全身比例评审；偏腿臀",
+      "CommentaryProfileId": "thin_jian",
+      "Kind": 1,
+      "Balanced": false,
+      "PreferredRegions": [
+        "leg_quads",
+        "leg_hamstrings",
+        "leg_adductors",
+        "leg_calves",
+        "glutes"
+      ],
+      "WeightsPercent": [
+        40,
+        20,
+        20,
+        20
+      ],
+      "FatLower": 14,
+      "FatUpper": 21
+    }
+  ],
+  "CommentaryProfiles": [
+    {
+      "Id": "body_heng",
+      "FallbackTextRef": "competition.comment.body_heng.fallback",
+      "Rules": [
+        {
+          "Predicate": "BalancedRatioAtLeast",
+          "TextRef": "competition.comment.body_heng.balanced",
+          "ThresholdMicro": 750000
+        }
+      ]
+    },
+    {
+      "Id": "body_liang",
+      "FallbackTextRef": "competition.comment.body_liang.fallback",
+      "Rules": [
+        {
+          "Predicate": "PreferredAtLeastMean",
+          "TextRef": "competition.comment.body_liang.preferred",
+          "ThresholdMicro": 0
+        }
+      ]
+    },
+    {
+      "Id": "body_su",
+      "FallbackTextRef": "competition.comment.body_su.fallback",
+      "Rules": [
+        {
+          "Predicate": "PreferredAtLeastMean",
+          "TextRef": "competition.comment.body_su.preferred",
+          "ThresholdMicro": 0
+        }
+      ]
+    },
+    {
+      "Id": "body_lu",
+      "FallbackTextRef": "competition.comment.body_lu.fallback",
+      "Rules": [
+        {
+          "Predicate": "PreferredAtLeastMean",
+          "TextRef": "competition.comment.body_lu.preferred",
+          "ThresholdMicro": 0
+        }
+      ]
+    },
+    {
+      "Id": "thin_qing",
+      "FallbackTextRef": "competition.comment.thin_qing.fallback",
+      "Rules": [
+        {
+          "Predicate": "ThinIndexAtLeast",
+          "TextRef": "competition.comment.thin_qing.fits",
+          "ThresholdMicro": 800000
+        }
+      ]
+    },
+    {
+      "Id": "thin_qiao",
+      "FallbackTextRef": "competition.comment.thin_qiao.fallback",
+      "Rules": [
+        {
+          "Predicate": "PreferredStrengthBelow",
+          "TextRef": "competition.comment.thin_qiao.weak",
+          "ThresholdMicro": 18000000
+        },
+        {
+          "Predicate": "PreferredStrengthAbove",
+          "TextRef": "competition.comment.thin_qiao.strong",
+          "ThresholdMicro": 26000000
+        }
+      ]
+    },
+    {
+      "Id": "thin_wen",
+      "FallbackTextRef": "competition.comment.thin_wen.fallback",
+      "Rules": []
+    },
+    {
+      "Id": "thin_jian",
+      "FallbackTextRef": "competition.comment.thin_jian.fallback",
+      "Rules": [
+        {
+          "Predicate": "ThinIndexAtLeast",
+          "TextRef": "competition.comment.thin_jian.fits",
+          "ThresholdMicro": 800000
+        }
+      ]
+    }
+  ],
+  "StrengthBucketWidth": 10,
+  "BodyFatBucketWidth": 5,
+  "DisclosureGroups": [
+    {
+      "Id": "chest",
+      "RegionIds": [
+        "chest_upper",
+        "chest_middle",
+        "chest_lower"
+      ]
+    },
+    {
+      "Id": "back",
+      "RegionIds": [
+        "back_upper",
+        "back_middle",
+        "back_lats",
+        "back_lower"
+      ]
+    },
+    {
+      "Id": "leg",
+      "RegionIds": [
+        "leg_quads",
+        "leg_hamstrings",
+        "leg_adductors",
+        "leg_calves"
+      ]
+    },
+    {
+      "Id": "shoulder",
+      "RegionIds": [
+        "shoulder_front",
+        "shoulder_side",
+        "shoulder_rear"
+      ]
+    },
+    {
+      "Id": "biceps",
+      "RegionIds": [
+        "biceps_long",
+        "biceps_short"
+      ]
+    },
+    {
+      "Id": "triceps",
+      "RegionIds": [
+        "triceps_long",
+        "triceps_lateral",
+        "triceps_medial"
+      ]
+    },
+    {
+      "Id": "abs",
+      "RegionIds": [
+        "abs"
+      ]
+    },
+    {
+      "Id": "glutes",
+      "RegionIds": [
+        "glutes"
+      ]
+    }
+  ]
+}

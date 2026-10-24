@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <BaseOutputPath>.build/bin/</BaseOutputPath>
+    <RootPath>../../../../../..</RootPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(RootPath)/Assets/FitnessSimulator/Production/Planning/*.cs" />
+    <Compile Include="$(RootPath)/Assets/FitnessSimulator/Production/Competition/*.cs" />
+    <Compile Include="$(RootPath)/Assets/FitnessSimulator/Production/Body/BodyState.cs" />
+    <Compile Include="$(RootPath)/Assets/FitnessSimulator/Production/Training/ExerciseCatalog.cs" />
+    <Compile Include="$(RootPath)/Assets/FitnessSimulator/Production/Training/TrainingModels.cs" />
+    <Compile Include="$(RootPath)/Assets/FitnessSimulator/Production/Numeric/Rational.cs" />
+    <Compile Include="../PlanningTests.cs" />
+    <Compile Include="../ActorDayPlansTests.cs" />
+    <Compile Include="../CompetitionTests.cs" />
+    <Compile Include="Runner.cs.txt" />
+    <NUnitAssembly Include="$(RootPath)/Library/PackageCache/com.unity.ext.nunit@*/net472/unity-custom/nunit.framework.dll" />
+    <Reference Include="nunit.framework"><HintPath>@(NUnitAssembly)</HintPath></Reference>
+  </ItemGroup>
+</Project>

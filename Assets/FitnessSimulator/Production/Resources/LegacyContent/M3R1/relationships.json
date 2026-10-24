@@ -1,0 +1,261 @@
+{
+  "Version": "relationships.v1",
+  "InitialState": {
+    "CurrentBuddy": "",
+    "PendingConfessionId": "",
+    "RomanceEstablished": false,
+    "PendingBuddyDay": 0,
+    "Affections": [
+      {
+        "CharacterId": "rival",
+        "FamiliarTextGranted": false,
+        "Value": 0
+      },
+      {
+        "CharacterId": "beginner",
+        "FamiliarTextGranted": false,
+        "Value": 0
+      },
+      {
+        "CharacterId": "veteran",
+        "FamiliarTextGranted": false,
+        "Value": 0
+      },
+      {
+        "CharacterId": "coach",
+        "FamiliarTextGranted": false,
+        "Value": 0
+      }
+    ],
+    "PendingBuddy": "",
+    "NextConfessionDay": 1,
+    "Id": "LC.initial-unmet-zero-no-partner.v1"
+  },
+  "AffectionMaximum": 100,
+  "FamiliarThreshold": 20,
+  "InviteThreshold": 40,
+  "FreeTeachingThreshold": 100,
+  "TeachingPrice": 80,
+  "PaidTeachingMicro": 3000000,
+  "Tiers": [
+    {
+      "Threshold": 0,
+      "Name": "陌生"
+    },
+    {
+      "Threshold": 20,
+      "Name": "熟悉"
+    },
+    {
+      "Threshold": 40,
+      "Name": "信任"
+    },
+    {
+      "Threshold": 70,
+      "Name": "亲近"
+    },
+    {
+      "Threshold": 100,
+      "Name": "满好感"
+    }
+  ],
+  "Characters": [
+    {
+      "FamiliarResponseEventId": "relationship.rival.familiar",
+      "CharacterId": "rival",
+      "BuddyKnowledgeMicro": 0,
+      "RiskReductionBasisPoints": 500,
+      "Dialogues": [
+        {
+          "MinimumAffection": 0,
+          "Id": "rival.dialogue.0",
+          "Text": "问今天练什么",
+          "ResponseEventId": "relationship.rival.response.0",
+          "FixedDelta": 4,
+          "Option": 0
+        },
+        {
+          "MinimumAffection": 0,
+          "Id": "rival.dialogue.1",
+          "Text": "只聊比赛输赢",
+          "ResponseEventId": "relationship.rival.response.1",
+          "FixedDelta": 1,
+          "Option": 1
+        },
+        {
+          "MinimumAffection": 20,
+          "Id": "rival.dialogue.2",
+          "Text": "交流今天的难点",
+          "ResponseEventId": "relationship.rival.response.2",
+          "FixedDelta": 5,
+          "Option": 2
+        },
+        {
+          "MinimumAffection": 70,
+          "Id": "rival.dialogue.3",
+          "Text": "认真回应他的担心",
+          "ResponseEventId": "relationship.rival.response.3",
+          "FixedDelta": 6,
+          "Option": 3
+        }
+      ]
+    },
+    {
+      "FamiliarResponseEventId": "relationship.beginner.familiar",
+      "CharacterId": "beginner",
+      "BuddyKnowledgeMicro": 0,
+      "RiskReductionBasisPoints": 500,
+      "Dialogues": [
+        {
+          "MinimumAffection": 0,
+          "Id": "beginner.dialogue.0",
+          "Text": "聊今天的训练感受",
+          "ResponseEventId": "relationship.beginner.response.0",
+          "FixedDelta": 4,
+          "Option": 0
+        },
+        {
+          "MinimumAffection": 0,
+          "Id": "beginner.dialogue.1",
+          "Text": "替她决定怎么练",
+          "ResponseEventId": "relationship.beginner.response.1",
+          "FixedDelta": 1,
+          "Option": 1
+        },
+        {
+          "MinimumAffection": 20,
+          "Id": "beginner.dialogue.2",
+          "Text": "听她说自己的安排",
+          "ResponseEventId": "relationship.beginner.response.2",
+          "FixedDelta": 5,
+          "Option": 2
+        },
+        {
+          "MinimumAffection": 70,
+          "Id": "beginner.dialogue.3",
+          "Text": "分享彼此坚持的理由",
+          "ResponseEventId": "relationship.beginner.response.3",
+          "FixedDelta": 6,
+          "Option": 3
+        }
+      ]
+    },
+    {
+      "FamiliarResponseEventId": "relationship.veteran.familiar",
+      "CharacterId": "veteran",
+      "BuddyKnowledgeMicro": 1000000,
+      "RiskReductionBasisPoints": 1500,
+      "Dialogues": [
+        {
+          "MinimumAffection": 0,
+          "Id": "veteran.dialogue.0",
+          "Text": "请他谈休息安排",
+          "ResponseEventId": "relationship.veteran.response.0",
+          "FixedDelta": 4,
+          "Option": 0
+        },
+        {
+          "MinimumAffection": 0,
+          "Id": "veteran.dialogue.1",
+          "Text": "催促赶紧开组",
+          "ResponseEventId": "relationship.veteran.response.1",
+          "FixedDelta": 1,
+          "Option": 1
+        },
+        {
+          "MinimumAffection": 20,
+          "Id": "veteran.dialogue.2",
+          "Text": "一起复盘刚才的动作",
+          "ResponseEventId": "relationship.veteran.response.2",
+          "FixedDelta": 5,
+          "Option": 2
+        },
+        {
+          "MinimumAffection": 70,
+          "Id": "veteran.dialogue.3",
+          "Text": "聊训练之外的生活",
+          "ResponseEventId": "relationship.veteran.response.3",
+          "FixedDelta": 6,
+          "Option": 3
+        }
+      ]
+    },
+    {
+      "FamiliarResponseEventId": "relationship.coach.familiar",
+      "CharacterId": "coach",
+      "BuddyKnowledgeMicro": 3000000,
+      "RiskReductionBasisPoints": 1000,
+      "Dialogues": [
+        {
+          "MinimumAffection": 0,
+          "Id": "coach.dialogue.0",
+          "Text": "说明自己遇到的问题",
+          "ResponseEventId": "relationship.coach.response.0",
+          "FixedDelta": 4,
+          "Option": 0
+        },
+        {
+          "MinimumAffection": 0,
+          "Id": "coach.dialogue.1",
+          "Text": "只问多久能练成",
+          "ResponseEventId": "relationship.coach.response.1",
+          "FixedDelta": 1,
+          "Option": 1
+        },
+        {
+          "MinimumAffection": 20,
+          "Id": "coach.dialogue.2",
+          "Text": "交流训练记录",
+          "ResponseEventId": "relationship.coach.response.2",
+          "FixedDelta": 5,
+          "Option": 2
+        },
+        {
+          "MinimumAffection": 70,
+          "Id": "coach.dialogue.3",
+          "Text": "讨论长期计划",
+          "ResponseEventId": "relationship.coach.response.3",
+          "FixedDelta": 6,
+          "Option": 3
+        }
+      ]
+    }
+  ],
+  "Romance": {
+    "Id": "beginner_romance",
+    "GiftQuantity": 1,
+    "Formula": {
+      "LeanMillionths": 350000,
+      "Version": "confession.formula.v1",
+      "FatMillionths": 200000,
+      "BaseMillionths": 150000,
+      "BodyFatKnotsMicro": [
+        5000000,
+        15000000,
+        20000000,
+        50000000
+      ],
+      "MaximumMillionths": 950000,
+      "CooldownFullDays": 7,
+      "CharmMillionths": 300000,
+      "MinimumMillionths": 50000
+    },
+    "FailureEventId": "romance.failure",
+    "SuccessEventId": "romance.success",
+    "RequiredAffection": 100,
+    "TargetCharacterId": "beginner",
+    "DeclineEventId": "romance.decline",
+    "GiftItemId": "commemorative_bookmark",
+    "PendingEventId": "romance.pending"
+  },
+  "Social": {
+    "CharmSqrtMillionths": 500000,
+    "ScalableEffectKinds": [
+      "Knowledge",
+      "Proficiency",
+      "MoneyGain"
+    ],
+    "MentalSquareMillionths": 750000,
+    "PositiveLinearMillionths": 500000
+  }
+}

@@ -147,3 +147,48 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# Unity generated state and local verification outputs
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/.utmp/
+/[Bb]uilds/
+/[Bb]uild/
+/TestResults/
+/.vs/
+/.idea/
+*.csproj
+*.sln
+*.slnx
+*.user
+*.pidb
+*.booproj
+*.unityproj
+*.apk
+*.aab
+*.keystore
+*.jks
+*.unitypackage
+sysinfo.txt
+/MemoryCaptures/
+/Recordings/
+
+# Nested standalone test build outputs
+**/[Bb]in/
+**/[Oo]bj/
+**/[Bb]in.meta
+**/[Oo]bj.meta
+!Assets/FitnessSimulator/Tests/**/*.csproj
+
+# Temporary player build isolation state
+/Assets/FitnessSimulator/Editor/PlayerBuild/IsolationJournal.json
+/Assets/FitnessSimulator/Editor/PlayerBuild/IsolationJournal.json.meta
+/Assets/FitnessSimulator/Editor/PlayerBuild/Quarantine/
+/Assets/FitnessSimulator/Editor/PlayerBuild/Quarantine.meta
+
+# Historical compile check outputs (keep draft sources and notes)
+/Docs/Implementation/Temp/*.dll
+/Docs/Implementation/Temp/*.rsp

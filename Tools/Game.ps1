@@ -1,0 +1,210 @@
+param(
+    [Parameter(Mandatory = $true)]
+    [ValidateSet('import','validate','test','ui-smoke','build-android','build-proxy')]
+    [string]$Action,
+    [string]$EditorPath,
+    [string]$ExpectedCasesFile,
+    [string]$TestFilter,
+    [int]$MinimumProductionTests = 1,
+    [switch]$RelationshipLayoutSmoke,
+    [switch]$ConfigurationLayoutSmoke,
+    [switch]$SaveFeedbackSmoke,
+    [ValidateSet('M1','M3','M3R1','ConfigR1','SaveR1')][string]$BuildStage = 'M1',
+    [ValidateSet('M1','ConfigR1','SaveR1')][string]$EvidenceStage = 'ConfigR1',
+    [switch]$DevelopmentBuild
+)
+
+$ErrorActionPreference = 'Stop'
+if ($SaveFeedbackSmoke -and ($Action -ne 'ui-smoke' -or $RelationshipLayoutSmoke -or $ConfigurationLayoutSmoke)) { throw 'SaveFeedbackSmoke requires exclusive ui-smoke mode.' }
+if ($RelationshipLayoutSmoke -and $Action -ne 'ui-smoke') { throw 'RelationshipLayoutSmoke requires -Action ui-smoke.' }
+if ($ConfigurationLayoutSmoke -and ($Action -ne 'ui-smoke' -or $RelationshipLayoutSmoke)) { throw 'ConfigurationLayoutSmoke requires exclusive ui-smoke mode.' }
+$isBuild = $Action -in @('build-android','build-proxy')
+if (($BuildStage -ne 'M1' -or $DevelopmentBuild) -and -not $isBuild) { throw 'BuildStage and DevelopmentBuild require a build action.' }
+$projectRoot = [IO.Path]::GetFullPath((Split-Path $PSScriptRoot -Parent))
+$versionLine = Get-Content (Join-Path $projectRoot 'ProjectSettings/ProjectVersion.txt') | Where-Object { $_ -match '^m_EditorVersion:' }
+$version = ($versionLine -split ':', 2)[1].Trim()
+if (-not $EditorPath) { $EditorPath = "C:\Program Files\Unity\Hub\Editor\$version\Editor\Unity.exe" }
+if (-not (Test-Path -LiteralPath $EditorPath)) { throw "Required editor missing: $EditorPath" }
+if (((Get-Item -LiteralPath $EditorPath).VersionInfo.ProductVersion -split '_', 2)[0] -ne $version) { throw 'Editor version mismatch.' }
+
+$evidenceStage = if ($isBuild) { $BuildStage } else { $EvidenceStage }
+$resultRoot = Join-Path $projectRoot "TestResults/$evidenceStage"
+$logRoot = Join-Path $projectRoot "Logs/$evidenceStage"
+New-Item -ItemType Directory -Path $resultRoot,$logRoot -Force | Out-Null
+$sharedLockRoot = Join-Path $projectRoot 'TestResults/M1'
+New-Item -ItemType Directory -Path $sharedLockRoot -Force | Out-Null
+$batchLock = $null
+try {
+    $batchLock = [IO.File]::Open((Join-Path $sharedLockRoot 'unity-batch.lock'), [IO.FileMode]::OpenOrCreate, [IO.FileAccess]::ReadWrite, [IO.FileShare]::None)
+} catch { throw 'Another formal batch operation holds the project lock.' }
+
+try {
+    $started = [DateTime]::UtcNow
+    $stamp = $started.ToString('yyyyMMdd-HHmmss-fff')
+    $logPath = Join-Path $logRoot "$Action-$stamp.log"
+    $reportPath = Join-Path $resultRoot "editmode-$stamp.xml"
+    $sourceRoots = @('Assets/FitnessSimulator/Production','Assets/FitnessSimulator/Tests/Production','Assets/FitnessSimulator/Editor/PlayerBuild','Assets/FitnessSimulator/Editor/Automation','Tools/Automation','Tools/Game.ps1')
+    function Get-FormalSourceManifest {
+        foreach ($sourceRoot in $sourceRoots) {
+            $sourcePath = Join-Path $projectRoot $sourceRoot
+            if (-not (Test-Path -LiteralPath $sourcePath)) { continue }
+            Get-ChildItem -LiteralPath $sourcePath -Recurse -File | Where-Object { $_.Extension -in @('.cs','.asmdef','.ps1','.json','.py','.wav') -and $_.FullName -notmatch '[\\/]\.[^\\/]+[\\/]' } | Sort-Object FullName | ForEach-Object {
+                [ordered]@{ path=$_.FullName; sha256=(Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash }
+            }
+        }
+    }
+    $sourceManifest = @(Get-FormalSourceManifest)
+    $sourceManifestPath = Join-Path $resultRoot "$Action-$stamp-sources.json"
+    $sourceManifest | ConvertTo-Json -Depth 4 | Set-Content -LiteralPath $sourceManifestPath -Encoding UTF8
+    $sourceCopyRoot = Join-Path $resultRoot "$Action-$stamp-source-copy"
+    foreach ($entry in $sourceManifest) {
+        $relative = $entry.path.Substring($projectRoot.Length).TrimStart([IO.Path]::DirectorySeparatorChar)
+        $copyPath = Join-Path $sourceCopyRoot $relative
+        New-Item -ItemType Directory -Force -Path (Split-Path $copyPath -Parent) | Out-Null
+        Copy-Item -LiteralPath $entry.path -Destination $copyPath
+        if ((Get-FileHash -LiteralPath $copyPath -Algorithm SHA256).Hash -ne $entry.sha256) { throw 'Source copy changed while freezing run.' }
+    }
+    $configurationManifestPath = $null
+    function Get-BuildConfigurationManifest {
+        foreach ($relative in @('Packages','ProjectSettings','Assets/Settings','Assets/FitnessSimulator/Scenes/Player','Assets/FitnessSimulator/Production')) {
+            $root = Join-Path $projectRoot $relative
+            if (-not (Test-Path -LiteralPath $root)) { throw "Build configuration root missing: $relative" }
+            Get-ChildItem -LiteralPath $root -Recurse -File | Sort-Object FullName | ForEach-Object {
+                [ordered]@{ path=$_.FullName; sha256=(Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash }
+            }
+        }
+    }
+    if ($isBuild -and $BuildStage -in @('M3','M3R1','ConfigR1','SaveR1')) {
+        $configurationManifest = @(Get-BuildConfigurationManifest)
+        $configurationManifestPath = Join-Path $resultRoot "$Action-$stamp-configuration.json"
+        $configurationManifest | ConvertTo-Json -Depth 4 | Set-Content -LiteralPath $configurationManifestPath -Encoding UTF8
+    }
+    $arguments = @('-batchmode','-projectPath',"`"$projectRoot`"",'-logFile',"`"$logPath`"")
+    $arguments += @('-fitnessEvidenceStage', $evidenceStage)
+    if ($Action -ne 'ui-smoke') { $arguments += '-nographics' }
+    if ($Action -eq 'test') {
+        $arguments += @('-runTests','-testPlatform','EditMode','-testResults',"`"$reportPath`"")
+        if ($TestFilter) { $arguments += @('-testFilter', "`"$TestFilter`"") }
+    } elseif ($Action -eq 'ui-smoke') {
+        $arguments += @('-executeMethod','FitnessSimulator.Game.Editor.GameUiSmoke.Run','-fitnessUiSmokeExit')
+        if ($RelationshipLayoutSmoke) { $arguments += '-fitnessRelationshipLayoutSmoke' }
+        if ($ConfigurationLayoutSmoke) { $arguments += '-fitnessConfigurationLayoutSmoke' }
+        if ($SaveFeedbackSmoke) { $arguments += '-fitnessSaveFeedbackSmoke' }
+    } else {
+        $method = @{ 'import'='CreateScene'; 'validate'='ValidateContent'; 'build-android'='BuildAndroid'; 'build-proxy'='BuildWindowsProxy' }[$Action]
+        $arguments += @('-quit','-executeMethod',"FitnessSimulator.Game.Editor.GamePlayerBuild.$method")
+        if ($Action -eq 'build-android') { $arguments += @('-buildTarget','Android') }
+        if ($Action -eq 'build-proxy') { $arguments += @('-buildTarget','StandaloneWindows64') }
+        if ($isBuild -and $BuildStage -ne 'M1') { $arguments += @('-fitnessBuildStage', $BuildStage) }
+        if ($DevelopmentBuild) { $arguments += '-fitnessDevelopmentBuild' }
+    }
+    $process = Start-Process -FilePath $EditorPath -ArgumentList $arguments -WorkingDirectory $projectRoot -WindowStyle Hidden -PassThru
+    # Wait for the editor itself. Start-Process -Wait can retain a finished batch's
+    # project lock while unrelated child services outlive a compilation failure.
+    $process.WaitForExit()
+    $summary = [ordered]@{ action=$Action; startedUtc=$started.ToString('o'); finishedUtc=[DateTime]::UtcNow.ToString('o'); log=$logPath; exitCode=$process.ExitCode }
+    $summary.sourceManifest=$sourceManifestPath
+    $afterManifest = @(Get-FormalSourceManifest)
+    $sourceDrift = @($sourceManifest | Where-Object { $beforeSource = $_; -not ($afterManifest | Where-Object { $_.path -eq $beforeSource.path -and $_.sha256 -eq $beforeSource.sha256 }) })
+    $sourceDrift += @($afterManifest | Where-Object { $_.path -notin $sourceManifest.path })
+    $summary.sourceDrift=$sourceDrift.Count
+    if ($isBuild) { $summary.buildStage=$BuildStage; $summary.developmentBuild=[bool]$DevelopmentBuild }
+    if ($configurationManifestPath) {
+        $configurationAfter = @(Get-BuildConfigurationManifest)
+        $configurationDrift = @($configurationManifest | Where-Object { $beforeConfig=$_; -not ($configurationAfter | Where-Object { $_.path -eq $beforeConfig.path -and $_.sha256 -eq $beforeConfig.sha256 }) })
+        $configurationDrift += @($configurationAfter | Where-Object { $_.path -notin $configurationManifest.path })
+        $summary.configurationManifest=$configurationManifestPath
+        $summary.configurationDrift=$configurationDrift.Count
+        $configurationAfter | ConvertTo-Json -Depth 4 | Set-Content -LiteralPath (Join-Path $resultRoot "$Action-$stamp-configuration-after.json") -Encoding UTF8
+    }
+    $summary.validation='Pending'
+    $summaryPath = Join-Path $resultRoot "$Action-$stamp.json"
+    if ($Action -eq 'test' -and (Test-Path -LiteralPath $reportPath)) {
+        [xml]$preliminaryReport = Get-Content -LiteralPath $reportPath
+        $summary.testReport=$reportPath
+        $summary.reportResult=$preliminaryReport.'test-run'.result
+        $summary.totalCases=@($preliminaryReport.SelectNodes('//test-case')).Count
+        $summary.failures=@($preliminaryReport.SelectNodes('//test-case/failure') | ForEach-Object InnerText)
+    }
+    # Preserve exit status and source drift even when compilation or a test fails.
+    $summary | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath $summaryPath -Encoding UTF8
+    if ($process.ExitCode -ne 0) { throw "$Action failed ($($process.ExitCode)); log: $logPath; summary: $summaryPath" }
+    if (-not (Test-Path -LiteralPath $logPath) -or (Get-Item -LiteralPath $logPath).LastWriteTimeUtc -lt $started) { throw 'Missing or stale editor log.' }
+    if (Select-String -LiteralPath $logPath -Pattern 'error CS\d+|Scripts have compiler errors' -Quiet) { throw "Compilation failed: $logPath" }
+    if ($sourceDrift.Count -gt 0) { throw "Source changed during operation; result cannot certify current source. Manifest: $sourceManifestPath" }
+    if ($configurationManifestPath -and $configurationDrift.Count -gt 0) { throw "Configuration changed during build; inspect before/after manifests: $configurationManifestPath" }
+    if ($Action -eq 'test') {
+        if (-not (Test-Path -LiteralPath $reportPath) -or (Get-Item -LiteralPath $reportPath).LastWriteTimeUtc -lt $started) { throw 'Missing or stale test report.' }
+        [xml]$report = Get-Content -LiteralPath $reportPath
+        $cases = @($report.SelectNodes('//test-case'))
+        $production = @($cases | Where-Object { $_.fullname -like 'FitnessSimulator.Game.*' })
+        if ($report.'test-run'.result -ne 'Passed' -or $production.Count -lt $MinimumProductionTests) { throw "Tests failed or insufficient production cases: $reportPath" }
+        if (@($production | Where-Object result -ne 'Passed').Count -ne 0) { throw 'A production case failed or was skipped.' }
+        if ($ExpectedCasesFile) {
+            $expected = Get-Content -Raw -LiteralPath $ExpectedCasesFile | ConvertFrom-Json
+            $actualNames = @($production | ForEach-Object { $_.fullname })
+            foreach ($name in $expected.cases) { if ($actualNames -notcontains $name) { throw "Required case did not run: $name" } }
+        }
+        $summary.testReport=$reportPath
+        $summary.totalCases=$cases.Count
+        $summary.productionCases=$production.Count
+        $summary.expectedCasesFile=$ExpectedCasesFile
+        $summary.testFilter=$TestFilter
+    }
+    if ($Action -in @('build-android','build-proxy')) {
+        $target = if ($Action -eq 'build-android') { 'Android' } else { 'StandaloneWindows64' }
+        $buildPath = Join-Path $resultRoot "build-$target.json"
+        if (-not (Test-Path -LiteralPath $buildPath) -or (Get-Item -LiteralPath $buildPath).LastWriteTimeUtc -lt $started) { throw "Missing fresh build report: $buildPath" }
+        $build = Get-Content -Raw -LiteralPath $buildPath | ConvertFrom-Json
+        if ($build.result -ne 'Succeeded' -or $build.errors -ne 0) { throw "Build did not succeed: $buildPath" }
+        $summary.buildReport=$buildPath
+        if ($BuildStage -in @('M3','M3R1','ConfigR1','SaveR1')) {
+            if ($build.stage -ne $BuildStage -or $build.development -ne [bool]$DevelopmentBuild -or -not $build.packedAssetsVerified) { throw 'M3 stage/options/packed-assets verification mismatch.' }
+            $packagePath = [IO.Path]::GetFullPath((Join-Path $projectRoot $build.outputPath))
+            $expectedRelative = if ($Action -eq 'build-android') { "Builds/$BuildStage/Android/FitnessSimulator-$BuildStage.apk" } else { "Builds/$BuildStage/Windows/FitnessSimulator-$BuildStage.exe" }
+            if ($packagePath -ne [IO.Path]::GetFullPath((Join-Path $projectRoot $expectedRelative))) { throw 'M3 output path mismatch.' }
+            if ((Get-FileHash -LiteralPath $packagePath -Algorithm SHA256).Hash -ne $build.sha256) { throw 'Built package hash mismatch.' }
+            $summary.package=$packagePath
+            $summary.packageSha256=$build.sha256
+        }
+    }
+    if ($Action -eq 'import' -and -not (Select-String -LiteralPath $logPath -Pattern 'FITNESS_PLAYER_SCENE_OK' -Quiet)) { throw 'Formal scene completion marker missing.' }
+    if ($Action -eq 'validate' -and -not (Select-String -LiteralPath $logPath -Pattern 'FITNESS_PLAYER_CONTENT_OK' -Quiet)) { throw 'Content validation marker missing.' }
+    if ($Action -eq 'ui-smoke') {
+        if (-not (Select-String -LiteralPath $logPath -Pattern 'FITNESS_UI_SMOKE_OK' -Quiet)) { throw 'UI smoke completion marker missing.' }
+        $uiReport = Get-ChildItem -LiteralPath (Join-Path $resultRoot 'Captures') -Filter 'ui-evidence.json' -Recurse | Where-Object LastWriteTimeUtc -ge $started | Sort-Object LastWriteTimeUtc -Descending | Select-Object -First 1
+        if (-not $uiReport) { throw 'No fresh UI evidence report.' }
+        $summary.uiEvidence=$uiReport.FullName
+    }
+    $summary.validation='Passed'
+    $summary | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath $summaryPath -Encoding UTF8
+    if ($isBuild -and $BuildStage -in @('M3','M3R1','ConfigR1','SaveR1')) {
+        $artifactDirectory = Split-Path $packagePath -Parent
+        $artifacts = @(
+            @{ source=$sourceManifestPath; name='source-manifest.json' },
+            @{ source=$configurationManifestPath; name='configuration-manifest.json' },
+            @{ source=$buildPath; name='build-evidence.json' },
+            @{ source=$summaryPath; name='verification-summary.json' }
+        )
+        $published = @()
+        foreach ($artifact in $artifacts) {
+            $destination = Join-Path $artifactDirectory $artifact.name
+            Copy-Item -LiteralPath $artifact.source -Destination $destination
+            $hash = (Get-FileHash -LiteralPath $artifact.source -Algorithm SHA256).Hash
+            if ((Get-FileHash -LiteralPath $destination -Algorithm SHA256).Hash -ne $hash) { throw 'Artifact copy hash mismatch.' }
+            $published += [ordered]@{ file=$artifact.name; sha256=$hash }
+        }
+        [ordered]@{ stage=$BuildStage; package=(Split-Path $packagePath -Leaf); packageSha256=$build.sha256; sourceDrift=0; configurationDrift=0; evidence=$published; deviceInstalled=$false; deviceTested=$false } | ConvertTo-Json -Depth 6 | Set-Content -LiteralPath (Join-Path $artifactDirectory 'release-manifest.json') -Encoding UTF8
+    }
+    $summary | ConvertTo-Json -Depth 5
+} catch {
+    if ($summary -and $summaryPath) {
+        $summary.validation='Failed'
+        $summary.validationError=$_.Exception.Message
+        $summary | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath $summaryPath -Encoding UTF8
+    }
+    throw
+} finally {
+    if ($batchLock) { $batchLock.Dispose() }
+}
+

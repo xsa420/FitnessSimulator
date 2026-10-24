@@ -1,0 +1,7 @@
+{
+  "name": "FitnessSimulator.Runtime",
+  "rootNamespace": "FitnessSimulator",
+  "references": [],
+  "autoReferenced": true,
+  "defineConstraints": ["!FITNESS_PLAYER"]
+}

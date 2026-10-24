@@ -1,0 +1,6 @@
+{
+  "name": "FitnessSimulator.EditModeTests",
+  "references": ["FitnessSimulator.Runtime"],
+  "includePlatforms": ["Editor"],
+  "optionalUnityReferences": ["TestAssemblies"]
+}

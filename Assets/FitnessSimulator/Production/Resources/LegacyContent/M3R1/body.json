@@ -1,0 +1,260 @@
+{
+  "Version": "body-v1",
+  "Regions": [
+    {
+      "Id": "chest_upper",
+      "Name": "上胸",
+      "Group": "chest"
+    },
+    {
+      "Id": "chest_middle",
+      "Name": "中胸",
+      "Group": "chest"
+    },
+    {
+      "Id": "chest_lower",
+      "Name": "下胸",
+      "Group": "chest"
+    },
+    {
+      "Id": "back_upper",
+      "Name": "上背",
+      "Group": "back"
+    },
+    {
+      "Id": "back_middle",
+      "Name": "中背",
+      "Group": "back"
+    },
+    {
+      "Id": "back_lats",
+      "Name": "背部两侧",
+      "Group": "back"
+    },
+    {
+      "Id": "back_lower",
+      "Name": "下背",
+      "Group": "back"
+    },
+    {
+      "Id": "leg_quads",
+      "Name": "大腿前侧",
+      "Group": "legs"
+    },
+    {
+      "Id": "leg_hamstrings",
+      "Name": "大腿后侧",
+      "Group": "legs"
+    },
+    {
+      "Id": "leg_adductors",
+      "Name": "大腿内侧",
+      "Group": "legs"
+    },
+    {
+      "Id": "leg_calves",
+      "Name": "小腿",
+      "Group": "legs"
+    },
+    {
+      "Id": "shoulder_front",
+      "Name": "肩前",
+      "Group": "shoulders"
+    },
+    {
+      "Id": "shoulder_side",
+      "Name": "肩中",
+      "Group": "shoulders"
+    },
+    {
+      "Id": "shoulder_rear",
+      "Name": "肩后",
+      "Group": "shoulders"
+    },
+    {
+      "Id": "biceps_long",
+      "Name": "二头长头",
+      "Group": "biceps"
+    },
+    {
+      "Id": "biceps_short",
+      "Name": "二头短头",
+      "Group": "biceps"
+    },
+    {
+      "Id": "triceps_long",
+      "Name": "三头长头",
+      "Group": "triceps"
+    },
+    {
+      "Id": "triceps_lateral",
+      "Name": "三头外侧头",
+      "Group": "triceps"
+    },
+    {
+      "Id": "triceps_medial",
+      "Name": "三头内侧头",
+      "Group": "triceps"
+    },
+    {
+      "Id": "abs",
+      "Name": "腹部",
+      "Group": "abs"
+    },
+    {
+      "Id": "glutes",
+      "Name": "臀部",
+      "Group": "glutes"
+    }
+  ],
+  "Attributes": [
+    {
+      "Id": "strength",
+      "Name": "力量",
+      "Unit": "点",
+      "MinMicro": 0,
+      "MaxMicro": 100000000,
+      "DisplayDecimals": 1,
+      "Scope": "actor_region"
+    },
+    {
+      "Id": "local_fatigue",
+      "Name": "局部疲劳",
+      "Unit": "点",
+      "MinMicro": 0,
+      "MaxMicro": 100000000,
+      "DisplayDecimals": 1,
+      "Scope": "actor_region"
+    },
+    {
+      "Id": "temporary_fatigue",
+      "Name": "临时疲劳",
+      "Unit": "点",
+      "MinMicro": 0,
+      "MaxMicro": 150000000,
+      "DisplayDecimals": 1,
+      "Scope": "actor_region"
+    },
+    {
+      "Id": "stress",
+      "Name": "身体压力",
+      "Unit": "点",
+      "MinMicro": 0,
+      "MaxMicro": 100000000,
+      "DisplayDecimals": 1,
+      "Scope": "actor"
+    },
+    {
+      "Id": "body_fat",
+      "Name": "体脂",
+      "Unit": "百分比",
+      "MinMicro": 5000000,
+      "MaxMicro": 50000000,
+      "DisplayDecimals": 1,
+      "Scope": "actor"
+    },
+    {
+      "Id": "base_charm",
+      "Name": "基础魅力",
+      "Unit": "点",
+      "MinMicro": 0,
+      "MaxMicro": 100000000,
+      "DisplayDecimals": 1,
+      "Scope": "actor"
+    },
+    {
+      "Id": "mental_stress",
+      "Name": "心理压力",
+      "Unit": "点",
+      "MinMicro": 0,
+      "MaxMicro": 100000000,
+      "DisplayDecimals": 1,
+      "Scope": "actor"
+    },
+    {
+      "Id": "knowledge",
+      "Name": "动作知识",
+      "Unit": "点",
+      "MinMicro": 0,
+      "MaxMicro": 100000000,
+      "DisplayDecimals": 1,
+      "Scope": "actor_exercise"
+    },
+    {
+      "Id": "proficiency",
+      "Name": "动作熟练度",
+      "Unit": "点",
+      "MinMicro": 0,
+      "MaxMicro": 1000000000,
+      "DisplayDecimals": 1,
+      "Scope": "actor_exercise"
+    }
+  ],
+  "Growth": {
+    "StrengthDecayPerPointMicro": 8000,
+    "FatigueFreeUntilMicro": 20000000,
+    "FatigueLossAtMaximumMicro": 700000,
+    "StressThresholdsMicro": [
+      25000000,
+      50000000,
+      75000000
+    ],
+    "StressRetentionMicro": [
+      1000000,
+      900000,
+      750000,
+      600000
+    ],
+    "KnowledgeThresholdsMicro": [
+      30000000,
+      60000000,
+      90000000
+    ],
+    "ProficiencyCapsMicro": [
+      100000000,
+      300000000,
+      600000000,
+      1000000000
+    ],
+    "KnowledgeMultiplierDenominatorMicro": 100000000,
+    "LocalRecoveryMicro": 20000000,
+    "StressRecoveryMicro": 10000000,
+    "KnowledgeMultiplierBaseMicro": 1000000
+  },
+  "CharmCurve": {
+    "FatMicro": [
+      5000000,
+      15000000,
+      20000000,
+      50000000
+    ],
+    "ValueMicro": [
+      0,
+      200000,
+      200000,
+      0
+    ]
+  },
+  "PressureCurve": {
+    "FatMicro": [
+      5000000,
+      15000000,
+      20000000,
+      50000000
+    ],
+    "ValueMicro": [
+      0,
+      200000,
+      200000,
+      0
+    ]
+  },
+  "ThinBuild": {
+    "RiseEndMicro": 18000000,
+    "PlateauEndMicro": 26000000,
+    "FallEndMicro": 48000000,
+    "SpreadScaleMicro": 14000000,
+    "BaseWeightMicro": 800000,
+    "BalanceWeightMicro": 200000
+  }
+}
