@@ -21,7 +21,9 @@ function New-Fixture([string]$Name) {
     Write-FixtureFile (Join-Path $fixture 'TestResults/Old/b-source-copy/empty.cs') ''
     Write-FixtureFile (Join-Path $fixture 'TestResults/Old/a-source-copy/state.bin') 'same historical contents'
     Write-FixtureFile (Join-Path $fixture 'TestResults/Old/seal-manifest.json') '{"historical":"preserve exact bytes"}'
+    Write-FixtureFile (Join-Path $fixture 'TestResults/Old/history.lock') 'historical lock must be excluded'
     Write-FixtureFile (Join-Path $fixture 'TestResults/IsolatedProjects/Old/Library/cache') 'cache'
+    Write-FixtureFile (Join-Path $fixture 'TestResults/IsolatedProjects/Old/Library/cache.lock') 'cache lock must be inventoried'
     Write-FixtureFile (Join-Path $fixture 'TestResults/IsolatedProjects/Old/UpmCache/cache') 'cache'
     Write-FixtureFile (Join-Path $fixture 'TestResults/IsolatedProjects/Old/IsolatedTemp/save/state.bin') 'actual route evidence'
     return $fixture
@@ -50,6 +52,8 @@ try {
     Check 'Plan succeeds' ((Invoke-Maintenance $basic 'Plan') -eq 0)
     $plan=Read-Plan $basic
     Check 'Plan selects exactly two isolated cache roots' (@($plan.cacheDirectories).Count -eq 2)
+    Check 'Plan inventories cache lock files for deletion preflight' (@($plan.cacheFiles | Where-Object path -eq 'TestResults/IsolatedProjects/Old/Library/cache.lock').Count -eq 1)
+    Check 'Historical non-cache lock is excluded from retained hashes' (@($plan.retainedFiles | Where-Object path -eq 'TestResults/Old/history.lock').Count -eq 0)
     Check 'Plan links only equal nonempty historical sources' (@($plan.hardLinks).Count -eq 1 -and $plan.hardLinks[0].path -like '*/b-source-copy/one.cs')
     $originalManifest=Digest (Join-Path $basic 'TestResults/Old/seal-manifest.json')
     Check 'Apply succeeds' ((Invoke-Maintenance $basic 'Apply') -eq 0)

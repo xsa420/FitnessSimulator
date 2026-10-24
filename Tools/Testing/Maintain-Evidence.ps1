@@ -72,7 +72,7 @@ try {
             if ($directory.Attributes -band [IO.FileAttributes]::ReparsePoint) { throw 'Historical evidence contains a reparse point.' }
         }
         foreach ($file in Get-ChildItem -LiteralPath $evidenceRoot -Recurse -File -Force | Sort-Object FullName) {
-            if (Is-Excluded $file.FullName) { continue }
+            if ($file.FullName.StartsWith((Join-Path $evidenceRoot 'Lightweight') + '\', [StringComparison]::OrdinalIgnoreCase)) { continue }
             $null = Assert-InEvidence $file.FullName
             $inCache = $false
             foreach ($cache in $cacheRoots) { if ($file.FullName.StartsWith($cache + '\', [StringComparison]::OrdinalIgnoreCase)) { $inCache = $true; break } }
@@ -80,6 +80,7 @@ try {
                 $cacheFiles.Add([ordered]@{ path=(Relative $file.FullName); bytes=$file.Length })
                 continue
             }
+            if (Is-Excluded $file.FullName) { continue }
             $hash = Hash $file.FullName
             $entry = [ordered]@{ path=(Relative $file.FullName); bytes=$file.Length; sha256=$hash }
             $retained.Add($entry)
