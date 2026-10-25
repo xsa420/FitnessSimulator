@@ -2,24 +2,23 @@
 
 [FRAME] 协作规则见[AGENTS.md](AGENTS.md)。制作建批／收口、架构实施期间单写，禁止并发编辑。代理按任务ID回传摘要；原始证据只存一份并在此链接。
 
-## [FRAME] 当前批次 LITE-20261024：轻量测试与历史副本清理
+## [FRAME] 当前批次 HOME-20261025：家用提交快捷入口
 
-- [FRAME] 用户反馈：取消逐次源码复制与重复封存；限制日志和快照；清理不必要副本且保留有效验收证据；验证后推送 GitHub。
-- [FRAME] 范围：测试工具、证据策略、历史副本清理和对应文档；不改游戏业务，不出包。查看入口为 Tools、Docs/Verification.md 与本清单；当前架构唯一维护清单。
-- [FRAME] 有限验收：版本追溯、引用式封存、容量边界、清理安全及证据完整性；必要的短测试，不重跑历史长线或构建。
+- [FRAME] 用户反馈：“给我一个可以在我家提交本项目的快捷方式”。目标：克隆后双击提交当前工程，支持可选本机代理。
+- [FRAME] 范围：根目录提交入口、Tools/Submit.ps1、README使用说明；不改业务、不运行游戏或构建。当前架构唯一维护清单。
+- [FRAME] 验收：临时本地远端验证提交/推送、无改动重推、失败保留、路径含空格及代理参数；通过后将入口同步至现有仓库供家中获取。
 
 | ID | 验收条件／反馈映射 | 实施负责人／唯一文件范围 | 依赖 | 独立验收人 | 状态 | 证据与结论 |
 | --- | --- | --- | --- | --- | --- | --- |
-| LITE-01 | 取消每次源码复制、提供引用式封存与可追溯版本记录；运行日志/证据预算有明确失败语义 | 工具程序：Tools/Game.ps1、Tools/Automation/Run.ps1、Tools/Testing下新增工具与测试（Test-MaintainEvidence.ps1归独立验收人） | 无 | 独立测试代理 | 已验收 | [独立验收](TestResults/Lightweight/LITE-20261024/acceptance.json)：版本追溯、引用封存、预算与实际入口通过 |
-| LITE-02 | 自动化追踪与快照输出受限，不静默截断有效证据、保留业务断言 | 测试设施程序：Assets/FitnessSimulator/Tests/Production/Automation、Assets/FitnessSimulator/Editor/Automation、GameUiSmoke产证、两个测试/编辑器asmdef引用 | 与LITE-01约定预算 | 独立测试代理 | 已验收 | 同一独立验收：预算边界与两日业务回归通过；未跑长线、图形烟测或设备 |
-| LITE-03 | 清理缓存与可验证冗余副本，历史证据可定位、可核验；更新流程说明 | 架构：Tools/Testing/Maintain-Evidence.ps1、README.md、Docs/Verification.md、TODOLIST.md、TestResults历史迁移 | LITE-01、02；清理先审查 | 独立测试代理 | 已验收 | 同一独立验收及[清理回执](TestResults/Lightweight/LITE-20261024/maintenance/applied.json)：历史证据完整；本轮编译缓存约19MB因自动审批拒绝删除而保留，不上传 |
-| LITE-04 | 有限验收通过后提交推送，远端与本地一致 | 架构：Git提交推送、本清单 | LITE-01至03 | 独立测试代理 | 已验收 | 独立确认远端与本地一致、工作区干净，受测版本之后仅清单验收记录；[推送核验](TestResults/Lightweight/LITE-20261024/push-verification.json)。本批已收口，未出包 |
+| HOME-01 | 双击显示改动、输入说明后提交全部未忽略改动并推送当前分支；相对路径、代理可选、失败不覆盖远端 | 架构：Submit.cmd、Submit-WithProxy.cmd、Tools/Submit.ps1、.gitattributes、README、本清单；验收人独占临时测试与证据 | 已有Git与远端账号权限 | 复用独立测试代理 | 已验收 | [独立验收](TestResults/HomeSubmit/HOME-20261025/review.json)：16项有限检查通过；入口随本批提交发布，未测试真实家用代理或家用账号；出包未请求 |
 
 ## [FRAME] 后续批次填写约定
 
 [FRAME] 在本文件替换“当前批次”为新批次，先保留用户每条反馈到任务ID的映射；补齐目标／范围外、查看场景与必要前置、出包授权、清单写者及上表字段。完成批次移到下方一行历史索引，详细证据继续使用原路径；不另开批次待办文件。
 
 ## [FRAME] 历史索引
+
+- [COMPUTED｜HIGH] LITE-20261024已验收：轻量测试、历史副本去重及推送完成；证据见TestResults/Lightweight/LITE-20261024/acceptance.json与push-verification.json。
 
 - [COMPUTED｜HIGH] SYNC-20261024已验收：工程已推送 origin/main；证据见TestResults/RepositorySync/SYNC-20261024/review.txt。
 

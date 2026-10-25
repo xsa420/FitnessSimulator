@@ -10,6 +10,14 @@
 
 [FRAME｜实施入口] 先读[统一技术方案与实施任务](Docs/Technical/FirstReleaseTechnicalPlan.md)、[程序模块分工与工程证据](Docs/ProgramModulesAndDependencies.md)及[集成审查](Docs/Technical/IntegrationReview.md)。M0方案阶段已完成；后续用户授权实际开发，现从M1按阶段实施，不能将方案、领域测试或构建通过等同全部首版验收。
 
+## [FRAME] 在另一台电脑提交
+
+[FRAME] 安装 Git 并克隆本仓库后，双击根目录 `Submit.cmd`：查看当前分支和改动，输入提交说明，提交全部未忽略的新增／修改／删除文件并推送至 origin 当前同名分支。首次使用若缺少作者姓名／邮箱，会提示填写并仅保存在当前克隆。无工作区改动时仍会推送尚未上传的本地提交。可右键此文件发送到桌面创建快捷方式；保留它在仓库里的原位置。
+
+[FRAME] 需要代理时使用 `Submit-WithProxy.cmd`，输入本机实际代理地址，例如 `http://127.0.0.1:7890`。此设置仅对本次命令生效，留空沿用已有设置；这个入口的代理参数适用于 HTTPS 远端，克隆请用 `https://github.com/xsa420/FitnessSimulator.git`。SSH 远端使用普通入口及自行配置的 SSH 连接。作者姓名／邮箱不是登录凭据，推送仍需该仓库的账号权限；HTTPS 登录按 Git 弹出的认证提示完成。
+
+[FRAME] 入口不会自动拉取合并、强推、切换分支或运行测试／构建。远端已领先、认证或网络失败时，保留本地改动／提交并显示错误；处理后再次双击即可。正在进行合并／变基或存在未解决冲突时拒绝提交。
+
 ## [FRAME] 正式文本切片
 
 [COMPUTED｜HIGH] 正式场景为 `Assets/FitnessSimulator/Scenes/Player/GameBootstrap.unity`，源码位于 `Assets/FitnessSimulator/Production`。打开正式场景后运行；首次新局使用稳步新手与明确的卧推自定义计划，之后从主菜单继续。单独保存于应用持久目录的 `PlayerM1`，不读取旧实验场存档。

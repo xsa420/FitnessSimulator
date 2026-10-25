@@ -10,3 +10,5 @@
 *.png binary
 *.fbx binary
 *.blend binary
+
+*.cmd text eol=crlf
