@@ -1,0 +1,262 @@
+[
+  {
+    "file": "01_ButtonBases/btn_base_white.png",
+    "size": [
+      436,
+      96
+    ],
+    "alpha_min": 0,
+    "alpha_max": 255,
+    "nonzero_alpha_pixels": 38497
+  },
+  {
+    "file": "01_ButtonBases/btn_base_orange.png",
+    "size": [
+      436,
+      96
+    ],
+    "alpha_min": 0,
+    "alpha_max": 255,
+    "nonzero_alpha_pixels": 38497
+  },
+  {
+    "file": "02_Icons/icon_continue_white.png",
+    "size": [
+      48,
+      48
+    ],
+    "alpha_min": 0,
+    "alpha_max": 255,
+    "nonzero_alpha_pixels": 517
+  },
+  {
+    "file": "02_Icons/icon_new_game_white.png",
+    "size": [
+      48,
+      48
+    ],
+    "alpha_min": 0,
+    "alpha_max": 255,
+    "nonzero_alpha_pixels": 833
+  },
+  {
+    "file": "02_Icons/icon_history_white.png",
+    "size": [
+      48,
+      48
+    ],
+    "alpha_min": 0,
+    "alpha_max": 255,
+    "nonzero_alpha_pixels": 941
+  },
+  {
+    "file": "02_Icons/icon_settings_white.png",
+    "size": [
+      48,
+      48
+    ],
+    "alpha_min": 0,
+    "alpha_max": 255,
+    "nonzero_alpha_pixels": 683
+  },
+  {
+    "file": "03_Watermarks/wm_runner_cool.png",
+    "size": [
+      132,
+      82
+    ],
+    "alpha_min": 0,
+    "alpha_max": 119,
+    "nonzero_alpha_pixels": 2831
+  },
+  {
+    "file": "03_Watermarks/wm_history_cool.png",
+    "size": [
+      132,
+      82
+    ],
+    "alpha_min": 0,
+    "alpha_max": 117,
+    "nonzero_alpha_pixels": 3802
+  },
+  {
+    "file": "03_Watermarks/wm_settings_cool.png",
+    "size": [
+      132,
+      82
+    ],
+    "alpha_min": 0,
+    "alpha_max": 124,
+    "nonzero_alpha_pixels": 3668
+  },
+  {
+    "file": "03_Watermarks/wm_runner_warm.png",
+    "size": [
+      132,
+      82
+    ],
+    "alpha_min": 0,
+    "alpha_max": 85,
+    "nonzero_alpha_pixels": 2831
+  },
+  {
+    "file": "04_Brand/logo_cn.png",
+    "size": [
+      538,
+      166
+    ],
+    "alpha_min": 0,
+    "alpha_max": 255,
+    "nonzero_alpha_pixels": 43663
+  },
+  {
+    "file": "04_Brand/logo_en.png",
+    "size": [
+      460,
+      25
+    ],
+    "alpha_min": 0,
+    "alpha_max": 255,
+    "nonzero_alpha_pixels": 1191
+  },
+  {
+    "file": "05_Text/txt_intro.png",
+    "size": [
+      365,
+      72
+    ],
+    "alpha_min": 0,
+    "alpha_max": 255,
+    "nonzero_alpha_pixels": 7103
+  },
+  {
+    "file": "05_Text/txt_continue_title.png",
+    "size": [
+      188,
+      31
+    ],
+    "alpha_min": 0,
+    "alpha_max": 255,
+    "nonzero_alpha_pixels": 2329
+  },
+  {
+    "file": "05_Text/txt_continue_subtitle.png",
+    "size": [
+      229,
+      24
+    ],
+    "alpha_min": 0,
+    "alpha_max": 255,
+    "nonzero_alpha_pixels": 1904
+  },
+  {
+    "file": "05_Text/txt_new_game_title.png",
+    "size": [
+      199,
+      34
+    ],
+    "alpha_min": 0,
+    "alpha_max": 255,
+    "nonzero_alpha_pixels": 2801
+  },
+  {
+    "file": "05_Text/txt_new_game_subtitle.png",
+    "size": [
+      232,
+      22
+    ],
+    "alpha_min": 0,
+    "alpha_max": 255,
+    "nonzero_alpha_pixels": 2004
+  },
+  {
+    "file": "05_Text/txt_history_title.png",
+    "size": [
+      189,
+      33
+    ],
+    "alpha_min": 0,
+    "alpha_max": 255,
+    "nonzero_alpha_pixels": 2228
+  },
+  {
+    "file": "05_Text/txt_history_subtitle.png",
+    "size": [
+      232,
+      23
+    ],
+    "alpha_min": 0,
+    "alpha_max": 255,
+    "nonzero_alpha_pixels": 1935
+  },
+  {
+    "file": "05_Text/txt_settings_title.png",
+    "size": [
+      135,
+      36
+    ],
+    "alpha_min": 0,
+    "alpha_max": 255,
+    "nonzero_alpha_pixels": 1135
+  },
+  {
+    "file": "05_Text/txt_settings_subtitle.png",
+    "size": [
+      200,
+      24
+    ],
+    "alpha_min": 0,
+    "alpha_max": 255,
+    "nonzero_alpha_pixels": 1505
+  },
+  {
+    "file": "05_Text/txt_footer.png",
+    "size": [
+      301,
+      61
+    ],
+    "alpha_min": 0,
+    "alpha_max": 255,
+    "nonzero_alpha_pixels": 3957
+  },
+  {
+    "file": "05_Text/txt_version.png",
+    "size": [
+      65,
+      30
+    ],
+    "alpha_min": 0,
+    "alpha_max": 255,
+    "nonzero_alpha_pixels": 559
+  },
+  {
+    "file": "06_Decor/intro_rule.png",
+    "size": [
+      56,
+      6
+    ],
+    "alpha_min": 255,
+    "alpha_max": 255,
+    "nonzero_alpha_pixels": 336
+  },
+  {
+    "file": "06_Decor/footer_rule.png",
+    "size": [
+      315,
+      53
+    ],
+    "alpha_min": 0,
+    "alpha_max": 195,
+    "nonzero_alpha_pixels": 1370
+  },
+  {
+    "file": "06_Decor/optional_right_scrim.png",
+    "size": [
+      610,
+      941
+    ],
+    "alpha_min": 0,
+    "alpha_max": 102,
+    "nonzero_alpha_pixels": 566482
+  }
+]

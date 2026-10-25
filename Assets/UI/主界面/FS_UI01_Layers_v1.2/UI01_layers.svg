@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1672" height="941" viewBox="0 0 1672 941">
+<image id="brand_cn" x="1100" y="78" width="538" height="166" xlink:href="04_Brand/logo_cn.png"/>
+<image id="brand_en" x="1160" y="248" width="460" height="25" xlink:href="04_Brand/logo_en.png"/>
+<image id="intro_rule" x="1218" y="380" width="56" height="6" xlink:href="06_Decor/intro_rule.png"/>
+<image id="footer_rule" x="1210" y="858" width="315" height="53" xlink:href="06_Decor/footer_rule.png"/>
+<image id="button_continue_base" x="1197" y="408" width="436" height="96" xlink:href="01_ButtonBases/btn_base_orange.png"/>
+<image id="button_new_game_base" x="1197" y="503" width="436" height="96" xlink:href="01_ButtonBases/btn_base_white.png"/>
+<image id="button_history_base" x="1197" y="598" width="436" height="96" xlink:href="01_ButtonBases/btn_base_white.png"/>
+<image id="button_settings_base" x="1197" y="695" width="436" height="96" xlink:href="01_ButtonBases/btn_base_white.png"/>
+<image id="button_continue_watermark" x="1469" y="416" width="132" height="82" xlink:href="03_Watermarks/wm_runner_warm.png"/>
+<image id="button_new_game_watermark" x="1469" y="511" width="132" height="82" xlink:href="03_Watermarks/wm_runner_cool.png"/>
+<image id="button_history_watermark" x="1469" y="606" width="132" height="82" xlink:href="03_Watermarks/wm_history_cool.png"/>
+<image id="button_settings_watermark" x="1469" y="703" width="132" height="82" xlink:href="03_Watermarks/wm_settings_cool.png"/>
+<image id="button_continue_icon" x="1237" y="433" width="48" height="48" xlink:href="02_Icons/icon_continue_white.png"/>
+<image id="button_new_game_icon" x="1237" y="528" width="48" height="48" xlink:href="02_Icons/icon_new_game_white.png"/>
+<image id="button_history_icon" x="1237" y="623" width="48" height="48" xlink:href="02_Icons/icon_history_white.png"/>
+<image id="button_settings_icon" x="1237" y="720" width="48" height="48" xlink:href="02_Icons/icon_settings_white.png"/>
+<image id="text_intro" x="1214" y="297" width="365" height="72" xlink:href="05_Text/txt_intro.png"/>
+<image id="text_continue_title" x="1320" y="427" width="188" height="31" xlink:href="05_Text/txt_continue_title.png"/>
+<image id="text_continue_subtitle" x="1320" y="462" width="229" height="24" xlink:href="05_Text/txt_continue_subtitle.png"/>
+<image id="text_new_game_title" x="1320" y="522" width="199" height="34" xlink:href="05_Text/txt_new_game_title.png"/>
+<image id="text_new_game_subtitle" x="1320" y="559" width="232" height="22" xlink:href="05_Text/txt_new_game_subtitle.png"/>
+<image id="text_history_title" x="1320" y="617" width="189" height="33" xlink:href="05_Text/txt_history_title.png"/>
+<image id="text_history_subtitle" x="1320" y="653" width="232" height="23" xlink:href="05_Text/txt_history_subtitle.png"/>
+<image id="text_settings_title" x="1320" y="713" width="135" height="36" xlink:href="05_Text/txt_settings_title.png"/>
+<image id="text_settings_subtitle" x="1320" y="750" width="200" height="24" xlink:href="05_Text/txt_settings_subtitle.png"/>
+<image id="text_footer" x="1207" y="823" width="301" height="61" xlink:href="05_Text/txt_footer.png"/>
+<image id="text_version" x="1573" y="882" width="65" height="30" xlink:href="05_Text/txt_version.png"/>
+</svg>

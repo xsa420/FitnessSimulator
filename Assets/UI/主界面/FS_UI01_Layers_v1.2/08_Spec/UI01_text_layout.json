@@ -1,0 +1,204 @@
+{
+  "canvas": [
+    1672,
+    941
+  ],
+  "coordinate_origin": "top-left",
+  "brand_text": [
+    {
+      "id": "logo_cn",
+      "text": "健身模拟器",
+      "rect": {
+        "x": 1100,
+        "y": 78,
+        "w": 538,
+        "h": 166
+      },
+      "colors": [
+        "#11D6E5",
+        "#F8FBFF",
+        "#102D50"
+      ],
+      "file": "04_Brand/logo_cn.png"
+    },
+    {
+      "id": "logo_en",
+      "text": "FITNESS LIFE SIMULATOR",
+      "rect": {
+        "x": 1160,
+        "y": 248,
+        "w": 460,
+        "h": 25
+      },
+      "color": "#F8FBFF",
+      "file": "04_Brand/logo_en.png"
+    }
+  ],
+  "text": [
+    {
+      "id": "intro",
+      "text": "从今天开始，\n遇见更强的自己。",
+      "file": "05_Text/txt_intro.png",
+      "rect": {
+        "x": 1214,
+        "y": 297,
+        "w": 365,
+        "h": 72
+      },
+      "color": "#F8FBFF",
+      "font_size_px_reference": 31,
+      "font_note": "原图字体文件未知。本包用Noto Sans CJK SC/DejaVu Sans/楷体作清晰重排；字体文件未附带，项目可用授权仍需核对。字号是重建值。",
+      "role": "intro"
+    },
+    {
+      "id": "continue_title",
+      "text": "继续游戏",
+      "file": "05_Text/txt_continue_title.png",
+      "rect": {
+        "x": 1320,
+        "y": 427,
+        "w": 188,
+        "h": 31
+      },
+      "color": "#FFFFFF",
+      "font_size_px_reference": 27,
+      "font_note": "原图字体文件未知。本包用Noto Sans CJK SC/DejaVu Sans/楷体作清晰重排；字体文件未附带，项目可用授权仍需核对。字号是重建值。",
+      "role": "button_title"
+    },
+    {
+      "id": "continue_subtitle",
+      "text": "回到你的训练旅程",
+      "file": "05_Text/txt_continue_subtitle.png",
+      "rect": {
+        "x": 1320,
+        "y": 462,
+        "w": 229,
+        "h": 24
+      },
+      "color": "#FFF8ED",
+      "font_size_px_reference": 18,
+      "font_note": "原图字体文件未知。本包用Noto Sans CJK SC/DejaVu Sans/楷体作清晰重排；字体文件未附带，项目可用授权仍需核对。字号是重建值。",
+      "role": "button_subtitle"
+    },
+    {
+      "id": "new_game_title",
+      "text": "开始新游戏",
+      "file": "05_Text/txt_new_game_title.png",
+      "rect": {
+        "x": 1320,
+        "y": 522,
+        "w": 199,
+        "h": 34
+      },
+      "color": "#0B2E53",
+      "font_size_px_reference": 27,
+      "font_note": "原图字体文件未知。本包用Noto Sans CJK SC/DejaVu Sans/楷体作清晰重排；字体文件未附带，项目可用授权仍需核对。字号是重建值。",
+      "role": "button_title"
+    },
+    {
+      "id": "new_game_subtitle",
+      "text": "开启全新的健身人生",
+      "file": "05_Text/txt_new_game_subtitle.png",
+      "rect": {
+        "x": 1320,
+        "y": 559,
+        "w": 232,
+        "h": 22
+      },
+      "color": "#526F8F",
+      "font_size_px_reference": 18,
+      "font_note": "原图字体文件未知。本包用Noto Sans CJK SC/DejaVu Sans/楷体作清晰重排；字体文件未附带，项目可用授权仍需核对。字号是重建值。",
+      "role": "button_subtitle"
+    },
+    {
+      "id": "history_title",
+      "text": "结局历史",
+      "file": "05_Text/txt_history_title.png",
+      "rect": {
+        "x": 1320,
+        "y": 617,
+        "w": 189,
+        "h": 33
+      },
+      "color": "#0B2E53",
+      "font_size_px_reference": 27,
+      "font_note": "原图字体文件未知。本包用Noto Sans CJK SC/DejaVu Sans/楷体作清晰重排；字体文件未附带，项目可用授权仍需核对。字号是重建值。",
+      "role": "button_title"
+    },
+    {
+      "id": "history_subtitle",
+      "text": "查看已解锁的结局",
+      "file": "05_Text/txt_history_subtitle.png",
+      "rect": {
+        "x": 1320,
+        "y": 653,
+        "w": 232,
+        "h": 23
+      },
+      "color": "#526F8F",
+      "font_size_px_reference": 18,
+      "font_note": "原图字体文件未知。本包用Noto Sans CJK SC/DejaVu Sans/楷体作清晰重排；字体文件未附带，项目可用授权仍需核对。字号是重建值。",
+      "role": "button_subtitle"
+    },
+    {
+      "id": "settings_title",
+      "text": "设置",
+      "file": "05_Text/txt_settings_title.png",
+      "rect": {
+        "x": 1320,
+        "y": 713,
+        "w": 135,
+        "h": 36
+      },
+      "color": "#0B2E53",
+      "font_size_px_reference": 27,
+      "font_note": "原图字体文件未知。本包用Noto Sans CJK SC/DejaVu Sans/楷体作清晰重排；字体文件未附带，项目可用授权仍需核对。字号是重建值。",
+      "role": "button_title"
+    },
+    {
+      "id": "settings_subtitle",
+      "text": "调整游戏选项",
+      "file": "05_Text/txt_settings_subtitle.png",
+      "rect": {
+        "x": 1320,
+        "y": 750,
+        "w": 200,
+        "h": 24
+      },
+      "color": "#526F8F",
+      "font_size_px_reference": 18,
+      "font_note": "原图字体文件未知。本包用Noto Sans CJK SC/DejaVu Sans/楷体作清晰重排；字体文件未附带，项目可用授权仍需核对。字号是重建值。",
+      "role": "button_subtitle"
+    },
+    {
+      "id": "footer",
+      "text": "规律的每一天，\n都是塑造更好的你。",
+      "file": "05_Text/txt_footer.png",
+      "rect": {
+        "x": 1207,
+        "y": 823,
+        "w": 301,
+        "h": 61
+      },
+      "color": "#F2F5F9",
+      "font_size_px_reference": 24,
+      "font_note": "原图字体文件未知。本包用Noto Sans CJK SC/DejaVu Sans/楷体作清晰重排；字体文件未附带，项目可用授权仍需核对。字号是重建值。",
+      "role": "footer"
+    },
+    {
+      "id": "version",
+      "text": "v0.1.0",
+      "file": "05_Text/txt_version.png",
+      "rect": {
+        "x": 1573,
+        "y": 882,
+        "w": 65,
+        "h": 30
+      },
+      "color": "#F4F7FA",
+      "font_size_px_reference": 19,
+      "font_note": "原图字体文件未知。本包用Noto Sans CJK SC/DejaVu Sans/楷体作清晰重排；字体文件未附带，项目可用授权仍需核对。字号是重建值。",
+      "role": "version"
+    }
+  ]
+}

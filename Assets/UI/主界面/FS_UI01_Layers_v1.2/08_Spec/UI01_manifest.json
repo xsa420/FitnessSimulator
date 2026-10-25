@@ -1,0 +1,1413 @@
+{
+  "version": "1.2",
+  "source": "wide_cinematic_game_ui_menu_splash_screen_in_anime.png",
+  "source_sha256": "5d8764f470a4a6e585bfbc8e3961b611aab808454ba63ac496fbd96d6f3079cc",
+  "canvas": {
+    "width": 1672,
+    "height": 941,
+    "origin": "top-left",
+    "x_positive": "right",
+    "y_positive": "down",
+    "units": "pixels"
+  },
+  "scope": "UI01主菜单非背景UI；不含剧情、自由活动入口或人物背景",
+  "delivery_note": "源图是扁平合成图，此包为分离清理＋底板矢量重建，不是从PSD恢复的原始图层。透明度均为真实PNG alpha，不是棋盘底图。",
+  "palette": {
+    "navy": "#102D50",
+    "circle": "#15365C",
+    "white_top": "#FCFDFF",
+    "white_bottom": "#E0EDF5",
+    "primary": "#0B2E53",
+    "secondary": "#526F8F",
+    "text_white": "#F8FBFF",
+    "orange_start": "#FFD75C",
+    "orange_mid": "#FF9635",
+    "orange_end": "#FF7827",
+    "orange_circle": "#FF650D",
+    "orange_inner": "#FFE786",
+    "cyan": "#11D6E5",
+    "cool_watermark": "#8DB5CE",
+    "warm_watermark": "#E56621",
+    "footer": "#F2F5F9",
+    "version": "#F4F7FA"
+  },
+  "assets": [
+    {
+      "file": "01_ButtonBases/btn_base_white.png",
+      "width": 436,
+      "height": 96,
+      "mode": "RGBA",
+      "alpha": "straight / non-premultiplied",
+      "kind": "button_base",
+      "notes": "包含底板、圆底、右箭头；不含图标、虚影或文字。斜侧边圆角梯形，不是正矩形。",
+      "vector": "09_Vector/btn_base_white.svg"
+    },
+    {
+      "file": "01_ButtonBases/btn_base_orange.png",
+      "width": 436,
+      "height": 96,
+      "mode": "RGBA",
+      "alpha": "straight / non-premultiplied",
+      "kind": "button_base",
+      "notes": "包含底板、圆底、右箭头；不含图标、虚影或文字。斜侧边圆角梯形，不是正矩形。",
+      "vector": "09_Vector/btn_base_orange.svg"
+    },
+    {
+      "file": "02_Icons/icon_continue_white.png",
+      "width": 48,
+      "height": 48,
+      "mode": "RGBA",
+      "alpha": "straight / non-premultiplied",
+      "kind": "icon",
+      "notes": "只有白色符号；不含圆底。固定48×48画布。"
+    },
+    {
+      "file": "02_Icons/icon_new_game_white.png",
+      "width": 48,
+      "height": 48,
+      "mode": "RGBA",
+      "alpha": "straight / non-premultiplied",
+      "kind": "icon",
+      "notes": "只有白色符号；不含圆底。固定48×48画布。"
+    },
+    {
+      "file": "02_Icons/icon_history_white.png",
+      "width": 48,
+      "height": 48,
+      "mode": "RGBA",
+      "alpha": "straight / non-premultiplied",
+      "kind": "icon",
+      "notes": "只有白色符号；不含圆底。固定48×48画布。"
+    },
+    {
+      "file": "02_Icons/icon_settings_white.png",
+      "width": 48,
+      "height": 48,
+      "mode": "RGBA",
+      "alpha": "straight / non-premultiplied",
+      "kind": "icon",
+      "notes": "只有白色符号；不含圆底。固定48×48画布。"
+    },
+    {
+      "file": "03_Watermarks/wm_runner_cool.png",
+      "width": 132,
+      "height": 82,
+      "mode": "RGBA",
+      "alpha": "straight / non-premultiplied",
+      "kind": "watermark",
+      "notes": "虚影本身已包含低透明度；Unity Image.color.alpha设1，不再重复降透明度。"
+    },
+    {
+      "file": "03_Watermarks/wm_history_cool.png",
+      "width": 132,
+      "height": 82,
+      "mode": "RGBA",
+      "alpha": "straight / non-premultiplied",
+      "kind": "watermark",
+      "notes": "虚影本身已包含低透明度；Unity Image.color.alpha设1，不再重复降透明度。"
+    },
+    {
+      "file": "03_Watermarks/wm_settings_cool.png",
+      "width": 132,
+      "height": 82,
+      "mode": "RGBA",
+      "alpha": "straight / non-premultiplied",
+      "kind": "watermark",
+      "notes": "虚影本身已包含低透明度；Unity Image.color.alpha设1，不再重复降透明度。"
+    },
+    {
+      "file": "03_Watermarks/wm_runner_warm.png",
+      "width": 132,
+      "height": 82,
+      "mode": "RGBA",
+      "alpha": "straight / non-premultiplied",
+      "kind": "watermark",
+      "notes": "用于橙色按钮；已内置低透明度。"
+    },
+    {
+      "file": "04_Brand/logo_cn.png",
+      "width": 538,
+      "height": 166,
+      "mode": "RGBA",
+      "alpha": "straight / non-premultiplied",
+      "kind": "brand",
+      "notes": "从最新效果图分离；透明外缘清理，不包含英文、背景或菜单。非字体文件。"
+    },
+    {
+      "file": "04_Brand/logo_en.png",
+      "width": 460,
+      "height": 25,
+      "mode": "RGBA",
+      "alpha": "straight / non-premultiplied",
+      "kind": "brand_text",
+      "notes": "英文副标题独立透明层，按源图字距重排：FITNESS LIFE SIMULATOR。"
+    },
+    {
+      "file": "05_Text/txt_intro.png",
+      "width": 365,
+      "height": 72,
+      "mode": "RGBA",
+      "alpha": "straight / non-premultiplied",
+      "kind": "text_raster",
+      "notes": "按测量框重排的清晰透明文字；源字体文件未知。正式可变文案建议独立文字组件，不随背景烘焙。"
+    },
+    {
+      "file": "05_Text/txt_continue_title.png",
+      "width": 188,
+      "height": 31,
+      "mode": "RGBA",
+      "alpha": "straight / non-premultiplied",
+      "kind": "text_raster",
+      "notes": "按测量框重排的清晰透明文字；源字体文件未知。正式可变文案建议独立文字组件，不随背景烘焙。"
+    },
+    {
+      "file": "05_Text/txt_continue_subtitle.png",
+      "width": 229,
+      "height": 24,
+      "mode": "RGBA",
+      "alpha": "straight / non-premultiplied",
+      "kind": "text_raster",
+      "notes": "按测量框重排的清晰透明文字；源字体文件未知。正式可变文案建议独立文字组件，不随背景烘焙。"
+    },
+    {
+      "file": "05_Text/txt_new_game_title.png",
+      "width": 199,
+      "height": 34,
+      "mode": "RGBA",
+      "alpha": "straight / non-premultiplied",
+      "kind": "text_raster",
+      "notes": "按测量框重排的清晰透明文字；源字体文件未知。正式可变文案建议独立文字组件，不随背景烘焙。"
+    },
+    {
+      "file": "05_Text/txt_new_game_subtitle.png",
+      "width": 232,
+      "height": 22,
+      "mode": "RGBA",
+      "alpha": "straight / non-premultiplied",
+      "kind": "text_raster",
+      "notes": "按测量框重排的清晰透明文字；源字体文件未知。正式可变文案建议独立文字组件，不随背景烘焙。"
+    },
+    {
+      "file": "05_Text/txt_history_title.png",
+      "width": 189,
+      "height": 33,
+      "mode": "RGBA",
+      "alpha": "straight / non-premultiplied",
+      "kind": "text_raster",
+      "notes": "按测量框重排的清晰透明文字；源字体文件未知。正式可变文案建议独立文字组件，不随背景烘焙。"
+    },
+    {
+      "file": "05_Text/txt_history_subtitle.png",
+      "width": 232,
+      "height": 23,
+      "mode": "RGBA",
+      "alpha": "straight / non-premultiplied",
+      "kind": "text_raster",
+      "notes": "按测量框重排的清晰透明文字；源字体文件未知。正式可变文案建议独立文字组件，不随背景烘焙。"
+    },
+    {
+      "file": "05_Text/txt_settings_title.png",
+      "width": 135,
+      "height": 36,
+      "mode": "RGBA",
+      "alpha": "straight / non-premultiplied",
+      "kind": "text_raster",
+      "notes": "按测量框重排的清晰透明文字；源字体文件未知。正式可变文案建议独立文字组件，不随背景烘焙。"
+    },
+    {
+      "file": "05_Text/txt_settings_subtitle.png",
+      "width": 200,
+      "height": 24,
+      "mode": "RGBA",
+      "alpha": "straight / non-premultiplied",
+      "kind": "text_raster",
+      "notes": "按测量框重排的清晰透明文字；源字体文件未知。正式可变文案建议独立文字组件，不随背景烘焙。"
+    },
+    {
+      "file": "05_Text/txt_footer.png",
+      "width": 301,
+      "height": 61,
+      "mode": "RGBA",
+      "alpha": "straight / non-premultiplied",
+      "kind": "text_raster",
+      "notes": "按测量框重排的清晰透明文字；源字体文件未知。正式可变文案建议独立文字组件，不随背景烘焙。"
+    },
+    {
+      "file": "05_Text/txt_version.png",
+      "width": 65,
+      "height": 30,
+      "mode": "RGBA",
+      "alpha": "straight / non-premultiplied",
+      "kind": "text_raster",
+      "notes": "按测量框重排的清晰透明文字；源字体文件未知。正式可变文案建议独立文字组件，不随背景烘焙。"
+    },
+    {
+      "file": "06_Decor/intro_rule.png",
+      "width": 56,
+      "height": 6,
+      "mode": "RGBA",
+      "alpha": "straight / non-premultiplied",
+      "kind": "decoration",
+      "notes": ""
+    },
+    {
+      "file": "06_Decor/footer_rule.png",
+      "width": 315,
+      "height": 53,
+      "mode": "RGBA",
+      "alpha": "straight / non-premultiplied",
+      "kind": "decoration",
+      "notes": "底部短句下划线单独层。"
+    },
+    {
+      "file": "06_Decor/optional_right_scrim.png",
+      "width": 610,
+      "height": 941,
+      "mode": "RGBA",
+      "alpha": "straight / non-premultiplied",
+      "kind": "optional_overlay",
+      "notes": "可选右侧可读性遮罩，不含背景。原图右侧已有暗部时不必重复叠加。"
+    },
+    {
+      "file": "07_Preview/UI01_overlay_transparent.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "alpha": "straight / non-premultiplied",
+      "kind": "assembled_preview",
+      "notes": "全部UI重新叠合，背景全透明。"
+    }
+  ],
+  "layers": [
+    {
+      "id": "brand_cn",
+      "file": "04_Brand/logo_cn.png",
+      "rect": {
+        "x": 1100,
+        "y": 78,
+        "w": 538,
+        "h": 166
+      },
+      "z": 10,
+      "group": "brand",
+      "unity_anchorMin": [
+        0,
+        1
+      ],
+      "unity_anchorMax": [
+        0,
+        1
+      ],
+      "unity_pivot": [
+        0,
+        1
+      ],
+      "unity_anchoredPosition": [
+        1100,
+        -78
+      ],
+      "unity_sizeDelta": [
+        538,
+        166
+      ],
+      "opacity": 1.0,
+      "note": ""
+    },
+    {
+      "id": "brand_en",
+      "file": "04_Brand/logo_en.png",
+      "rect": {
+        "x": 1160,
+        "y": 248,
+        "w": 460,
+        "h": 25
+      },
+      "z": 11,
+      "group": "brand",
+      "unity_anchorMin": [
+        0,
+        1
+      ],
+      "unity_anchorMax": [
+        0,
+        1
+      ],
+      "unity_pivot": [
+        0,
+        1
+      ],
+      "unity_anchoredPosition": [
+        1160,
+        -248
+      ],
+      "unity_sizeDelta": [
+        460,
+        25
+      ],
+      "opacity": 1.0,
+      "note": ""
+    },
+    {
+      "id": "intro_rule",
+      "file": "06_Decor/intro_rule.png",
+      "rect": {
+        "x": 1218,
+        "y": 380,
+        "w": 56,
+        "h": 6
+      },
+      "z": 12,
+      "group": "intro",
+      "unity_anchorMin": [
+        0,
+        1
+      ],
+      "unity_anchorMax": [
+        0,
+        1
+      ],
+      "unity_pivot": [
+        0,
+        1
+      ],
+      "unity_anchoredPosition": [
+        1218,
+        -380
+      ],
+      "unity_sizeDelta": [
+        56,
+        6
+      ],
+      "opacity": 1.0,
+      "note": ""
+    },
+    {
+      "id": "footer_rule",
+      "file": "06_Decor/footer_rule.png",
+      "rect": {
+        "x": 1210,
+        "y": 858,
+        "w": 315,
+        "h": 53
+      },
+      "z": 12,
+      "group": "footer",
+      "unity_anchorMin": [
+        0,
+        1
+      ],
+      "unity_anchorMax": [
+        0,
+        1
+      ],
+      "unity_pivot": [
+        0,
+        1
+      ],
+      "unity_anchoredPosition": [
+        1210,
+        -858
+      ],
+      "unity_sizeDelta": [
+        315,
+        53
+      ],
+      "opacity": 1.0,
+      "note": ""
+    },
+    {
+      "id": "button_continue_base",
+      "file": "01_ButtonBases/btn_base_orange.png",
+      "rect": {
+        "x": 1197,
+        "y": 408,
+        "w": 436,
+        "h": 96
+      },
+      "z": 20,
+      "group": "buttons",
+      "unity_anchorMin": [
+        0,
+        1
+      ],
+      "unity_anchorMax": [
+        0,
+        1
+      ],
+      "unity_pivot": [
+        0,
+        1
+      ],
+      "unity_anchoredPosition": [
+        1197,
+        -408
+      ],
+      "unity_sizeDelta": [
+        436,
+        96
+      ],
+      "opacity": 1.0,
+      "note": "底板已含圆底与箭头。"
+    },
+    {
+      "id": "button_new_game_base",
+      "file": "01_ButtonBases/btn_base_white.png",
+      "rect": {
+        "x": 1197,
+        "y": 503,
+        "w": 436,
+        "h": 96
+      },
+      "z": 20,
+      "group": "buttons",
+      "unity_anchorMin": [
+        0,
+        1
+      ],
+      "unity_anchorMax": [
+        0,
+        1
+      ],
+      "unity_pivot": [
+        0,
+        1
+      ],
+      "unity_anchoredPosition": [
+        1197,
+        -503
+      ],
+      "unity_sizeDelta": [
+        436,
+        96
+      ],
+      "opacity": 1.0,
+      "note": "底板已含圆底与箭头。"
+    },
+    {
+      "id": "button_history_base",
+      "file": "01_ButtonBases/btn_base_white.png",
+      "rect": {
+        "x": 1197,
+        "y": 598,
+        "w": 436,
+        "h": 96
+      },
+      "z": 20,
+      "group": "buttons",
+      "unity_anchorMin": [
+        0,
+        1
+      ],
+      "unity_anchorMax": [
+        0,
+        1
+      ],
+      "unity_pivot": [
+        0,
+        1
+      ],
+      "unity_anchoredPosition": [
+        1197,
+        -598
+      ],
+      "unity_sizeDelta": [
+        436,
+        96
+      ],
+      "opacity": 1.0,
+      "note": "底板已含圆底与箭头。"
+    },
+    {
+      "id": "button_settings_base",
+      "file": "01_ButtonBases/btn_base_white.png",
+      "rect": {
+        "x": 1197,
+        "y": 695,
+        "w": 436,
+        "h": 96
+      },
+      "z": 20,
+      "group": "buttons",
+      "unity_anchorMin": [
+        0,
+        1
+      ],
+      "unity_anchorMax": [
+        0,
+        1
+      ],
+      "unity_pivot": [
+        0,
+        1
+      ],
+      "unity_anchoredPosition": [
+        1197,
+        -695
+      ],
+      "unity_sizeDelta": [
+        436,
+        96
+      ],
+      "opacity": 1.0,
+      "note": "底板已含圆底与箭头。"
+    },
+    {
+      "id": "button_continue_watermark",
+      "file": "03_Watermarks/wm_runner_warm.png",
+      "rect": {
+        "x": 1469,
+        "y": 416,
+        "w": 132,
+        "h": 82
+      },
+      "z": 21,
+      "group": "buttons",
+      "unity_anchorMin": [
+        0,
+        1
+      ],
+      "unity_anchorMax": [
+        0,
+        1
+      ],
+      "unity_pivot": [
+        0,
+        1
+      ],
+      "unity_anchoredPosition": [
+        1469,
+        -416
+      ],
+      "unity_sizeDelta": [
+        132,
+        82
+      ],
+      "opacity": 1.0,
+      "note": "仅保留在文案右侧，低透明度已存于PNG。"
+    },
+    {
+      "id": "button_new_game_watermark",
+      "file": "03_Watermarks/wm_runner_cool.png",
+      "rect": {
+        "x": 1469,
+        "y": 511,
+        "w": 132,
+        "h": 82
+      },
+      "z": 21,
+      "group": "buttons",
+      "unity_anchorMin": [
+        0,
+        1
+      ],
+      "unity_anchorMax": [
+        0,
+        1
+      ],
+      "unity_pivot": [
+        0,
+        1
+      ],
+      "unity_anchoredPosition": [
+        1469,
+        -511
+      ],
+      "unity_sizeDelta": [
+        132,
+        82
+      ],
+      "opacity": 1.0,
+      "note": "仅保留在文案右侧，低透明度已存于PNG。"
+    },
+    {
+      "id": "button_history_watermark",
+      "file": "03_Watermarks/wm_history_cool.png",
+      "rect": {
+        "x": 1469,
+        "y": 606,
+        "w": 132,
+        "h": 82
+      },
+      "z": 21,
+      "group": "buttons",
+      "unity_anchorMin": [
+        0,
+        1
+      ],
+      "unity_anchorMax": [
+        0,
+        1
+      ],
+      "unity_pivot": [
+        0,
+        1
+      ],
+      "unity_anchoredPosition": [
+        1469,
+        -606
+      ],
+      "unity_sizeDelta": [
+        132,
+        82
+      ],
+      "opacity": 1.0,
+      "note": "仅保留在文案右侧，低透明度已存于PNG。"
+    },
+    {
+      "id": "button_settings_watermark",
+      "file": "03_Watermarks/wm_settings_cool.png",
+      "rect": {
+        "x": 1469,
+        "y": 703,
+        "w": 132,
+        "h": 82
+      },
+      "z": 21,
+      "group": "buttons",
+      "unity_anchorMin": [
+        0,
+        1
+      ],
+      "unity_anchorMax": [
+        0,
+        1
+      ],
+      "unity_pivot": [
+        0,
+        1
+      ],
+      "unity_anchoredPosition": [
+        1469,
+        -703
+      ],
+      "unity_sizeDelta": [
+        132,
+        82
+      ],
+      "opacity": 1.0,
+      "note": "仅保留在文案右侧，低透明度已存于PNG。"
+    },
+    {
+      "id": "button_continue_icon",
+      "file": "02_Icons/icon_continue_white.png",
+      "rect": {
+        "x": 1237,
+        "y": 433,
+        "w": 48,
+        "h": 48
+      },
+      "z": 22,
+      "group": "buttons",
+      "unity_anchorMin": [
+        0,
+        1
+      ],
+      "unity_anchorMax": [
+        0,
+        1
+      ],
+      "unity_pivot": [
+        0,
+        1
+      ],
+      "unity_anchoredPosition": [
+        1237,
+        -433
+      ],
+      "unity_sizeDelta": [
+        48,
+        48
+      ],
+      "opacity": 1.0,
+      "note": "不包括圆底。"
+    },
+    {
+      "id": "button_new_game_icon",
+      "file": "02_Icons/icon_new_game_white.png",
+      "rect": {
+        "x": 1237,
+        "y": 528,
+        "w": 48,
+        "h": 48
+      },
+      "z": 22,
+      "group": "buttons",
+      "unity_anchorMin": [
+        0,
+        1
+      ],
+      "unity_anchorMax": [
+        0,
+        1
+      ],
+      "unity_pivot": [
+        0,
+        1
+      ],
+      "unity_anchoredPosition": [
+        1237,
+        -528
+      ],
+      "unity_sizeDelta": [
+        48,
+        48
+      ],
+      "opacity": 1.0,
+      "note": "不包括圆底。"
+    },
+    {
+      "id": "button_history_icon",
+      "file": "02_Icons/icon_history_white.png",
+      "rect": {
+        "x": 1237,
+        "y": 623,
+        "w": 48,
+        "h": 48
+      },
+      "z": 22,
+      "group": "buttons",
+      "unity_anchorMin": [
+        0,
+        1
+      ],
+      "unity_anchorMax": [
+        0,
+        1
+      ],
+      "unity_pivot": [
+        0,
+        1
+      ],
+      "unity_anchoredPosition": [
+        1237,
+        -623
+      ],
+      "unity_sizeDelta": [
+        48,
+        48
+      ],
+      "opacity": 1.0,
+      "note": "不包括圆底。"
+    },
+    {
+      "id": "button_settings_icon",
+      "file": "02_Icons/icon_settings_white.png",
+      "rect": {
+        "x": 1237,
+        "y": 720,
+        "w": 48,
+        "h": 48
+      },
+      "z": 22,
+      "group": "buttons",
+      "unity_anchorMin": [
+        0,
+        1
+      ],
+      "unity_anchorMax": [
+        0,
+        1
+      ],
+      "unity_pivot": [
+        0,
+        1
+      ],
+      "unity_anchoredPosition": [
+        1237,
+        -720
+      ],
+      "unity_sizeDelta": [
+        48,
+        48
+      ],
+      "opacity": 1.0,
+      "note": "不包括圆底。"
+    },
+    {
+      "id": "text_intro",
+      "file": "05_Text/txt_intro.png",
+      "rect": {
+        "x": 1214,
+        "y": 297,
+        "w": 365,
+        "h": 72
+      },
+      "z": 30,
+      "group": "text",
+      "unity_anchorMin": [
+        0,
+        1
+      ],
+      "unity_anchorMax": [
+        0,
+        1
+      ],
+      "unity_pivot": [
+        0,
+        1
+      ],
+      "unity_anchoredPosition": [
+        1214,
+        -297
+      ],
+      "unity_sizeDelta": [
+        365,
+        72
+      ],
+      "opacity": 1.0,
+      "note": ""
+    },
+    {
+      "id": "text_continue_title",
+      "file": "05_Text/txt_continue_title.png",
+      "rect": {
+        "x": 1320,
+        "y": 427,
+        "w": 188,
+        "h": 31
+      },
+      "z": 30,
+      "group": "text",
+      "unity_anchorMin": [
+        0,
+        1
+      ],
+      "unity_anchorMax": [
+        0,
+        1
+      ],
+      "unity_pivot": [
+        0,
+        1
+      ],
+      "unity_anchoredPosition": [
+        1320,
+        -427
+      ],
+      "unity_sizeDelta": [
+        188,
+        31
+      ],
+      "opacity": 1.0,
+      "note": ""
+    },
+    {
+      "id": "text_continue_subtitle",
+      "file": "05_Text/txt_continue_subtitle.png",
+      "rect": {
+        "x": 1320,
+        "y": 462,
+        "w": 229,
+        "h": 24
+      },
+      "z": 30,
+      "group": "text",
+      "unity_anchorMin": [
+        0,
+        1
+      ],
+      "unity_anchorMax": [
+        0,
+        1
+      ],
+      "unity_pivot": [
+        0,
+        1
+      ],
+      "unity_anchoredPosition": [
+        1320,
+        -462
+      ],
+      "unity_sizeDelta": [
+        229,
+        24
+      ],
+      "opacity": 1.0,
+      "note": ""
+    },
+    {
+      "id": "text_new_game_title",
+      "file": "05_Text/txt_new_game_title.png",
+      "rect": {
+        "x": 1320,
+        "y": 522,
+        "w": 199,
+        "h": 34
+      },
+      "z": 30,
+      "group": "text",
+      "unity_anchorMin": [
+        0,
+        1
+      ],
+      "unity_anchorMax": [
+        0,
+        1
+      ],
+      "unity_pivot": [
+        0,
+        1
+      ],
+      "unity_anchoredPosition": [
+        1320,
+        -522
+      ],
+      "unity_sizeDelta": [
+        199,
+        34
+      ],
+      "opacity": 1.0,
+      "note": ""
+    },
+    {
+      "id": "text_new_game_subtitle",
+      "file": "05_Text/txt_new_game_subtitle.png",
+      "rect": {
+        "x": 1320,
+        "y": 559,
+        "w": 232,
+        "h": 22
+      },
+      "z": 30,
+      "group": "text",
+      "unity_anchorMin": [
+        0,
+        1
+      ],
+      "unity_anchorMax": [
+        0,
+        1
+      ],
+      "unity_pivot": [
+        0,
+        1
+      ],
+      "unity_anchoredPosition": [
+        1320,
+        -559
+      ],
+      "unity_sizeDelta": [
+        232,
+        22
+      ],
+      "opacity": 1.0,
+      "note": ""
+    },
+    {
+      "id": "text_history_title",
+      "file": "05_Text/txt_history_title.png",
+      "rect": {
+        "x": 1320,
+        "y": 617,
+        "w": 189,
+        "h": 33
+      },
+      "z": 30,
+      "group": "text",
+      "unity_anchorMin": [
+        0,
+        1
+      ],
+      "unity_anchorMax": [
+        0,
+        1
+      ],
+      "unity_pivot": [
+        0,
+        1
+      ],
+      "unity_anchoredPosition": [
+        1320,
+        -617
+      ],
+      "unity_sizeDelta": [
+        189,
+        33
+      ],
+      "opacity": 1.0,
+      "note": ""
+    },
+    {
+      "id": "text_history_subtitle",
+      "file": "05_Text/txt_history_subtitle.png",
+      "rect": {
+        "x": 1320,
+        "y": 653,
+        "w": 232,
+        "h": 23
+      },
+      "z": 30,
+      "group": "text",
+      "unity_anchorMin": [
+        0,
+        1
+      ],
+      "unity_anchorMax": [
+        0,
+        1
+      ],
+      "unity_pivot": [
+        0,
+        1
+      ],
+      "unity_anchoredPosition": [
+        1320,
+        -653
+      ],
+      "unity_sizeDelta": [
+        232,
+        23
+      ],
+      "opacity": 1.0,
+      "note": ""
+    },
+    {
+      "id": "text_settings_title",
+      "file": "05_Text/txt_settings_title.png",
+      "rect": {
+        "x": 1320,
+        "y": 713,
+        "w": 135,
+        "h": 36
+      },
+      "z": 30,
+      "group": "text",
+      "unity_anchorMin": [
+        0,
+        1
+      ],
+      "unity_anchorMax": [
+        0,
+        1
+      ],
+      "unity_pivot": [
+        0,
+        1
+      ],
+      "unity_anchoredPosition": [
+        1320,
+        -713
+      ],
+      "unity_sizeDelta": [
+        135,
+        36
+      ],
+      "opacity": 1.0,
+      "note": ""
+    },
+    {
+      "id": "text_settings_subtitle",
+      "file": "05_Text/txt_settings_subtitle.png",
+      "rect": {
+        "x": 1320,
+        "y": 750,
+        "w": 200,
+        "h": 24
+      },
+      "z": 30,
+      "group": "text",
+      "unity_anchorMin": [
+        0,
+        1
+      ],
+      "unity_anchorMax": [
+        0,
+        1
+      ],
+      "unity_pivot": [
+        0,
+        1
+      ],
+      "unity_anchoredPosition": [
+        1320,
+        -750
+      ],
+      "unity_sizeDelta": [
+        200,
+        24
+      ],
+      "opacity": 1.0,
+      "note": ""
+    },
+    {
+      "id": "text_footer",
+      "file": "05_Text/txt_footer.png",
+      "rect": {
+        "x": 1207,
+        "y": 823,
+        "w": 301,
+        "h": 61
+      },
+      "z": 30,
+      "group": "text",
+      "unity_anchorMin": [
+        0,
+        1
+      ],
+      "unity_anchorMax": [
+        0,
+        1
+      ],
+      "unity_pivot": [
+        0,
+        1
+      ],
+      "unity_anchoredPosition": [
+        1207,
+        -823
+      ],
+      "unity_sizeDelta": [
+        301,
+        61
+      ],
+      "opacity": 1.0,
+      "note": ""
+    },
+    {
+      "id": "text_version",
+      "file": "05_Text/txt_version.png",
+      "rect": {
+        "x": 1573,
+        "y": 882,
+        "w": 65,
+        "h": 30
+      },
+      "z": 30,
+      "group": "text",
+      "unity_anchorMin": [
+        0,
+        1
+      ],
+      "unity_anchorMax": [
+        0,
+        1
+      ],
+      "unity_pivot": [
+        0,
+        1
+      ],
+      "unity_anchoredPosition": [
+        1573,
+        -882
+      ],
+      "unity_sizeDelta": [
+        65,
+        30
+      ],
+      "opacity": 1.0,
+      "note": ""
+    }
+  ],
+  "text": [
+    {
+      "id": "intro",
+      "text": "从今天开始，\n遇见更强的自己。",
+      "file": "05_Text/txt_intro.png",
+      "rect": {
+        "x": 1214,
+        "y": 297,
+        "w": 365,
+        "h": 72
+      },
+      "color": "#F8FBFF",
+      "font_size_px_reference": 31,
+      "font_note": "原图字体文件未知。本包用Noto Sans CJK SC/DejaVu Sans/楷体作清晰重排；字体文件未附带，项目可用授权仍需核对。字号是重建值。",
+      "role": "intro"
+    },
+    {
+      "id": "continue_title",
+      "text": "继续游戏",
+      "file": "05_Text/txt_continue_title.png",
+      "rect": {
+        "x": 1320,
+        "y": 427,
+        "w": 188,
+        "h": 31
+      },
+      "color": "#FFFFFF",
+      "font_size_px_reference": 27,
+      "font_note": "原图字体文件未知。本包用Noto Sans CJK SC/DejaVu Sans/楷体作清晰重排；字体文件未附带，项目可用授权仍需核对。字号是重建值。",
+      "role": "button_title"
+    },
+    {
+      "id": "continue_subtitle",
+      "text": "回到你的训练旅程",
+      "file": "05_Text/txt_continue_subtitle.png",
+      "rect": {
+        "x": 1320,
+        "y": 462,
+        "w": 229,
+        "h": 24
+      },
+      "color": "#FFF8ED",
+      "font_size_px_reference": 18,
+      "font_note": "原图字体文件未知。本包用Noto Sans CJK SC/DejaVu Sans/楷体作清晰重排；字体文件未附带，项目可用授权仍需核对。字号是重建值。",
+      "role": "button_subtitle"
+    },
+    {
+      "id": "new_game_title",
+      "text": "开始新游戏",
+      "file": "05_Text/txt_new_game_title.png",
+      "rect": {
+        "x": 1320,
+        "y": 522,
+        "w": 199,
+        "h": 34
+      },
+      "color": "#0B2E53",
+      "font_size_px_reference": 27,
+      "font_note": "原图字体文件未知。本包用Noto Sans CJK SC/DejaVu Sans/楷体作清晰重排；字体文件未附带，项目可用授权仍需核对。字号是重建值。",
+      "role": "button_title"
+    },
+    {
+      "id": "new_game_subtitle",
+      "text": "开启全新的健身人生",
+      "file": "05_Text/txt_new_game_subtitle.png",
+      "rect": {
+        "x": 1320,
+        "y": 559,
+        "w": 232,
+        "h": 22
+      },
+      "color": "#526F8F",
+      "font_size_px_reference": 18,
+      "font_note": "原图字体文件未知。本包用Noto Sans CJK SC/DejaVu Sans/楷体作清晰重排；字体文件未附带，项目可用授权仍需核对。字号是重建值。",
+      "role": "button_subtitle"
+    },
+    {
+      "id": "history_title",
+      "text": "结局历史",
+      "file": "05_Text/txt_history_title.png",
+      "rect": {
+        "x": 1320,
+        "y": 617,
+        "w": 189,
+        "h": 33
+      },
+      "color": "#0B2E53",
+      "font_size_px_reference": 27,
+      "font_note": "原图字体文件未知。本包用Noto Sans CJK SC/DejaVu Sans/楷体作清晰重排；字体文件未附带，项目可用授权仍需核对。字号是重建值。",
+      "role": "button_title"
+    },
+    {
+      "id": "history_subtitle",
+      "text": "查看已解锁的结局",
+      "file": "05_Text/txt_history_subtitle.png",
+      "rect": {
+        "x": 1320,
+        "y": 653,
+        "w": 232,
+        "h": 23
+      },
+      "color": "#526F8F",
+      "font_size_px_reference": 18,
+      "font_note": "原图字体文件未知。本包用Noto Sans CJK SC/DejaVu Sans/楷体作清晰重排；字体文件未附带，项目可用授权仍需核对。字号是重建值。",
+      "role": "button_subtitle"
+    },
+    {
+      "id": "settings_title",
+      "text": "设置",
+      "file": "05_Text/txt_settings_title.png",
+      "rect": {
+        "x": 1320,
+        "y": 713,
+        "w": 135,
+        "h": 36
+      },
+      "color": "#0B2E53",
+      "font_size_px_reference": 27,
+      "font_note": "原图字体文件未知。本包用Noto Sans CJK SC/DejaVu Sans/楷体作清晰重排；字体文件未附带，项目可用授权仍需核对。字号是重建值。",
+      "role": "button_title"
+    },
+    {
+      "id": "settings_subtitle",
+      "text": "调整游戏选项",
+      "file": "05_Text/txt_settings_subtitle.png",
+      "rect": {
+        "x": 1320,
+        "y": 750,
+        "w": 200,
+        "h": 24
+      },
+      "color": "#526F8F",
+      "font_size_px_reference": 18,
+      "font_note": "原图字体文件未知。本包用Noto Sans CJK SC/DejaVu Sans/楷体作清晰重排；字体文件未附带，项目可用授权仍需核对。字号是重建值。",
+      "role": "button_subtitle"
+    },
+    {
+      "id": "footer",
+      "text": "规律的每一天，\n都是塑造更好的你。",
+      "file": "05_Text/txt_footer.png",
+      "rect": {
+        "x": 1207,
+        "y": 823,
+        "w": 301,
+        "h": 61
+      },
+      "color": "#F2F5F9",
+      "font_size_px_reference": 24,
+      "font_note": "原图字体文件未知。本包用Noto Sans CJK SC/DejaVu Sans/楷体作清晰重排；字体文件未附带，项目可用授权仍需核对。字号是重建值。",
+      "role": "footer"
+    },
+    {
+      "id": "version",
+      "text": "v0.1.0",
+      "file": "05_Text/txt_version.png",
+      "rect": {
+        "x": 1573,
+        "y": 882,
+        "w": 65,
+        "h": 30
+      },
+      "color": "#F4F7FA",
+      "font_size_px_reference": 19,
+      "font_note": "原图字体文件未知。本包用Noto Sans CJK SC/DejaVu Sans/楷体作清晰重排；字体文件未附带，项目可用授权仍需核对。字号是重建值。",
+      "role": "version"
+    }
+  ],
+  "brand_text": [
+    {
+      "id": "logo_cn",
+      "text": "健身模拟器",
+      "rect": {
+        "x": 1100,
+        "y": 78,
+        "w": 538,
+        "h": 166
+      },
+      "colors": [
+        "#11D6E5",
+        "#F8FBFF",
+        "#102D50"
+      ],
+      "file": "04_Brand/logo_cn.png"
+    },
+    {
+      "id": "logo_en",
+      "text": "FITNESS LIFE SIMULATOR",
+      "rect": {
+        "x": 1160,
+        "y": 248,
+        "w": 460,
+        "h": 25
+      },
+      "color": "#F8FBFF",
+      "file": "04_Brand/logo_en.png"
+    }
+  ],
+  "optional_layers": [
+    {
+      "file": "06_Decor/optional_right_scrim.png",
+      "x": 1062,
+      "y": 0,
+      "z": 0
+    }
+  ],
+  "runtime_notes": [
+    "按钮底板须整体等比缩放。不要对包含圆底与箭头的整张底板直接做九宫格拉伸，否则两者会变形。",
+    "如需可伸缩组件，用SVG重建面板后将圆底和箭头固定在两端；当前PNG按要求合为一张。",
+    "虚影PNG已内置低透明度，不要再乘一次0.3。",
+    "文字与素材位置采用原始1672×941画布。1920×1080是另一实现目标，不是此源图实际像素。",
+    "v0.1.0仅沿原效果图的示例版本；运行时显示真实构建版本。"
+  ]
+}
